@@ -240,8 +240,7 @@ class Admin_Controller extends CI_Controller
 		} else {
 			$message = "Perubahan pada SOAL SIMBOL ".$kolomnya." Berhasil disimpan!";
     		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001');console.warn('here3'); </script>";
-		}
-		
+		}		
 	}
 
 	function updatelistjawaban() {
@@ -266,34 +265,151 @@ class Admin_Controller extends CI_Controller
 				$i++;
 			}
 			while ($i <= 30 && $u < count($ap));
-			$nganu = wordwrap($output, 8, '-', true); //kumpulkan ke variabel nganau, sekalian di trim
-			//echo 'this is the fucking output and it will be ready to be inserted to the facking database!: '.wordwrap($output, 8, '-', true); //debug only
-			$nganu2 = wordwrap($output1,1,'-',true);
-			//echo wordwrap($nganu2); debug only
-			$data = array(
-				'listjawaban' => $nganu,
-				'jawabanbenar' => $nganu2
-			);
-
-			$where = array(
-				'id_kolomjawaban' => $idkolomjawabannya,
-				'kolom' => $kolomnya
-			);
-
-			$this->load->model('Xhilangmodel'); //loadmodelnya dulu
-			$this->Xhilangmodel->lakukan_update($where,$data,'tbl_kolomjawaban');
-
-			if ($idkolomjawabannya == 'S0JL') {
-				$message = "Perubahan pada jawaban".$kolomnya." Berhasil disimpan!";
-	    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001') </script>";
-			
-			} else {
-				print "<script type=\"text/javascript\">alert('u must be from aanother world?');
-				</script>";
+		} elseif ($kolomnya == 'KLM02') {
+			do{ //lakukan
+				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
+					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom2'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
+					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
+					$output.= $a[$i].' ';
+				}
+				$b[$i] = $this->input->post('radiobaris'.$i.'kolom2'); //mengambil nilai radio sesuai yang dipilih
+				$output1.= $b[$i]; 
+				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
+				$i++;
 			}
-
+			while ($i <= 30 && $u < count($ap));
+		} elseif ($kolomnya == 'KLM03') {
+			do{ //lakukan
+				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
+					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom3'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
+					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
+					$output.= $a[$i].' ';
+				}
+				$b[$i] = $this->input->post('radiobaris'.$i.'kolom3'); //mengambil nilai radio sesuai yang dipilih
+				$output1.= $b[$i]; 
+				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
+				$i++;
+			}
+			while ($i <= 30 && $u < count($ap));
+		} elseif ($kolomnya == 'KLM04') {
+			do{ //lakukan
+				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
+					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom4'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
+					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
+					$output.= $a[$i].' ';
+				}
+				$b[$i] = $this->input->post('radiobaris'.$i.'kolom4'); //mengambil nilai radio sesuai yang dipilih
+				$output1.= $b[$i]; 
+				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
+				$i++;
+			}
+			while ($i <= 30 && $u < count($ap));
+		} elseif ($kolomnya == 'KLM05') {
+			do{ //lakukan
+				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
+					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom5'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
+					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
+					$output.= $a[$i].' ';
+				}
+				$b[$i] = $this->input->post('radiobaris'.$i.'kolom5'); //mengambil nilai radio sesuai yang dipilih
+				$output1.= $b[$i]; 
+				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
+				$i++;
+			}
+			while ($i <= 30 && $u < count($ap));
+		} elseif ($kolomnya == 'KLM06') {
+			do{ //lakukan
+				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
+					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom6'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
+					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
+					$output.= $a[$i].' ';
+				}
+				$b[$i] = $this->input->post('radiobaris'.$i.'kolom6'); //mengambil nilai radio sesuai yang dipilih
+				$output1.= $b[$i]; 
+				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
+				$i++;
+			}
+			while ($i <= 30 && $u < count($ap));
+		} elseif ($kolomnya == 'KLM07') {
+			do{ //lakukan
+				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
+					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom7'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
+					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
+					$output.= $a[$i].' ';
+				}
+				$b[$i] = $this->input->post('radiobaris'.$i.'kolom7'); //mengambil nilai radio sesuai yang dipilih
+				$output1.= $b[$i]; 
+				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
+				$i++;
+			}
+			while ($i <= 30 && $u < count($ap));
+		} elseif ($kolomnya == 'KLM08') {
+			do{ //lakukan
+				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
+					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom8'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
+					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
+					$output.= $a[$i].' ';
+				}
+				$b[$i] = $this->input->post('radiobaris'.$i.'kolom8'); //mengambil nilai radio sesuai yang dipilih
+				$output1.= $b[$i]; 
+				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
+				$i++;
+			}
+			while ($i <= 30 && $u < count($ap));
+		} elseif ($kolomnya == 'KLM09') {
+			do{ //lakukan
+				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
+					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom9'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
+					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
+					$output.= $a[$i].' ';
+				}
+				$b[$i] = $this->input->post('radiobaris'.$i.'kolom9'); //mengambil nilai radio sesuai yang dipilih
+				$output1.= $b[$i]; 
+				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
+				$i++;
+			}
+			while ($i <= 30 && $u < count($ap));
 		} else {
-			echo "just copy the code block on first statement above if u have more than one column dickhead!";
+			do{ //lakukan
+				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
+					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom10'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
+					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
+					$output.= $a[$i].' ';
+				}
+				$b[$i] = $this->input->post('radiobaris'.$i.'kolom10'); //mengambil nilai radio sesuai yang dipilih
+				$output1.= $b[$i]; 
+				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
+				$i++;
+			}
+			while ($i <= 30 && $u < count($ap));
+		}
+		$nganu = wordwrap($output, 8, '-', true); //kumpulkan ke variabel nganau, sekalian di trim
+		//echo 'this is the fucking output and it will be ready to be inserted to the facking database!: '.wordwrap($output, 8, '-', true); //debug only
+		$nganu2 = wordwrap($output1,1,'-',true);
+		//echo wordwrap($nganu2); debug only
+		$data = array(
+			'listjawaban' => $nganu,
+			'jawabanbenar' => $nganu2
+		);
+
+		$where = array(
+			'id_kolomjawaban' => $idkolomjawabannya,
+			'kolom' => $kolomnya
+		);
+
+		$this->load->model('Xhilangmodel'); //loadmodelnya dulu
+		$this->Xhilangmodel->lakukan_update($where,$data,'tbl_kolomjawaban');
+
+		if ($idkolomjawabannya == 'S0JL') {
+			$message = "Perubahan pada jawaban angka untuk ".$kolomnya." Berhasil disimpan!";
+    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001') </script>";
+		
+		} elseif ($idkolomjawabannya == 'S1JL') {
+			$message = "Perubahan pada jawaban huruf untuk ".$kolomnya." Berhasil disimpan!";
+    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001') </script>";
+		} else {
+			$message = "Perubahan pada jawaban simbol untuk ".$kolomnya." Berhasil disimpan!";
+    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001') </script>";
 		}
 
 	}

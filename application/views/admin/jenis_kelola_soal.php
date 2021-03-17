@@ -1,5 +1,13 @@
-
-<div class="container" style="margin-top: 60px;">
+<div class="container" style="background-color: #ececec;
+    border-radius: 5px;">
+	<nav aria-label="breadcrumb">
+	  	<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="<?php echo base_url().'admin/Admin_Controller/index' ?>">Menu Utama</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Kelola Soal</li>
+		</ol>
+	</nav>
+</div>
+<div class="container" style="padding: 8vh 13vh;">
 	<div class="row">
 		<div class="col-sm-4 card-wrapper">
 			<div class="each-card-wrap">

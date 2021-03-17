@@ -1,9 +1,10 @@
 body {
     font-family: sans-serif;
-    background: #CCC !important;
+    background-color: #CCC !important;
     display: flex;
     min-height: 100vh;
-    flex-direction: column
+    flex-direction: column;
+    overflow-y: hidden;
 }
 
 .body {

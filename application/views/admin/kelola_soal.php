@@ -1,4 +1,15 @@
-<div class="container">
+<div class="container" style="background-color: #ececec;
+    border-radius: 5px;">
+	<nav aria-label="breadcrumb">
+	  	<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="<?php echo base_url().'admin/Admin_Controller/index' ?>">Menu Utama</a></li>
+	    	<li class="breadcrumb-item"><a href="<?php echo base_url().'admin/Admin_Controller/pilih_kelola_soal'?>">Kelola Soal</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Soal Angka(S0JL)</li>
+		</ol>
+	</nav>
+</div>
+<div class="container" style="overflow-y: scroll;
+    height: 75vh;">
 	<div class="row">
 	  	<div class="col-sm-3">
 	    	<div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
@@ -29,9 +40,9 @@
 						</tr>
 					</table>
 					<?php } ?>
+					<h5 class="card-title" style="text-align: center;">Kolom 1</h5>
 		  		</div>
 	  			<div class="card-body">
-	    			<h5 class="card-title">Kolom 1</h5>
 	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id1 ?>" method="post" enctype="multipart/form-data">
 		    			<table class="table table-borderless">
 		    				<?php
@@ -130,9 +141,10 @@
 						</tr>
 					</table>
 					<?php } ?>
+					<h5 class="card-title" style="text-align: center;">Kolom 2</h5>
 		  		</div>
 	  			<div class="card-body">
-	    			<h5 class="card-title">Kolom 2</h5>
+	    			
 	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id2 ?>" method="post" enctype="multipart/form-data">
 		    			<table class="table table-borderless">
 		    				<?php
@@ -231,9 +243,10 @@
 						</tr>
 					</table>
 					<?php } ?>
+					<h5 class="card-title" style="text-align: center;">Kolom 3</h5>
 		  		</div>
 	  			<div class="card-body">
-	    			<h5 class="card-title">Kolom 3</h5>
+	    			
 	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id3 ?>" method="post" enctype="multipart/form-data">
 		    			<table class="table table-borderless">
 		    				<?php
@@ -331,9 +344,10 @@
 						</tr>
 					</table>
 					<?php } ?>
+					<h5 class="card-title" style="text-align: center;">Kolom 4</h5>
 		  		</div>
 	  			<div class="card-body">
-	    			<h5 class="card-title">Kolom 4</h5>
+	    			
 	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id4 ?>" method="post" enctype="multipart/form-data">
 		    			<table class="table table-borderless">
 		    				<?php
@@ -434,9 +448,10 @@
 						</tr>
 					</table>
 					<?php } ?>
+					<h5 class="card-title" style="text-align: center;">Kolom 5</h5>
 		  		</div>
 	  			<div class="card-body">
-	    			<h5 class="card-title">Kolom 5</h5>
+	    			
 	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id5 ?>" method="post" enctype="multipart/form-data">
 		    			<table class="table table-borderless">
 		    				<?php
@@ -535,9 +550,10 @@
 						</tr>
 					</table>
 					<?php } ?>
+					<h5 class="card-title" style="text-align: center;">Kolom 6</h5>
 		  		</div>
 	  			<div class="card-body">
-	    			<h5 class="card-title">Kolom 6</h5>
+	    			
 	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id6 ?>" method="post" enctype="multipart/form-data">
 		    			<table class="table table-borderless">
 		    				<?php
@@ -636,9 +652,10 @@
 						</tr>
 					</table>
 					<?php } ?>
+					<h5 class="card-title" style="text-align: center;">Kolom 7</h5>
 		  		</div>
 	  			<div class="card-body">
-	    			<h5 class="card-title">Kolom 7</h5>
+	    			
 	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id6 ?>" method="post" enctype="multipart/form-data">
 		    			<table class="table table-borderless">
 		    				<?php
@@ -737,9 +754,10 @@
 						</tr>
 					</table>
 					<?php } ?>
+					<h5 class="card-title" style="text-align: center;">Kolom 8</h5>
 		  		</div>
 	  			<div class="card-body">
-	    			<h5 class="card-title">Kolom 8</h5>
+	    			
 	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id8 ?>" method="post" enctype="multipart/form-data">
 		    			<table class="table table-borderless">
 		    				<?php
@@ -840,9 +858,10 @@
 						</tr>
 					</table>
 					<?php } ?>
+					<h5 class="card-title" style="text-align: center;">Kolom 9</h5>
 		  		</div>
 	  			<div class="card-body">
-	    			<h5 class="card-title">Kolom 9</h5>
+	    			
 	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id9 ?>" method="post" enctype="multipart/form-data">
 		    			<table class="table table-borderless">
 		    				<?php
@@ -940,9 +959,10 @@
 						</tr>
 					</table>
 					<?php } ?>
+					<h5 class="card-title" style="text-align: center;">Kolom 10</h5>
 		  		</div>
 	  			<div class="card-body">
-	    			<h5 class="card-title">Kolom 10</h5>
+	    			
 	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id10 ?>" method="post" enctype="multipart/form-data">
 		    			<table class="table table-borderless">
 		    				<?php
