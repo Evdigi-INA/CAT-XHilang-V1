@@ -5,7 +5,7 @@
 		  		<div class="card-header card-kepala">
 		  			<?php foreach ($datajawabanlistkolom1 as $sk1) {
 		  				$ask1 = explode('-', $sk1->soal);
-		  				$id1 = "?kolomsoal=KLM01&idkolomjawaban=".$sk1->id_kolomjawaban;
+		  				$id1 = "?kolomsoal=KLM01&idkolomjawaban=S0JL";
 					?>
 		  			<table class="table table-bordered border-secondary" style="text-align: center;">
 						<tr>
@@ -106,7 +106,7 @@
 		  		<div class="card-header card-kepala">
 		  			<?php foreach ($datajawabanlistkolom2 as $sk2) {
 		  				$ask2 = explode('-', $sk2->soal);
-		  				$id2 = "?kolomsoal=KLM02&idkolomjawaban=".$sk2->id_kolomjawaban;
+		  				$id2 = "?kolomsoal=KLM02&idkolomjawaban=S0JL";
 					?>
 		  			<table class="table table-bordered border-secondary" style="text-align: center;">
 						<tr>
@@ -207,7 +207,7 @@
 		  		<div class="card-header card-kepala">
 		  			<?php foreach ($datajawabanlistkolom3 as $sk3) {
 		  				$ask3 = explode('-', $sk3->soal);
-		  				$id3 = "?kolomsoal=KLM03&idkolomjawaban=".$sk3->id_kolomjawaban;
+		  				$id3 = "?kolomsoal=KLM03&idkolomjawaban=S0JL";
 					?>
 		  			<table class="table table-bordered border-secondary" style="text-align: center;">
 						<tr>
@@ -307,7 +307,7 @@
 		  		<div class="card-header card-kepala">
 		  			<?php foreach ($datajawabanlistkolom4 as $sk4) {
 		  				$ask4 = explode('-', $sk4->soal);
-		  				$id4 = "?kolomsoal=KLM04&idkolomjawaban=".$sk4->id_kolomjawaban;
+		  				$id4 = "?kolomsoal=KLM04&idkolomjawaban=S0JL";
 					?>
 		  			<table class="table table-bordered border-secondary" style="text-align: center;">
 						<tr>
@@ -410,7 +410,7 @@
 		  		<div class="card-header card-kepala">
 		  			<?php foreach ($datajawabanlistkolom5 as $sk5) {
 		  				$ask5 = explode('-', $sk5->soal);
-		  				$id5 = "?kolomsoal=KLM05&idkolomjawaban=".$sk5->id_kolomjawaban;
+		  				$id5 = "?kolomsoal=KLM05&idkolomjawaban=S0JL";
 					?>
 		  			<table class="table table-bordered border-secondary" style="text-align: center;">
 						<tr>
@@ -511,7 +511,7 @@
 		  		<div class="card-header card-kepala">
 		  			<?php foreach ($datajawabanlistkolom6 as $sk6) {
 		  				$ask6 = explode('-', $sk6->soal);
-		  				$id6 = "?kolomsoal=KLM06&idkolomjawaban=".$sk6->id_kolomjawaban;
+		  				$id6 = "?kolomsoal=KLM06&idkolomjawaban=S0JL";
 					?>
 		  			<table class="table table-bordered border-secondary" style="text-align: center;">
 						<tr>
@@ -612,7 +612,7 @@
 		  		<div class="card-header card-kepala">
 		  			<?php foreach ($datajawabanlistkolom7 as $sk7) {
 		  				$ask7 = explode('-', $sk7->soal);
-		  				$id7 = "?kolomsoal=KLM07&idkolomjawaban=".$sk7->id_kolomjawaban;
+		  				$id7 = "?kolomsoal=KLM07&idkolomjawaban=S0JL";
 					?>
 		  			<table class="table table-bordered border-secondary" style="text-align: center;">
 						<tr>
@@ -713,7 +713,7 @@
 		  		<div class="card-header card-kepala">
 		  			<?php foreach ($datajawabanlistkolom8 as $sk8) {
 		  				$ask8 = explode('-', $sk8->soal);
-		  				$id8 = "?kolomsoal=KLM08&idkolomjawaban=".$sk8->id_kolomjawaban;
+		  				$id8 = "?kolomsoal=KLM08&idkolomjawaban=S0JL";
 					?>
 		  			<table class="table table-bordered border-secondary" style="text-align: center;">
 						<tr>
@@ -816,7 +816,7 @@
 		  		<div class="card-header card-kepala">
 		  			<?php foreach ($datajawabanlistkolom9 as $sk9) {
 		  				$ask9 = explode('-', $sk9->soal);
-		  				$id9 = "?kolomsoal=KLM09&idkolomjawaban=".$sk9->id_kolomjawaban;
+		  				$id9 = "?kolomsoal=KLM09&idkolomjawaban=S0JL";
 					?>
 		  			<table class="table table-bordered border-secondary" style="text-align: center;">
 						<tr>
@@ -916,7 +916,7 @@
 		  		<div class="card-header card-kepala">
 		  			<?php foreach ($datajawabanlistkolom10 as $sk10) {
 		  				$ask10 = explode('-', $sk10->soal);
-		  				$id10 = "?kolomsoal=KLM09&idkolomjawaban=".$sk10->id_kolomjawaban;
+		  				$id10 = "?kolomsoal=KLM10&idkolomjawaban=".$sk10->id_kolomjawaban;
 					?>
 		  			<table class="table table-bordered border-secondary" style="text-align: center;">
 						<tr>
@@ -942,7 +942,7 @@
 					<?php } ?>
 		  		</div>
 	  			<div class="card-body">
-	    			<h5 class="card-title">Kolom 9</h5>
+	    			<h5 class="card-title">Kolom 10</h5>
 	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id10 ?>" method="post" enctype="multipart/form-data">
 		    			<table class="table table-borderless">
 		    				<?php

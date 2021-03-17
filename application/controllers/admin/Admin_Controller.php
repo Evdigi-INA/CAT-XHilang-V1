@@ -147,13 +147,78 @@ class Admin_Controller extends CI_Controller
 	function updatesoal(){
 		$idkolomjawabannya = $this->input->get('idkolomjawaban');
 		$kolomnya = $this->input->get('kolomsoal');
-		$valuesoal1		= $this->input->post('tbsoalkolom1a');
-		$valuesoal2		= $this->input->post('tbsoalkolom1b');
-		$valuesoal3		= $this->input->post('tbsoalkolom1c');
-		$valuesoal4		= $this->input->post('tbsoalkolom1d');
 
-		$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+		if($kolomnya == 'KLM01') {
+			$valuesoal1		= $this->input->post('tbsoalkolom1a');
+			$valuesoal2		= $this->input->post('tbsoalkolom1b');
+			$valuesoal3		= $this->input->post('tbsoalkolom1c');
+			$valuesoal4		= $this->input->post('tbsoalkolom1d');
 
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;	
+		} elseif ($kolomnya == 'KLM02') {
+			$valuesoal1		= $this->input->post('tbsoalkolom2a');
+			$valuesoal2		= $this->input->post('tbsoalkolom2b');
+			$valuesoal3		= $this->input->post('tbsoalkolom2c');
+			$valuesoal4		= $this->input->post('tbsoalkolom2d');
+
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+		} elseif ($kolomnya == 'KLM03') {
+			$valuesoal1		= $this->input->post('tbsoalkolom3a');
+			$valuesoal2		= $this->input->post('tbsoalkolom3b');
+			$valuesoal3		= $this->input->post('tbsoalkolom3c');
+			$valuesoal4		= $this->input->post('tbsoalkolom3d');
+
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+		} elseif ($kolomnya == 'KLM04') {
+			$valuesoal1		= $this->input->post('tbsoalkolom4a');
+			$valuesoal2		= $this->input->post('tbsoalkolom4b');
+			$valuesoal3		= $this->input->post('tbsoalkolom4c');
+			$valuesoal4		= $this->input->post('tbsoalkolom4d');
+
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+		} elseif ($kolomnya == 'KLM05') {
+			$valuesoal1		= $this->input->post('tbsoalkolom5a');
+			$valuesoal2		= $this->input->post('tbsoalkolom5b');
+			$valuesoal3		= $this->input->post('tbsoalkolom5c');
+			$valuesoal4		= $this->input->post('tbsoalkolom5d');
+
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+		} elseif ($kolomnya == 'KLM06') {
+			$valuesoal1		= $this->input->post('tbsoalkolom6a');
+			$valuesoal2		= $this->input->post('tbsoalkolom6b');
+			$valuesoal3		= $this->input->post('tbsoalkolom6c');
+			$valuesoal4		= $this->input->post('tbsoalkolom6d');
+
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;	
+		} elseif ($kolomnya == 'KLM07') {
+			$valuesoal1		= $this->input->post('tbsoalkolom7a');
+			$valuesoal2		= $this->input->post('tbsoalkolom7b');
+			$valuesoal3		= $this->input->post('tbsoalkolom7c');
+			$valuesoal4		= $this->input->post('tbsoalkolom7d');
+
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+		} elseif ($kolomnya == 'KLM08') {
+			$valuesoal1		= $this->input->post('tbsoalkolom8a');
+			$valuesoal2		= $this->input->post('tbsoalkolom8b');
+			$valuesoal3		= $this->input->post('tbsoalkolom8c');
+			$valuesoal4		= $this->input->post('tbsoalkolom8d');
+
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+		} elseif ($kolomnya == 'KLM09') {
+			$valuesoal1		= $this->input->post('tbsoalkolom9a');
+			$valuesoal2		= $this->input->post('tbsoalkolom9b');
+			$valuesoal3		= $this->input->post('tbsoalkolom9c');
+			$valuesoal4		= $this->input->post('tbsoalkolom9d');
+
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+		} else {
+			$valuesoal1		= $this->input->post('tbsoalkolom10a');
+			$valuesoal2		= $this->input->post('tbsoalkolom10b');
+			$valuesoal3		= $this->input->post('tbsoalkolom10c');
+			$valuesoal4		= $this->input->post('tbsoalkolom10d');
+
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+		}
 		$data = array(
 			'soal' => $soalvalueunited
 		);
@@ -162,15 +227,19 @@ class Admin_Controller extends CI_Controller
 			'id_kolomjawaban' => $idkolomjawabannya,
 			'kolom' => $kolomnya
 		);
+		
 		$this->load->model('Xhilangmodel'); //loadmodelnya dulu
 		$this->Xhilangmodel->lakukan_update($where,$data,'tbl_kolomjawaban');
+		
 		if ($idkolomjawabannya == 'S0JL') {
-			$message = "Perubahan Berhasil disimpan!";
-    		echo "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001') </script>";
-			
+			$message = "Perubahan pada SOAL ANGKA ".$kolomnya." Berhasil disimpan!"; //bug here BG001 - 17032021556 [FIXED]
+    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001');console.warn('here1'); </script>";
+		} elseif ($idkolomjawabannya == 'S1JL') {
+			$message = "Perubahan pada SOAL HURUF ".$kolomnya." Berhasil disimpan!";
+    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001');console.warn('here2'); </script>";
 		} else {
-			print "<script type=\"text/javascript\">alert('u must be from aanother world?');
-			</script>";
+			$message = "Perubahan pada SOAL SIMBOL ".$kolomnya." Berhasil disimpan!";
+    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001');console.warn('here3'); </script>";
 		}
 		
 	}
@@ -215,8 +284,8 @@ class Admin_Controller extends CI_Controller
 			$this->Xhilangmodel->lakukan_update($where,$data,'tbl_kolomjawaban');
 
 			if ($idkolomjawabannya == 'S0JL') {
-				$message = "Perubahan Berhasil disimpan!";
-	    		echo "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001') </script>";
+				$message = "Perubahan pada jawaban".$kolomnya." Berhasil disimpan!";
+	    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001') </script>";
 			
 			} else {
 				print "<script type=\"text/javascript\">alert('u must be from aanother world?');
