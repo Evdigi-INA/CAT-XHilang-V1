@@ -182,6 +182,7 @@ class Admin_Controller extends CI_Controller
 		$u=0;
 		$ap = array('a','b','c','d');
 		$output = '';
+		$output1 ='';
 
 		if ($kolomnya == 'KLM01') { //JIKA Kolom 1
 			do{ //lakukan
@@ -191,15 +192,18 @@ class Admin_Controller extends CI_Controller
 					$output.= $a[$i].' ';
 				}
 				$b[$i] = $this->input->post('radiobaris'.$i.'kolom1'); //mengambil nilai radio sesuai yang dipilih
-				
+				$output1.= $b[$i]; 
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
 			while ($i <= 30 && $u < count($ap));
 			$nganu = wordwrap($output, 8, '-', true); //kumpulkan ke variabel nganau, sekalian di trim
-			//echo 'this is the fucking output and it will be ready to be inserted to the facking database!: '.wordwrap($output, 8, '-', true); debug only
+			//echo 'this is the fucking output and it will be ready to be inserted to the facking database!: '.wordwrap($output, 8, '-', true); //debug only
+			$nganu2 = wordwrap($output1,1,'-',true);
+			//echo wordwrap($nganu2); debug only
 			$data = array(
-				'listjawaban' => $nganu
+				'listjawaban' => $nganu,
+				'jawabanbenar' => $nganu2
 			);
 
 			$where = array(
