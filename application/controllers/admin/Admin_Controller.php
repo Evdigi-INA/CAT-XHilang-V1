@@ -73,18 +73,23 @@ class Admin_Controller extends CI_Controller
 		$jenissoal = array(
 			"id_soal" => $idsoal
 		);
+		$data['idkolomjawaban'] = '';
 		
 		//END OF DEBUG LOG//
 			//load view admin/blablabla.php
 		if ($idsoal == 'S001') {
 			$data['title'] = 'Dashboard - Kelola Soal Angka';
-			$idkolomjawaban = "S0JL";
+			$data['jenissoalnya'] = "Soal Angka (S0JL)";
+			$idkolomjawaban = 'S0JL';
+
 		} else if($idsoal == 'S002') {
 			$data['title'] = 'Dashboard - Kelola Soal Huruf';
-			$idkolomjawaban = "S1JL";
+			$data['jenissoalnya'] = "Soal Huruf (S1JL)";
+			$idkolomjawaban = 'S1JL';
 		} else {
 			$data['title'] = 'Dashboard - Kelola Soal Simbol';
-			$idkolomjawaban = "S2JL";
+			$data['jenissoalnya'] = "Soal Simbol (S2JL)";
+			$idkolomjawaban = 'S2JL';
 		}
 		
 		$jenissoalkolom1 = array(
@@ -153,71 +158,81 @@ class Admin_Controller extends CI_Controller
 			$valuesoal2		= $this->input->post('tbsoalkolom1b');
 			$valuesoal3		= $this->input->post('tbsoalkolom1c');
 			$valuesoal4		= $this->input->post('tbsoalkolom1d');
+			$valuesoal5		= $this->input->post('tbsoalkolom1e');
 
-			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;	
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4."-".$valuesoal5;	
 		} elseif ($kolomnya == 'KLM02') {
 			$valuesoal1		= $this->input->post('tbsoalkolom2a');
 			$valuesoal2		= $this->input->post('tbsoalkolom2b');
 			$valuesoal3		= $this->input->post('tbsoalkolom2c');
 			$valuesoal4		= $this->input->post('tbsoalkolom2d');
+			$valuesoal5		= $this->input->post('tbsoalkolom2e');
 
-			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4."-".$valuesoal5;
 		} elseif ($kolomnya == 'KLM03') {
 			$valuesoal1		= $this->input->post('tbsoalkolom3a');
 			$valuesoal2		= $this->input->post('tbsoalkolom3b');
 			$valuesoal3		= $this->input->post('tbsoalkolom3c');
 			$valuesoal4		= $this->input->post('tbsoalkolom3d');
+			$valuesoal5		= $this->input->post('tbsoalkolom3e');
 
-			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4."-".$valuesoal5;
 		} elseif ($kolomnya == 'KLM04') {
 			$valuesoal1		= $this->input->post('tbsoalkolom4a');
 			$valuesoal2		= $this->input->post('tbsoalkolom4b');
 			$valuesoal3		= $this->input->post('tbsoalkolom4c');
 			$valuesoal4		= $this->input->post('tbsoalkolom4d');
+			$valuesoal5		= $this->input->post('tbsoalkolom4e');
 
-			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4."-".$valuesoal5;
 		} elseif ($kolomnya == 'KLM05') {
 			$valuesoal1		= $this->input->post('tbsoalkolom5a');
 			$valuesoal2		= $this->input->post('tbsoalkolom5b');
 			$valuesoal3		= $this->input->post('tbsoalkolom5c');
 			$valuesoal4		= $this->input->post('tbsoalkolom5d');
+			$valuesoal5		= $this->input->post('tbsoalkolom5e');
 
-			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4."-".$valuesoal5;
 		} elseif ($kolomnya == 'KLM06') {
 			$valuesoal1		= $this->input->post('tbsoalkolom6a');
 			$valuesoal2		= $this->input->post('tbsoalkolom6b');
 			$valuesoal3		= $this->input->post('tbsoalkolom6c');
 			$valuesoal4		= $this->input->post('tbsoalkolom6d');
+			$valuesoal5		= $this->input->post('tbsoalkolom6e');
 
-			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;	
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4."-".$valuesoal5;	
 		} elseif ($kolomnya == 'KLM07') {
 			$valuesoal1		= $this->input->post('tbsoalkolom7a');
 			$valuesoal2		= $this->input->post('tbsoalkolom7b');
 			$valuesoal3		= $this->input->post('tbsoalkolom7c');
 			$valuesoal4		= $this->input->post('tbsoalkolom7d');
+			$valuesoal5		= $this->input->post('tbsoalkolom7e');
 
-			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4."-".$valuesoal5;
 		} elseif ($kolomnya == 'KLM08') {
 			$valuesoal1		= $this->input->post('tbsoalkolom8a');
 			$valuesoal2		= $this->input->post('tbsoalkolom8b');
 			$valuesoal3		= $this->input->post('tbsoalkolom8c');
 			$valuesoal4		= $this->input->post('tbsoalkolom8d');
+			$valuesoal5		= $this->input->post('tbsoalkolom8e');
 
-			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4."-".$valuesoal5;
 		} elseif ($kolomnya == 'KLM09') {
 			$valuesoal1		= $this->input->post('tbsoalkolom9a');
 			$valuesoal2		= $this->input->post('tbsoalkolom9b');
 			$valuesoal3		= $this->input->post('tbsoalkolom9c');
 			$valuesoal4		= $this->input->post('tbsoalkolom9d');
+			$valuesoal5		= $this->input->post('tbsoalkolom9e');
 
-			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4."-".$valuesoal5;
 		} else {
 			$valuesoal1		= $this->input->post('tbsoalkolom10a');
 			$valuesoal2		= $this->input->post('tbsoalkolom10b');
 			$valuesoal3		= $this->input->post('tbsoalkolom10c');
 			$valuesoal4		= $this->input->post('tbsoalkolom10d');
+			$valuesoal5		= $this->input->post('tbsoalkolom10e');
 
-			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4;
+			$soalvalueunited = $valuesoal1."-".$valuesoal2."-".$valuesoal3."-".$valuesoal4."-".$valuesoal5;
 		}
 		$data = array(
 			'soal' => $soalvalueunited
@@ -233,13 +248,13 @@ class Admin_Controller extends CI_Controller
 		
 		if ($idkolomjawabannya == 'S0JL') {
 			$message = "Perubahan pada SOAL ANGKA ".$kolomnya." Berhasil disimpan!"; //bug here BG001 - 17032021556 [FIXED]
-    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001');console.warn('here1'); </script>";
+    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001'); </script>";
 		} elseif ($idkolomjawabannya == 'S1JL') {
 			$message = "Perubahan pada SOAL HURUF ".$kolomnya." Berhasil disimpan!";
-    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001');console.warn('here2'); </script>";
+    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S002'); </script>";
 		} else {
 			$message = "Perubahan pada SOAL SIMBOL ".$kolomnya." Berhasil disimpan!";
-    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001');console.warn('here3'); </script>";
+    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S003'); </script>";
 		}		
 	}
 
@@ -248,7 +263,7 @@ class Admin_Controller extends CI_Controller
 		$kolomnya = $this->input->get('kolomsoal');
 		$i=1;
 		$u=0;
-		$ap = array('a','b','c','d');
+		$ap = array('a','b','c','d','e');
 		$output = '';
 		$output1 ='';
 
@@ -383,7 +398,7 @@ class Admin_Controller extends CI_Controller
 			}
 			while ($i <= 30 && $u < count($ap));
 		}
-		$nganu = wordwrap($output, 8, '-', true); //kumpulkan ke variabel nganau, sekalian di trim
+		$nganu = wordwrap($output, 10, '-', true); //kumpulkan ke variabel nganau, sekalian di trim
 		//echo 'this is the fucking output and it will be ready to be inserted to the facking database!: '.wordwrap($output, 8, '-', true); //debug only
 		$nganu2 = wordwrap($output1,1,'-',true);
 		//echo wordwrap($nganu2); debug only
@@ -406,10 +421,10 @@ class Admin_Controller extends CI_Controller
 		
 		} elseif ($idkolomjawabannya == 'S1JL') {
 			$message = "Perubahan pada jawaban huruf untuk ".$kolomnya." Berhasil disimpan!";
-    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001') </script>";
+    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S002') </script>";
 		} else {
 			$message = "Perubahan pada jawaban simbol untuk ".$kolomnya." Berhasil disimpan!";
-    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001') </script>";
+    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S003') </script>";
 		}
 
 	}

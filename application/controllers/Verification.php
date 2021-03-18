@@ -54,7 +54,7 @@ class Verification extends CI_Controller
 		if($this->session->userdata('status') == 'login')
 		{
 			$this->session->sess_destroy();
-			redirect(base_url('Verification'));//dis php
+			redirect(base_url('login'));//dis php
 		}
 		else
 		{

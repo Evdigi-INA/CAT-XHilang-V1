@@ -23,41 +23,10 @@
 </head>
 <style type="text/css">
 	.account-button-wrapper {
-		display: flex;
-		width: auto;
-		margin-right: 6vh;
-		height: 100%;
-		padding: 10px 0px;
+	    width: auto;
+	    height: 100%;
+	    padding: 6px 0;
 	}
-
-	.account-menu {
-		position: absolute;
-	    right: 5vh;
-	    background-color: #f9f9f9;
-	    min-width: 160px;
-	    height: 0px;
-	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	    z-index: 9999;
-	    display: flex;
-	    flex-direction: column;
-	    top: 3em;
-	    transition: all 250ms ease-in-out;
-	    overflow-y: hidden;
-	}
-
-	.account-button-wrapper > .account-menu a {
-		text-decoration: none;
-		color: black;
-		padding: 10px 14px;
-		display: block;
-	}
-
-	.account-button-wrapper:hover > .account-menu {
-		transition: all 250ms ease-in-out;
-		height: 120px;
-		display: block;
-	}
-
 
 </style>
 <body>
@@ -71,17 +40,27 @@
 		<div class="navigation-headbar">
 			<nav class="navbar navbar-dark bg-dark" style="display: flex;flex-direction: row;align-items: flex-start;flex-wrap: nowrap;padding: 0 2vh;height: 50px;line-height: 2;">
 			  <div class="container-fluid">
-			    <a class="navbar-brand" href="<?php echo base_url().'admin/Admin_Controller/pilih_kelola_soal' ?>">
+			    <a class="navbar-brand" href="<?php echo base_url().'admin/Admin_Controller/index' ?>">
 			      <span style="margin-right: 10px;"><i class="fas fa-file fa-fw"></i></span>
 			      CAT X Hilang Dashboard 
 			    </a>
 			  </div>
-			  <div class="account-button-wrapper">
-			  	<span style="float: left; margin-right: 10px;"><i class="fas fa-user-circle fa-fw" style="color: white"></i></span><h6 style="color: white;line-height: 2;"><?php echo $o->username; ?></h6>
-			  	<div class="account-menu">
-			  		<a href="#">Report Bug</a>
-			  		<a href="#">Logout</a>
-			  	</div>
+			  <div class="account-button-wrapper"><h6 style="color: white; font-size: 15px;"><?php
+            $t = date("H");
+
+            if ($t < "11") {
+              echo "Selamat Pagi";
+            } elseif ($t < "15") {
+              echo "Selamat Siang";
+            } elseif ($t < "18") {
+              echo "Selamat Sore";
+            } else {
+              echo "Selamat Malam";
+            }
+            ?>, <?php echo $o->username; ?></h6>
+			  </div>
+			  <div class="btn-logout-wrapper">
+			  	<a href="<?php echo base_url().'Verification/logoutkeun' ?>"><span style="color: white;"><i class="fas fa-sign-out-alt"></i></span></a>
 			  </div>
 			</nav>
 		</div>

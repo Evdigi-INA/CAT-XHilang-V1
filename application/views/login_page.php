@@ -35,7 +35,19 @@
 	<div class="body" style="flex: auto 1 0;">
 		<div class="container" style="width: 320px;height: auto;margin: auto; background-color: #fff; padding: 18px; border-radius: 20px;">
 			<center>
-				<h1 style="font-size: 17px;">Selamat datang</h1>
+				<h1 style="font-size: 17px;"><?php
+            $t = date("H");
+
+            if ($t < "11") {
+              echo "Selamat Pagi";
+            } elseif ($t < "15") {
+              echo "Selamat Siang";
+            } elseif ($t < "18") {
+              echo "Selamat Sore";
+            } else {
+              echo "Selamat Malam";
+            }
+            ?></h1>
 				<h5 style="font-size: 14px;">Silahkan masukan data login anda</h3>
 			</center>
 			<div class="login-wrapper">
