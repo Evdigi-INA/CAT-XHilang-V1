@@ -18,6 +18,16 @@
   	<!--LOAD FAVICON-->
   	<link rel="icon" href="<?php echo base_url('assets/web-images/lock.png') ?>" sizes="16x16" type="image/png">
 
+  	<!-- LOAD CUSTOM TEMPLATE STYLE DISINI -->
+	<link rel="stylesheet" href="<?php echo base_url('css/sb-admin.css') ?> ">
+
+  	<script src="<?php echo base_url('assets/chart.js/Chart.min.js') ?>"></script>
+  	<!-- LOAD DATATABLE PLUGIN CSS DISINI -->
+  	
+	<link rel="stylesheet" href="<?php echo base_url('assets/datatables/jquery.dataTables.css') ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/datatables/dataTables.bootstrap4.css') ?>">
+  	<link rel="stylesheet" href="<?php echo base_url('assets/datatables/buttons.dataTables.min.css') ?>">
+
   	<script type="text/javascript" src="<?php echo base_url('js/scriptsoal.js');?>"></script>
 
 </head>
@@ -60,7 +70,7 @@
             ?>, <?php echo $o->username; ?></h6>
 			  </div>
 			  <div class="btn-logout-wrapper">
-			  	<a href="<?php echo base_url().'Verification/logoutkeun' ?>"><span style="color: white;"><i class="fas fa-sign-out-alt"></i></span></a>
+			  	<a href="<?php echo base_url().'Verification/logoutkeun' ?>" style="line-height: 3;"><span style="color: white;"><i class="fas fa-sign-out-alt"></i></span></a>
 			  </div>
 			</nav>
 		</div>

@@ -40,3 +40,8 @@ body {
     background: #f0f1f2;
     top: 0px;
 }
+
+.table th, .table td
+{
+	padding: 0.20rem !important;
+}

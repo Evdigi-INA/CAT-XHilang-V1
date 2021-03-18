@@ -14,12 +14,17 @@ class Admin_Controller extends CI_Controller
 			redirect(base_url("Verification"));
 		}
 
+		if($this->session->userdata('role') != "admin")
+		{
+			redirect(base_url("Verification"));
+		}
+
 		$this->load->helper('text');
+		$this->load->model('Xhilangmodel'); //loadmodelnya dulu
 	}
 
 	function index()
 	{
-		$this->load->model('Xhilangmodel'); //loadmodelnya dulu
 		$iduser = $this->session->userdata('iduser'); //ambil data berdasarkan sessionuserdata
 		$where = array(
 			"id_user" => $iduser
@@ -34,7 +39,7 @@ class Admin_Controller extends CI_Controller
 
 	function laporan_list()
 	{
-		$this->load->model('Xhilangmodel'); //loadmodelnya dulu
+	
 		$iduser = $this->session->userdata('iduser'); //ambil data berdasarkan sessionuserdata
 		$where = array(
 			"id_user" => $iduser
@@ -48,9 +53,26 @@ class Admin_Controller extends CI_Controller
 		$this->load->view('admin/footer');
 	}
 
+	function daftar_peserta() //tampildata peserta
+	{
+		$iduser = $this->session->userdata('iduser'); //ambil data berdasarkan sessionuserdata
+		$where = array(
+			"id_user" => $iduser
+		);
+		$data['qinfo'] = $this->Xhilangmodel->tampilinformasiakun('tbl_user',$where);
+		$data['listpeserta'] = $this->Xhilangmodel->tampil_peserta()->result();
+		$data['qeditpeserta'] = $this->Xhilangmodel->tampil_edit_peserta();
+		//END OF DEBUG LOG//
+			//load view admin/blablabla.php
+		$data['title'] = 'Dashboard - Daftar Peserta';
+		$this->load->view('admin/header',$data);
+		$this->load->view('admin/daftar_peserta');
+		$this->load->view('admin/edit_data_peserta');
+		$this->load->view('admin/footer');
+	}
+
 	function pilih_kelola_soal()
 	{
-		$this->load->model('Xhilangmodel'); //loadmodelnya dulu
 		$iduser = $this->session->userdata('iduser'); //ambil data berdasarkan sessionuserdata
 		$where = array(
 			"id_user" => $iduser
@@ -429,5 +451,78 @@ class Admin_Controller extends CI_Controller
     		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S003') </script>";
 		}
 
+	}
+
+	function update_peserta()
+	{
+		$tbidusr = $this->input->post('tbiduser');
+		$tbidktp = $this->input->post('tbidnomor');
+		$tbnamleng = $this->input->post('tbnamalengkap');
+		$tbjk = $this->input->post('tbjeniskelamin');
+		$tbalmt = $this->input->post('tbalamat');
+		$tbusernem = $this->input->post('tbusername');
+		$tbpasswod = $this->input->post('tbpassword');
+		$tbrol = $this->input->post('tbrole');
+
+		$datatbl1 = array(
+			'no_ktp' => $tbidktp,
+			'nama_lengkap' => $tbnamleng,
+			'alamat' => $tbalmt,
+			'jenis_kelamin' => $tbjk
+		);
+
+		$datatbl2 = array(
+			'username' => $tbusernem,
+			'password' => $tbpasswod,
+			'role' => $tbrol
+		);
+
+		$where = array('id_user' => $tbidusr);
+
+		$this->Xhilangmodel->lakukan_update($where,$datatbl1,'tbl_peserta');
+		$this->Xhilangmodel->lakukan_update($where,$datatbl2,'tbl_user');
+		redirect('/admin/Admin_Controller/daftar_peserta');
+	}
+
+	public function tambah_peserta()
+	{
+		$iduser = $this->input->post('tbiduser');
+		$tbnoktp = $this->input->post('tbidnomor');
+		$tbnamaleng = $this->input->post('tbnamalengkap');
+		$tbjk = $this->input->post('tbjeniskelamin');
+		$tbalamat	= $this->input->post('tbalamat');
+		$tbusernem = $this->input->post('tbusername');
+		$tbpasswod = $this->input->post('tbpassword');
+		$tbrol = $this->input->post('tbrole');
+		$datatbl1= array(
+			'id_user'	=> $iduser,
+			'no_ktp'		=> $tbnoktp,
+			'id_nilaipeserta'	=> '',
+			'nama_lengkap'	=> $tbnamaleng,
+			'alamat'	=> $tbalamat,
+			'jenis_kelamin'	=> $tbjk
+			
+		);
+
+		$datatbl2=array(
+			'id_user'	=> $iduser,
+			'username'		=> $tbusernem,
+			'password'	=> $tbpasswod,
+			'role'	=> $tbrol
+		);
+
+		$this->Xhilangmodel->lakukan_insert('tbl_peserta',$datatbl1);
+		$this->Xhilangmodel->lakukan_insert('tbl_user',$datatbl2);
+		redirect('/admin/Admin_Controller/daftar_peserta');
+	}
+
+	public function hapus_peserta($id_user)
+	{
+		
+		$fetchid = $id_user;
+		$this->Xhilangmodel->lakukan_delete_peserta($fetchid);
+		$message = "Sukses menghapus ".$id_user.".";
+		print "<script type='text/javascript'>alert('$message');window.location = ('daftar_peserta'); </script>";
+		redirect('/admin/Admin_Controller/daftar_peserta');
 	}
 }
