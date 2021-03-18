@@ -13,6 +13,8 @@ class Admin_Controller extends CI_Controller
 		{
 			redirect(base_url("Verification"));
 		}
+
+		$this->load->helper('text');
 	}
 
 	function index()

@@ -304,6 +304,8 @@ switch (ENVIRONMENT)
 	}
 
 	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
+	
+	header('Content-Type: text/html; charset=utf-8');
 
 /*
  * --------------------------------------------------------------------
