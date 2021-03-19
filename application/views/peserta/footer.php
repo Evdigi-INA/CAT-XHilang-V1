@@ -5,13 +5,65 @@
 
 <script type="text/javascript">
 	
-	$(document).ready(function() {
-    	$('#dataTablePeserta').DataTable({
-    		"scrollY":        "45vh",
-	        "scrollCollapse": true,
-	        "paging":         true
-    	});
+	$(document).ready(function(){
+		
+		
+		var kolom = $('.kolomnya');
+		var barisny = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+		var kolomny = [1,2,3,4,5,6,7,8,9,10];
+		var index = -1;
+		var counter = $(this).index();
+		var max = $(barisny).length;
+
+		$('#nextbutton').click(function(){
+			$('.soaltest').att
+			$('.barisss').attr('hidden','true');
+			if (index <= max) {
+				index++;
+				$('.barisnya' + barisny[index]).removeAttr('hidden');
+				$('#judulcard').text('Soal '+barisny[index]);
+				console.log(index);
+			}else{
+				alert("mentok kekanan")
+				$('.barisnya' + barisny[index]).removeAttr('hidden');
+				$('#judulcard').text('Soal '+barisny[index]);
+				console.log(index);
+			}
+
+			if (index <= 101) {
+				$('#jenissoalnya').text('Soal Angka');
+			} else if (index <= 201) {
+				$('#jenissoalnya').text('Soal Huruf');
+			} else {
+				$('#jenissoalnya').text('Soal Simbol')
+			}
+		});
+
+		$('#prevbutton').click(function(){
+			$('.barisss').attr('hidden','true');
+			if (index >= 1) {
+				index--;
+				$('.barisnya' + barisny[index]).removeAttr('hidden');
+				$('#judulcard').text('Soal '+barisny[index]);
+				console.log(index);
+			} else {
+				alert("mentok kekiri");
+				$('.barisnya' + barisny[index]).removeAttr('hidden');
+				$('#judulcard').text('Soal '+barisny[index]);
+				console.log(index);
+			}
+			
+			if (index <= 101) {
+				$('#jenissoalnya').text('Soal Angka');
+			} else if (index <= 201) {
+				$('#jenissoalnya').text('Soal Huruf');
+			} else {
+				$('#jenissoalnya').text('Soal Simbol')
+			}
+
+		});	
 	});
+	    
 
 </script>
 

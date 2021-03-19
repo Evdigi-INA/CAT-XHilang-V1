@@ -24,6 +24,7 @@ class Peserta_Controller extends CI_Controller
 			"id_user" => $iduser
 		);
 		$data['qinfo'] = $this->Xhilangmodel->tampilinformasiakun('tbl_user',$where);
+		$data['soalkolom'] = $this->Xhilangmodel->tampil_soal();
 
 		$data['title'] = 'Konfirmasi Mulai Test';
 		$this->load->view('peserta/header',$data);

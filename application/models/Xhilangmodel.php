@@ -51,4 +51,12 @@ class Xhilangmodel extends CI_Model
      	$this->db->delete('tbl_user', array('id_user' => $tbiduser));
      	$this->db->delete('tbl_peserta', array('id_user' => $tbiduser));
     }
+
+    function tampil_soal()
+    {
+        $select = array('id_kolomjawaban','soal');
+
+        $soal = $this->db->select($select)->from('tbl_kolomjawaban')->get();
+        return $soal->result();  
+    }
 }

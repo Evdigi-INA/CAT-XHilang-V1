@@ -1,0 +1,33 @@
+.radioform > .radiogroup > input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+  transition: all 200ms ease-in-out;
+}
+
+.radioform > .radiogroup > label {
+  color: #9a929e;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 20px;
+  margin-bottom: 0 !important;
+}
+
+.radioform > .radiogroup > input[type=radio]:checked + label {
+  color: #ccc8ce;
+  background: #675f6b;
+  transition: all 200ms ease-in-out;
+}
+
+.radioform > .radiogroup > label + .radioform > .radiogroup > input[type=radio] + .radioform > .radiogroup > label {
+  border-left: solid 3px #675f6b;
+}
+
+.radioform .radiogroup {
+  border: solid 3px #675f6b;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
