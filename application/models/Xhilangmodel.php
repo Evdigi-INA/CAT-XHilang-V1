@@ -17,13 +17,6 @@ class Xhilangmodel extends CI_Model
 		return $get->result();	
 	}
 
-	function listjawabannya() {
-		$select = array('*');
-		$get = $this->db->select($select)->from('tbl_kolomjawaban')->get();
-		$res = $get->row()->listjawaban;
-		return $res;
-	}
-
 	function lakukan_update($where,$data,$table)
 	{
 		$this->db->where($where);

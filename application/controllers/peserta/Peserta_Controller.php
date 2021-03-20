@@ -25,8 +25,6 @@ class Peserta_Controller extends CI_Controller
 		);
 		$data['qinfo'] = $this->Xhilangmodel->tampilinformasiakun('tbl_user',$where);
 		$data['soalkolom'] = $this->Xhilangmodel->tampil_soal();
-		$data['jawabanlist'] = $this->Xhilangmodel->listjawabannya();
-
 		$jenissoalkolom1a = array(
 			"id_kolomjawaban" => "S0JL",
 			"kolom" => "KLM01"
