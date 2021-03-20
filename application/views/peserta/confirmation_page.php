@@ -8,10 +8,8 @@
 					</div>
 					<div class="card-body" id="bodycard">
 						<?php
-						$arrayNumber = range(1, 300);
+						$arrayNumber = range(1, 900);
 						$baris = $arrayNumber;
-
-						$kolom = array(1,2,3,4,5,6,7,8,9.10);
 						?>
 						<table class="table table-bordered">
 							<tr>
@@ -42,33 +40,73 @@
 							?>
 						</table>
 						<div class="message-wrapper">
-							
 							<div class="soalkolom kolomnya">
 								<table style="margin: auto;">
 
 									<?php
-									foreach ($baris as $b) {
+									$jlb = 1;
+
+									$var1 = '';
+
+									foreach ($datajawabanlistkolom1a as $k1) {
+										$var1 = $k1->listjawaban;
+									}
+									foreach ($datajawabanlistkolom1a as $k1) {
+										$var1 = $k1->listjawaban;
+									}
+									foreach ($datajawabanlistkolom1a as $k1) {
+										$var1 = $k1->listjawaban;
+									}
+									foreach ($datajawabanlistkolom1a as $k1) {
+										$var1 = $k1->listjawaban;
+									}
+									foreach ($datajawabanlistkolom1a as $k1) {
+										$var1 = $k1->listjawaban;
+									}
+									foreach ($datajawabanlistkolom1a as $k1) {
+										$var1 = $k1->listjawaban;
+									}
+									foreach ($datajawabanlistkolom1a as $k1) {
+										$var1 = $k1->listjawaban;
+									}
+									foreach ($datajawabanlistkolom1a as $k1) {
+										$var1 = $k1->listjawaban;
+									}
+									foreach ($datajawabanlistkolom1a as $k1) {
+										$var1 = $k1->listjawaban;
+									}
+									echo $var1;
+
+									foreach ($jawabanlist as $jl) {
+										$jlarray1 = explode('-', $jl->listjawaban);
+
+										foreach ($jlarray1 as $kjla1) {
+											$l = explode(' ', $kjla1);
 
 									 ?>
-									<tr class="barisnya<?php echo $b ?> barisss" hidden>
+									<tr class="barisnya<?php echo $jlb ?> barisss" hidden>
 										<td>
 											<div class="radioform">
 											  <div class="radiogroup">
-											    <input type="radio" id="option-onekolom<?php echo'baris'.$b ?>" name="selectorkolom<?php echo'baris'.$b ?>">
-											    <label for="option-one<?php echo'baris'.$b ?>">A</label>
-											    <input type="radio" id="option-two<?php echo'baris'.$b ?>" name="selector<?php echo'baris'.$b ?>">
-											    <label for="option-two<?php echo'baris'.$b ?>">B</label>
-											    <input type="radio" id="option-three<?php echo'baris'.$b ?>" name="selector<?php echo'baris'.$b ?>">
-											    <label for="option-three<?php echo'baris'.$b ?>">C</label>
-											    <input type="radio" id="option-four<?php echo'baris'.$b ?>" name="selector<?php echo'baris'.$b ?>">
-											    <label for="option-four<?php echo'baris'.$b ?>">D</label>
-											    <input type="radio" id="option-five<?php echo'baris'.$b ?>" name="selector<?php echo'baris'.$b ?>">
-											    <label for="option-five<?php echo'baris'.$b ?>">E</label>
+											    <input type="radio" id="option-onekolom<?php echo'baris'.$jlb ?>" name="selectorkolom<?php echo'baris'.$jlb ?>">
+											    <label for="option-one<?php echo'baris'.$jlb ?>"><?php echo $l[0] ?></label>
+											    <input type="radio" id="option-two<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>">
+											    <label for="option-two<?php echo'baris'.$jlb ?>"><?php echo $l[1] ?></label>
+											    <input type="radio" id="option-three<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>">
+											    <label for="option-three<?php echo'baris'.$jlb ?>"><?php echo $l[2] ?></label>
+											    <input type="radio" id="option-four<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>">
+											    <label for="option-four<?php echo'baris'.$jlb ?>"><?php echo $l[3] ?></label>
+											    <input type="radio" id="option-five<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>">
+											    <label for="option-five<?php echo'baris'.$jlb ?>"><?php echo $l[4] ?></label>
 											  </div>
 											</div>
 										</td>
 									</tr>
-								<?php } ?>
+								<?php 
+								$jlb++;
+								}
+								break;
+							} ?>
 								</table>
 							</div>
 						</div>

@@ -287,7 +287,7 @@ class Admin_Controller extends CI_Controller
 		$kolomnya = $this->input->get('kolomsoal');
 		$i=1;
 		$u=0;
-		$ap = array('a','b','c','d','e');
+		$ap = array('a','b','c','d');
 		$output = '';
 		$output1 ='';
 
@@ -422,34 +422,67 @@ class Admin_Controller extends CI_Controller
 			}
 			while ($i <= 30 && $u < count($ap));
 		}
-		$nganu = wordwrap($output, 10, '-', true); //kumpulkan ke variabel nganau, sekalian di trim
-		//echo 'this is the fucking output and it will be ready to be inserted to the facking database!: '.wordwrap($output, 8, '-', true); //debug only
-		$nganu2 = wordwrap($output1,1,'-',true);
-		//echo wordwrap($nganu2); debug only
-		$data = array(
-			'listjawaban' => $nganu,
-			'jawabanbenar' => $nganu2
-		);
-
-		$where = array(
-			'id_kolomjawaban' => $idkolomjawabannya,
-			'kolom' => $kolomnya
-		);
-
-		$this->load->model('Xhilangmodel'); //loadmodelnya dulu
-		$this->Xhilangmodel->lakukan_update($where,$data,'tbl_kolomjawaban');
-
+		
 		if ($idkolomjawabannya == 'S0JL') {
+			$nganu = wordwrap($output, 8, '-', true); //kumpulkan ke variabel nganu daftar jawaban pada tbnya, sekalian di trim
+			$nganu2 = wordwrap($output1,1,'-',true);
+			//echo wordwrap($nganu2); debug only
+			$data = array(
+				'listjawaban' => $nganu,
+				'jawabanbenar' => $nganu2
+			);
+
+			$where = array(
+				'id_kolomjawaban' => $idkolomjawabannya,
+				'kolom' => $kolomnya
+			);
+
+			$this->load->model('Xhilangmodel'); //loadmodelnya dulu
+			$this->Xhilangmodel->lakukan_update($where,$data,'tbl_kolomjawaban');
 			$message = "Perubahan pada jawaban angka untuk ".$kolomnya." Berhasil disimpan!";
     		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001') </script>";
 		
 		} elseif ($idkolomjawabannya == 'S1JL') {
+			$nganu = wordwrap($output, 8, '-', true); //kumpulkan ke variabel nganu daftar jawaban pada tbnya, sekalian di trim
+			$nganu2 = wordwrap($output1,1,'-',true);
+			//echo wordwrap($nganu2); debug only
+			$data = array(
+				'listjawaban' => $nganu,
+				'jawabanbenar' => $nganu2
+			);
+
+			$where = array(
+				'id_kolomjawaban' => $idkolomjawabannya,
+				'kolom' => $kolomnya
+			);
+
+			$this->load->model('Xhilangmodel'); //loadmodelnya dulu
+			$this->Xhilangmodel->lakukan_update($where,$data,'tbl_kolomjawaban');
 			$message = "Perubahan pada jawaban huruf untuk ".$kolomnya." Berhasil disimpan!";
     		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S002') </script>";
 		} else {
+			$nganu = wordwrap($output, 12, '-', true); //kumpulkan ke variabel nganu daftar jawaban pada tbnya, sekalian di trim (12 karena UTF8 Simbol, beda dengan yang diatur ke 8)
+			$nganu2 = wordwrap($output1,1,'-',true);
+			//echo wordwrap($nganu2); debug only
+			$data = array(
+				'listjawaban' => $nganu,
+				'jawabanbenar' => $nganu2
+			);
+
+			$where = array(
+				'id_kolomjawaban' => $idkolomjawabannya,
+				'kolom' => $kolomnya
+			);
+
+			$this->load->model('Xhilangmodel'); //loadmodelnya dulu
+			$this->Xhilangmodel->lakukan_update($where,$data,'tbl_kolomjawaban');
 			$message = "Perubahan pada jawaban simbol untuk ".$kolomnya." Berhasil disimpan!";
     		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S003') </script>";
 		}
+		
+		//echo 'this is the fucking output and it will be ready to be inserted to the facking database!: '.wordwrap($output, 12, '-', true); //debug only
+		
+
 
 	}
 

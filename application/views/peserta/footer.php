@@ -7,16 +7,24 @@
 	
 	$(document).ready(function(){
 		
-		
-		var kolom = $('.kolomnya');
-		var barisny = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
-		var kolomny = [1,2,3,4,5,6,7,8,9,10];
+		function range(awal, akhir) {
+		  	return Array(akhir - awal + 1).fill().map((_, idx) => awal + idx);
+		}
+
+
+
+		var barisny = range(1, 900); // array sampe 900 (untuk baris jawaban list)
 		var index = -1;
 		var counter = $(this).index();
 		var max = $(barisny).length;
 
+		var indexsoal = 0;
+
+		var columnsoalcheckpoint = Array.from({length:31}, (v, i) => i * 30 + 1); //mulai dari 0, untuk index naekin 1
+
+
 		$('#nextbutton').click(function(){
-			$('.soaltest').att
+			$('.soaltest').attr('hidden','true');
 			$('.barisss').attr('hidden','true');
 			if (index <= max) {
 				index++;
@@ -30,14 +38,98 @@
 				console.log(index);
 			}
 
-			if (index <= 101) {
+			if (index < columnsoalcheckpoint[1]) {
 				$('#jenissoalnya').text('Soal Angka');
-			} else if (index <= 201) {
+				$('.soalke1').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[2]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke2').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[3]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke3').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[4]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke4').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[5]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke5').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[6]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke6').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[7]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke7').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[8]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke8').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[9]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke9').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[10]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke10').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[11]) {
 				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke11').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[12]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke12').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[13]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke13').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[14]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke14').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[15]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke15').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[16]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke16').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[17]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke17').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[18]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke18').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[19]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke19').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[20]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke20').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[21]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke21').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[22]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke22').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[23]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke23').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[24]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke24').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[25]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke25').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[26]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke26').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[27]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke27').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[28]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke28').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[29]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke29').removeAttr('hidden');
 			} else {
-				$('#jenissoalnya').text('Soal Simbol')
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke30').removeAttr('hidden');
 			}
-		});
+		})
 
 		$('#prevbutton').click(function(){
 			$('.barisss').attr('hidden','true');
@@ -53,15 +145,99 @@
 				console.log(index);
 			}
 			
-			if (index <= 101) {
+			if (index < columnsoalcheckpoint[1]) {
 				$('#jenissoalnya').text('Soal Angka');
-			} else if (index <= 201) {
+				$('.soalke1').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[2]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke2').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[3]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke3').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[4]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke4').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[5]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke5').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[6]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke6').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[7]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke7').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[8]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke8').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[9]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke9').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[10]) {
+				$('#jenissoalnya').text('Soal Angka');
+				$('.soalke10').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[11]) {
 				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke11').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[12]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke12').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[13]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke13').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[14]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke14').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[15]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke15').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[16]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke16').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[17]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke17').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[18]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke18').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[19]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke19').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[20]) {
+				$('#jenissoalnya').text('Soal Huruf');
+				$('.soalke20').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[21]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke21').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[22]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke22').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[23]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke23').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[24]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke24').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[25]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke25').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[26]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke26').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[27]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke27').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[28]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke28').removeAttr('hidden');
+			} else if (index < columnsoalcheckpoint[29]) {
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke29').removeAttr('hidden');
 			} else {
-				$('#jenissoalnya').text('Soal Simbol')
+				$('#jenissoalnya').text('Soal Simbol');
+				$('.soalke30').removeAttr('hidden');
 			}
 
-		});	
+		})	
 	});
 	    
 

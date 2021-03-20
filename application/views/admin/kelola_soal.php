@@ -98,13 +98,6 @@
 			    text-align: center;">
 				    							</label>	
 		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom1" class="check-input" value="E" <?php if ($jb1[$o] == 'E') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-lima">
-				    								<input type="text" name="tbebaris<?php echo $i ?>kolom1" id="pilihanebaris<?php echo $i ?>kolom1" value="<?php echo $jl1[4] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
-		    								</div>
 										</div>	
 		    						</div>
 		    					</td>
@@ -207,13 +200,6 @@
 		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom2" class="check-input" value="D" <?php if ($jb2[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
 				    							<label class="form-check-label">
 				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom2" value="<?php echo $jl2[3] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
-		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom2" class="check-input" value="E" <?php if ($jb2[$o] == 'E') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbebaris<?php echo $i ?>kolom2" value="<?php echo $jl2[4] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 				    							</label>	
 		    								</div>
@@ -322,13 +308,6 @@
 			    text-align: center;">
 				    							</label>	
 		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom3" class="check-input" value="E" <?php if ($jb2[$o] == 'E') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbebaris<?php echo $i ?>kolom3" value="<?php echo $jl3[4] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
-		    								</div>
 										</div>	
 		    						</div>
 		    					</td>
@@ -430,13 +409,6 @@
 		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom4" class="check-input" value="D" <?php if ($jb4[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
 				    							<label class="form-check-label">
 				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom4" value="<?php echo $jl4[3] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
-		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom4" class="check-input" value="E" <?php if ($jb4[$o] == 'E') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbebaris<?php echo $i ?>kolom4" value="<?php echo $jl4[4] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 				    							</label>	
 		    								</div>
@@ -547,13 +519,6 @@
 			    text-align: center;">
 				    							</label>	
 		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom5" class="check-input" value="E" <?php if ($jb5[$o] == 'E') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbebaris<?php echo $i ?>kolom5" value="<?php echo $jl5[4] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
-		    								</div>
 										</div>	
 		    						</div>
 		    					</td>
@@ -659,13 +624,6 @@
 			    text-align: center;">
 				    							</label>	
 		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom6" class="check-input" value="E" <?php if ($jb6[$o] == 'E') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbebaris<?php echo $i ?>kolom6" value="<?php echo $jl6[4] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
-		    								</div>
 										</div>	
 		    						</div>
 		    					</td>
@@ -718,7 +676,7 @@
 		  		</div>
 	  			<div class="card-body">
 	    			
-	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id6 ?>" method="post" enctype="multipart/form-data">
+	    			<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatelistjawaban').$id7 ?>" method="post" enctype="multipart/form-data">
 		    			<table class="table table-borderless">
 		    				<?php
 		    					
@@ -768,13 +726,6 @@
 		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom7" class="check-input" value="D" <?php if ($jb7[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
 				    							<label class="form-check-label">
 				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom7" value="<?php echo $jl7[3] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
-		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom7" class="check-input" value="E" <?php if ($jb7[$o] == 'E') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbebaris<?php echo $i ?>kolom7" value="<?php echo $jl7[4] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 				    							</label>	
 		    								</div>
@@ -880,13 +831,6 @@
 		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom8" class="check-input" value="D" <?php if ($jb8[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
 				    							<label class="form-check-label">
 				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom8" value="<?php echo $jl8[3] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
-		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom8" class="check-input" value="E" <?php if ($jb8[$o] == 'E') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbebaris<?php echo $i ?>kolom8" value="<?php echo $jl8[4] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 				    							</label>	
 		    								</div>
@@ -997,13 +941,6 @@
 			    text-align: center;">
 				    							</label>	
 		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom9" class="check-input" value="E" <?php if ($jb9[$o] == 'E') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbebaris<?php echo $i ?>kolom9" value="<?php echo $jl9[4] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
-		    								</div>
 										</div>	
 		    						</div>
 		    					</td>
@@ -1105,13 +1042,6 @@
 		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom10" class="check-input" value="D" <?php if ($jb10[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
 				    							<label class="form-check-label">
 				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom10" value="<?php echo $jl10[3] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
-		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom10" class="check-input" value="E" <?php if ($jb10[$o] == 'E') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-sepuluh">
-				    								<input type="text" name="tbebaris<?php echo $i ?>kolom10" value="<?php echo $jl10[4] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 				    							</label>	
 		    								</div>
