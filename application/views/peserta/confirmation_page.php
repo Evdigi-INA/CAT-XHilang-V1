@@ -100,7 +100,7 @@
 										<td>
 											<div class="radioform">
 											  <div class="radiogroup">
-											    <input type="radio" id="option-onekolom<?php echo'baris'.$jlb ?>" name="selectorkolom<?php echo'baris'.$jlb ?>">
+											    <input type="radio" id="option-one<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>">
 											    <label onclick="setTimeout(function(){nextquest()},500);" for="option-one<?php echo'baris'.$jlb ?>"><?php echo $l[0] ?></label>
 											    <input type="radio" id="option-two<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>">
 											    <label onclick="setTimeout(function(){nextquest()},500);" for="option-two<?php echo'baris'.$jlb ?>"><?php echo $l[1] ?></label>

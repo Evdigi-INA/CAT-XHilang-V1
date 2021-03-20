@@ -19,10 +19,6 @@
 	var columnsoalcheckpoint = Array.from({length:31}, (v, i) => i * 30); //mulai dari 0, untuk index naekin 1
 	$(document).ready(function(){
 		
-
-
-
-
 		$('#startbuttontest').click(function(){
 			$('.soaltest').attr('hidden','true');
 			$('.barisss').attr('hidden','true');
@@ -32,7 +28,7 @@
 			$('#judulcard').text('Soal '+barisny[index]);
 			$('.soalke1').removeAttr('hidden');
 		});
-
+	});
 
 	function nextquest(){
 		$('.soaltest').attr('hidden','true');
