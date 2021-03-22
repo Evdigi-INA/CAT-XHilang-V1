@@ -248,17 +248,33 @@
 									 ?>
 									<tr class="barisnya<?php echo $jlb ?> barisss" hidden>
 										<td>
+											<div class="jawabanlist" style="width: 100%; margin-top: 3vh">
+												<div class="jawabanlisgroup" style="display: flex; flex-direction: row; width: 100%;">
+													<div class="wrapperjawabanlist" style="justify-content: space-between;width: 30%;text-align: center;">
+														<h6><?php echo $l[0] ?></h6>
+													</div>
+													<div class="wrapperjawabanlist" style="justify-content: space-between;width: 30%;text-align: center;">
+														<h6><?php echo $l[1] ?></h6>
+													</div>
+													<div class="wrapperjawabanlist" style="justify-content: space-between;width: 30%;text-align: center;">
+														<h6><?php echo $l[2] ?></h6>
+													</div>
+													<div class="wrapperjawabanlist" style="justify-content: space-between;width: 30%;text-align: center;">
+														<h6><?php echo $l[3] ?></h6>
+													</div>
+												</div>
+											</div>
 											<div class="radioform">
-											  <div class="radiogroup">
-											    <input value="A" type="radio" id="option-one<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>" class="selector<?php echo 'baris'.$jlb ?>">
-											    <label onclick="setTimeout(function(){nextquest()},500);" for="option-one<?php echo'baris'.$jlb ?>"><?php echo $l[0] ?></label>
-											    <input value="B" type="radio" id="option-two<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>" class="selector<?php echo 'baris'.$jlb ?>">
-											    <label onclick="setTimeout(function(){nextquest()},500);" for="option-two<?php echo'baris'.$jlb ?>"><?php echo $l[1] ?></label>
-											    <input value="C" type="radio" id="option-three<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>" class="selector<?php echo 'baris'.$jlb ?>">
-											    <label onclick="setTimeout(function(){nextquest()},500);" for="option-three<?php echo'baris'.$jlb ?>"><?php echo $l[2] ?></label>
-											    <input value="D" type="radio" id="option-four<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>" class="selector<?php echo 'baris'.$jlb ?>">
-											    <label onclick="setTimeout(function(){nextquest()},500);" for="option-four<?php echo'baris'.$jlb ?>"><?php echo $l[3] ?></label>
-											  </div>
+												<div class="radiogroup">
+													<input value="A" type="radio" id="option-one<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>" class="selector<?php echo 'baris'.$jlb ?>">
+													<label onclick="setTimeout(function(){nextquest()},500);" for="option-one<?php echo'baris'.$jlb ?>">A</label>
+													<input value="B" type="radio" id="option-two<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>" class="selector<?php echo 'baris'.$jlb ?>">
+													<label onclick="setTimeout(function(){nextquest()},500);" for="option-two<?php echo'baris'.$jlb ?>">B</label>
+													<input value="C" type="radio" id="option-three<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>" class="selector<?php echo 'baris'.$jlb ?>">
+													<label onclick="setTimeout(function(){nextquest()},500);" for="option-three<?php echo'baris'.$jlb ?>">C</label>
+													<input value="D" type="radio" id="option-four<?php echo'baris'.$jlb ?>" name="selector<?php echo'baris'.$jlb ?>" class="selector<?php echo 'baris'.$jlb ?>">
+													<label onclick="setTimeout(function(){nextquest()},500);" for="option-four<?php echo'baris'.$jlb ?>">D</label>
+												</div>
 											</div>
 										</td>
 									</tr>
@@ -282,6 +298,11 @@
 
 
 									?>
+								</table>
+								<table class="tabelbesttime">
+									<tr>
+										<td></td>
+									</tr>
 								</table>
 							</div>
 						</div>

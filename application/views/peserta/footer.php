@@ -26,10 +26,13 @@
 			$('.barisss').attr('hidden','true');
 			if(jenissoal == 'S1JL') {
 				$('#jenissoalnya').text('Soal Huruf - Kolom 1');
+				$('.soalke11').removeAttr('hidden');
 			} else if (jenissoal == 'S2JL') {
 				$('#jenissoalnya').text('Soal Simbol - Kolom 1');
+				$('.soalke21').removeAttr('hidden');
 			} else {
 				$('#jenissoalnya').text('Soal Angka - Kolom 1');
+				$('.soalke1').removeAttr('hidden');
 			}
 			$('.tabelsoal').removeAttr('hidden');
 			$('.brieftext').css('display','none');
@@ -37,13 +40,6 @@
 			$(this).css('display','none');
 			$('.barisnya' + barisny[index]).removeAttr('hidden');
 			$('#judulcard').text('Soal '+barisny[index]);
-			if (index == 300) {
-				$('.soalke301').removeAttr('hidden');
-			} else if (index == 601) {
-				$('.soalke601').removeAttr('hidden');
-			} else {
-				$('.soalke1').removeAttr('hidden');
-			}
 			status = 'Mengerjakan'
 		});
 	});
@@ -52,10 +48,13 @@
 		$('.soaltest').attr('hidden','true');
 		$('.barisss').attr('hidden','true');
 		if (index <= max) {
-			if (index == 300 || index == 600 || index === 900){
+			if (index == 299 || index == 599 || index === 899){
 				status = 'Break';
+				console.log('Status: Break');
+				console.log(index);
 			} else {
 				status = 'Mengerjakan';
+				console.log('Status: Mengerjakan');
 				index++;
 				$('.barisnya' + barisny[index]).removeAttr('hidden');
 				$('#judulcard').text('Soal ' + barisny[index]);
@@ -63,9 +62,8 @@
 			}
 		} else {
 			alert("mentok kekanan");
-			$('.barisnya' + barisny[index]).removeAttr('hidden');
-			$('#judulcard').text('Soal ' + barisny[index]);
-			console.log(index);block		}
+			console.log(index);
+		}
 
 		if (index < columnsoalcheckpoint[1] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 1');
@@ -97,15 +95,19 @@
 		} else if (index < columnsoalcheckpoint[10] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 10');
 			$('.soalke10').removeAttr('hidden');
-		} else if (index < columnsoalcheckpoint[11] && status=='Break') {
-			$('#jenissoalnya').text('Hasil - Soal Angka');
+		} else if (index == 299 && status=='Break') {
+			jenissoal = 'S1JL';
+			$('#jenissoalnya').text('Hasil Pengerjaan Soal Angka');
+			$('.brieftext').css('display','block');
+			$('.brieftext').text('Silahkan klik tombol hitung hasil untuk melihat nilai anda');
 			$('.soalke10').attr('hidden','true');
 			$('#startbuttontest').css('display','block');
+			$('#judulcard').text('Soal Angka Selesai');
+			$('.tabelsoal').attr('hidden','true');
 		} else if (index < columnsoalcheckpoint[11] && status=='Mengerjakan') {
-			jenissoal = 'S1JL';
 			$('#jenissoalnya').text('Soal Huruf - Kolom 1');
 			$('.soalke11').removeAttr('hidden');
-			$('#startbuttontest').css('display','block');
+			$('#startbuttontest').css('display','none');
 		} else if (index < columnsoalcheckpoint[12] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 2');
 			$('.soalke12').removeAttr('hidden');
@@ -133,14 +135,19 @@
 		} else if (index < columnsoalcheckpoint[20] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 10');
 			$('.soalke20').removeAttr('hidden');
-		} else if (index < columnsoalcheckpoint[21] && status=='Break') {
-			jenissoal = 'S2JL';
-			$('#jenissoalnya').text('Soal Simbol - Kolom 1');
-			$('.soalke21').removeAttr('hidden');
+		} else if (index == 599 && status=='Break') {
+			jenissoal = 'S1JL';
+			$('#jenissoalnya').text('Hasil Pengerjaan Soal Huruf');
+			$('.brieftext').css('display','block');
+			$('.brieftext').text('Silahkan klik tombol hitung hasil untuk melihat nilai anda');
+			$('.soalke20').attr('hidden','true');
 			$('#startbuttontest').css('display','block');
+			$('#judulcard').text('Soal Huruf Selesai');
+			$('.tabelsoal').attr('hidden','true');
 		} else if (index < columnsoalcheckpoint[21] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 1');
 			$('.soalke21').removeAttr('hidden');
+			$('#startbuttontest').css('display','none');
 		} else if (index < columnsoalcheckpoint[22] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 2');
 			$('.soalke22').removeAttr('hidden');
@@ -165,9 +172,15 @@
 		} else if (index < columnsoalcheckpoint[29] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 9');
 			$('.soalke29').removeAttr('hidden');
-		} else {
+		} else if (index < columnsoalcheckpoint[39] && status=='Mengerjakan'){
 			$('#jenissoalnya').text('Soal Simbol - Kolom 10');
 			$('.soalke30').removeAttr('hidden');
+		} else {
+			$('#jenissoalnya').text('Hasil Pengerjaan Soal Simbol');
+			$('.soalke30').attr('hidden','true');;
+			$('#startbuttontest').css('display','block');
+			$('.judulcard').text('Soal Simbol Selesai');
+			$('.tabelsoal').attr('hidden','true');
 		}
 
 		$('table:nth-child(2) > tbody > tr:nth-child(' + index + ') > td.answered').text($('.selectorbaris' + index + ':checked').val());
