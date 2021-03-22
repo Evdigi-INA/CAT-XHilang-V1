@@ -4,7 +4,7 @@
 			<form role="form" method="POST" action="" method="post" enctype="multipart/form-data">
 				<div class="card">
 					<div class="card-header">
-						<h4 id="judulcard">Konfirmasi Mulai Test</h4><p id="jenissoalnya"></p>
+						<h4 id="judulcard">Konfirmasi Mulai Test</h4><p><span id="jenissoalnya"></span><span class="badge badge-pill badge-success" id="countdownkolom">Mulai</span></p>
 					</div>
 					<div class="card-body" id="bodycard">
 						<p class="brieftext">

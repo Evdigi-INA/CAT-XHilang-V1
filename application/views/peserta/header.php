@@ -6,7 +6,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 	<!--CUSTOM CSS -->
-  	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/peserta-style.css') ?>">
+  	<link rel="stylesheet" type="text/css" href="/CAT-XHilang/css/peserta-style.css">
   	<!-- LOAD CUSTOM FONTS DISINI -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/fontawesome-free/css/all.min.css') ?>">
 

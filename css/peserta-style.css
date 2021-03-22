@@ -31,3 +31,38 @@
   border-radius: 10px;
   overflow: hidden;
 }
+
+#countdownkolom {
+  margin-left: 1vh;
+  display: none;
+}
+
+.break {
+  background-color: #3664e3 !important;
+  animation: breakglow 1s infinite alternate;
+  transition: all 200ms ease-in;
+}
+
+.runningout {
+  background-color: red !important;
+  transition: all 200ms ease-in;
+  animation: warningglow 1s infinite alternate;
+}
+
+@keyframes warningglow {
+  from {
+    box-shadow: 0 0 4px -4px red;
+  }
+  to {
+    box-shadow: 0 0 4px 4px red;
+  }
+}
+
+@keyframes breakglow {
+  from {
+    box-shadow: 0 0 2px -2px #3664e3;
+  }
+  to {
+    box-shadow: 0 0 2px 2px #3664e3;
+  }
+}
