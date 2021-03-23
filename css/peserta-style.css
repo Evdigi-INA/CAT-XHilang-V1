@@ -1,3 +1,10 @@
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 .radioform > .radiogroup > input[type=radio] {
   position: absolute;
   visibility: hidden;
@@ -71,4 +78,27 @@
   to {
     box-shadow: 0 0 2px 2px #3664e3;
   }
+}
+
+#loader {
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  display: none;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

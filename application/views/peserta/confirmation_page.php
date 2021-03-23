@@ -1,12 +1,15 @@
-<div class="container contain-wrapper">
+<div class="container contain-wrapper" style="width: 100%;">
 	<div class="container">
-		<div class="confirmation-wrapper" style="margin: auto;">
+		<div class="confirmation-wrapper" style="margin: auto; max-width: 870px;">
 			<form role="form" method="POST" action="" method="post" enctype="multipart/form-data">
 				<div class="card">
 					<div class="card-header">
 						<h4 id="judulcard">Konfirmasi Mulai Test</h4><p><span id="jenissoalnya"></span><span class="badge badge-pill badge-success" id="countdownkolom">Mulai</span></p>
 					</div>
 					<div class="card-body" id="bodycard">
+						<div id="loader">
+							
+						</div>
 						<p class="brieftext">
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -15,6 +18,29 @@
 							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</p>
+						<div id="scoreresultLeft" style="display: none;">
+							<table>
+									<tr>
+										<td>Benar</td>
+										<td>:</td>
+										<td id="JBenar"></td>
+									</tr>
+									<tr>
+										<td>Salah</td>
+										<td>:</td>
+										<td id="JSalah"></td>
+									</tr>
+									<tr>
+										<td>Tidak Dijawab</td>
+										<td>:</td>
+										<td id="JTidakDijawab"></td>
+									</tr>
+								</table>
+						</div>
+						<div id="scoreresultRight" style="float: right; display: none;">
+							<h4>Skor Anda</h4>
+							<h3 id="Nilainya"></h3>
+						</div>
 						<?php
 						$arrayNumber = range(1, 900);
 						$baris = $arrayNumber;
@@ -291,7 +317,7 @@
 										?>
 										<tr class="barisjawabandandijawab">
 											<td class="realanswer"><?php echo $a[$g] ?></td>
-											<td class="answered">-</td>
+											<td class="answered">p</td>
 										</tr>
 										<?php
 									}

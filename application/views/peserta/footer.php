@@ -27,6 +27,19 @@
 
 	var interval;
 
+	var S0JLSalah = 0;
+	var S0JLBenar = 0;
+	var S0JLTJ = 0 + 1;
+	var nilaiS0JL = 0;
+	var S1JLSalah = 0;
+	var S1JLBenar = 0;
+	var S1JLTJ = 0 + 1;
+	var nilaiS1JL = 0;
+	var S2JLSalah = 0;
+	var S2JLBenar = 0;
+	var S2JLTJ = 0 + 1;
+	var nilaiS2JL = 0;
+
 	var barisjawabancheckpoint = Array.from({length:31}, (v, i) => i * 30 + 1); //mulai dari 0, untuk index naekin 1
 
 	var columnsoalcheckpoint = Array.from({length:31}, (v, i) => i * 30); //mulai dari 0, untuk index naekin 1
@@ -44,6 +57,7 @@
 				$('.soalke21').removeAttr('hidden');
 				$('#countdownkolom').css('display','unset');
 			} else {
+				jenissoal = 'S0JL';
 				$('#jenissoalnya').text('Soal Angka - Kolom 1');
 				$('.soalke1').removeAttr('hidden');
 				$('#countdownkolom').css('display','unset');
@@ -57,8 +71,14 @@
 			$( "#countdownkolom" ).removeClass("break");
 			status = 'Mengerjakan';
 			runTimer();
+			$('#scoreresultLeft').css('display','none');
+			$('#scoreresultRight').css('display','none');
 		});
 	});
+
+	function loading(){
+		$('#brieftext')
+	}
 
 	function nextquest(){
 		$('.soaltest').attr('hidden','true');
@@ -75,6 +95,7 @@
 				$('.barisnya' + barisny[index]).removeAttr('hidden');
 				$('#judulcard').text('Soal ' + barisny[index]);
 				console.log(index);	
+
 			}
 		} else {
 			alert("mentok kekanan");
@@ -171,17 +192,27 @@
 			soalke = '10';
 		} else if (index == 299 && status=='Break') {
 			jenissoal = 'S1JL';
-			clearInterval(interval);
-			$('#jenissoalnya').text('Hasil Pengerjaan Soal Angka');
-			$('.brieftext').css('display','block');
-			$('.brieftext').text('Silahkan klik tombol hitung hasil untuk melihat nilai anda');
-			$('.soalke10').attr('hidden','true');
-			$('#startbuttontest').css('display','block');
-			$('#judulcard').text('Soal Angka Selesai');
+			$('#loader').css('display','block');
+			$('#judulcard').text('Mengumpulkan Hasil');
+			$('#jenissoalnya').text('Mohon Menunggu');
 			$('.tabelsoal').attr('hidden','true');
-			$( "#countdownkolom" ).addClass("break");
-			$( "#countdownkolom" ).text("jeda");
-			detectClassRunningOut();
+			clearInterval(interval);
+			setTimeout(function(){
+				$('#loader').css('display','none');
+				$('#jenissoalnya').text('Hasil Pengerjaan Soal Angka');
+				$('.brieftext').css('display','block');
+				$('.brieftext').text('Berikut adalah hasil pengerjaan');
+				$('.soalke10').attr('hidden','true');
+				$('#startbuttontest').css('display','block');
+				$('#judulcard').text('Soal Angka Selesai');
+				$('.tabelsoal').attr('hidden','true');
+				$( "#countdownkolom" ).addClass("break");
+				$( "#countdownkolom" ).text("jeda");
+				fetchNilai('S0JL');
+				detectClassRunningOut();
+				clearInterval(interval);
+				},3000);
+
 		} else if (index < columnsoalcheckpoint[11] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 1');
 			$('.soalke11').removeAttr('hidden');
@@ -190,7 +221,6 @@
 				console.log('Restarted');
 				detectClassRunningOut();
 			}
-			$('#startbuttontest').css('display','none');
 			soalke = '11';
 		} else if (index < columnsoalcheckpoint[12] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 2');
@@ -275,17 +305,26 @@
 			soalke = '20';
 		} else if (index == 599 && status=='Break') {
 			jenissoal = 'S2JL';
-			clearInterval(interval);
-			$('#jenissoalnya').text('Hasil Pengerjaan Soal Huruf');
-			$('.brieftext').css('display','block');
-			$('.brieftext').text('Silahkan klik tombol hitung hasil untuk melihat nilai anda');
-			$('.soalke20').attr('hidden','true');
-			$('#startbuttontest').css('display','block');
-			$('#judulcard').text('Soal Huruf Selesai');
+			$('#loader').css('display','block');
+			$('#judulcard').text('Mengumpulkan Hasil');
+			$('#jenissoalnya').text('Mohon Menunggu');
 			$('.tabelsoal').attr('hidden','true');
-			$( "#countdownkolom" ).addClass("break");
-			$( "#countdownkolom" ).text("jeda");
-			detectClassRunningOut();
+			clearInterval(interval);
+			setTimeout(function(){
+				$('#loader').css('display','none');
+				$('#jenissoalnya').text('Hasil Pengerjaan Soal Huruf');
+				$('.brieftext').css('display','block');
+				$('.brieftext').text('Berikut adalah hasil pengerjaan');
+				$('.soalke20').attr('hidden','true');
+				$('#startbuttontest').css('display','block');
+				$('#judulcard').text('Soal Huruf Selesai');
+				$('.tabelsoal').attr('hidden','true');
+				$( "#countdownkolom" ).addClass("break");
+				$( "#countdownkolom" ).text("jeda");
+				fetchNilai('S1JL');
+				detectClassRunningOut();
+				clearInterval(interval);
+				},3000);
 		} else if (index < columnsoalcheckpoint[21] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 1');
 			$('.soalke21').removeAttr('hidden');
@@ -378,20 +417,44 @@
 			}
 			soalke = '30';
 		} else {
-			$('#jenissoalnya').text('Hasil Pengerjaan Soal Huruf');
-			$('.brieftext').css('display','block');
-			$('.brieftext').text('Silahkan klik tombol hitung hasil untuk melihat nilai anda');
-			$('.soalke30').attr('hidden','true');
-			$('#startbuttontest').css('display','block');
-			$('#judulcard').text('Soal Huruf Selesai');
+			$('#loader').css('display','block');
+			$('#judulcard').text('Mengumpulkan Hasil');
+			$('#jenissoalnya').text('Mohon Menunggu');
 			$('.tabelsoal').attr('hidden','true');
-			$( "#countdownkolom" ).addClass("break");
-			$( "#countdownkolom" ).text("jeda");
-			detectClassRunningOut();
+			clearInterval(interval);
+			setTimeout(function(){
+				$('#loader').css('display','none');
+				$('#jenissoalnya').text('Hasil Pengerjaan Soal Simbol');
+				$('.brieftext').css('display','block');
+				$('.brieftext').text('Berikut adalah hasil pengerjaan');
+				$('.soalke30').attr('hidden','true');
+				$('#startbuttontest').css('display','block');
+				$('#judulcard').text('Soal Huruf Selesai');
+				$('.tabelsoal').attr('hidden','true');
+				$( "#countdownkolom" ).addClass("break");
+				$( "#countdownkolom" ).text("jeda");
+				fetchNilai('S2JL');
+				detectClassRunningOut();
+				clearInterval(interval);
+				},3000);
 		}
 
 		$('table:nth-child(2) > tbody > tr:nth-child(' + index + ') > td.answered').text($('.selectorbaris' + index + ':checked').val());
 		//console.log('table:nth-child(2) > tbody > tr:nth-child(' + index + ') > td.answered? also selector' + index + ':checked');
+		
+		//make sure the jawaban and answer is correct within one row
+		if ($('table:nth-child(2) > tbody > tr:nth-child(' + index + ') > td.answered').text() == $('table:nth-child(2) > tbody > tr:nth-child(' + index + ') > td.realanswer').text()) {
+
+			nilaiS0JL += 0.3334;
+			S0JLBenar += 1;
+		} else {
+			S0JLSalah += 1;
+		}
+
+		console.log('Nilai: ' + nilaiS0JL);
+		console.log('Benar: ' + S0JLBenar);
+		console.log('Salah: ' + S0JLSalah);
+		//console.log('Tidak Dijawab: ' + S0JLTJ);
 	}
 
 	function refreshQuest() {
@@ -468,15 +531,28 @@
 			soalke = '10';
 		} else if (soalke == '10') {
 			jenissoal = 'S1JL';
-			$('#jenissoalnya').text('Hasil Pengerjaan Soal Angka');
-			$('.brieftext').css('display','block');
-			$('.brieftext').text('Silahkan klik tombol hitung hasil untuk melihat nilai anda');
-			$('.soalke10').attr('hidden','true');
-			$('#startbuttontest').css('display','block');
-			$('#judulcard').text('Soal Angka Selesai');
+			$('#loader').css('display','block');
+			$('#judulcard').text('Mengumpulkan Hasil');
+			$('#jenissoalnya').text('Mohon Menunggu');
 			$('.tabelsoal').attr('hidden','true');
-			$( "#countdownkolom" ).addClass("break");
-			$( "#countdownkolom" ).text("jeda");
+			clearInterval(interval);
+			setTimeout(function(){
+				$('#loader').css('display','none');
+				$('#jenissoalnya').text('Hasil Pengerjaan Soal Angka');
+				$('.brieftext').css('display','block');
+				$('.brieftext').text('Berikut adalah hasil pengerjaan');
+				$('.soalke10').attr('hidden','true');
+				$('#startbuttontest').css('display','block');
+				$('#judulcard').text('Soal Angka Selesai');
+				$('.tabelsoal').attr('hidden','true');
+				$( "#countdownkolom" ).addClass("break");
+				$( "#countdownkolom" ).text("jeda");
+				fetchNilai('S0JL');
+				detectClassRunningOut();
+				clearInterval(interval);
+				},3000);
+
+			fetchNilai('S0JL');
 			soalke = '11'
 		} else if (soalke == '11') {
 			index = columnsoalcheckpoint[11];
@@ -543,15 +619,26 @@
 			soalke = '20';
 		} else if (index == '20' && status=='Break') {
 			jenissoal = 'S2JL';
-			$('#jenissoalnya').text('Hasil Pengerjaan Soal Huruf');
-			$('.brieftext').css('display','block');
-			$('.brieftext').text('Silahkan klik tombol hitung hasil untuk melihat nilai anda');
-			$('.soalke20').attr('hidden','true');
-			$('#startbuttontest').css('display','block');
-			$('#judulcard').text('Soal Huruf Selesai');
+			$('#loader').css('display','block');
+			$('#judulcard').text('Mengumpulkan Hasil');
+			$('#jenissoalnya').text('Mohon Menunggu');
 			$('.tabelsoal').attr('hidden','true');
-			$( "#countdownkolom" ).addClass("break");
-			$( "#countdownkolom" ).text("jeda");
+			clearInterval(interval);
+			setTimeout(function(){
+				$('#loader').css('display','none');
+				$('#jenissoalnya').text('Hasil Pengerjaan Soal Huruf');
+				$('.brieftext').css('display','block');
+				$('.brieftext').text('Berikut adalah hasil pengerjaan');
+				$('.soalke20').attr('hidden','true');
+				$('#startbuttontest').css('display','block');
+				$('#judulcard').text('Soal Huruf Selesai');
+				$('.tabelsoal').attr('hidden','true');
+				$( "#countdownkolom" ).addClass("break");
+				$( "#countdownkolom" ).text("jeda");
+				fetchNilai('S1JL');
+				detectClassRunningOut();
+				clearInterval(interval);
+				},3000);
 			soalke = '21';
 		} else if (soalke == '21') {
 			index = columnsoalcheckpoint[21];
@@ -617,15 +704,26 @@
 			$('.soalke30').removeAttr('hidden');
 			soalke = '30';
 		} else {
-			$('#jenissoalnya').text('Hasil Pengerjaan Soal Huruf');
-			$('.brieftext').css('display','block');
-			$('.brieftext').text('Silahkan klik tombol hitung hasil untuk melihat nilai anda');
-			$('.soalke30').attr('hidden','true');
-			$('#startbuttontest').css('display','block');
-			$('#judulcard').text('Soal Huruf Selesai');
+			$('#loader').css('display','block');
+			$('#judulcard').text('Mengumpulkan Hasil');
+			$('#jenissoalnya').text('Mohon Menunggu');
 			$('.tabelsoal').attr('hidden','true');
-			$( "#countdownkolom" ).addClass("break");
-			$( "#countdownkolom" ).text("jeda");
+			clearInterval(interval);
+			setTimeout(function(){
+				$('#loader').css('display','none');
+				$('#jenissoalnya').text('Hasil Pengerjaan Soal Simbol');
+				$('.brieftext').css('display','block');
+				$('.brieftext').text('Berikut adalah hasil pengerjaan');
+				$('.soalke30').attr('hidden','true');
+				$('#startbuttontest').css('display','block');
+				$('#judulcard').text('Soal Huruf Selesai');
+				$('.tabelsoal').attr('hidden','true');
+				$( "#countdownkolom" ).addClass("break");
+				$( "#countdownkolom" ).text("jeda");
+				fetchNilai('S2JL');
+				detectClassRunningOut();
+				clearInterval(interval);
+				},3000);
 		}
 		
 	}
@@ -665,6 +763,62 @@
 			};
 			timernya = minutes + ':' + seconds;
 		}, 1000);
+	}
+
+	function fetchNilai(jenissoal) {
+		if (jenissoal == 'S0JL') {
+			$('table:nth-child(2) > tbody > tr > td.answered').slice(0,299).each(function () {
+		        if ($(this).text() == 'p') {
+		            S0JLTJ++;
+		        } else {
+		        	S0JLTJ = 0;
+		        }
+		    });
+
+			$('#JBenar').text('' + S0JLBenar + '');
+			$('#JSalah').text('' + S0JLSalah + '');
+			$('#JTidakDijawab').text('' + S0JLTJ + '');
+			$('#Nilainya').text('' + parseInt(nilaiS0JL) + '');
+
+
+			$('#scoreresultLeft').css('display','unset');
+			$('#scoreresultRight').css('display','unset');
+
+		} else if(jenissoal == 'S1JL') {
+			$('table:nth-child(2) > tbody > tr > td.answered').slice(300,599).each(function () {
+		        if ($(this).text() == 'p') {
+		            S1JLTJ++;
+		        } else {
+		        	S1JLTJ = 0;
+		        }
+		    });
+			
+			$('#JBenar').text('' + S1JLBenar + '');
+			$('#JSalah').text('' + S1JLSalah + '');
+			$('#JTidakDijawab').text('' + S1JLTJ + '');
+			$('#Nilainya').text('' + parseInt(nilaiS1JL) + '');
+
+			$('#scoreresultLeft').css('display','unset');
+			$('#scoreresultRight').css('display','unset');
+
+		} else if(jenissoal == 'S2JL') {
+
+			$('table:nth-child(2) > tbody > tr > td.answered').slice(600,899).each(function () {
+		        if ($(this).text() == 'p') {
+		            S2JLTJ++;
+		        } else {
+		        	S2JLTJ = 0;
+		        }
+		    });
+
+			$('#JBenar').text('' + S2JLBenar + '');
+			$('#JSalah').text('' + S2JLSalah + '');
+			$('#JTidakDijawab').text('' + S2JLTJ + '');
+			$('#Nilainya').text('' + parseInt(nilaiS2JL) + '');
+
+			$('#scoreresultLeft').css('display','unset');
+			$('#scoreresultRight').css('display','unset');
+		}
 	}
 	    
 
