@@ -308,7 +308,7 @@
 								$jlb++;
 							} ?>
 								</table>
-								<table hidden="true">
+								<table class="tablebarisjawabandandijawab" hidden="true">
 									<?php 
 
 									$g = 0;

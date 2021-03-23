@@ -57,14 +57,13 @@
 				$('.soalke21').removeAttr('hidden');
 				$('#countdownkolom').css('display','unset');
 			} else {
-				jenissoal = 'S0JL';
 				$('#jenissoalnya').text('Soal Angka - Kolom 1');
 				$('.soalke1').removeAttr('hidden');
 				$('#countdownkolom').css('display','unset');
+				index++;
 			}
 			$('.tabelsoal').removeAttr('hidden');
 			$('.brieftext').css('display','none');
-			index++;
 			$(this).css('display','none');
 			$('.barisnya' + barisny[index]).removeAttr('hidden');
 			$('#judulcard').text('Soal '+barisny[index]);
@@ -439,11 +438,11 @@
 				},3000);
 		}
 
-		$('table:nth-child(2) > tbody > tr:nth-child(' + index + ') > td.answered').text($('.selectorbaris' + index + ':checked').val());
-		//console.log('table:nth-child(2) > tbody > tr:nth-child(' + index + ') > td.answered? also selector' + index + ':checked');
+		$('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text($('.selectorbaris' + index + ':checked').val());
+		//console.log('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered? also selector' + index + ':checked');
 		
 		//make sure the jawaban and answer is correct within one row
-		if ($('table:nth-child(2) > tbody > tr:nth-child(' + index + ') > td.answered').text() == $('table:nth-child(2) > tbody > tr:nth-child(' + index + ') > td.realanswer').text()) {
+		if ($('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text() == $('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.realanswer').text()) {
 
 			nilaiS0JL += 0.3334;
 			S0JLBenar += 1;
@@ -530,6 +529,7 @@
 			$('.soalke10').removeAttr('hidden');
 			soalke = '10';
 		} else if (soalke == '10') {
+			index = columnsoalcheckpoint[10];
 			jenissoal = 'S1JL';
 			$('#loader').css('display','block');
 			$('#judulcard').text('Mengumpulkan Hasil');
@@ -551,8 +551,6 @@
 				detectClassRunningOut();
 				clearInterval(interval);
 				},3000);
-
-			fetchNilai('S0JL');
 			soalke = '11'
 		} else if (soalke == '11') {
 			index = columnsoalcheckpoint[11];
@@ -618,6 +616,7 @@
 			$('.soalke20').removeAttr('hidden');
 			soalke = '20';
 		} else if (index == '20' && status=='Break') {
+			index = columnsoalcheckpoint[20];
 			jenissoal = 'S2JL';
 			$('#loader').css('display','block');
 			$('#judulcard').text('Mengumpulkan Hasil');
@@ -704,6 +703,7 @@
 			$('.soalke30').removeAttr('hidden');
 			soalke = '30';
 		} else {
+			index = columnsoalcheckpoint[30];
 			$('#loader').css('display','block');
 			$('#judulcard').text('Mengumpulkan Hasil');
 			$('#jenissoalnya').text('Mohon Menunggu');
@@ -725,7 +725,7 @@
 				clearInterval(interval);
 				},3000);
 		}
-		
+		console.log(index);
 	}
 
 	
@@ -765,9 +765,11 @@
 		}, 1000);
 	}
 
-	function fetchNilai(jenissoal) {
-		if (jenissoal == 'S0JL') {
-			$('table:nth-child(2) > tbody > tr > td.answered').slice(0,299).each(function () {
+	function fetchNilai(jsnya) {
+		var js = jsnya;
+
+		if (js == 'S0JL') {
+			$('table.tablebarisjawabandandijawab > tbody > tr > td.answered').slice(0,299).each(function () {
 		        if ($(this).text() == 'p') {
 		            S0JLTJ++;
 		        } else {
@@ -784,8 +786,8 @@
 			$('#scoreresultLeft').css('display','unset');
 			$('#scoreresultRight').css('display','unset');
 
-		} else if(jenissoal == 'S1JL') {
-			$('table:nth-child(2) > tbody > tr > td.answered').slice(300,599).each(function () {
+		} else if(js == 'S1JL') {
+			$('table.tablebarisjawabandandijawab > tbody > tr > td.answered').slice(300,599).each(function () {
 		        if ($(this).text() == 'p') {
 		            S1JLTJ++;
 		        } else {
@@ -801,9 +803,9 @@
 			$('#scoreresultLeft').css('display','unset');
 			$('#scoreresultRight').css('display','unset');
 
-		} else if(jenissoal == 'S2JL') {
+		} else if(js == 'S2JL') {
 
-			$('table:nth-child(2) > tbody > tr > td.answered').slice(600,899).each(function () {
+			$('table.tablebarisjawabandandijawab > tbody > tr > td.answered').slice(600,899).each(function () {
 		        if ($(this).text() == 'p') {
 		            S2JLTJ++;
 		        } else {
