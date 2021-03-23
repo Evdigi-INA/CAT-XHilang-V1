@@ -15,17 +15,23 @@
 }
 
 .radioform > .radiogroup > input[type=radio]:checked + label {
-  color: #ccc8ce;
-  background: #675f6b;
+  color: #ccc8ce !important;
+  background: #525252 !important;
+  transition: all 200ms ease-in-out;
+}
+
+.radioform > .radiogroup > input[type=radio]:not(:focus):hover + label:not(:focus):hover {
+  color: black;
+  background: #d9d9d9;
   transition: all 200ms ease-in-out;
 }
 
 .radioform > .radiogroup > label + .radioform > .radiogroup > input[type=radio] + .radioform > .radiogroup > label {
-  border-left: solid 3px #675f6b;
+  border-left: solid 3px #525252;
 }
 
 .radioform .radiogroup {
-  border: solid 3px #675f6b;
+  border: solid 3px #525252;
   display: inline-block;
   margin: 20px;
   border-radius: 10px;
