@@ -1,3 +1,12 @@
+<div class="container" style="background-color: #ececec;
+    border-radius: 5px;">
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="<?php echo base_url().'admin/Admin_Controller/index' ?>">Menu Utama</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Daftar Peserta</li>
+    </ol>
+  </nav>
+</div>
 <div class="wrapper-daftar-peserta" style="height: 85vh">
   <div class="container">
     
@@ -38,8 +47,8 @@
                       <td><?php echo $u->jenis_kelamin; ?></td>
                       <td style="text-align: center;"><div class="btn-group" role="group" aria-label="Basic mixed styles example">
                         <button type="button" class="btn btn-primary"><span><i class="fas fa-eye fa-fw"></i></span></button>
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="<?php echo "#modalEditPeserta".$u->id_user;?>"><span><i class="fas fa-edit fa-fw"></i></span></button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="<?php echo "#exampleModal".$u->id_user;?>"><span><i class="fas fa-trash fa-fw"></i></span></button>
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="<?php echo "#modalEditPeserta".$u->id_user;?>"><span><i class="fas fa-edit fa-fw"></i></span></button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="<?php echo "#exampleModal".$u->id_user;?>"><span><i class="fas fa-trash fa-fw"></i></span></button>
                       </div></td>
                   </tr>
                 <?php } ?>
@@ -97,20 +106,20 @@ foreach ($listpeserta as $k) {
                     <div class="form-group">
                         <label class="control-label">Nomor Identitas</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="tbidnomor" value="">
+                            <input type="text" class="form-control input-lg" name="tbidnomor" value="" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label">Nama Lengkap</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="tbnamalengkap" value="">
+                            <input type="text" class="form-control input-lg" name="tbnamalengkap" value="" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label">Jenis Kelamin</label>
                         <div>
-                            <select class="custom-select custom-select-sm" name="tbjeniskelamin">
+                            <select class="custom-select custom-select-sm" name="tbjeniskelamin" required>
                               <option value="Laki-Laki">Laki-Laki</option>
                               <option value="Perempuan">Perempuan</option>
                             </select>
@@ -120,7 +129,7 @@ foreach ($listpeserta as $k) {
                     <div class="form-group">
                         <label class="control-label">Alamat</label>
                         <div>
-                            <textarea name="tbalamat"></textarea>
+                            <textarea name="tbalamat" required></textarea>
                         </div>
                     </div>
                   </div>
@@ -133,25 +142,25 @@ foreach ($listpeserta as $k) {
                                 <div class="form-group">
                                     <label class="control-label">ID User</label>
                                     <div>
-                                        <input type="text" class="form-control input-lg" name="tbiduser" value="">
+                                        <input type="text" class="form-control input-lg" name="tbiduser" value="" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Username</label>
                                     <div>
-                                        <input type="text" class="form-control input-lg" name="tbusername">
+                                        <input type="text" class="form-control input-lg" name="tbusername" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Password</label>
                                     <div>
-                                        <input type="text" class="form-control input-lg" name="tbpassword">
+                                        <input type="text" class="form-control input-lg" name="tbpassword" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Role</label>
                                     <div>
-                                        <select class="custom-select custom-select-sm" name="tbrole">
+                                        <select class="custom-select custom-select-sm" name="tbrole" required>
                                           <option value="admin">Admin</option>
                                           <option value="peserta">Peserta Test</option>
                                         </select>

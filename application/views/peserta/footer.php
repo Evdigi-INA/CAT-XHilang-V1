@@ -105,14 +105,14 @@
 		if (index <= max) {
 			if (index == 299 || index == 599 || index == 899){
 				status = 'Break';
-				console.log('Status: Break');
-				console.log(index);
+				//console.log('Status: Break');
+				//console.log(index);
 			} else {
 				status = 'Mengerjakan';
 				index++;
 				$('.barisnya' + barisny[index]).removeAttr('hidden');
 				$('#judulcard').text('Soal ' + barisny[index]);
-				console.log(index + '(Telah Dikerjakan)');	
+				//console.log(index + '(Telah Dikerjakan)');	
 
 			}
 		} else {
@@ -124,7 +124,7 @@
 			$('.soalke1').removeAttr('hidden');
 			/*if (index == columnsoalcheckpoint[1]) {
 				runTimer();
-				console.log('Restarted')
+				//console.log('Restarted')
 			}*/
 			soalke = '1';
 		} else if (index < columnsoalcheckpoint[2] && status=='Mengerjakan') {
@@ -132,7 +132,7 @@
 			$('.soalke2').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[1]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '2';
@@ -141,7 +141,7 @@
 			$('.soalke3').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[2]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '3';
@@ -150,7 +150,7 @@
 			$('.soalke4').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[3]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '4';
@@ -159,7 +159,7 @@
 			$('.soalke5').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[4]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '5';
@@ -168,7 +168,7 @@
 			$('.soalke6').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[5]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '6';
@@ -177,7 +177,7 @@
 			$('.soalke7').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[6]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '7';
@@ -186,7 +186,7 @@
 			$('.soalke8').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[7]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '8';
@@ -195,7 +195,7 @@
 			$('.soalke9').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[8]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '9';
@@ -204,7 +204,7 @@
 			$('.soalke10').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[9]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '10';
@@ -240,7 +240,7 @@
 			$('.soalke11').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[10]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '11';
@@ -249,7 +249,7 @@
 			$('.soalke12').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[11]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '12';
@@ -258,7 +258,7 @@
 			$('.soalke13').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[12]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '13';
@@ -267,7 +267,7 @@
 			$('.soalke14').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[13]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '14';
@@ -276,7 +276,7 @@
 			$('.soalke15').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[14]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '15';
@@ -285,7 +285,7 @@
 			$('.soalke16').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[15]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '16';
@@ -294,7 +294,7 @@
 			$('.soalke17').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[16]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '17';
@@ -303,7 +303,7 @@
 			$('.soalke18').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[17]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '18';
@@ -312,7 +312,7 @@
 			$('.soalke19').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[18]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '19';
@@ -321,7 +321,7 @@
 			$('.soalke20').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[19]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '20';
@@ -356,7 +356,7 @@
 			$('.soalke21').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[20]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			$('#startbuttontest').css('display','none');
@@ -366,7 +366,7 @@
 			$('.soalke22').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[21]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '22';
@@ -375,7 +375,7 @@
 			$('.soalke23').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[22]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '23';
@@ -384,7 +384,7 @@
 			$('.soalke24').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[23]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '24';
@@ -393,7 +393,7 @@
 			$('.soalke25').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[24]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '25';
@@ -402,7 +402,7 @@
 			$('.soalke26').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[25]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '26';
@@ -411,7 +411,7 @@
 			$('.soalke27').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[26]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '27';
@@ -420,7 +420,7 @@
 			$('.soalke28').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[27]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '28';
@@ -429,7 +429,7 @@
 			$('.soalke29').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[28]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '29';
@@ -438,7 +438,7 @@
 			$('.soalke30').removeAttr('hidden');
 			if (index == columnsoalcheckpoint[29]) {
 				runTimer();
-				console.log('Restarted');
+				//console.log('Restarted');
 				detectClassRunningOut();
 			}
 			soalke = '30';
@@ -471,12 +471,12 @@
 
 		//put the selected radio to table
 		$('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text($('.selectorbaris' + index + ':checked').val());
-		//console.log('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered? also selector' + index + ':checked')
+		////console.log('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered? also selector' + index + ':checked')
 	
 
-		console.log(index + ' Selesai');
-		console.warn('Soal ke :' + soalke);
-		console.warn('Jenis Soal :' + jenissoal);
+		//console.log(index + ' Selesai');
+		//console.warn('Soal ke :' + soalke);
+		//console.warn('Jenis Soal :' + jenissoal);
 	}
 
 	function refreshQuest() {
@@ -760,11 +760,11 @@
 				clearInterval(interval);
 				},3000);
 		} else {
-			console.log('something wrong?');
+			//console.log('something wrong?');
 		}
-		console.log('Index :' + index);
-		console.warn('Soal ke :' + soalke);
-		console.warn('Jenis Soal :' + jenissoal);
+		//console.log('Index :' + index);
+		//console.warn('Soal ke :' + soalke);
+		//console.warn('Jenis Soal :' + jenissoal);
 	}
 
 	
@@ -795,7 +795,7 @@
 					clearInterval(interval);	
 				} else {
 					$('#countdownkolom').removeClass('runningout');
-					console.log('Clearing running out');
+					//console.log('Clearing running out');
 					clearInterval(interval);
 					pindahKolom();
 				}
