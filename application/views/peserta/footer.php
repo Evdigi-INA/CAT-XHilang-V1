@@ -17,30 +17,23 @@
 
 	var barisny = range(1, 900); // array sampe 900 (untuk baris jawaban list)
 	var index = -1; //baris
-	var counter = $(this).index();
 	var max = $(barisny).length;
 
-	var indexsoal = 0;
-	var status = '';
-	var jenissoal = '';
+	var status = 'Mengerjakan';
+	var jenissoal = 'S0JL'; //INITIALIZE JENIS SOAL ANGKA
 	var soalke = '1';
 
 	var interval;
 
 	var S0JLSalah = 0;
 	var S0JLBenar = 0;
-	var S0JLTJ = 0 + 1;
 	var nilaiS0JL = 0;
 	var S1JLSalah = 0;
 	var S1JLBenar = 0;
-	var S1JLTJ = 0 + 1;
 	var nilaiS1JL = 0;
 	var S2JLSalah = 0;
 	var S2JLBenar = 0;
-	var S2JLTJ = 0 + 1;
 	var nilaiS2JL = 0;
-
-	var barisjawabancheckpoint = Array.from({length:31}, (v, i) => i * 30 + 1); //mulai dari 0, untuk index naekin 1
 
 	var columnsoalcheckpoint = Array.from({length:31}, (v, i) => i * 30); //mulai dari 0, untuk index naekin 1
 	$(document).ready(function(){
@@ -60,8 +53,8 @@
 				$('#jenissoalnya').text('Soal Angka - Kolom 1');
 				$('.soalke1').removeAttr('hidden');
 				$('#countdownkolom').css('display','unset');
-				index++;
 			}
+			index++;
 			$('.tabelsoal').removeAttr('hidden');
 			$('.brieftext').css('display','none');
 			$(this).css('display','none');
@@ -75,25 +68,20 @@
 		});
 	});
 
-	function loading(){
-		$('#brieftext')
-	}
-
 	function nextquest(){
 		$('.soaltest').attr('hidden','true');
 		$('.barisss').attr('hidden','true');
 		if (index <= max) {
-			if (index == 299 || index == 599 || index === 899){
+			if (index == 299 || index == 599 || index == 899){
 				status = 'Break';
 				console.log('Status: Break');
 				console.log(index);
 			} else {
 				status = 'Mengerjakan';
-				console.log('Status: Mengerjakan');
 				index++;
 				$('.barisnya' + barisny[index]).removeAttr('hidden');
 				$('#judulcard').text('Soal ' + barisny[index]);
-				console.log(index);	
+				console.log(index + '(Telah Dikerjakan)');	
 
 			}
 		} else {
@@ -428,7 +416,7 @@
 				$('.brieftext').text('Berikut adalah hasil pengerjaan');
 				$('.soalke30').attr('hidden','true');
 				$('#startbuttontest').css('display','block');
-				$('#judulcard').text('Soal Huruf Selesai');
+				$('#judulcard').text('Soal Simbol Selesai');
 				$('.tabelsoal').attr('hidden','true');
 				$( "#countdownkolom" ).addClass("break");
 				$( "#countdownkolom" ).text("jeda");
@@ -438,22 +426,52 @@
 				},3000);
 		}
 
+		//put the selected radio to table
 		$('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text($('.selectorbaris' + index + ':checked').val());
 		//console.log('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered? also selector' + index + ':checked');
 		
-		//make sure the jawaban and answer is correct within one row
-		if ($('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text() == $('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.realanswer').text()) {
 
-			nilaiS0JL += 0.3334;
-			S0JLBenar += 1;
+		if (jenissoal == 'S0JL') {
+			//make sure the jawaban and answer is correct within one row
+
+			if ($('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text() == $('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.realanswer').text()) {
+				nilaiS0JL += 0.3334;
+				S0JLBenar += 1;
+			} else {
+				S0JLSalah += 1;
+			}
+
+			console.log('Nilai: ' + nilaiS0JL);
+			console.log('Benar: ' + S0JLBenar);
+			console.log('Salah: ' + S0JLSalah);
+			//console.log('Tidak Dijawab: ' + S0JLTJ);
+		} else if (jenissoal == 'S1JL') {
+			if ($('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text() == $('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.realanswer').text()) {
+				nilaiS1JL += 0.3334;
+				S1JLBenar += 1;
+			} else {
+				S1JLSalah += 1;
+			}
+
+			console.log('Nilai: ' + nilaiS1JL);
+			console.log('Benar: ' + S1JLBenar);
+			console.log('Salah: ' + S1JLSalah);
 		} else {
-			S0JLSalah += 1;
+			if ($('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text() == $('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.realanswer').text()) {
+				nilaiS2JL += 0.3334;
+				S2JLBenar += 1;
+			} else {
+				S2JLSalah += 1;
+			}
+
+			console.log('Nilai: ' + nilaiS2JL);
+			console.log('Benar: ' + S2JLBenar);
+			console.log('Salah: ' + S2JLSalah);
 		}
 
-		console.log('Nilai: ' + nilaiS0JL);
-		console.log('Benar: ' + S0JLBenar);
-		console.log('Salah: ' + S0JLSalah);
-		//console.log('Tidak Dijawab: ' + S0JLTJ);
+		console.log('Index :' + index);
+		console.warn('Soal ke :' + soalke);
+		console.warn('Jenis Soal :' + jenissoal);
 	}
 
 	function refreshQuest() {
@@ -551,7 +569,7 @@
 				detectClassRunningOut();
 				clearInterval(interval);
 				},3000);
-			soalke = '11'
+			soalke = '11';
 		} else if (soalke == '11') {
 			index = columnsoalcheckpoint[11];
 			runTimer();
@@ -615,7 +633,7 @@
 			$('#jenissoalnya').text('Soal Huruf - Kolom 10');
 			$('.soalke20').removeAttr('hidden');
 			soalke = '20';
-		} else if (index == '20' && status=='Break') {
+		} else if (soalke == '20') {
 			index = columnsoalcheckpoint[20];
 			jenissoal = 'S2JL';
 			$('#loader').css('display','block');
@@ -702,7 +720,7 @@
 			$('#jenissoalnya').text('Soal Simbol - Kolom 10');
 			$('.soalke30').removeAttr('hidden');
 			soalke = '30';
-		} else {
+		} else if (soalke == '30') {
 			index = columnsoalcheckpoint[30];
 			$('#loader').css('display','block');
 			$('#judulcard').text('Mengumpulkan Hasil');
@@ -724,14 +742,18 @@
 				detectClassRunningOut();
 				clearInterval(interval);
 				},3000);
+		} else {
+			console.log('something wrong?');
 		}
-		console.log(index);
+		console.log('Index :' + index);
+		console.warn('Soal ke :' + soalke);
+		console.warn('Jenis Soal :' + jenissoal);
 	}
 
 	
 	function runTimer() {
 		clearInterval(interval);
-		var timernya = "1:00";
+		var timernya = "1:01";
 		interval = setInterval(function() {
 			var timer = timernya.split(':');
 			//by parsing integer, I avoid all extra string processing
@@ -747,7 +769,7 @@
 				clearInterval(interval);
 			}
 
-			if (seconds < 10) {
+			if ((minutes <= 0) && (seconds <= 10)) {
 				$( "#countdownkolom" ).addClass( "runningout" );
 			}
 			//check if both minutes and seconds are 0
@@ -769,13 +791,16 @@
 		var js = jsnya;
 
 		if (js == 'S0JL') {
+			var S0JLTJ = 0 + 1;
 			$('table.tablebarisjawabandandijawab > tbody > tr > td.answered').slice(0,299).each(function () {
-		        if ($(this).text() == 'p') {
-		            S0JLTJ++;
-		        } else {
-		        	S0JLTJ = 0;
-		        }
+		        if ($(this).text() == '-' ? S0JLTJ++:S0JLTJ+=0);
 		    });
+
+		    if (S0JLTJ == 1) {
+		    	S0JLTJ = 0;
+		    } else {
+		    	S0JLTJ-=1;
+		    }
 
 			$('#JBenar').text('' + S0JLBenar + '');
 			$('#JSalah').text('' + S0JLSalah + '');
@@ -787,13 +812,16 @@
 			$('#scoreresultRight').css('display','unset');
 
 		} else if(js == 'S1JL') {
+			var S1JLTJ = 0 + 1;
 			$('table.tablebarisjawabandandijawab > tbody > tr > td.answered').slice(300,599).each(function () {
-		        if ($(this).text() == 'p') {
-		            S1JLTJ++;
-		        } else {
-		        	S1JLTJ = 0;
-		        }
+		        if ($(this).text() == '-' ? S1JLTJ++:S1JLTJ+=0);
 		    });
+
+		    if (S1JLTJ == 1) {
+		    	S1JLTJ = 0;
+		    } else {
+		    	S1JLTJ-=1;
+		    }
 			
 			$('#JBenar').text('' + S1JLBenar + '');
 			$('#JSalah').text('' + S1JLSalah + '');
@@ -804,14 +832,16 @@
 			$('#scoreresultRight').css('display','unset');
 
 		} else if(js == 'S2JL') {
-
+			var S2JLTJ = 0 + 1;
 			$('table.tablebarisjawabandandijawab > tbody > tr > td.answered').slice(600,899).each(function () {
-		        if ($(this).text() == 'p') {
-		            S2JLTJ++;
-		        } else {
-		        	S2JLTJ = 0;
-		        }
+		        if ($(this).text() == '-' ? S2JLTJ++:S2JLTJ+=0);
 		    });
+
+			if (S2JLTJ == 1) {
+		    	S2JLTJ = 0;
+		    } else {
+		    	S2JLTJ-=1;
+		    }
 
 			$('#JBenar').text('' + S2JLBenar + '');
 			$('#JSalah').text('' + S2JLSalah + '');

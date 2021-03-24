@@ -59,7 +59,7 @@ body {
 .runningout {
   background-color: red !important;
   transition: all 200ms ease-in;
-  animation: warningglow 1s infinite alternate;
+  animation: warningglow 500ms infinite alternate;
 }
 
 @keyframes warningglow {
