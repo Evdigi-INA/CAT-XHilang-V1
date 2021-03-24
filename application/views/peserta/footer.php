@@ -25,9 +25,7 @@
 
 	var interval;
 
-	var S0JLSalah = 0;
-	var S0JLBenar = 0;
-	var nilaiS0JL = 0;
+	
 	var S1JLSalah = 0;
 	var S1JLBenar = 0;
 	var nilaiS1JL = 0;
@@ -428,48 +426,10 @@
 
 		//put the selected radio to table
 		$('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text($('.selectorbaris' + index + ':checked').val());
-		//console.log('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered? also selector' + index + ':checked');
-		
+		//console.log('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered? also selector' + index + ':checked')
+	
 
-		if (jenissoal == 'S0JL') {
-			//make sure the jawaban and answer is correct within one row
-
-			if ($('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text() == $('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.realanswer').text()) {
-				nilaiS0JL += 0.3334;
-				S0JLBenar += 1;
-			} else {
-				S0JLSalah += 1;
-			}
-
-			console.log('Nilai: ' + nilaiS0JL);
-			console.log('Benar: ' + S0JLBenar);
-			console.log('Salah: ' + S0JLSalah);
-			//console.log('Tidak Dijawab: ' + S0JLTJ);
-		} else if (jenissoal == 'S1JL') {
-			if ($('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text() == $('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.realanswer').text()) {
-				nilaiS1JL += 0.3334;
-				S1JLBenar += 1;
-			} else {
-				S1JLSalah += 1;
-			}
-
-			console.log('Nilai: ' + nilaiS1JL);
-			console.log('Benar: ' + S1JLBenar);
-			console.log('Salah: ' + S1JLSalah);
-		} else {
-			if ($('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text() == $('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.realanswer').text()) {
-				nilaiS2JL += 0.3334;
-				S2JLBenar += 1;
-			} else {
-				S2JLSalah += 1;
-			}
-
-			console.log('Nilai: ' + nilaiS2JL);
-			console.log('Benar: ' + S2JLBenar);
-			console.log('Salah: ' + S2JLSalah);
-		}
-
-		console.log('Index :' + index);
+		console.log(index + ' Selesai');
 		console.warn('Soal ke :' + soalke);
 		console.warn('Jenis Soal :' + jenissoal);
 	}
@@ -791,62 +751,95 @@
 		var js = jsnya;
 
 		if (js == 'S0JL') {
-			var S0JLTJ = 0 + 1;
-			$('table.tablebarisjawabandandijawab > tbody > tr > td.answered').slice(0,299).each(function () {
-		        if ($(this).text() == '-' ? S0JLTJ++:S0JLTJ+=0);
-		    });
+			var gadijawab0 = 0 + 1;
+			var salah0 = 0;
+			var bener0 = 0;
+			var nilai0 = 0;
+			$('table.tablebarisjawabandandijawab > tbody > tr').slice(0,299).each(function(){
+			    tds0 = $(this).find('td');
+			    if($(tds0[1]).text() == $(tds0[0]).text()){
+					bener0++;
+					nilai0 += 0.3334; //saat mendapat point
+			    } else if($(tds0[1]).text() == '-') {
+					gadijawab0++;
+			    } else if($(tds0[1]).text() != $(tds0[0]).text()) {
+					salah0++;
+			    } else {
+					console.warn('Error: refer to the code');
+				}
+			});
 
-		    if (S0JLTJ == 1) {
-		    	S0JLTJ = 0;
-		    } else {
-		    	S0JLTJ-=1;
+		    if (gadijawab0 == 1) {
+		    	gadijawab0 = 0;
 		    }
 
-			$('#JBenar').text('' + S0JLBenar + '');
-			$('#JSalah').text('' + S0JLSalah + '');
-			$('#JTidakDijawab').text('' + S0JLTJ + '');
-			$('#Nilainya').text('' + parseInt(nilaiS0JL) + '');
+			$('#JBenar').text('' + bener0 + '');
+			$('#JSalah').text('' + salah0 + '');
+			$('#JTidakDijawab').text('' + gadijawab0 + '');
+			$('#Nilainya').text('' + parseInt(nilai0) + '');
 
 
 			$('#scoreresultLeft').css('display','unset');
 			$('#scoreresultRight').css('display','unset');
 
 		} else if(js == 'S1JL') {
-			var S1JLTJ = 0 + 1;
-			$('table.tablebarisjawabandandijawab > tbody > tr > td.answered').slice(300,599).each(function () {
-		        if ($(this).text() == '-' ? S1JLTJ++:S1JLTJ+=0);
-		    });
+			var gadijawab1 = 0 + 1;
+			var salah1 = 0;
+			var bener1 = 0;
+			var nilai1 = 0;
+			$('table.tablebarisjawabandandijawab > tbody > tr').slice(300,599).each(function(){
+			    tds1 = $(this).find('td');
+			    if($(tds1[1]).text() == $(tds1[0]).text()){
+					bener1++;
+					nilai1 += 0.3334; //saat mendapat point
+			    } else if($(tds1[1]).text() == '-') {
+					gadijawab1++;
+			    } else if($(tds1[1]).text() != $(tds1[0]).text()) {
+					salah1++;
+			    } else {
+					console.warn('Error: refer to the code');
+				}
+			});
 
-		    if (S1JLTJ == 1) {
-		    	S1JLTJ = 0;
-		    } else {
-		    	S1JLTJ-=1;
+		    if (gadijawab1 == 1) {
+		    	gadijawab1 = 0;
 		    }
-			
-			$('#JBenar').text('' + S1JLBenar + '');
-			$('#JSalah').text('' + S1JLSalah + '');
-			$('#JTidakDijawab').text('' + S1JLTJ + '');
-			$('#Nilainya').text('' + parseInt(nilaiS1JL) + '');
+
+			$('#JBenar').text('' + bener1 + '');
+			$('#JSalah').text('' + salah1 + '');
+			$('#JTidakDijawab').text('' + gadijawab1 + '');
+			$('#Nilainya').text('' + parseInt(nilai1) + '');
 
 			$('#scoreresultLeft').css('display','unset');
 			$('#scoreresultRight').css('display','unset');
 
 		} else if(js == 'S2JL') {
-			var S2JLTJ = 0 + 1;
-			$('table.tablebarisjawabandandijawab > tbody > tr > td.answered').slice(600,899).each(function () {
-		        if ($(this).text() == '-' ? S2JLTJ++:S2JLTJ+=0);
-		    });
+			var gadijawab2 = 0 + 1;
+			var salah2 = 0;
+			var bener2 = 0;
+			var nilai2 = 0;
+			$('table.tablebarisjawabandandijawab > tbody > tr').slice(600,899).each(function(){
+			    tds2 = $(this).find('td');
+			    if($(tds2[1]).text() == $(tds2[0]).text()){
+					bener2++;
+					nilai2 += 0.3334; //saat mendapat point
+			    } else if($(tds2[1]).text() == '-') {
+					gadijawab2++;
+			    } else if($(tds2[1]).text() != $(tds2[0]).text()) {
+					salah2++;
+			    } else {
+					console.warn('Error: refer to the code');
+				}
+			});
 
-			if (S2JLTJ == 1) {
-		    	S2JLTJ = 0;
-		    } else {
-		    	S2JLTJ-=1;
+		    if (gadijawab2 == 1) {
+		    	gadijawab2 = 0;
 		    }
 
-			$('#JBenar').text('' + S2JLBenar + '');
-			$('#JSalah').text('' + S2JLSalah + '');
-			$('#JTidakDijawab').text('' + S2JLTJ + '');
-			$('#Nilainya').text('' + parseInt(nilaiS2JL) + '');
+			$('#JBenar').text('' + bener2 + '');
+			$('#JSalah').text('' + salah2 + '');
+			$('#JTidakDijawab').text('' + gadijawab2 + '');
+			$('#Nilainya').text('' + parseInt(nilai2) + '');
 
 			$('#scoreresultLeft').css('display','unset');
 			$('#scoreresultRight').css('display','unset');

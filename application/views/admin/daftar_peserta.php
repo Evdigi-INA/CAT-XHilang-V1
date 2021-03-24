@@ -10,7 +10,7 @@
             <i class="fas fa-table"></i>
             Data Table Example
             <div style="float: right;">
-              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalTambahPeserta"><span><i class="fas fa-plus fa-fw"></i></span></button>
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalTambahPeserta"><span><i class="fas fa-plus fa-fw"></i></span></button>
             </div></div>
           <div class="card-body">
             <div class="table-responsive">
