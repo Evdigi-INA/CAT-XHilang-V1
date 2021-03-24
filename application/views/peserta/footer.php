@@ -64,6 +64,39 @@
 			$('#scoreresultLeft').css('display','none');
 			$('#scoreresultRight').css('display','none');
 		});
+
+		$('#menjelangendbutton').click(function(){
+
+			/*var a = $('#tbnilaiS0JL').val();
+			var b = $('#tbnilaiS1JL').val();
+			var c = $('#tbnilaiS2JL').val();
+			var total = a+b+c/3;
+			$('#tbnilaiFinal').val(g);*/
+
+			forceHide();
+			$('#loader').css('display','none');
+			var tbnilai1 = $('#tbnilaiS0JL').val();
+            var tbnilai2 = $('#tbnilaiS1JL').val();
+            var tbnilai3 = $('#tbnilaiS2JL').val();
+            var tbiduser = $('#tbiduser').val();
+            var tbusername = $('#tbusername').val();
+            $.ajax({
+                type : "POST",
+                url  : "<?php echo base_url('/index.php/peserta/Peserta_Controller/simpan_nilai')?>",
+                dataType : "JSON",
+                data : {tbnilai1:tbnilai1 , tbnilai2:tbnilai2, tbnilai3:tbnilai3, tbiduser:tbiduser,tbusername:tbusername},
+                success: function(data){
+                }
+            });
+            $('#scoreresultLeft').css('display','none');
+			$('#scoreresultRight').css('display','none');
+            $('#judulcard').text('Test Telah Selesai');
+			$('#jenissoalnya').text('Anda bisa logout sekarang');
+			$('.brieftext').css('display','block');
+			$('.brieftext').text('Anda Bisa Logout sekarang dengan mengklik ikon di pojok kanan atas.');
+			$(this).css('display','none');
+
+		});
 	});
 
 	function nextquest(){
@@ -193,6 +226,10 @@
 				$('.tabelsoal').attr('hidden','true');
 				$( "#countdownkolom" ).addClass("break");
 				$( "#countdownkolom" ).text("jeda");
+				
+				//saat tepat sekali user ngisi soal pas waktu dah deket, pastikan soal selanjutnya ga keliatan [kode ini hanya sesaat, soon it will be implemented (for debugging purpose)]
+				forceHide();
+
 				fetchNilai('S0JL');
 				detectClassRunningOut();
 				clearInterval(interval);
@@ -306,6 +343,10 @@
 				$('.tabelsoal').attr('hidden','true');
 				$( "#countdownkolom" ).addClass("break");
 				$( "#countdownkolom" ).text("jeda");
+
+				//saat tepat sekali user ngisi soal pas waktu dah deket, pastikan soal selanjutnya ga keliatan [kode ini hanya sesaat, soon it will be implemented (for debugging purpose)]
+				forceHide();
+
 				fetchNilai('S1JL');
 				detectClassRunningOut();
 				clearInterval(interval);
@@ -413,11 +454,15 @@
 				$('.brieftext').css('display','block');
 				$('.brieftext').text('Berikut adalah hasil pengerjaan');
 				$('.soalke30').attr('hidden','true');
-				$('#startbuttontest').css('display','block');
+				$('#menjelangendbutton').css('display','block');
 				$('#judulcard').text('Soal Simbol Selesai');
 				$('.tabelsoal').attr('hidden','true');
 				$( "#countdownkolom" ).addClass("break");
 				$( "#countdownkolom" ).text("jeda");
+
+				//saat tepat sekali user ngisi soal pas waktu dah deket, pastikan soal selanjutnya ga keliatan [kode ini hanya sesaat, soon it will be implemented (for debugging purpose)]
+				forceHide();
+
 				fetchNilai('S2JL');
 				detectClassRunningOut();
 				clearInterval(interval);
@@ -525,6 +570,10 @@
 				$('.tabelsoal').attr('hidden','true');
 				$( "#countdownkolom" ).addClass("break");
 				$( "#countdownkolom" ).text("jeda");
+
+				//saat tepat sekali user ngisi soal pas waktu dah deket, pastikan soal selanjutnya ga keliatan [kode ini hanya sesaat, soon it will be implemented (for debugging purpose)]
+				forceHide();
+
 				fetchNilai('S0JL');
 				detectClassRunningOut();
 				clearInterval(interval);
@@ -612,6 +661,10 @@
 				$('.tabelsoal').attr('hidden','true');
 				$( "#countdownkolom" ).addClass("break");
 				$( "#countdownkolom" ).text("jeda");
+
+				//saat tepat sekali user ngisi soal pas waktu dah deket, pastikan soal selanjutnya ga keliatan [kode ini hanya sesaat, soon it will be implemented (for debugging purpose)]
+				forceHide();
+
 				fetchNilai('S1JL');
 				detectClassRunningOut();
 				clearInterval(interval);
@@ -693,11 +746,15 @@
 				$('.brieftext').css('display','block');
 				$('.brieftext').text('Berikut adalah hasil pengerjaan');
 				$('.soalke30').attr('hidden','true');
-				$('#startbuttontest').css('display','block');
+				$('#menjelangendbutton').css('display','block');
 				$('#judulcard').text('Soal Huruf Selesai');
 				$('.tabelsoal').attr('hidden','true');
 				$( "#countdownkolom" ).addClass("break");
 				$( "#countdownkolom" ).text("jeda");
+
+				//saat tepat sekali user ngisi soal pas waktu dah deket, pastikan soal selanjutnya ga keliatan [kode ini hanya sesaat, soon it will be implemented (for debugging purpose)]
+				forceHide();
+
 				fetchNilai('S2JL');
 				detectClassRunningOut();
 				clearInterval(interval);
@@ -747,6 +804,11 @@
 		}, 1000);
 	}
 
+	function forceHide() {
+		$('.soaltest').attr('hidden','true');
+		$('.barisss').attr('hidden','true');
+	}
+
 	function fetchNilai(jsnya) {
 		var js = jsnya;
 
@@ -777,6 +839,7 @@
 			$('#JSalah').text('' + salah0 + '');
 			$('#JTidakDijawab').text('' + gadijawab0 + '');
 			$('#Nilainya').text('' + parseInt(nilai0) + '');
+			$('#tbnilaiS0JL').val(parseInt(nilai0));
 
 
 			$('#scoreresultLeft').css('display','unset');
@@ -809,6 +872,7 @@
 			$('#JSalah').text('' + salah1 + '');
 			$('#JTidakDijawab').text('' + gadijawab1 + '');
 			$('#Nilainya').text('' + parseInt(nilai1) + '');
+			$('#tbnilaiS1JL').val(parseInt(nilai1));
 
 			$('#scoreresultLeft').css('display','unset');
 			$('#scoreresultRight').css('display','unset');
@@ -840,6 +904,7 @@
 			$('#JSalah').text('' + salah2 + '');
 			$('#JTidakDijawab').text('' + gadijawab2 + '');
 			$('#Nilainya').text('' + parseInt(nilai2) + '');
+			$('#tbnilaiS2JL').val(parseInt(nilai2));
 
 			$('#scoreresultLeft').css('display','unset');
 			$('#scoreresultRight').css('display','unset');

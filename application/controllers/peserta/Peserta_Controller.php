@@ -182,4 +182,24 @@ class Peserta_Controller extends CI_Controller
 		$this->load->view('peserta/confirmation_page');
 		$this->load->view('peserta/footer');	
 	}
+
+	public function simpan_nilai()
+	{
+		$user_name = $this->input->post('tbusername');
+		$id_user = $this->input->post('tbiduser');
+		$tb_nilai1 = $this->input->post('tbnilai1');
+		$tb_nilai2 = $this->input->post('tbnilai2');
+		$tb_nilai3 = $this->input->post('tbnilai3');
+		
+		$datatbl= array(
+			'nilai1'		=> $tb_nilai1,
+			'nilai2'		=> $tb_nilai2,
+			'nilai3'		=> $tb_nilai3,
+			'id_user'	=> $id_user,
+			'username'	=> $user_name
+		);
+
+		$this->Xhilangmodel->lakukan_insert('tbl_nilai',$datatbl);
+		redirect('/login');
+	}
 }

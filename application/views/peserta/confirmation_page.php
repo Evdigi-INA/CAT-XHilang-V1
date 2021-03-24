@@ -17,6 +17,16 @@
 							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							<div hidden="true">
+							<?php foreach ($qinfo as $v) {
+								# code...
+							} ?>
+								<input type="text" name="tbiduser" id="tbiduser" value="<?php echo $v->id_user ?>">
+								<input type="text" name="tbusername" id="tbusername" value="<?php echo $v->username ?>">
+								<input type="text" name="tbnilaiS0JL" id="tbnilaiS0JL">
+								<input type="text" name="tbnilaiS1JL" id="tbnilaiS1JL">
+								<input type="text" name="tbnilaiS2JL" id="tbnilaiS2JL">
+							</div>
 						</p>
 						<div id="scoreresultLeft" style="display: none;">
 							<table>
@@ -325,16 +335,12 @@
 
 									?>
 								</table>
-								<table class="tabelbesttime">
-									<tr>
-										<td></td>
-									</tr>
-								</table>
 							</div>
 						</div>
 					</div>
 					<div class="card-footer" id="footercard">
 						<button class="btn btn-primary btn-md" id="startbuttontest" type="button" style="float: right;">Mulai Test</button>
+						<button class="btn btn-primary btn-md" id="menjelangendbutton" type="button" style="float: right; display: none;">Akhiri Test</button>
 					</div>
 				</div>
 			</form>
