@@ -37,7 +37,7 @@
 								<td><input type="text" class="tbsoal" id="tbsoalkolom1d" name="tbsoalkolom1d" value="<?php echo $ask1[3] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
 							    <td><input type="text" class="tbsoal" id="tbsoalkolom1e" name="tbsoalkolom1e" value="<?php echo $ask1[4] ?>" maxlength="1" style="width: 100%;text-align: center;"></td>
-	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Soal</button>
+	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
 						</tr>
 					</table>
@@ -71,32 +71,15 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom1" class="check-input" value="A" <?php if ($jb1[$o] == 'A') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-satu">
-				    								<input type="text" name="tbabaris<?php echo $i ?>kolom1" value="<?php echo $jl1[0] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
+			    								<input type="text" name="tb1baris<?php echo $i ?>kolom1" value="<?php echo $jl1[0] ?>" maxlength="1" style="width: 28px;text-align: center;">	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom1" class="check-input" value="B" <?php if ($jb1[$o] == 'B') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-dua">
-				    								<input type="text" name="tbbbaris<?php echo $i ?>kolom1" value="<?php echo $jl1[1] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
+			    								<input type="text" name="tb2baris<?php echo $i ?>kolom1" value="<?php echo $jl1[1] ?>" maxlength="1" style="width: 28px;text-align: center;">
 		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom1" class="check-input" value="C" <?php if ($jb1[$o] == 'C') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-tiga">
-				    								<input type="text" name="tbcbaris<?php echo $i ?>kolom1" value="<?php echo $jl1[2] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
+		    								<div class="radio-choice" style="display: flex; flex-direction: column;">			
+			    								<input type="text" name="tb3baris<?php echo $i ?>kolom1" value="<?php echo $jl1[2] ?>" maxlength="1" style="width: 28px;text-align: center;">					
 		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom1" class="check-input" value="D" <?php if ($jb1[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom1" value="<?php echo $jl1[3] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
+			    								<input type="text" name="tb4baris<?php echo $i ?>kolom1" value="<?php echo $jl1[3] ?>" maxlength="1" style="width: 28px;text-align: center;">
 		    								</div>
 										</div>	
 		    						</div>
@@ -108,7 +91,7 @@
 
 			    		} ?>
 	    				</table>
-	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Jawaban</button>
+	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Soal</button>
 					</form>
 	  			</div>
 	  		</div>
@@ -141,7 +124,7 @@
 	    text-align: center;"></td>
 	    						<td><input type="text" class="tbsoal" id="tbsoalkolom2e" name="tbsoalkolom2e" value="<?php echo $ask2[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Soal</button>
+	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
 						</tr>
 					</table>
@@ -176,32 +159,16 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom2" class="check-input" value="A" <?php if ($jb2[$o] == 'A') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-satu">
-				    								<input type="text" name="tbabaris<?php echo $i ?>kolom2" value="<?php echo $jl2[0] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
+			    								<input type="text" name="tb1baris<?php echo $i ?>kolom2" value="<?php echo $jl2[0] ?>" maxlength="1" style="width: 28px;text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom2" class="check-input" value="B" <?php if ($jb2[$o] == 'B') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-dua">
-				    								<input type="text" name="tbbbaris<?php echo $i ?>kolom2" value="<?php echo $jl2[1] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
+			    								<input type="text" name="tb2baris<?php echo $i ?>kolom2" value="<?php echo $jl2[1] ?>" maxlength="1" style="width: 28px;text-align: center;">
+		    								</div>
+		    								<div class="radio-choice" style="display: flex; flex-direction: column;">			
+				    							<input type="text" name="tb3baris<?php echo $i ?>kolom2" value="<?php echo $jl2[2] ?>" maxlength="1" style="width: 28px;text-align: center;">	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom2" class="check-input" value="C" <?php if ($jb2[$o] == 'C') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-tiga">
-				    								<input type="text" name="tbcbaris<?php echo $i ?>kolom2" value="<?php echo $jl2[2] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
-		    								</div>
-		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom2" class="check-input" value="D" <?php if ($jb2[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom2" value="<?php echo $jl2[3] ?>" maxlength="1" style="width: 28px;
-			    text-align: center;">
-				    							</label>	
+				    							<input type="text" name="tb4baris<?php echo $i ?>kolom2" value="<?php echo $jl2[3] ?>" maxlength="1" style="width: 28px;text-align: center;">	
 		    								</div>
 										</div>	
 		    						</div>
@@ -213,7 +180,7 @@
 
 			    		} ?>
 	    				</table>
-	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Jawaban</button>
+	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Soal</button>
 					</form>
 	  			</div>
 	  		</div>
@@ -246,7 +213,7 @@
 	    text-align: center;"></td>
 	    						<td><input type="text" class="tbsoal" id="tbsoalkolom3e" name="tbsoalkolom3e" value="<?php echo $ask3[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Soal</button>
+	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
 						</tr>
 					</table>
@@ -281,32 +248,20 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom3" class="check-input" value="A" <?php if ($jb2[$o] == 'A') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-satu">
-				    								<input type="text" name="tbabaris<?php echo $i ?>kolom3" value="<?php echo $jl3[0] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb1baris<?php echo $i ?>kolom3" value="<?php echo $jl3[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom3" class="check-input" value="B" <?php if ($jb2[$o] == 'B') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-dua">
-				    								<input type="text" name="tbbbaris<?php echo $i ?>kolom3" value="<?php echo $jl3[1] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb2baris<?php echo $i ?>kolom3" value="<?php echo $jl3[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom3" class="check-input" value="C" <?php if ($jb2[$o] == 'C') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-tiga">
-				    								<input type="text" name="tbcbaris<?php echo $i ?>kolom3" value="<?php echo $jl3[2] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb3baris<?php echo $i ?>kolom3" value="<?php echo $jl3[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom3" class="check-input" value="D" <?php if ($jb2[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom3" value="<?php echo $jl3[3] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb4baris<?php echo $i ?>kolom3" value="<?php echo $jl3[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 										</div>	
 		    						</div>
@@ -318,7 +273,7 @@
 
 			    		} ?>
 	    				</table>
-	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Jawaban</button>
+	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Soal</button>
 					</form>
 	  			</div>
 	  		</div>
@@ -350,7 +305,7 @@
 	    text-align: center;"></td>
 	    						<td><input type="text" class="tbsoal" id="tbsoalkolom4e" name="tbsoalkolom4e" value="<?php echo $ask4[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Soal</button>
+	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
 						</tr>
 					</table>
@@ -385,32 +340,20 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom4" class="check-input" value="A" <?php if ($jb4[$o] == 'A') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-satu">
-				    								<input type="text" name="tbabaris<?php echo $i ?>kolom4" value="<?php echo $jl4[0] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb1baris<?php echo $i ?>kolom4" value="<?php echo $jl4[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom4" class="check-input" value="B" <?php if ($jb4[$o] == 'B') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-dua">
-				    								<input type="text" name="tbbbaris<?php echo $i ?>kolom4" value="<?php echo $jl4[1] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb2baris<?php echo $i ?>kolom4" value="<?php echo $jl4[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom4" class="check-input" value="C" <?php if ($jb4[$o] == 'C') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-tiga">
-				    								<input type="text" name="tbcbaris<?php echo $i ?>kolom4" value="<?php echo $jl4[2] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb3baris<?php echo $i ?>kolom4" value="<?php echo $jl4[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom4" class="check-input" value="D" <?php if ($jb4[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom4" value="<?php echo $jl4[3] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb4baris<?php echo $i ?>kolom4" value="<?php echo $jl4[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 										</div>	
 		    						</div>
@@ -422,7 +365,7 @@
 
 			    		} ?>
 	    				</table>
-	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Jawaban</button>
+	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Soal</button>
 					</form>
 	  			</div>
 	  		</div>
@@ -457,7 +400,7 @@
 	    text-align: center;"></td>
 								<td><input type="text" class="tbsoal" id="tbsoalkolom5e" name="tbsoalkolom5e" value="<?php echo $ask5[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Soal</button>
+	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
 						</tr>
 					</table>
@@ -492,32 +435,20 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom5" class="check-input" value="A" <?php if ($jb5[$o] == 'A') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-satu">
-				    								<input type="text" name="tbabaris<?php echo $i ?>kolom5" value="<?php echo $jl5[0] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb1baris<?php echo $i ?>kolom5" value="<?php echo $jl5[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom5" class="check-input" value="B" <?php if ($jb5[$o] == 'B') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-dua">
-				    								<input type="text" name="tbbbaris<?php echo $i ?>kolom5" value="<?php echo $jl5[1] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb2baris<?php echo $i ?>kolom5" value="<?php echo $jl5[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom5" class="check-input" value="C" <?php if ($jb5[$o] == 'C') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-tiga">
-				    								<input type="text" name="tbcbaris<?php echo $i ?>kolom5" value="<?php echo $jl5[2] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb3baris<?php echo $i ?>kolom5" value="<?php echo $jl5[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom5" class="check-input" value="D" <?php if ($jb5[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom5" value="<?php echo $jl5[3] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb4baris<?php echo $i ?>kolom5" value="<?php echo $jl5[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 										</div>	
 		    						</div>
@@ -529,7 +460,7 @@
 
 			    		} ?>
 	    				</table>
-	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Jawaban</button>
+	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Soal</button>
 					</form>
 	  			</div>
 	  		</div>
@@ -562,7 +493,7 @@
 	    text-align: center;"></td>
 	    						<td><input type="text" class="tbsoal" id="tbsoalkolom6e" name="tbsoalkolom6e" value="<?php echo $ask6[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Soal</button>
+	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
 						</tr>
 					</table>
@@ -597,32 +528,20 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom6" class="check-input" value="A" <?php if ($jb6[$o] == 'A') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-satu">
-				    								<input type="text" name="tbabaris<?php echo $i ?>kolom6" value="<?php echo $jl6[0] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb1baris<?php echo $i ?>kolom6" value="<?php echo $jl6[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom6" class="check-input" value="B" <?php if ($jb6[$o] == 'B') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-dua">
-				    								<input type="text" name="tbbbaris<?php echo $i ?>kolom6" value="<?php echo $jl6[1] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb2baris<?php echo $i ?>kolom6" value="<?php echo $jl6[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom6" class="check-input" value="C" <?php if ($jb6[$o] == 'C') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-tiga">
-				    								<input type="text" name="tbcbaris<?php echo $i ?>kolom6" value="<?php echo $jl6[2] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb3baris<?php echo $i ?>kolom6" value="<?php echo $jl6[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom6" class="check-input" value="D" <?php if ($jb6[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom6" value="<?php echo $jl6[3] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb4baris<?php echo $i ?>kolom6" value="<?php echo $jl6[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 										</div>	
 		    						</div>
@@ -634,7 +553,7 @@
 
 			    		} ?>
 	    				</table>
-	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Jawaban</button>
+	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Soal</button>
 					</form>
 	  			</div>
 	  		</div>
@@ -667,7 +586,7 @@
 	    text-align: center;"></td>
 	    						<td><input type="text" class="tbsoal" id="tbsoalkolom7e" name="tbsoalkolom7e" value="<?php echo $ask7[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Soal</button>
+	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
 						</tr>
 					</table>
@@ -702,32 +621,20 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom7" class="check-input" value="A" <?php if ($jb7[$o] == 'A') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-satu">
-				    								<input type="text" name="tbabaris<?php echo $i ?>kolom7" value="<?php echo $jl7[0] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb1baris<?php echo $i ?>kolom7" value="<?php echo $jl7[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom7" class="check-input" value="B" <?php if ($jb7[$o] == 'B') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-dua">
-				    								<input type="text" name="tbbbaris<?php echo $i ?>kolom7" value="<?php echo $jl7[1] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb2baris<?php echo $i ?>kolom7" value="<?php echo $jl7[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom7" class="check-input" value="C" <?php if ($jb7[$o] == 'C') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-tiga">
-				    								<input type="text" name="tbcbaris<?php echo $i ?>kolom7" value="<?php echo $jl7[2] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb3baris<?php echo $i ?>kolom7" value="<?php echo $jl7[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom7" class="check-input" value="D" <?php if ($jb7[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom7" value="<?php echo $jl7[3] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb4baris<?php echo $i ?>kolom7" value="<?php echo $jl7[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 										</div>	
 		    						</div>
@@ -739,7 +646,7 @@
 
 			    		} ?>
 	    				</table>
-	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Jawaban</button>
+	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Soal</button>
 					</form>
 	  			</div>
 	  		</div>
@@ -772,7 +679,7 @@
 	    text-align: center;"></td>
 	    						<td><input type="text" class="tbsoal" id="tbsoalkolom8e" name="tbsoalkolom8e" value="<?php echo $ask8[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Soal</button>
+	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
 						</tr>
 					</table>
@@ -807,32 +714,20 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom8" class="check-input" value="A" <?php if ($jb8[$o] == 'A') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-satu">
-				    								<input type="text" name="tbabaris<?php echo $i ?>kolom8" value="<?php echo $jl8[0] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb1baris<?php echo $i ?>kolom8" value="<?php echo $jl8[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom8" class="check-input" value="B" <?php if ($jb8[$o] == 'B') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-dua">
-				    								<input type="text" name="tbbbaris<?php echo $i ?>kolom8" value="<?php echo $jl8[1] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb2baris<?php echo $i ?>kolom8" value="<?php echo $jl8[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom8" class="check-input" value="C" <?php if ($jb8[$o] == 'C') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-tiga">
-				    								<input type="text" name="tbcbaris<?php echo $i ?>kolom8" value="<?php echo $jl8[2] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb3baris<?php echo $i ?>kolom8" value="<?php echo $jl8[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom8" class="check-input" value="D" <?php if ($jb8[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom8" value="<?php echo $jl8[3] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb4baris<?php echo $i ?>kolom8" value="<?php echo $jl8[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 										</div>	
 		    						</div>
@@ -844,7 +739,7 @@
 
 			    		} ?>
 	    				</table>
-	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Jawaban</button>
+	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Soal</button>
 					</form>
 	  			</div>
 	  		</div>
@@ -879,7 +774,7 @@
 	    text-align: center;"></td>
 	    						<td><input type="text" class="tbsoal" id="tbsoalkolom9e" name="tbsoalkolom9e" value="<?php echo $ask9[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Soal</button>
+	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
 						</tr>
 					</table>
@@ -914,32 +809,20 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom9" class="check-input" value="A" <?php if ($jb9[$o] == 'A') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-satu">
-				    								<input type="text" name="tbabaris<?php echo $i ?>kolom9" value="<?php echo $jl9[0] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb1baris<?php echo $i ?>kolom9" value="<?php echo $jl9[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom9" class="check-input" value="B" <?php if ($jb9[$o] == 'B') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-dua">
-				    								<input type="text" name="tbbbaris<?php echo $i ?>kolom9" value="<?php echo $jl9[1] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb2baris<?php echo $i ?>kolom9" value="<?php echo $jl9[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom9" class="check-input" value="C" <?php if ($jb9[$o] == 'C') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-tiga">
-				    								<input type="text" name="tbcbaris<?php echo $i ?>kolom9" value="<?php echo $jl9[2] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb3baris<?php echo $i ?>kolom9" value="<?php echo $jl9[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom9" class="check-input" value="D" <?php if ($jb9[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom9" value="<?php echo $jl9[3] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb4baris<?php echo $i ?>kolom9" value="<?php echo $jl9[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 										</div>	
 		    						</div>
@@ -951,7 +834,7 @@
 
 			    		} ?>
 	    				</table>
-	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Jawaban</button>
+	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Soal</button>
 					</form>
 	  			</div>
 	  		</div>
@@ -983,7 +866,7 @@
 	    text-align: center;"></td>
 	    						<td><input type="text" class="tbsoal" id="tbsoalkolom10e" name="tbsoalkolom10e" value="<?php echo $ask10[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Soal</button>
+	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
 						</tr>
 					</table>
@@ -1018,32 +901,20 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom10" class="check-input" value="A" <?php if ($jb10[$o] == 'A') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-satu">
-				    								<input type="text" name="tbabaris<?php echo $i ?>kolom10" value="<?php echo $jl10[0] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb1baris<?php echo $i ?>kolom10" value="<?php echo $jl10[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom10" class="check-input" value="B" <?php if ($jb10[$o] == 'B') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-dua">
-				    								<input type="text" name="tbbbaris<?php echo $i ?>kolom10" value="<?php echo $jl10[1] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb2baris<?php echo $i ?>kolom10" value="<?php echo $jl10[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom10" class="check-input" value="C" <?php if ($jb10[$o] == 'C') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label" for="jawaban-tiga">
-				    								<input type="text" name="tbcbaris<?php echo $i ?>kolom10" value="<?php echo $jl10[2] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb3baris<?php echo $i ?>kolom10" value="<?php echo $jl10[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-		    									<input type="radio" name="radiobaris<?php echo $i ?>kolom10" class="check-input" value="D" <?php if ($jb10[$o] == 'D') { echo "checked"; } else { echo ""; }?>>
-				    							<label class="form-check-label">
-				    								<input type="text" name="tbdbaris<?php echo $i ?>kolom10" value="<?php echo $jl10[3] ?>" maxlength="1" style="width: 28px;
+				    								<input type="text" name="tb4baris<?php echo $i ?>kolom10" value="<?php echo $jl10[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
-				    							</label>	
 		    								</div>
 										</div>	
 		    						</div>
@@ -1055,7 +926,7 @@
 
 			    		} ?>
 	    				</table>
-	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Jawaban</button>
+	    				<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 5px; width: 100%; position: sticky; bottom: 10px;" >Update Soal</button>
 					</form>
 	  			</div>
 	  		</div>

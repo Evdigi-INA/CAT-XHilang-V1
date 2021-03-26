@@ -285,11 +285,10 @@ class Admin_Controller extends CI_Controller
 	function updatelistjawaban() {
 		$idkolomjawabannya = $this->input->get('idkolomjawaban');
 		$kolomnya = $this->input->get('kolomsoal');
-		$i=1;
+		$i=1;	
 		$u=0;
-		$ap = array('a','b','c','d');
+		$ap = array('1','2','3','4');
 		$output = '';
-		$output1 ='';
 
 		if ($kolomnya == 'KLM01') { //JIKA Kolom 1
 			do{ //lakukan
@@ -297,9 +296,7 @@ class Admin_Controller extends CI_Controller
 					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom1'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
 					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
 					$output.= $a[$i].' ';
-				}
-				$b[$i] = $this->input->post('radiobaris'.$i.'kolom1'); //mengambil nilai radio sesuai yang dipilih
-				$output1.= $b[$i]; 
+				} 
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
@@ -310,9 +307,7 @@ class Admin_Controller extends CI_Controller
 					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom2'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
 					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
 					$output.= $a[$i].' ';
-				}
-				$b[$i] = $this->input->post('radiobaris'.$i.'kolom2'); //mengambil nilai radio sesuai yang dipilih
-				$output1.= $b[$i]; 
+				} 
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
@@ -323,9 +318,7 @@ class Admin_Controller extends CI_Controller
 					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom3'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
 					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
 					$output.= $a[$i].' ';
-				}
-				$b[$i] = $this->input->post('radiobaris'.$i.'kolom3'); //mengambil nilai radio sesuai yang dipilih
-				$output1.= $b[$i]; 
+				} 
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
@@ -336,9 +329,7 @@ class Admin_Controller extends CI_Controller
 					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom4'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
 					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
 					$output.= $a[$i].' ';
-				}
-				$b[$i] = $this->input->post('radiobaris'.$i.'kolom4'); //mengambil nilai radio sesuai yang dipilih
-				$output1.= $b[$i]; 
+				} 
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
@@ -349,9 +340,7 @@ class Admin_Controller extends CI_Controller
 					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom5'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
 					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
 					$output.= $a[$i].' ';
-				}
-				$b[$i] = $this->input->post('radiobaris'.$i.'kolom5'); //mengambil nilai radio sesuai yang dipilih
-				$output1.= $b[$i]; 
+				} 
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
@@ -362,9 +351,7 @@ class Admin_Controller extends CI_Controller
 					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom6'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
 					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
 					$output.= $a[$i].' ';
-				}
-				$b[$i] = $this->input->post('radiobaris'.$i.'kolom6'); //mengambil nilai radio sesuai yang dipilih
-				$output1.= $b[$i]; 
+				} 
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
@@ -375,9 +362,7 @@ class Admin_Controller extends CI_Controller
 					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom7'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
 					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
 					$output.= $a[$i].' ';
-				}
-				$b[$i] = $this->input->post('radiobaris'.$i.'kolom7'); //mengambil nilai radio sesuai yang dipilih
-				$output1.= $b[$i]; 
+				} 
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
@@ -388,9 +373,7 @@ class Admin_Controller extends CI_Controller
 					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom8'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
 					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
 					$output.= $a[$i].' ';
-				}
-				$b[$i] = $this->input->post('radiobaris'.$i.'kolom8'); //mengambil nilai radio sesuai yang dipilih
-				$output1.= $b[$i]; 
+				} 
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
@@ -401,9 +384,7 @@ class Admin_Controller extends CI_Controller
 					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom9'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
 					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
 					$output.= $a[$i].' ';
-				}
-				$b[$i] = $this->input->post('radiobaris'.$i.'kolom9'); //mengambil nilai radio sesuai yang dipilih
-				$output1.= $b[$i]; 
+				} 
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
@@ -414,22 +395,18 @@ class Admin_Controller extends CI_Controller
 					$a[$i] = $this->input->post('tb'.$k[$u].'baris'.$i.'kolom10'); //ambil isi2 textbox yang totalnya ada 4 (sebanyak pilihan yang ditentuin yaitu a b c d)
 					//echo $a[$i].' : Textbox  baris '.$i.'<br>'; //munculin nilai for debug only
 					$output.= $a[$i].' ';
-				}
-				$b[$i] = $this->input->post('radiobaris'.$i.'kolom10'); //mengambil nilai radio sesuai yang dipilih
-				$output1.= $b[$i]; 
+				} 
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
 			while ($i <= 30 && $u < count($ap));
 		}
-		
+
 		if ($idkolomjawabannya == 'S0JL') {
 			$nganu = wordwrap($output, 8, '-', true); //kumpulkan ke variabel nganu daftar jawaban pada tbnya, sekalian di trim
-			$nganu2 = wordwrap($output1,1,'-',true);
 			//echo wordwrap($nganu2); debug only
 			$data = array(
-				'listjawaban' => $nganu,
-				'jawabanbenar' => $nganu2
+				'listjawaban' => $nganu
 			);
 
 			$where = array(
@@ -444,11 +421,9 @@ class Admin_Controller extends CI_Controller
 		
 		} elseif ($idkolomjawabannya == 'S1JL') {
 			$nganu = wordwrap($output, 8, '-', true); //kumpulkan ke variabel nganu daftar jawaban pada tbnya, sekalian di trim
-			$nganu2 = wordwrap($output1,1,'-',true);
 			//echo wordwrap($nganu2); debug only
 			$data = array(
-				'listjawaban' => $nganu,
-				'jawabanbenar' => $nganu2
+				'listjawaban' => $nganu
 			);
 
 			$where = array(
@@ -462,11 +437,9 @@ class Admin_Controller extends CI_Controller
     		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S002') </script>";
 		} else {
 			$nganu = wordwrap($output, 12, '-', true); //kumpulkan ke variabel nganu daftar jawaban pada tbnya, sekalian di trim (12 karena UTF8 Simbol, beda dengan yang diatur ke 8)
-			$nganu2 = wordwrap($output1,1,'-',true);
 			//echo wordwrap($nganu2); debug only
 			$data = array(
-				'listjawaban' => $nganu,
-				'jawabanbenar' => $nganu2
+				'listjawaban' => $nganu
 			);
 
 			$where = array(
@@ -481,8 +454,6 @@ class Admin_Controller extends CI_Controller
 		}
 		
 		//echo 'this is the fucking output and it will be ready to be inserted to the facking database!: '.wordwrap($output, 12, '-', true); //debug only
-		
-
 
 	}
 

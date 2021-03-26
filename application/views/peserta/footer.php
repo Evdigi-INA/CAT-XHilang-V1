@@ -39,17 +39,22 @@
 		$('#startbuttontest').click(function(){
 			$('.soaltest').attr('hidden','true');
 			$('.barisss').attr('hidden','true');
+			$('.barispilihan').attr('hidden','true');
+
 			if(jenissoal == 'S1JL') {
 				$('#jenissoalnya').text('Soal Huruf - Kolom 1');
 				$('.soalke11').removeAttr('hidden');
+				$('.listsoalke301').removeAttr('hidden');
 				$('#countdownkolom').css('display','unset');
 			} else if (jenissoal == 'S2JL') {
 				$('#jenissoalnya').text('Soal Simbol - Kolom 1');
 				$('.soalke21').removeAttr('hidden');
+				$('.listsoalke601').removeAttr('hidden');
 				$('#countdownkolom').css('display','unset');
 			} else {
 				$('#jenissoalnya').text('Soal Angka - Kolom 1');
 				$('.soalke1').removeAttr('hidden');
+				$('.listsoalke1').removeAttr('hidden');
 				$('#countdownkolom').css('display','unset');
 			}
 			index++;
@@ -102,6 +107,7 @@
 	function nextquest(){
 		$('.soaltest').attr('hidden','true');
 		$('.barisss').attr('hidden','true');
+		$('.barispilihan').attr('hidden','true');
 		if (index <= max) {
 			if (index == 299 || index == 599 || index == 899){
 				status = 'Break';
@@ -111,6 +117,7 @@
 				status = 'Mengerjakan';
 				index++;
 				$('.barisnya' + barisny[index]).removeAttr('hidden');
+				$('.listsoalke' + barisny[index]).removeAttr('hidden');
 				$('#judulcard').text('Soal ' + barisny[index]);
 				//console.log(index + '(Telah Dikerjakan)');	
 
@@ -122,14 +129,17 @@
 		if (index < columnsoalcheckpoint[1] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 1');
 			$('.soalke1').removeAttr('hidden');
-			/*if (index == columnsoalcheckpoint[1]) {
+			
+			if (index == columnsoalcheckpoint[1]) {
 				runTimer();
 				//console.log('Restarted')
-			}*/
+				detectClassRunningOut();
+			}
 			soalke = '1';
 		} else if (index < columnsoalcheckpoint[2] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 2');
 			$('.soalke2').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[1]) {
 				runTimer();
 				//console.log('Restarted');
@@ -139,6 +149,7 @@
 		} else if (index < columnsoalcheckpoint[3] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 3');
 			$('.soalke3').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[2]) {
 				runTimer();
 				//console.log('Restarted');
@@ -148,6 +159,7 @@
 		} else if (index < columnsoalcheckpoint[4] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 4');
 			$('.soalke4').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[3]) {
 				runTimer();
 				//console.log('Restarted');
@@ -157,6 +169,7 @@
 		} else if (index < columnsoalcheckpoint[5] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 5');
 			$('.soalke5').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[4]) {
 				runTimer();
 				//console.log('Restarted');
@@ -166,6 +179,7 @@
 		} else if (index < columnsoalcheckpoint[6] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 6');
 			$('.soalke6').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[5]) {
 				runTimer();
 				//console.log('Restarted');
@@ -175,6 +189,7 @@
 		} else if (index < columnsoalcheckpoint[7] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 7');
 			$('.soalke7').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[6]) {
 				runTimer();
 				//console.log('Restarted');
@@ -184,6 +199,7 @@
 		} else if (index < columnsoalcheckpoint[8] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 8');
 			$('.soalke8').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[7]) {
 				runTimer();
 				//console.log('Restarted');
@@ -193,6 +209,7 @@
 		} else if (index < columnsoalcheckpoint[9] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 9');
 			$('.soalke9').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[8]) {
 				runTimer();
 				//console.log('Restarted');
@@ -202,6 +219,7 @@
 		} else if (index < columnsoalcheckpoint[10] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 10');
 			$('.soalke10').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[9]) {
 				runTimer();
 				//console.log('Restarted');
@@ -221,6 +239,7 @@
 				$('.brieftext').css('display','block');
 				$('.brieftext').text('Berikut adalah hasil pengerjaan');
 				$('.soalke10').attr('hidden','true');
+				
 				$('#startbuttontest').css('display','block');
 				$('#judulcard').text('Soal Angka Selesai');
 				$('.tabelsoal').attr('hidden','true');
@@ -238,6 +257,7 @@
 		} else if (index < columnsoalcheckpoint[11] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 1');
 			$('.soalke11').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[10]) {
 				runTimer();
 				//console.log('Restarted');
@@ -247,6 +267,7 @@
 		} else if (index < columnsoalcheckpoint[12] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 2');
 			$('.soalke12').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[11]) {
 				runTimer();
 				//console.log('Restarted');
@@ -256,6 +277,7 @@
 		} else if (index < columnsoalcheckpoint[13] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 3');
 			$('.soalke13').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[12]) {
 				runTimer();
 				//console.log('Restarted');
@@ -265,6 +287,7 @@
 		} else if (index < columnsoalcheckpoint[14] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 4');
 			$('.soalke14').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[13]) {
 				runTimer();
 				//console.log('Restarted');
@@ -274,6 +297,7 @@
 		} else if (index < columnsoalcheckpoint[15] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 5');
 			$('.soalke15').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[14]) {
 				runTimer();
 				//console.log('Restarted');
@@ -283,6 +307,7 @@
 		} else if (index < columnsoalcheckpoint[16] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 6');
 			$('.soalke16').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[15]) {
 				runTimer();
 				//console.log('Restarted');
@@ -292,6 +317,7 @@
 		} else if (index < columnsoalcheckpoint[17] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 7');
 			$('.soalke17').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[16]) {
 				runTimer();
 				//console.log('Restarted');
@@ -301,6 +327,7 @@
 		} else if (index < columnsoalcheckpoint[18] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 8');
 			$('.soalke18').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[17]) {
 				runTimer();
 				//console.log('Restarted');
@@ -310,6 +337,7 @@
 		} else if (index < columnsoalcheckpoint[19] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 9');
 			$('.soalke19').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[18]) {
 				runTimer();
 				//console.log('Restarted');
@@ -319,6 +347,7 @@
 		} else if (index < columnsoalcheckpoint[20] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Huruf - Kolom 10');
 			$('.soalke20').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[19]) {
 				runTimer();
 				//console.log('Restarted');
@@ -354,6 +383,7 @@
 		} else if (index < columnsoalcheckpoint[21] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 1');
 			$('.soalke21').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[20]) {
 				runTimer();
 				//console.log('Restarted');
@@ -364,6 +394,7 @@
 		} else if (index < columnsoalcheckpoint[22] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 2');
 			$('.soalke22').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[21]) {
 				runTimer();
 				//console.log('Restarted');
@@ -373,6 +404,7 @@
 		} else if (index < columnsoalcheckpoint[23] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 3');
 			$('.soalke23').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[22]) {
 				runTimer();
 				//console.log('Restarted');
@@ -382,6 +414,7 @@
 		} else if (index < columnsoalcheckpoint[24] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 4');
 			$('.soalke24').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[23]) {
 				runTimer();
 				//console.log('Restarted');
@@ -391,6 +424,7 @@
 		} else if (index < columnsoalcheckpoint[25] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 5');
 			$('.soalke25').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[24]) {
 				runTimer();
 				//console.log('Restarted');
@@ -400,6 +434,7 @@
 		} else if (index < columnsoalcheckpoint[26] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 6');
 			$('.soalke26').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[25]) {
 				runTimer();
 				//console.log('Restarted');
@@ -409,6 +444,7 @@
 		} else if (index < columnsoalcheckpoint[27] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 7');
 			$('.soalke27').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[26]) {
 				runTimer();
 				//console.log('Restarted');
@@ -418,6 +454,7 @@
 		} else if (index < columnsoalcheckpoint[28] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 8');
 			$('.soalke28').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[27]) {
 				runTimer();
 				//console.log('Restarted');
@@ -427,6 +464,7 @@
 		} else if (index < columnsoalcheckpoint[29] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Simbol - Kolom 9');
 			$('.soalke29').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[28]) {
 				runTimer();
 				//console.log('Restarted');
@@ -436,6 +474,7 @@
 		} else if (index < columnsoalcheckpoint[30] && status=='Mengerjakan'){
 			$('#jenissoalnya').text('Soal Simbol - Kolom 10');
 			$('.soalke30').removeAttr('hidden');
+			
 			if (index == columnsoalcheckpoint[29]) {
 				runTimer();
 				//console.log('Restarted');
@@ -481,12 +520,14 @@
 
 	function refreshQuest() {
 		$('.barisnya' + barisny[index]).removeAttr('hidden');
+		$('.listsoalke' + barisny[index]).removeAttr('hidden');
 		$('#judulcard').text('Soal ' + barisny[index]);
 	}
 
 	function pindahKolom() {
 		$('.soaltest').attr('hidden','true');
 		$('.barisss').attr('hidden','true');
+		$('.barispilihan').attr('hidden','true');
 		if (soalke == '1') 
 		{
 			index = columnsoalcheckpoint[1];				
@@ -494,12 +535,14 @@
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Angka - Kolom 2');
 			$('.soalke2').removeAttr('hidden');
+			
 			soalke = '2';
 		} else if (soalke == '2') {
 			index = columnsoalcheckpoint[2];
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Angka - Kolom 3');
+			
 			$('.soalke3').removeAttr('hidden');
 			soalke = '3';
 		} else if (soalke == '3') {
@@ -507,6 +550,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Angka - Kolom 4');
+			
 			$('.soalke4').removeAttr('hidden');
 			soalke = '4';
 		} else if (soalke == '4') {
@@ -514,6 +558,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Angka - Kolom 5');
+			
 			$('.soalke5').removeAttr('hidden');
 			soalke = '5';
 		} else if (soalke == '5') {
@@ -521,6 +566,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Angka - Kolom 6');
+			
 			$('.soalke6').removeAttr('hidden');
 			soalke = '6';
 		} else if (soalke == '6') {
@@ -528,6 +574,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Angka - Kolom 7');
+			
 			$('.soalke7').removeAttr('hidden');
 			soalke = '7';
 		} else if (soalke == '7') {
@@ -535,6 +582,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Angka - Kolom 8');
+			
 			$('.soalke8').removeAttr('hidden');
 			soalke = '8';
 		} else if (soalke == '8') {
@@ -542,6 +590,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Angka - Kolom 9');
+			
 			$('.soalke9').removeAttr('hidden');
 			soalke = '9';
 		} else if (soalke == '9') {
@@ -549,6 +598,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Angka - Kolom 10');
+			
 			$('.soalke10').removeAttr('hidden');
 			soalke = '10';
 		} else if (soalke == '10') {
@@ -564,6 +614,7 @@
 				$('#jenissoalnya').text('Hasil Pengerjaan Soal Angka');
 				$('.brieftext').css('display','block');
 				$('.brieftext').text('Berikut adalah hasil pengerjaan');
+				
 				$('.soalke10').attr('hidden','true');
 				$('#startbuttontest').css('display','block');
 				$('#judulcard').text('Soal Angka Selesai');
@@ -584,6 +635,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Huruf - Kolom 2');
+			
 			$('.soalke12').removeAttr('hidden');
 			soalke = '12';
 		} else if (soalke == '12') {
@@ -591,6 +643,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Huruf - Kolom 3');
+			
 			$('.soalke13').removeAttr('hidden');
 			soalke = '13';
 		} else if (soalke == '13') {
@@ -598,6 +651,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Huruf - Kolom 4');
+			
 			$('.soalke14').removeAttr('hidden');
 			soalke = '14';
 		} else if (soalke == '14') {
@@ -605,6 +659,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Huruf - Kolom 5');
+			
 			$('.soalke15').removeAttr('hidden');
 			soalke = '15';
 		} else if (soalke == '15') {
@@ -612,6 +667,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Huruf - Kolom 6');
+			
 			$('.soalke16').removeAttr('hidden');
 			soalke = '16';
 		} else if (soalke == '16') {
@@ -619,6 +675,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Huruf - Kolom 7');
+			
 			$('.soalke17').removeAttr('hidden');
 			soalke = '17';
 		} else if (soalke == '17') {
@@ -626,6 +683,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Huruf - Kolom 8');
+			
 			$('.soalke18').removeAttr('hidden');
 			soalke = '18';
 		} else if (soalke == '18') {
@@ -633,6 +691,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Huruf - Kolom 9');
+			
 			$('.soalke19').removeAttr('hidden');
 			soalke = '19';
 		} else if (soalke == '19') {
@@ -640,6 +699,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Huruf - Kolom 10');
+			
 			$('.soalke20').removeAttr('hidden');
 			soalke = '20';
 		} else if (soalke == '20') {
@@ -675,6 +735,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Simbol - Kolom 2');
+			
 			$('.soalke22').removeAttr('hidden');
 			soalke = '22';
 		} else if (soalke == '22') {
@@ -682,6 +743,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Simbol - Kolom 3');
+			
 			$('.soalke23').removeAttr('hidden');
 			soalke = '23';
 		} else if (soalke == '13') {
@@ -689,6 +751,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Simbol - Kolom 4');
+			
 			$('.soalke24').removeAttr('hidden');
 			soalke = '24';
 		} else if (soalke == '14') {
@@ -696,6 +759,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Simbol - Kolom 5');
+			
 			$('.soalke25').removeAttr('hidden');
 			soalke = '25';
 		} else if (soalke == '25') {
@@ -703,6 +767,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Simbol - Kolom 6');
+			
 			$('.soalke26').removeAttr('hidden');
 			soalke = '26';
 		} else if (soalke == '26') {
@@ -710,6 +775,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Simbol - Kolom 7');
+			
 			$('.soalke27').removeAttr('hidden');
 			soalke = '27';
 		} else if (soalke == '27') {
@@ -717,6 +783,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Simbol - Kolom 8');
+			
 			$('.soalke28').removeAttr('hidden');
 			soalke = '28';
 		} else if (soalke == '28') {
@@ -724,6 +791,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Simbol - Kolom 9');
+			
 			$('.soalke29').removeAttr('hidden');
 			soalke = '29';
 		} else if (soalke == '29') {
@@ -731,6 +799,7 @@
 			runTimer();
 			refreshQuest();
 			$('#jenissoalnya').text('Soal Simbol - Kolom 10');
+			
 			$('.soalke30').removeAttr('hidden');
 			soalke = '30';
 		} else if (soalke == '30') {
@@ -813,31 +882,48 @@
 		var js = jsnya;
 
 		if (js == 'S0JL') {
-			var gadijawab0 = 0 + 1;
+			var datasoal0 = Array();
+			var datajawaban0 = Array();
+			var gadijawab0 = 0;
 			var salah0 = 0;
-			var bener0 = 0;
+			var benar0 = 0;
 			var nilai0 = 0;
-			$('table.tablebarisjawabandandijawab > tbody > tr').slice(0,299).each(function(){
+			
+			//collect data jawaban fro kolom 2
+			$('table.tablebarisjawabandandijawab > tbody > tr').slice(0,300).each(function(o){
 			    tds0 = $(this).find('td');
-			    if($(tds0[1]).text() == $(tds0[0]).text()){
-					bener0++;
-					nilai0 += 0.3334; //saat mendapat point
-			    } else if($(tds0[1]).text() == '-') {
-					gadijawab0++;
-			    } else if($(tds0[1]).text() != $(tds0[0]).text()) {
-					salah0++;
-			    } else {
-					console.warn('Error: refer to the code');
-				}
+  				datajawaban0[o] = $(tds0[0]).text();
 			});
 
-		    if (gadijawab0 == 1) {
-		    	gadijawab0 = 0;
-		    }
+			//collect data soal
+			$("table.soalny > tbody > tr.barisss").slice(0,300).each(function(i, v){
+			  datasoal0[i] = Array();
+			  $(this).children('td').each(function(ii, vv){
+			    datasoal0[i][ii] = $(this).text();
+			  }); 
+			});
+			//console.log('soalnya : ' + datasoal);
+			//console.log('jawaban : ' + datajawaban);
 
-			$('#JBenar').text('' + bener0 + '');
+		    var x = 0;
+		    //buat perulangan
+			do {
+				//make sure the jawaban we got ada pada salah satu index array yang mana berisi 4 value (im make it comparison or 'make sure it was included')
+				if(datasoal0[x].includes(datajawaban0[x])){
+					salah0++;
+				} else {
+					benar0++;
+					nilai0+= 0.3334; //saat mendapat point
+				}
+				x++;
+			}
+			while(x < 300);
+			//console.log('Benar : ' + benar);
+			//console.log('Salah : ' + salah);
+
+			$('#JBenar').text('' + benar0 + '');
 			$('#JSalah').text('' + salah0 + '');
-			$('#JTidakDijawab').text('' + gadijawab0 + '');
+			//$('#JTidakDijawab').text('' + gadijawab0 + '');
 			$('#Nilainya').text('' + parseInt(nilai0) + '');
 			$('#tbnilaiS0JL').val(parseInt(nilai0));
 
@@ -846,65 +932,97 @@
 			$('#scoreresultRight').css('display','unset');
 
 		} else if(js == 'S1JL') {
+			var datasoal1 = Array();
+			var datajawaban1 = Array();
 			var gadijawab1 = 0 + 1;
 			var salah1 = 0;
-			var bener1 = 0;
+			var benar1 = 0;
 			var nilai1 = 0;
-			$('table.tablebarisjawabandandijawab > tbody > tr').slice(300,599).each(function(){
+			
+			//collect data jawaban fro kolom 2
+			$('table.tablebarisjawabandandijawab > tbody > tr').slice(301,600).each(function(o){
 			    tds1 = $(this).find('td');
-			    if($(tds1[1]).text() == $(tds1[0]).text()){
-					bener1++;
-					nilai1 += 0.3334; //saat mendapat point
-			    } else if($(tds1[1]).text() == '-') {
-					gadijawab1++;
-			    } else if($(tds1[1]).text() != $(tds1[0]).text()) {
-					salah1++;
-			    } else {
-					console.warn('Error: refer to the code');
-				}
+  				datajawaban1[o] = $(tds1[0]).text();
 			});
 
-		    if (gadijawab1 == 1) {
-		    	gadijawab1 = 0;
-		    }
+			//collect data soal
+			$("table.soalny > tbody > tr.barisss").slice(301,600).each(function(i, v){
+			  datasoal1[i] = Array();
+			  $(this).children('td').each(function(ii, vv){
+			    datasoal1[i][ii] = $(this).text();
+			  }); 
+			});
+			//console.log('soalnya : ' + datasoal);
+			//console.log('jawaban : ' + datajawaban);
 
-			$('#JBenar').text('' + bener1 + '');
+		    var x = 301;
+			do {
+				if(datasoal1[x].includes(datajawaban1[x])){
+					salah1++;
+				} else {
+					benar1++;
+					nilai1+= 0.3334; //saat mendapat point
+				}
+				x++;
+			}
+			while(x < 599);
+			//console.log('Benar : ' + benar);
+			//console.log('Salah : ' + salah);
+
+			$('#JBenar').text('' + benar1 + '');
 			$('#JSalah').text('' + salah1 + '');
-			$('#JTidakDijawab').text('' + gadijawab1 + '');
+			//$('#JTidakDijawab').text('' + gadijawab1 + '');
 			$('#Nilainya').text('' + parseInt(nilai1) + '');
-			$('#tbnilaiS1JL').val(parseInt(nilai1));
+			$('#tbnilaiS0JL').val(parseInt(nilai1));
+
 
 			$('#scoreresultLeft').css('display','unset');
 			$('#scoreresultRight').css('display','unset');
 
 		} else if(js == 'S2JL') {
+			var datasoal2 = Array();
+			var datajawaban2 = Array();
 			var gadijawab2 = 0 + 1;
 			var salah2 = 0;
-			var bener2 = 0;
+			var benar2 = 0;
 			var nilai2 = 0;
-			$('table.tablebarisjawabandandijawab > tbody > tr').slice(600,899).each(function(){
+			
+			//collect data jawaban fro kolom 2
+			$('table.tablebarisjawabandandijawab > tbody > tr').slice(601,900).each(function(o){
 			    tds2 = $(this).find('td');
-			    if($(tds2[1]).text() == $(tds2[0]).text()){
-					bener2++;
-					nilai2 += 0.3334; //saat mendapat point
-			    } else if($(tds2[1]).text() == '-') {
-					gadijawab2++;
-			    } else if($(tds2[1]).text() != $(tds2[0]).text()) {
-					salah2++;
-			    } else {
-					console.warn('Error: refer to the code');
-				}
+  				datajawaban2[o] = $(tds2[0]).text();
 			});
 
-		    if (gadijawab2 == 1) {
-		    	gadijawab2 = 0;
-		    }
+			//collect data soal
+			$("table.soalny > tbody > tr.barisss").slice(601,900).each(function(i, v){
+			  datasoal2[i] = Array();
+			  $(this).children('td').each(function(ii, vv){
+			    datasoal2[i][ii] = $(this).text();
+			  }); 
+			});
+			//console.log('soalnya : ' + datasoal);
+			//console.log('jawaban : ' + datajawaban);
 
-			$('#JBenar').text('' + bener2 + '');
+		    var x = 0;
+			do {
+				if(datasoal2[x].includes(datajawaban2[x])){
+					salah2++;
+				} else {
+					benar2++;
+					nilai2+= 0.3334; //saat mendapat point
+				};
+				x++;
+			}
+			while(x < 300);
+			//console.log('Benar : ' + benar);
+			//console.log('Salah : ' + salah);
+
+			$('#JBenar').text('' + benar2 + '');
 			$('#JSalah').text('' + salah2 + '');
-			$('#JTidakDijawab').text('' + gadijawab2 + '');
+			//$('#JTidakDijawab').text('' + gadijawab2 + '');
 			$('#Nilainya').text('' + parseInt(nilai2) + '');
-			$('#tbnilaiS2JL').val(parseInt(nilai2));
+			$('#tbnilaiS0JL').val(parseInt(nilai2));
+
 
 			$('#scoreresultLeft').css('display','unset');
 			$('#scoreresultRight').css('display','unset');

@@ -146,6 +146,37 @@ class Peserta_Controller extends CI_Controller
 			"kolom" => "KLM10"
 		);
 
+		$data['soal1'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom1a);
+		$data['soal2'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom2a);
+		$data['soal3'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom3a);
+		$data['soal4'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom4a);
+		$data['soal5'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom5a);
+		$data['soal6'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom6a);
+		$data['soal7'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom7a);
+		$data['soal8'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom8a);
+		$data['soal9'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom9a);
+		$data['soal10'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom10a);
+		$data['soal11'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom1b);
+		$data['soal12'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom2b);
+		$data['soal13'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom3b);
+		$data['soal14'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom4b);
+		$data['soal15'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom5b);
+		$data['soal16'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom6b);
+		$data['soal17'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom7b);
+		$data['soal18'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom8b);
+		$data['soal19'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom9b);
+		$data['soal20'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom10b);
+		$data['soal21'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom1c);
+		$data['soal22'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom2c);
+		$data['soal23'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom3c);
+		$data['soal24'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom4c);
+		$data['soal25'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom5c);
+		$data['soal26'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom6c);
+		$data['soal27'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom7c);
+		$data['soal28'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom8c);
+		$data['soal29'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom9c);
+		$data['soal30'] = $this->Xhilangmodel->tampil_soal2($jenissoalkolom10c);
+
 		$data['datajawabanlistkolom1a'] = $this->Xhilangmodel->listjawaban($jenissoalkolom1a);
 		$data['datajawabanlistkolom2a'] = $this->Xhilangmodel->listjawaban($jenissoalkolom2a);
 		$data['datajawabanlistkolom3a'] = $this->Xhilangmodel->listjawaban($jenissoalkolom3a);

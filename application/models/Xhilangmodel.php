@@ -59,4 +59,11 @@ class Xhilangmodel extends CI_Model
         $soal = $this->db->select($select)->from('tbl_kolomjawaban')->get();
         return $soal->result();  
     }
+
+    function tampil_soal2($data)
+    {
+        $select = array('*');
+		$get = $this->db->select($select)->from('tbl_kolomjawaban')->where($data)->get();
+		return $get->result();	  
+    }
 }
