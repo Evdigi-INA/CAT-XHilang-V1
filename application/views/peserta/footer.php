@@ -746,7 +746,7 @@
 			
 			$('.soalke23').removeAttr('hidden');
 			soalke = '23';
-		} else if (soalke == '13') {
+		} else if (soalke == '23') {
 			index = columnsoalcheckpoint[23];
 			runTimer();
 			refreshQuest();
@@ -754,7 +754,7 @@
 			
 			$('.soalke24').removeAttr('hidden');
 			soalke = '24';
-		} else if (soalke == '14') {
+		} else if (soalke == '24') {
 			index = columnsoalcheckpoint[24];
 			runTimer();
 			refreshQuest();
@@ -987,7 +987,7 @@
 			$('#JSalah').text('' + salah1 + '');
 			$('#JTidakDijawab').text('' + gadijawab1 + '');
 			$('#Nilainya').text('' + parseInt(nilai1) + '');
-			$('#tbnilaiS0JL').val(parseInt(nilai1));
+			$('#tbnilaiS1JL').val(parseInt(nilai1));
 
 
 			$('#scoreresultLeft').css('display','unset');
@@ -1039,7 +1039,7 @@
 			$('#JSalah').text('' + salah2 + '');
 			$('#JTidakDijawab').text('' + gadijawab2 + '');
 			$('#Nilainya').text('' + parseInt(nilai2) + '');
-			$('#tbnilaiS0JL').val(parseInt(nilai2));
+			$('#tbnilaiS2JL').val(parseInt(nilai2));
 
 
 			$('#scoreresultLeft').css('display','unset');
