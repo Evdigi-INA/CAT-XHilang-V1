@@ -40,7 +40,7 @@
 										<td>:</td>
 										<td id="JSalah"></td>
 									</tr>
-									<tr hidden="true">
+									<tr>
 										<td>Tidak Dijawab</td>
 										<td>:</td>
 										<td id="JTidakDijawab"></td>
@@ -1128,7 +1128,7 @@
 									do {
 										?> 
 										<tr class="barisjawabandandijawab">
-											<td class="answered">-</td>
+											<td class="answered"></td>
 										</tr>
 										<?php
 										$brs++;

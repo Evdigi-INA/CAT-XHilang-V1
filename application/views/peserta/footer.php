@@ -907,15 +907,25 @@
 
 		    var x = 0;
 		    //buat perulangan
+		    for (var i = 0; i < datasoal0.length; i++) {
+		    	var datajawab = datajawaban0[i];
+		    	if (datasoal0[i] == datajawab) {
+		    		salah++;
+		    	}
+		    }
 			do {
 				//make sure the jawaban we got ada pada salah satu index array yang mana berisi 4 value (im make it comparison or 'make sure it was included')
-				if(datasoal0[x].includes(datajawaban0[x])){
-					salah0++;
-				} else {
-					benar0++;
-					nilai0+= 0.3334; //saat mendapat point
-				}
-				x++;
+				if(datajawaban0[x]){ //pastikan value ada
+			        if(datasoal0[x].includes(datajawaban0[x])){
+								salah0++;
+							} else {
+			                    benar0++;
+			                    nilai0+= 0.3334; //saat mendapat point
+			                }
+			        } else {
+			        gadijawab0++;
+			    }
+			    x++;
 			}
 			while(x < 300);
 			//console.log('Benar : ' + benar);
@@ -923,7 +933,7 @@
 
 			$('#JBenar').text('' + benar0 + '');
 			$('#JSalah').text('' + salah0 + '');
-			//$('#JTidakDijawab').text('' + gadijawab0 + '');
+			$('#JTidakDijawab').text('' + gadijawab0 + '');
 			$('#Nilainya').text('' + parseInt(nilai0) + '');
 			$('#tbnilaiS0JL').val(parseInt(nilai0));
 
@@ -934,44 +944,48 @@
 		} else if(js == 'S1JL') {
 			var datasoal1 = Array();
 			var datajawaban1 = Array();
-			var gadijawab1 = 0 + 1;
+			var gadijawab1 = 0;
 			var salah1 = 0;
 			var benar1 = 0;
 			var nilai1 = 0;
 			
 			//collect data jawaban fro kolom 2
-			$('table.tablebarisjawabandandijawab > tbody > tr').slice(301,600).each(function(o){
+			$('table.tablebarisjawabandandijawab > tbody > tr').slice(300,600).each(function(o){
 			    tds1 = $(this).find('td');
   				datajawaban1[o] = $(tds1[0]).text();
 			});
 
 			//collect data soal
-			$("table.soalny > tbody > tr.barisss").slice(301,600).each(function(i, v){
+			$("table.soalny > tbody > tr.barisss").slice(300,600).each(function(i, v){
 			  datasoal1[i] = Array();
 			  $(this).children('td').each(function(ii, vv){
 			    datasoal1[i][ii] = $(this).text();
 			  }); 
 			});
-			//console.log('soalnya : ' + datasoal);
-			//console.log('jawaban : ' + datajawaban);
-
-		    var x = 301;
+			console.log(datajawaban1);
+			console.log(datasoal1);
+			var x = 0;
 			do {
-				if(datasoal1[x].includes(datajawaban1[x])){
-					salah1++;
-				} else {
-					benar1++;
-					nilai1+= 0.3334; //saat mendapat point
-				}
-				x++;
+			    if(datajawaban1[x]){
+			        if(datasoal1[x].includes(datajawaban1[x])){
+								salah1++;
+							} else {
+			                    benar1++;
+			                    nilai1+= 0.3334; //saat mendapat point
+			                }
+			        } else {
+			        gadijawab1++;
+			    }
+			    x++;
 			}
-			while(x < 599);
-			//console.log('Benar : ' + benar);
-			//console.log('Salah : ' + salah);
+			while(x < 300);
 
+			console.log('Benar : ' + benar1);
+			console.log('Salah : ' + salah1);
+			console.log('Gadijawab : ' + gadijawab1);
 			$('#JBenar').text('' + benar1 + '');
 			$('#JSalah').text('' + salah1 + '');
-			//$('#JTidakDijawab').text('' + gadijawab1 + '');
+			$('#JTidakDijawab').text('' + gadijawab1 + '');
 			$('#Nilainya').text('' + parseInt(nilai1) + '');
 			$('#tbnilaiS0JL').val(parseInt(nilai1));
 
@@ -988,13 +1002,13 @@
 			var nilai2 = 0;
 			
 			//collect data jawaban fro kolom 2
-			$('table.tablebarisjawabandandijawab > tbody > tr').slice(601,900).each(function(o){
+			$('table.tablebarisjawabandandijawab > tbody > tr').slice(600,900).each(function(o){
 			    tds2 = $(this).find('td');
   				datajawaban2[o] = $(tds2[0]).text();
 			});
 
 			//collect data soal
-			$("table.soalny > tbody > tr.barisss").slice(601,900).each(function(i, v){
+			$("table.soalny > tbody > tr.barisss").slice(600,900).each(function(i, v){
 			  datasoal2[i] = Array();
 			  $(this).children('td').each(function(ii, vv){
 			    datasoal2[i][ii] = $(this).text();
@@ -1005,13 +1019,17 @@
 
 		    var x = 0;
 			do {
-				if(datasoal2[x].includes(datajawaban2[x])){
-					salah2++;
-				} else {
-					benar2++;
-					nilai2+= 0.3334; //saat mendapat point
-				};
-				x++;
+				if(datajawaban2[x]){
+			        if(datasoal2[x].includes(datajawaban2[x])){
+								salah2++;
+							} else {
+			                    benar2++;
+			                    nilai2+= 0.3334; //saat mendapat point
+			                }
+			        } else {
+			        gadijawab2++;
+			    }
+			    x++;
 			}
 			while(x < 300);
 			//console.log('Benar : ' + benar);
@@ -1019,7 +1037,7 @@
 
 			$('#JBenar').text('' + benar2 + '');
 			$('#JSalah').text('' + salah2 + '');
-			//$('#JTidakDijawab').text('' + gadijawab2 + '');
+			$('#JTidakDijawab').text('' + gadijawab2 + '');
 			$('#Nilainya').text('' + parseInt(nilai2) + '');
 			$('#tbnilaiS0JL').val(parseInt(nilai2));
 
