@@ -66,4 +66,29 @@ class Xhilangmodel extends CI_Model
 		$get = $this->db->select($select)->from('tbl_kolomjawaban')->where($data)->get();
 		return $get->result();	  
     }
+
+    function hitungpesertaberdasarkanstatus()
+    {
+        $select = array('(select count(*) from tbl_peserta where status = "BM") as belummengerjakan','(select count(*) from tbl_peserta where status = "SM") as sedangmengerjakan','(select count(*) from tbl_peserta where status = "DONE") as selesaimengerjakan','(select count(*) from tbl_peserta) as totalpeserta');
+
+        $count = $this->db->select($select)->from('tbl_peserta')->limit(1)->get();
+        return $count->result();      
+    }
+
+    function psedangtest()
+    {
+        $select = array('*');
+        $wherenya = array('status' => 'SM' );
+
+        $list = $this->db->select($select)->from('tbl_peserta')->where($wherenya)->get();
+        return $list->result();
+    }
+
+    function p_top10()
+    {
+        $select = array('tbl_peserta.id_user as iduser', 'tbl_peserta.nama_lengkap as namleng','tbl_peserta.no_ktp as noktp', 'tbl_nilai.nilai1 as NilaiAngkaHilang', 'tbl_nilai.nilai2 as NilaiHurufHilang', 'tbl_nilai.nilai3 as NilaiSimbolHilang');
+        $gas = $this->db->select($select)->from('tbl_peserta')->join('tbl_nilai','tbl_nilai.id_user = tbl_peserta.id_user')->order_by('NilaiAngkaHilang', 'NilaiHurufHilang', 'NilaiSimbolHilang','asc')->limit(10)->get();
+
+        return $gas->result();
+    }
 }

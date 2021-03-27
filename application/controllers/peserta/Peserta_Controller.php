@@ -233,4 +233,19 @@ class Peserta_Controller extends CI_Controller
 		$this->Xhilangmodel->lakukan_insert('tbl_nilai',$datatbl);
 		redirect('/login');
 	}
+
+	function update_status()
+	{
+		$iduser=$this->input->post('tbiduser');
+        $username=$this->input->post('tbusername');
+        $status=$this->input->post('tbstatus');
+
+        $where = array(
+			'id_user'		=> $iduser
+		);
+ 		
+ 		$data = array('status' => $status);
+
+ 		$this->Xhilangmodel->lakukan_update($where,$data,'tbl_peserta');
+	}
 }

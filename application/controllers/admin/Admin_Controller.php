@@ -45,6 +45,9 @@ class Admin_Controller extends CI_Controller
 			"id_user" => $iduser
 		);
 		$data['qinfo'] = $this->Xhilangmodel->tampilinformasiakun('tbl_user',$where);
+
+		$data['top10'] = $this->Xhilangmodel->p_top10();
+		$data['countpeserta'] = $this->Xhilangmodel->hitungpesertaberdasarkanstatus();
 		//END OF DEBUG LOG//
 			//load view admin/blablabla.php
 		$data['title'] = 'Dashboard - Menu Laporan';
@@ -498,13 +501,14 @@ class Admin_Controller extends CI_Controller
 		$tbusernem = $this->input->post('tbusername');
 		$tbpasswod = $this->input->post('tbpassword');
 		$tbrol = $this->input->post('tbrole');
+		$tbstatus = 'BM';
 		$datatbl1= array(
 			'id_user'	=> $iduser,
 			'no_ktp'		=> $tbnoktp,
-			'id_nilaipeserta'	=> '',
 			'nama_lengkap'	=> $tbnamaleng,
 			'alamat'	=> $tbalamat,
-			'jenis_kelamin'	=> $tbjk
+			'jenis_kelamin'	=> $tbjk,
+			'status' => $tbstatus
 			
 		);
 
@@ -529,4 +533,22 @@ class Admin_Controller extends CI_Controller
 		print "<script type='text/javascript'>alert('$message');window.location = ('daftar_peserta'); </script>";
 		redirect('/admin/Admin_Controller/daftar_peserta');
 	}
+
+	function peserta_sedang_test() //tampildata peserta
+	{
+		$iduser = $this->session->userdata('iduser'); //ambil data berdasarkan sessionuserdata
+		$where = array(
+			"id_user" => $iduser
+		);
+		$data['qinfo'] = $this->Xhilangmodel->tampilinformasiakun('tbl_user',$where);
+		$data['listpesertasedangtest'] = $this->Xhilangmodel->psedangtest();
+		//END OF DEBUG LOG//
+		//load view admin/blablabla.php
+		$data['title'] = 'Dashboard - Daftar Peserta';
+		$this->load->view('admin/header',$data);
+		$this->load->view('admin/peserta_sedang_test');
+		$this->load->view('admin/footer');
+	}
+
+
 }

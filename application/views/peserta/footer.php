@@ -52,10 +52,22 @@
 				$('.listsoalke601').removeAttr('hidden');
 				$('#countdownkolom').css('display','unset');
 			} else {
+				var tbiduser = $('#tbiduser').val();
+            	var tbusername = $('#tbusername').val();
+            	var tbstatus = 'SM'; //seddang mengerjakkan
 				$('#jenissoalnya').text('Soal Angka - Kolom 1');
 				$('.soalke1').removeAttr('hidden');
 				$('.listsoalke1').removeAttr('hidden');
 				$('#countdownkolom').css('display','unset');
+	            $.ajax({
+	                type : "POST",
+	                url  : "<?php echo site_url('/peserta/Peserta_Controller/update_status')?>",
+	                dataType : "JSON",
+	                data : {tbiduser:tbiduser,tbusername:tbusername,tbstatus:tbstatus},
+	                success: function(data){
+	                	
+	                }
+	            });
 			}
 			index++;
 			$('.tabelsoal').removeAttr('hidden');
@@ -71,13 +83,6 @@
 		});
 
 		$('#menjelangendbutton').click(function(){
-
-			/*var a = $('#tbnilaiS0JL').val();
-			var b = $('#tbnilaiS1JL').val();
-			var c = $('#tbnilaiS2JL').val();
-			var total = a+b+c/3;
-			$('#tbnilaiFinal').val(g);*/
-
 			forceHide();
 			$('#loader').css('display','none');
 			var tbnilai1 = $('#tbnilaiS0JL').val();
@@ -87,9 +92,18 @@
             var tbusername = $('#tbusername').val();
             $.ajax({
                 type : "POST",
-                url  : "<?php echo base_url('/index.php/peserta/Peserta_Controller/simpan_nilai')?>",
+                url  : "<?php echo base_url('/peserta/Peserta_Controller/simpan_nilai')?>",
                 dataType : "JSON",
                 data : {tbnilai1:tbnilai1 , tbnilai2:tbnilai2, tbnilai3:tbnilai3, tbiduser:tbiduser,tbusername:tbusername},
+                success: function(data){
+                }
+            });
+            var tbstatus = 'DONE'; //seddang mengerjakkan
+            $.ajax({
+                type : "POST",
+                url  : "<?php echo base_url('/peserta/Peserta_Controller/update_status')?>",
+                dataType : "JSON",
+                data : {tbiduser:tbiduser,tbusername:tbusername,tbstatus:tbstatus},
                 success: function(data){
                 }
             });
