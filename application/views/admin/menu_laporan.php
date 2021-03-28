@@ -1,4 +1,4 @@
-<div class="container-fluid" style="height: 87vh;overflow-y: scroll;">
+<div class="container-fluid">
     <h1 class="mt-4">Laporan</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="<?php echo base_url().'admin/Admin_Controller/index' ?>">Menu Utama</a></li>
