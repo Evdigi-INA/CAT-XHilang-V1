@@ -11,6 +11,27 @@
 	        "scrollCollapse": true,
 	        "paging":         true
     	});
+
+    	$('#tabelnilaipeserta').DataTable({
+    		"scrollY":        "45vh",
+	        "scrollCollapse": true,
+	        "paging":         true,
+	        dom: 'Bfrtip',
+	        buttons: [
+	            {
+	                extend: 'print',
+	                title: 'Activity log by <?php echo $this->session->userdata('iduser') ?>'
+	            },
+	            {
+	                extend: 'csv',
+	                title: 'Data export by <?php echo $this->session->userdata('iduser') ?>'
+	            },
+	            {
+	                extend: 'excel',
+	                title: 'Data export by <?php echo $this->session->userdata('iduser') ?>'
+	            }
+	            ]
+	        });
     	// Set new default font family and font color to mimic Bootstrap's default styling
 		Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 		Chart.defaults.global.defaultFontColor = '#292b2c';
@@ -78,6 +99,9 @@
 <script src="<?php echo base_url('assets/datatables/jquery.dataTables.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/datatables/buttons.print.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/datatables/dataTables.buttons.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/datatables/jszip.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/datatables/pdfmake.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/datatables/vfs_fonts.js') ?>"></script>
 <script src="<?php echo base_url('assets/datatables/buttons.html5.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/datatables/jszip.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/datatables/datatables.min.js') ?>"></script>

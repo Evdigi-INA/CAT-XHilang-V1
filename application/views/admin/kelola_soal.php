@@ -28,15 +28,15 @@
 						</tr>
 						<tr>
 							<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatesoal').$id1 ?>" method="post" enctype="multipart/form-data">
-								<td><input type="text" class="tbsoal" id="tbsoalkolom1a" name="tbsoalkolom1a" value="<?php echo $ask1[0] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom1a" name="tbsoalkolom1a" value="<?php echo $ask1[0] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom1b" name="tbsoalkolom1b" value="<?php echo $ask1[1] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom1b" name="tbsoalkolom1b" value="<?php echo $ask1[1] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom1c" name="tbsoalkolom1c" value="<?php echo $ask1[2] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom1c" name="tbsoalkolom1c" value="<?php echo $ask1[2] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom1d" name="tbsoalkolom1d" value="<?php echo $ask1[3] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom1d" name="tbsoalkolom1d" value="<?php echo $ask1[3] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-							    <td><input type="text" class="tbsoal" id="tbsoalkolom1e" name="tbsoalkolom1e" value="<?php echo $ask1[4] ?>" maxlength="1" style="width: 100%;text-align: center;"></td>
+							    <td><input required type="text" class="tbsoal" id="tbsoalkolom1e" name="tbsoalkolom1e" value="<?php echo $ask1[4] ?>" maxlength="1" style="width: 100%;text-align: center;"></td>
 	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
 						</tr>
@@ -71,15 +71,15 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-			    								<input type="text" name="tb1baris<?php echo $i ?>kolom1" value="<?php echo $jl1[0] ?>" maxlength="1" style="width: 28px;text-align: center;">	
+			    								<input required type="text" name="tb1baris<?php echo $i ?>kolom1" value="<?php echo $jl1[0] ?>" maxlength="1" style="width: 28px;text-align: center;">	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-			    								<input type="text" name="tb2baris<?php echo $i ?>kolom1" value="<?php echo $jl1[1] ?>" maxlength="1" style="width: 28px;text-align: center;">
+			    								<input required type="text" name="tb2baris<?php echo $i ?>kolom1" value="<?php echo $jl1[1] ?>" maxlength="1" style="width: 28px;text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">			
-			    								<input type="text" name="tb3baris<?php echo $i ?>kolom1" value="<?php echo $jl1[2] ?>" maxlength="1" style="width: 28px;text-align: center;">					
+			    								<input required type="text" name="tb3baris<?php echo $i ?>kolom1" value="<?php echo $jl1[2] ?>" maxlength="1" style="width: 28px;text-align: center;">					
 		    								</div>
-			    								<input type="text" name="tb4baris<?php echo $i ?>kolom1" value="<?php echo $jl1[3] ?>" maxlength="1" style="width: 28px;text-align: center;">
+			    								<input required type="text" name="tb4baris<?php echo $i ?>kolom1" value="<?php echo $jl1[3] ?>" maxlength="1" style="width: 28px;text-align: center;">
 		    								</div>
 										</div>	
 		    						</div>
@@ -114,15 +114,15 @@
 						</tr>
 						<tr>
 							<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatesoal').$id2 ?>" method="post" enctype="multipart/form-data">
-								<td><input type="text" class="tbsoal" id="tbsoalkolom2a" name="tbsoalkolom2a" value="<?php echo $ask2[0] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom2a" name="tbsoalkolom2a" value="<?php echo $ask2[0] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom2b" name="tbsoalkolom2b" value="<?php echo $ask2[1] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom2b" name="tbsoalkolom2b" value="<?php echo $ask2[1] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom2c" name="tbsoalkolom2c" value="<?php echo $ask2[2] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom2c" name="tbsoalkolom2c" value="<?php echo $ask2[2] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom2d" name="tbsoalkolom2d" value="<?php echo $ask2[3] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom2d" name="tbsoalkolom2d" value="<?php echo $ask2[3] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<td><input type="text" class="tbsoal" id="tbsoalkolom2e" name="tbsoalkolom2e" value="<?php echo $ask2[4] ?>" maxlength="1" style="width: 100%;
+	    						<td><input required type="text" class="tbsoal" id="tbsoalkolom2e" name="tbsoalkolom2e" value="<?php echo $ask2[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
 	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
@@ -159,16 +159,16 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-			    								<input type="text" name="tb1baris<?php echo $i ?>kolom2" value="<?php echo $jl2[0] ?>" maxlength="1" style="width: 28px;text-align: center;">
+			    								<input required type="text" name="tb1baris<?php echo $i ?>kolom2" value="<?php echo $jl2[0] ?>" maxlength="1" style="width: 28px;text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-			    								<input type="text" name="tb2baris<?php echo $i ?>kolom2" value="<?php echo $jl2[1] ?>" maxlength="1" style="width: 28px;text-align: center;">
+			    								<input required type="text" name="tb2baris<?php echo $i ?>kolom2" value="<?php echo $jl2[1] ?>" maxlength="1" style="width: 28px;text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">			
-				    							<input type="text" name="tb3baris<?php echo $i ?>kolom2" value="<?php echo $jl2[2] ?>" maxlength="1" style="width: 28px;text-align: center;">	
+				    							<input required type="text" name="tb3baris<?php echo $i ?>kolom2" value="<?php echo $jl2[2] ?>" maxlength="1" style="width: 28px;text-align: center;">	
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    							<input type="text" name="tb4baris<?php echo $i ?>kolom2" value="<?php echo $jl2[3] ?>" maxlength="1" style="width: 28px;text-align: center;">	
+				    							<input required type="text" name="tb4baris<?php echo $i ?>kolom2" value="<?php echo $jl2[3] ?>" maxlength="1" style="width: 28px;text-align: center;">	
 		    								</div>
 										</div>	
 		    						</div>
@@ -203,15 +203,15 @@
 						</tr>
 						<tr>
 							<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatesoal').$id3 ?>" method="post" enctype="multipart/form-data">
-								<td><input type="text" class="tbsoal" id="tbsoalkolom3a" name="tbsoalkolom3a" value="<?php echo $ask3[0] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom3a" name="tbsoalkolom3a" value="<?php echo $ask3[0] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom3b" name="tbsoalkolom3b" value="<?php echo $ask3[1] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom3b" name="tbsoalkolom3b" value="<?php echo $ask3[1] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom3c" name="tbsoalkolom3c" value="<?php echo $ask3[2] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom3c" name="tbsoalkolom3c" value="<?php echo $ask3[2] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom3d" name="tbsoalkolom3d" value="<?php echo $ask3[3] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom3d" name="tbsoalkolom3d" value="<?php echo $ask3[3] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<td><input type="text" class="tbsoal" id="tbsoalkolom3e" name="tbsoalkolom3e" value="<?php echo $ask3[4] ?>" maxlength="1" style="width: 100%;
+	    						<td><input required type="text" class="tbsoal" id="tbsoalkolom3e" name="tbsoalkolom3e" value="<?php echo $ask3[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
 	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
@@ -248,19 +248,19 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb1baris<?php echo $i ?>kolom3" value="<?php echo $jl3[0] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb1baris<?php echo $i ?>kolom3" value="<?php echo $jl3[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb2baris<?php echo $i ?>kolom3" value="<?php echo $jl3[1] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb2baris<?php echo $i ?>kolom3" value="<?php echo $jl3[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb3baris<?php echo $i ?>kolom3" value="<?php echo $jl3[2] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb3baris<?php echo $i ?>kolom3" value="<?php echo $jl3[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb4baris<?php echo $i ?>kolom3" value="<?php echo $jl3[3] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb4baris<?php echo $i ?>kolom3" value="<?php echo $jl3[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 										</div>	
@@ -295,15 +295,15 @@
 						</tr>
 						<tr>
 							<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatesoal').$id4 ?>" method="post" enctype="multipart/form-data">
-								<td><input type="text" class="tbsoal" id="tbsoalkolom4a" name="tbsoalkolom4a" value="<?php echo $ask4[0] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom4a" name="tbsoalkolom4a" value="<?php echo $ask4[0] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom4b" name="tbsoalkolom4b" value="<?php echo $ask4[1] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom4b" name="tbsoalkolom4b" value="<?php echo $ask4[1] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom4c" name="tbsoalkolom4c" value="<?php echo $ask4[2] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom4c" name="tbsoalkolom4c" value="<?php echo $ask4[2] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom4d" name="tbsoalkolom4d" value="<?php echo $ask4[3] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom4d" name="tbsoalkolom4d" value="<?php echo $ask4[3] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<td><input type="text" class="tbsoal" id="tbsoalkolom4e" name="tbsoalkolom4e" value="<?php echo $ask4[4] ?>" maxlength="1" style="width: 100%;
+	    						<td><input required type="text" class="tbsoal" id="tbsoalkolom4e" name="tbsoalkolom4e" value="<?php echo $ask4[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
 	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
@@ -340,19 +340,19 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb1baris<?php echo $i ?>kolom4" value="<?php echo $jl4[0] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb1baris<?php echo $i ?>kolom4" value="<?php echo $jl4[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb2baris<?php echo $i ?>kolom4" value="<?php echo $jl4[1] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb2baris<?php echo $i ?>kolom4" value="<?php echo $jl4[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb3baris<?php echo $i ?>kolom4" value="<?php echo $jl4[2] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb3baris<?php echo $i ?>kolom4" value="<?php echo $jl4[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb4baris<?php echo $i ?>kolom4" value="<?php echo $jl4[3] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb4baris<?php echo $i ?>kolom4" value="<?php echo $jl4[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 										</div>	
@@ -390,15 +390,15 @@
 						</tr>
 						<tr>
 							<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatesoal').$id5 ?>" method="post" enctype="multipart/form-data">
-								<td><input type="text" class="tbsoal" id="tbsoalkolom5a" name="tbsoalkolom5a" value="<?php echo $ask5[0] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom5a" name="tbsoalkolom5a" value="<?php echo $ask5[0] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom5b" name="tbsoalkolom5b" value="<?php echo $ask5[1] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom5b" name="tbsoalkolom5b" value="<?php echo $ask5[1] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom5c" name="tbsoalkolom5c" value="<?php echo $ask5[2] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom5c" name="tbsoalkolom5c" value="<?php echo $ask5[2] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom5d" name="tbsoalkolom5d" value="<?php echo $ask5[3] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom5d" name="tbsoalkolom5d" value="<?php echo $ask5[3] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom5e" name="tbsoalkolom5e" value="<?php echo $ask5[4] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom5e" name="tbsoalkolom5e" value="<?php echo $ask5[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
 	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
@@ -435,19 +435,19 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb1baris<?php echo $i ?>kolom5" value="<?php echo $jl5[0] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb1baris<?php echo $i ?>kolom5" value="<?php echo $jl5[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb2baris<?php echo $i ?>kolom5" value="<?php echo $jl5[1] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb2baris<?php echo $i ?>kolom5" value="<?php echo $jl5[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb3baris<?php echo $i ?>kolom5" value="<?php echo $jl5[2] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb3baris<?php echo $i ?>kolom5" value="<?php echo $jl5[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb4baris<?php echo $i ?>kolom5" value="<?php echo $jl5[3] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb4baris<?php echo $i ?>kolom5" value="<?php echo $jl5[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 										</div>	
@@ -483,15 +483,15 @@
 						</tr>
 						<tr>
 							<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatesoal').$id6 ?>" method="post" enctype="multipart/form-data">
-								<td><input type="text" class="tbsoal" id="tbsoalkolom6a" name="tbsoalkolom6a" value="<?php echo $ask6[0] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom6a" name="tbsoalkolom6a" value="<?php echo $ask6[0] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom6b" name="tbsoalkolom6b" value="<?php echo $ask6[1] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom6b" name="tbsoalkolom6b" value="<?php echo $ask6[1] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom6c" name="tbsoalkolom6c" value="<?php echo $ask6[2] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom6c" name="tbsoalkolom6c" value="<?php echo $ask6[2] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom6d" name="tbsoalkolom6d" value="<?php echo $ask6[3] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom6d" name="tbsoalkolom6d" value="<?php echo $ask6[3] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<td><input type="text" class="tbsoal" id="tbsoalkolom6e" name="tbsoalkolom6e" value="<?php echo $ask6[4] ?>" maxlength="1" style="width: 100%;
+	    						<td><input required type="text" class="tbsoal" id="tbsoalkolom6e" name="tbsoalkolom6e" value="<?php echo $ask6[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
 	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
@@ -528,19 +528,19 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb1baris<?php echo $i ?>kolom6" value="<?php echo $jl6[0] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb1baris<?php echo $i ?>kolom6" value="<?php echo $jl6[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb2baris<?php echo $i ?>kolom6" value="<?php echo $jl6[1] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb2baris<?php echo $i ?>kolom6" value="<?php echo $jl6[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb3baris<?php echo $i ?>kolom6" value="<?php echo $jl6[2] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb3baris<?php echo $i ?>kolom6" value="<?php echo $jl6[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb4baris<?php echo $i ?>kolom6" value="<?php echo $jl6[3] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb4baris<?php echo $i ?>kolom6" value="<?php echo $jl6[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 										</div>	
@@ -576,15 +576,15 @@
 						</tr>
 						<tr>
 							<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatesoal').$id7 ?>" method="post" enctype="multipart/form-data">
-								<td><input type="text" class="tbsoal" id="tbsoalkolom7a" name="tbsoalkolom7a" value="<?php echo $ask7[0] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom7a" name="tbsoalkolom7a" value="<?php echo $ask7[0] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom7b" name="tbsoalkolom7b" value="<?php echo $ask7[1] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom7b" name="tbsoalkolom7b" value="<?php echo $ask7[1] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom7c" name="tbsoalkolom7c" value="<?php echo $ask7[2] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom7c" name="tbsoalkolom7c" value="<?php echo $ask7[2] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom7d" name="tbsoalkolom7d" value="<?php echo $ask7[3] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom7d" name="tbsoalkolom7d" value="<?php echo $ask7[3] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<td><input type="text" class="tbsoal" id="tbsoalkolom7e" name="tbsoalkolom7e" value="<?php echo $ask7[4] ?>" maxlength="1" style="width: 100%;
+	    						<td><input required type="text" class="tbsoal" id="tbsoalkolom7e" name="tbsoalkolom7e" value="<?php echo $ask7[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
 	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
@@ -621,19 +621,19 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb1baris<?php echo $i ?>kolom7" value="<?php echo $jl7[0] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb1baris<?php echo $i ?>kolom7" value="<?php echo $jl7[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb2baris<?php echo $i ?>kolom7" value="<?php echo $jl7[1] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb2baris<?php echo $i ?>kolom7" value="<?php echo $jl7[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb3baris<?php echo $i ?>kolom7" value="<?php echo $jl7[2] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb3baris<?php echo $i ?>kolom7" value="<?php echo $jl7[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb4baris<?php echo $i ?>kolom7" value="<?php echo $jl7[3] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb4baris<?php echo $i ?>kolom7" value="<?php echo $jl7[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 										</div>	
@@ -669,15 +669,15 @@
 						</tr>
 						<tr>
 							<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatesoal').$id8 ?>" method="post" enctype="multipart/form-data">
-								<td><input type="text" class="tbsoal" id="tbsoalkolom8a" name="tbsoalkolom8a" value="<?php echo $ask8[0] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom8a" name="tbsoalkolom8a" value="<?php echo $ask8[0] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom8b" name="tbsoalkolom8b" value="<?php echo $ask8[1] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom8b" name="tbsoalkolom8b" value="<?php echo $ask8[1] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom8c" name="tbsoalkolom8c" value="<?php echo $ask8[2] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom8c" name="tbsoalkolom8c" value="<?php echo $ask8[2] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom8d" name="tbsoalkolom8d" value="<?php echo $ask8[3] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom8d" name="tbsoalkolom8d" value="<?php echo $ask8[3] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<td><input type="text" class="tbsoal" id="tbsoalkolom8e" name="tbsoalkolom8e" value="<?php echo $ask8[4] ?>" maxlength="1" style="width: 100%;
+	    						<td><input required type="text" class="tbsoal" id="tbsoalkolom8e" name="tbsoalkolom8e" value="<?php echo $ask8[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
 	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
@@ -714,19 +714,19 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb1baris<?php echo $i ?>kolom8" value="<?php echo $jl8[0] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb1baris<?php echo $i ?>kolom8" value="<?php echo $jl8[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb2baris<?php echo $i ?>kolom8" value="<?php echo $jl8[1] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb2baris<?php echo $i ?>kolom8" value="<?php echo $jl8[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb3baris<?php echo $i ?>kolom8" value="<?php echo $jl8[2] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb3baris<?php echo $i ?>kolom8" value="<?php echo $jl8[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb4baris<?php echo $i ?>kolom8" value="<?php echo $jl8[3] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb4baris<?php echo $i ?>kolom8" value="<?php echo $jl8[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 										</div>	
@@ -764,15 +764,15 @@
 						</tr>
 						<tr>
 							<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatesoal').$id9 ?>" method="post" enctype="multipart/form-data">
-								<td><input type="text" class="tbsoal" id="tbsoalkolom9a" name="tbsoalkolom9a" value="<?php echo $ask9[0] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom9a" name="tbsoalkolom9a" value="<?php echo $ask9[0] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom9b" name="tbsoalkolom9b" value="<?php echo $ask9[1] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom9b" name="tbsoalkolom9b" value="<?php echo $ask9[1] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom9c" name="tbsoalkolom9c" value="<?php echo $ask9[2] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom9c" name="tbsoalkolom9c" value="<?php echo $ask9[2] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom9d" name="tbsoalkolom9d" value="<?php echo $ask9[3] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom9d" name="tbsoalkolom9d" value="<?php echo $ask9[3] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<td><input type="text" class="tbsoal" id="tbsoalkolom9e" name="tbsoalkolom9e" value="<?php echo $ask9[4] ?>" maxlength="1" style="width: 100%;
+	    						<td><input required type="text" class="tbsoal" id="tbsoalkolom9e" name="tbsoalkolom9e" value="<?php echo $ask9[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
 	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
@@ -809,19 +809,19 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb1baris<?php echo $i ?>kolom9" value="<?php echo $jl9[0] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb1baris<?php echo $i ?>kolom9" value="<?php echo $jl9[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb2baris<?php echo $i ?>kolom9" value="<?php echo $jl9[1] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb2baris<?php echo $i ?>kolom9" value="<?php echo $jl9[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb3baris<?php echo $i ?>kolom9" value="<?php echo $jl9[2] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb3baris<?php echo $i ?>kolom9" value="<?php echo $jl9[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb4baris<?php echo $i ?>kolom9" value="<?php echo $jl9[3] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb4baris<?php echo $i ?>kolom9" value="<?php echo $jl9[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 										</div>	
@@ -856,15 +856,15 @@
 						</tr>
 						<tr>
 							<form role="form" method="POST" action="<?php echo site_url('admin/Admin_Controller/updatesoal').$id10 ?>" method="post" enctype="multipart/form-data">
-								<td><input type="text" class="tbsoal" id="tbsoalkolom10a" name="tbsoalkolom10a" value="<?php echo $ask10[0] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom10a" name="tbsoalkolom10a" value="<?php echo $ask10[0] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom10b" name="tbsoalkolom10b" value="<?php echo $ask10[1] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom10b" name="tbsoalkolom10b" value="<?php echo $ask10[1] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom10c" name="tbsoalkolom10c" value="<?php echo $ask10[2] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom10c" name="tbsoalkolom10c" value="<?php echo $ask10[2] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-								<td><input type="text" class="tbsoal" id="tbsoalkolom10d" name="tbsoalkolom10d" value="<?php echo $ask10[3] ?>" maxlength="1" style="width: 100%;
+								<td><input required type="text" class="tbsoal" id="tbsoalkolom10d" name="tbsoalkolom10d" value="<?php echo $ask10[3] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
-	    						<td><input type="text" class="tbsoal" id="tbsoalkolom10e" name="tbsoalkolom10e" value="<?php echo $ask10[4] ?>" maxlength="1" style="width: 100%;
+	    						<td><input required type="text" class="tbsoal" id="tbsoalkolom10e" name="tbsoalkolom10e" value="<?php echo $ask10[4] ?>" maxlength="1" style="width: 100%;
 	    text-align: center;"></td>
 	    						<button type="submit" class="btn btn-primary" value="Submit" style="margin-top: 10px;">Update Jawaban</button>
     						</form>
@@ -901,19 +901,19 @@
 		    						<div class="radio-form">
 		    							<div class="radio-group" style="display: flex; justify-content: space-between;">
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb1baris<?php echo $i ?>kolom10" value="<?php echo $jl10[0] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb1baris<?php echo $i ?>kolom10" value="<?php echo $jl10[0] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb2baris<?php echo $i ?>kolom10" value="<?php echo $jl10[1] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb2baris<?php echo $i ?>kolom10" value="<?php echo $jl10[1] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb3baris<?php echo $i ?>kolom10" value="<?php echo $jl10[2] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb3baris<?php echo $i ?>kolom10" value="<?php echo $jl10[2] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 		    								<div class="radio-choice" style="display: flex; flex-direction: column;">
-				    								<input type="text" name="tb4baris<?php echo $i ?>kolom10" value="<?php echo $jl10[3] ?>" maxlength="1" style="width: 28px;
+				    								<input required type="text" name="tb4baris<?php echo $i ?>kolom10" value="<?php echo $jl10[3] ?>" maxlength="1" style="width: 28px;
 			    text-align: center;">
 		    								</div>
 										</div>	

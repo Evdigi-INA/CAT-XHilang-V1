@@ -566,5 +566,24 @@ class Admin_Controller extends CI_Controller
 		$this->load->view('admin/footer');	
 	}
 
+	public function detail_peserta($id_peserta)
+	{
+		$iduser = $this->session->userdata('iduser'); //ambil data berdasarkan sessionuserdata
+		$where = array(
+			"id_user" => $iduser
+		);
+
+		$dimana = array('tbl_nilai.id_user' => $id_peserta);
+		$data['qinfo'] = $this->Xhilangmodel->tampilinformasiakun('tbl_user',$where);
+		$data['dtlnilailist'] = $this->Xhilangmodel->detail_nilai_peserta($dimana);
+		$data['infop'] = $this->Xhilangmodel->info_peserta_overview($dimana);
+		//END OF DEBUG LOG//
+		//load view admin/blablabla.php
+		$data['title'] = 'Peserta Dinilai';
+		$this->load->view('admin/header',$data);
+		$this->load->view('admin/detail_nilai_peserta');
+		$this->load->view('admin/footer');	
+	}
+
 
 }

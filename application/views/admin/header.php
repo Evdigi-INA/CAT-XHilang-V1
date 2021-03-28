@@ -41,8 +41,7 @@
 </style>
 <body>
 	
-	<div class="header" style="position: sticky !important;
-    top: 0;">
+	<div class="header" style="position: sticky !important;top: 0;z-index: 999;">
     	<?php
 			foreach ($qinfo as $o) 
 			    {

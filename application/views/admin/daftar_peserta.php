@@ -20,7 +20,8 @@
             Data Table Example
             <div style="float: right;">
               <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalTambahPeserta"><span><i class="fas fa-plus fa-fw"></i></span></button>
-            </div></div>
+            </div>
+          </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTablePeserta" width="100%" cellspacing="0">
@@ -46,7 +47,7 @@
                       <td><?php echo $u->alamat; ?></td>
                       <td><?php echo $u->jenis_kelamin; ?></td>
                       <td style="text-align: center;"><div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <button type="button" class="btn btn-primary"><span><i class="fas fa-eye fa-fw"></i></span></button>
+                        <a type="button" class="btn btn-primary" href="<?php echo base_url().'admin/Admin_Controller/detail_peserta/'.$u->id_user ?>"><span><i class="fas fa-eye fa-fw"></i></span></a>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="<?php echo "#modalEditPeserta".$u->id_user;?>"><span><i class="fas fa-edit fa-fw"></i></span></button>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="<?php echo "#exampleModal".$u->id_user;?>"><span><i class="fas fa-trash fa-fw"></i></span></button>
                       </div></td>
