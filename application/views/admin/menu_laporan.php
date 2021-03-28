@@ -30,7 +30,7 @@
             <div class="card bg-success text-white mb-4">
                 <div class="card-body"><?php echo $cunt->selesaimengerjakan; ?> Sudah Dinilai</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">Lihat Detail</a>
+                    <a class="small text-white stretched-link" href="<?php echo base_url().'admin/Admin_Controller/peserta_dinilai' ?>">Lihat Detail</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>

@@ -544,10 +544,26 @@ class Admin_Controller extends CI_Controller
 		$data['listpesertasedangtest'] = $this->Xhilangmodel->psedangtest();
 		//END OF DEBUG LOG//
 		//load view admin/blablabla.php
-		$data['title'] = 'Dashboard - Daftar Peserta';
+		$data['title'] = 'Sedang Test';
 		$this->load->view('admin/header',$data);
 		$this->load->view('admin/peserta_sedang_test');
 		$this->load->view('admin/footer');
+	}
+
+	function peserta_dinilai()
+	{
+		$iduser = $this->session->userdata('iduser'); //ambil data berdasarkan sessionuserdata
+		$where = array(
+			"id_user" => $iduser
+		);
+		$data['qinfo'] = $this->Xhilangmodel->tampilinformasiakun('tbl_user',$where);
+		$data['listpesertadinilai'] = $this->Xhilangmodel->tampil_peserta_with_nilai();
+		//END OF DEBUG LOG//
+		//load view admin/blablabla.php
+		$data['title'] = 'Peserta Dinilai';
+		$this->load->view('admin/header',$data);
+		$this->load->view('admin/peserta_dinilai');
+		$this->load->view('admin/footer');	
 	}
 
 
