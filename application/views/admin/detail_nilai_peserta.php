@@ -118,7 +118,7 @@
                   $no = 1;
                   foreach($dtlnilailist as $u)
                   {
-                  	$rata2 = (intval($u->nilai1)+intval($u->nilai2)+intval($u->nilai3))/3;
+                  	$rata2 = (floatval($u->nilai1)+floatval($u->nilai2)+floatval($u->nilai3))/3;
                    ?>
                   <tr>
                       <td hidden="true"><?php echo $no++ ?></td>

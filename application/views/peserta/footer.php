@@ -953,8 +953,8 @@
 			$('#JBenar').text('' + benar0 + '');
 			$('#JSalah').text('' + salah0 + '');
 			$('#JTidakDijawab').text('' + gadijawab0 + '');
-			$('#Nilainya').text('' + parseInt(nilai0) + '');
-			$('#tbnilaiS0JL').val(parseInt(nilai0));
+			$('#Nilainya').text('' + parseFloat(nilai0).toFixed(2) + '');
+			$('#tbnilaiS0JL').val(parseFloat(nilai0).toFixed(2));
 
 
 			$('#scoreresultLeft').css('display','unset');
@@ -1005,8 +1005,8 @@
 			$('#JBenar').text('' + benar1 + '');
 			$('#JSalah').text('' + salah1 + '');
 			$('#JTidakDijawab').text('' + gadijawab1 + '');
-			$('#Nilainya').text('' + parseInt(nilai1) + '');
-			$('#tbnilaiS1JL').val(parseInt(nilai1));
+			$('#Nilainya').text('' + parseFloat(nilai1).toFixed(2) + '');
+			$('#tbnilaiS1JL').val(parseFloat(nilai1).toFixed(2));
 
 
 			$('#scoreresultLeft').css('display','unset');
@@ -1057,8 +1057,8 @@
 			$('#JBenar').text('' + benar2 + '');
 			$('#JSalah').text('' + salah2 + '');
 			$('#JTidakDijawab').text('' + gadijawab2 + '');
-			$('#Nilainya').text('' + parseInt(nilai2) + '');
-			$('#tbnilaiS2JL').val(parseInt(nilai2));
+			$('#Nilainya').text('' + parseFloat(nilai2).toFixed(2) + '');
+			$('#tbnilaiS2JL').val(parseFloat(nilai2).toFixed(2));
 
 
 			$('#scoreresultLeft').css('display','unset');
