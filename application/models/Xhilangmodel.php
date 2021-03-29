@@ -115,4 +115,13 @@ class Xhilangmodel extends CI_Model
         $querya = $this->db->select($select)->from('tbl_peserta')->join('tbl_user','tbl_peserta.id_user = tbl_user.id_user')->join('tbl_nilai','tbl_peserta.id_user = tbl_nilai.id_user')->where($where)->order_by('datamasuk','ASC')->limit(1)->get();
         return $querya->result();
     }
+
+    function tampil_peserta_belum_ngerjain()
+    {
+        $select = array('id_user', 'nama_lengkap','no_ktp','alamat','jenis_kelamin');
+        $wherenya = array('status' => 'BM' );
+        $gas = $this->db->select($select)->from('tbl_peserta')->where($wherenya)->get();
+
+        return $gas->result();    
+    }
 }

@@ -519,9 +519,13 @@ class Admin_Controller extends CI_Controller
 			'role'	=> $tbrol
 		);
 
-		$this->Xhilangmodel->lakukan_insert('tbl_peserta',$datatbl1);
-		$this->Xhilangmodel->lakukan_insert('tbl_user',$datatbl2);
-		redirect('/admin/Admin_Controller/daftar_peserta');
+		$insert1 = $this->Xhilangmodel->lakukan_insert('tbl_peserta',$datatbl1);
+		$insert2 = $this->Xhilangmodel->lakukan_insert('tbl_user',$datatbl2);
+		if ($insert1>0 && $insert2>0) {
+			redirect('/admin/Admin_Controller/daftar_peserta');
+		} else {
+			echo "Data sudah tersedia";
+		}
 	}
 
 	public function hapus_peserta($id_user)
@@ -563,6 +567,22 @@ class Admin_Controller extends CI_Controller
 		$data['title'] = 'Peserta Dinilai';
 		$this->load->view('admin/header',$data);
 		$this->load->view('admin/peserta_dinilai');
+		$this->load->view('admin/footer');	
+	}
+
+	function peserta_belum_test()
+	{
+		$iduser = $this->session->userdata('iduser'); //ambil data berdasarkan sessionuserdata
+		$where = array(
+			"id_user" => $iduser
+		);
+		$data['qinfo'] = $this->Xhilangmodel->tampilinformasiakun('tbl_user',$where);
+		$data['listpesertabelumdinilai'] = $this->Xhilangmodel->tampil_peserta_belum_ngerjain();
+		//END OF DEBUG LOG//
+		//load view admin/blablabla.php
+		$data['title'] = 'Peserta Dinilai';
+		$this->load->view('admin/header',$data);
+		$this->load->view('admin/peserta_belum_test');
 		$this->load->view('admin/footer');	
 	}
 

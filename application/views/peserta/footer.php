@@ -1,6 +1,6 @@
 	</div>
 	<div class="footer">
-		<p style="font-size: 10px; text-align: center;">© <span class="uwu">create with <3</span> | Dev-Mode, Version: 0.0.1 (Latest Beta-Build.R2 - 13/03/2021 ) see <a href="update_history.txt">this log</a> for update history </p>
+		<p style="font-size: 10px; text-align: center;">© PT. Evdigi Indonesia | Contact US 0838-7473-1480</p>
 	</div>
 
 <script type="text/javascript">
@@ -46,18 +46,22 @@
 				$('.soalke11').removeAttr('hidden');
 				$('.listsoalke301').removeAttr('hidden');
 				$('#countdownkolom').css('display','unset');
+				$(document).attr("title", "Soal Huruf");
 			} else if (jenissoal == 'S2JL') {
 				$('#jenissoalnya').text('Soal Simbol - Kolom 1');
 				$('.soalke21').removeAttr('hidden');
 				$('.listsoalke601').removeAttr('hidden');
 				$('#countdownkolom').css('display','unset');
+				$(document).attr("title", "Soal Simbol");
 			} else {
 				var tbiduser = $('#tbiduser').val();
             	var tbusername = $('#tbusername').val();
+            	$(document).attr("title", "Soal Angka");
             	var tbstatus = 'SM'; //seddang mengerjakkan
 				$('#jenissoalnya').text('Soal Angka - Kolom 1');
 				$('.soalke1').removeAttr('hidden');
 				$('.listsoalke1').removeAttr('hidden');
+				$('.gambarpetunjuk').css('display','none');
 				$('#countdownkolom').css('display','unset');
 	            $.ajax({
 	                type : "POST",
@@ -98,7 +102,7 @@
                 success: function(data){
                 }
             });
-            var tbstatus = 'DONE'; //seddang mengerjakkan
+            var tbstatus = 'DONE'; //Selesai Mengerjaaakan
             $.ajax({
                 type : "POST",
                 url  : "<?php echo base_url('/peserta/Peserta_Controller/update_status')?>",
@@ -107,6 +111,7 @@
                 success: function(data){
                 }
             });
+            $(document).attr("title", "Test Selesai");
             $('#scoreresultLeft').css('display','none');
 			$('#scoreresultRight').css('display','none');
             $('#judulcard').text('Test Telah Selesai');

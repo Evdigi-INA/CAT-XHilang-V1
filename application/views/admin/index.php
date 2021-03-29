@@ -6,7 +6,7 @@
 		</ol>
 	</nav>
 </div>
-<div class="container" style="padding: 8vh 6vh; max-width: 550px;">
+<div class="container" style="padding: 8vh 6vh; max-width: 650px;">
 	<div class="row">
 		<div class="col-sm-4 card-wrapper">
 			<div class="each-card-wrap">

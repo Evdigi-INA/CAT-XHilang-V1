@@ -45,14 +45,14 @@
                   { ?>
                   <tr>
                       <td hidden="true"><?php echo $no++ ?></td>
-                      <td><?php echo $u->noktp; ?></td>
+                      <td><a href="<?php echo base_url().'admin/Admin_Controller/detail_peserta/'.$u->iduser?>"><?php echo $u->noktp; ?></a></td>
                       <td><?php echo $u->namleng; ?></td>
                       <td><?php echo $u->alamat; ?></td>
                       <td><?php echo $u->jk; ?></td>
                       <td><?php echo $u->NilaiAngkaHilang; ?></td>
                       <td><?php echo $u->NilaiHurufHilang; ?></td>
                       <td><?php echo $u->NilaiSimbolHilang; ?></td>
-                      <td style="text-align: center;"><span class="badge badge-warning">Sudah Mengerjakan</span></td>
+                      <td style="text-align: center;"><span class="badge badge-success">Sudah Mengerjakan</span></td>
                   </tr>
                 <?php } ?>
                 </tbody>

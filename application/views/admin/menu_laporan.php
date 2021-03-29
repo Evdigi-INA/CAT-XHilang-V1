@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
     <h1 class="mt-4">Laporan</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="<?php echo base_url().'admin/Admin_Controller/index' ?>">Menu Utama</a></li>
@@ -39,37 +39,17 @@
             <div class="card bg-danger text-white mb-4">
                 <div class="card-body"><?php echo $cunt->belummengerjakan; ?> Belum Test</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">Lihat Detail</a>
+                    <a class="small text-white stretched-link" href="<?php echo base_url().'admin/Admin_Controller/peserta_belum_test' ?>">Lihat Detail</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
     <?php } ?>
     </div>
-    <div class="row">
-        <div class="col-xl-6">
-            <div class="card mb-4">
-                <div class="card-header">
-                    <i class="fas fa-chart-area mr-1"></i>
-                    Area Chart Example
-                </div>
-                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-            </div>
-        </div>
-        <div class="col-xl-6">
-            <div class="card mb-4">
-                <div class="card-header">
-                    <i class="fas fa-chart-bar mr-1"></i>
-                    Bar Chart Example
-                </div>
-                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-            </div>
-        </div>
-    </div>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>
-            10 Peserta Terbaik
+            10 Nilai Terbaik
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -100,7 +80,7 @@
                         ?>
                         <tr>
                             <td><?php echo $tp10->iduser ?></td>
-                            <td><?php echo $tp10->namleng ?></td>
+                            <td><a href="<?php echo base_url().'admin/Admin_Controller/detail_peserta/'.$tp10->iduser ?>"><?php echo $tp10->namleng ?></a></td>
                             <td><?php echo $tp10->noktp ?></td>
                             <td><?php echo $tp10->NilaiAngkaHilang ?></td>
                             <td><?php echo $tp10->NilaiHurufHilang ?></td>

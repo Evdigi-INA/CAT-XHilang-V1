@@ -11,12 +11,8 @@
 							
 						</div>
 						<p class="brieftext">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							Sebelum mengerjakan, pastikan peserta memahami cara mengerjakan dengan melihat video dibawah ini dan menunggu penjelasan dari instruktur selesai, jika sudah silahkaan klik <b>Mulai Test</b>.<br>
+							<center><span class="gambarpetunjuk"><img class="img-fluid" src="<?php echo base_url('assets/web-images/petunjuk.gif')?>"></span></center>
 							<div hidden="true">
 							<?php foreach ($qinfo as $v) {
 								# code...
