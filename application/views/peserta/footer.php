@@ -3,6 +3,7 @@
 		<p style="font-size: 10px; text-align: center;">© PT. Evdigi Indonesia | Contact US 0838-7473-1480</p>
 	</div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
 <script type="text/javascript">
 	
 	function range(awal, akhir) {
@@ -14,6 +15,27 @@
 			$('#countdownkolom').removeClass('runningout');
 		}
 	}
+
+	$("#logoutlink").click(function(e){
+		e.preventDefault(); // <--- prevent form from submitting
+		Swal.fire({
+		  title: 'Yakin ingin Logout?',
+		  text: "Anda dapat mengulang test ini nanti dan mulai dari awal.",
+		  type: "question",
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'Ya'
+		}).then((result) => {
+		  if (result.value) {
+		  	Swal.fire('Logout Sukses','Test diakhiri','success').then(function() {
+	          window.location.href = "<?php echo base_url().'Verification/logoutkeun' ?>";// <--- submit for prmogrammatically
+	        });
+		    
+		  }
+		})
+	});
+
 
 	var barisny = range(1, 900); // array sampe 900 (untuk baris jawaban list)
 	var index = -1; //baris

@@ -70,7 +70,7 @@
             ?>, <?php echo $o->username; ?></h6>
 			  </div>
 			  <div class="btn-logout-wrapper">
-			  	<a href="<?php echo base_url().'Verification/logoutkeun' ?>" style="line-height: 3;"><span style="color: white;"><i class="fas fa-sign-out-alt"></i></span></a>
+			  	<a href="#" id="logoutlink" style="line-height: 3;"><span style="color: white;"><i class="fas fa-sign-out-alt"></i></span></a>
 			  </div>
 			</nav>
 		</div>

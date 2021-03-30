@@ -14,13 +14,15 @@ class Verification extends CI_Controller
 		$this->load->view('login_page');	
 	}
 
-	function loginkeun()
+	function checktoken()
 	{
-		$username = $this->input->post('tbusername');
-		$password = $this->input->post('tbpassword');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$token = $this->input->post('token');
 		$where = array(
 			'username' => $username,
-			'password' => $password //password menggunakan MD5! without MD5? simply remove it lol
+			'password' => $password, //password menggunakan MD5! without MD5? simply remove it lol
+			'token_access' => $token
 			);
 
 		$cek1 = $this->modelverif->cek_user("tbl_user",$where);
@@ -35,17 +37,36 @@ class Verification extends CI_Controller
 			);
 			$this->session->set_userdata($data_session);
 			if($cek1->row()->role == 'admin'){
-				redirect(base_url("index.php/admin/Admin_Controller/index"));
+				echo "admin";
 			} else {
-				redirect(base_url("index.php/peserta/Peserta_Controller/index"));
+				echo "peserta";
 			}
 			
 		}
 		else
 		{
-			print "<script type=\"text/javascript\">alert('Username atau Password salah!');
-			</script>";
-			$this->load->view('login_page');
+			echo "wrong";
+		};	
+	}
+
+	function loginkeun()
+	{
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$where = array(
+			'username' => $username,
+			'password' => $password //password menggunakan MD5! without MD5? simply remove it lol
+			);
+
+		$cek1 = $this->modelverif->cek_user("tbl_user",$where);
+
+		if ($cek1->num_rows() > 0) //kondisi berdasarkan jumlah record
+		{
+			echo "ok";
+		}
+		else
+		{
+			echo "failed";
 		};
 	}
 
@@ -61,6 +82,22 @@ class Verification extends CI_Controller
 			echo "LOGOUT FAILED! Error Code: 000";
 		}
 		
+	}
+
+	function update_token()
+	{
+		$iduser=$this->input->post('username');
+        $password=$this->input->post('password');
+        $token=$this->input->post('token');
+
+        $where = array(
+			'username'		=> $iduser,
+			'password'		=> $password
+		);
+ 		
+ 		$data = array('token_access' => $token);
+
+ 		$this->modelverif->lakukan_update($where,$data,'tbl_user');
 	}
 }
 

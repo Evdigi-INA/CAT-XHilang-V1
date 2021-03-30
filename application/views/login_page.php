@@ -48,30 +48,37 @@
               echo "Selamat Malam";
             }
             ?></h1>
-				<h5 style="font-size: 14px;">Silahkan masukan data login anda</h3>
+				<h5 style="font-size: 14px;" class="welcometext">Silahkan masukan data login anda</h3>
 			</center>
 			<div class="login-wrapper">
 				<p class="warning"></p>
 				<div class="container" style="height: auto;">
-					<form id="form-login" action="<?php echo base_url('Verification/loginkeun/'); ?>" method="post" name="form-login" enctype="multipart/form-data">
-						<div class="form">
-								<input type="text" name="tbusername" autocomplete="off" required>
-				        		<label for="nama" class="label-nama">
-				            		<span class="content-nama">Username</span>
-				        		</label>	
+					<div id="form-login" name="form-login">
+						<div class="form tbusernamenya">
+							<input type="text" name="tbusername" id="tbusername" autocomplete="off" required>
+			        		<label for="nama" class="label-nama">
+			            		<span class="content-nama">Username</span>
+			        		</label>	
 						</div>
-						<div class="form">
-								<input type="password" name="tbpassword" autocomplete="off" required>
-				        		<label for="tbpassword" class="label-nama">
-				            		<span class="content-nama">Password</span>
-				        		</label>	
+						<div class="form tbpasswordnya">
+							<input type="password" name="tbpassword" id="tbpassword" autocomplete="off" required>
+			        		<label for="tbpassword" class="label-nama">
+			            		<span class="content-nama">Password</span>
+			        		</label>	
+						</div>
+						<div class="form tbtokenform" style="display: none">
+							<input type="text" name="tbtoken" id="tbtoken" autocomplete="off" required>
+			        		<label for="nama" class="label-nama">
+			            		<span class="content-nama">Ketik disini</span>
+			        		</label>		
 						</div>
 						<div class="button-wrapper">
 							<div class="button-container">
-								<input class="button" type="submit" value="Login">
+								<input class="button" type="submit" value="Login" id="btn-login">
+								<input class="button" type="submit" value="Validasi" id="buttonvalidate" style="display: none;">
 							</div>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -80,6 +87,11 @@
 		<p style="font-size: 10px;">© <span class="uwu">create with <3</span> | Dev-Mode, Version: 0.0.1 (Latest Beta-Build.R2 - 13/03/2021 ) see <a href="update_history.txt">this log</a> for update history </p>
 	</div>
 	
-	<script type="text/javascript" src="<?php echo base_url('assets/web-js/login.js'); ?>"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+	<script type="text/javascript">
+		var baseUrl = "<?= base_url();?>";
+    	var siteUrl = "<?= site_url();?>";
+	</script>
+	<script type="text/javascript" src="<?php echo base_url('assets/web-js/login-js.js'); ?>"></script>
 </body>
 </html>
