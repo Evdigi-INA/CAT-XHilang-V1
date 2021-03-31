@@ -29,17 +29,17 @@ class Verification extends CI_Controller
 
 		if ($cek1->num_rows() > 0) //kondisi berdasarkan jumlah record
 		{
-			$data_session = array(
-				'nama' => $username,
-				'status' => "login",
-				'iduser' => $cek1->row()->id_user, 
-				'role' => $cek1->row()->role
-			);
-			$this->session->set_userdata($data_session);
-			if($cek1->row()->role == 'admin'){
-				echo "admin";
-			} else {
+			if($cek1->row()->role == 'peserta'){
+				$data_session = array(
+					'nama' => $username,
+					'status' => "login",
+					'iduser' => $cek1->row()->id_user, 
+					'role' => $cek1->row()->role
+				);
+				$this->session->set_userdata($data_session);
 				echo "peserta";
+			} else {
+				echo "failed";
 			}
 			
 		}
@@ -62,7 +62,18 @@ class Verification extends CI_Controller
 
 		if ($cek1->num_rows() > 0) //kondisi berdasarkan jumlah record
 		{
-			echo "ok";
+			if($cek1->row()->role == 'admin'){
+				$data_session = array(
+					'nama' => $username,
+					'status' => "login",
+					'iduser' => $cek1->row()->id_user, 
+					'role' => $cek1->row()->role
+				);
+				$this->session->set_userdata($data_session);
+				echo "admin";
+			} else {
+				echo "ok";
+			}
 		}
 		else
 		{

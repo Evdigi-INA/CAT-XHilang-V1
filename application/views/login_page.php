@@ -72,6 +72,7 @@
 			            		<span class="content-nama">Ketik disini</span>
 			        		</label>		
 						</div>
+						<div style="text-align: center; display: none;" class="texttoken"><p>Tidak bisa login? <a href="#">refresh token</a></p></div>
 						<div class="button-wrapper">
 							<div class="button-container">
 								<input class="button" type="submit" value="Login" id="btn-login">

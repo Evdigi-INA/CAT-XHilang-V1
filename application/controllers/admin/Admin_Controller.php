@@ -48,12 +48,19 @@ class Admin_Controller extends CI_Controller
 
 		$data['top10'] = $this->Xhilangmodel->p_top10();
 		$data['countpeserta'] = $this->Xhilangmodel->hitungpesertaberdasarkanstatus();
+		$data['pesertalisttoken'] = $this->Xhilangmodel->fetchpesertatokenlist();
 		//END OF DEBUG LOG//
 			//load view admin/blablabla.php
 		$data['title'] = 'Dashboard - Menu Laporan';
 		$this->load->view('admin/header',$data);
 		$this->load->view('admin/menu_laporan');
 		$this->load->view('admin/footer');
+	}
+
+	function refreshtokenlistpeserta()
+	{
+		$data=$this->Xhilangmodel->fetchpesertatokenlist();
+        echo json_encode($data);
 	}
 
 	function daftar_peserta() //tampildata peserta

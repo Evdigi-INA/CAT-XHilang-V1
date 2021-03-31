@@ -46,50 +46,93 @@
         </div>
     <?php } ?>
     </div>
-    <div class="card mb-4">
-        <div class="card-header">
-            <i class="fas fa-table mr-1"></i>
-            10 Nilai Terbaik
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>ID User</th>
-                            <th>Nama Lengkap</th>
-                            <th>No KTP</th>
-                            <th>Nilai Angka Hilang</th>
-                            <th>Nilai Huruf Hilang</th>
-                            <th>Nilai Simbol Hilang</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>ID User</th>
-                            <th>Nama Lengkap</th>
-                            <th>No KTP</th>
-                            <th>Nilai Angka Hilang</th>
-                            <th>Nilai Huruf Hilang</th>
-                            <th>Nilai Simbol Hilang</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        <?php foreach ($top10 as $tp10) {
-                            
-                        ?>
-                        <tr>
-                            <td><?php echo $tp10->iduser ?></td>
-                            <td><a href="<?php echo base_url().'admin/Admin_Controller/detail_peserta/'.$tp10->iduser ?>"><?php echo $tp10->namleng ?></a></td>
-                            <td><?php echo $tp10->noktp ?></td>
-                            <td><?php echo $tp10->NilaiAngkaHilang ?></td>
-                            <td><?php echo $tp10->NilaiHurufHilang ?></td>
-                            <td><?php echo $tp10->NilaiSimbolHilang ?></td>
-                        </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-6">
+                <div class="card-header">
+                    <i class="fas fa-table mr-1"></i>
+                    10 Nilai Terbaik
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>ID User</th>
+                                    <th>Nama Lengkap</th>
+                                    <th>No KTP</th>
+                                    <th>Nilai Angka Hilang</th>
+                                    <th>Nilai Huruf Hilang</th>
+                                    <th>Nilai Simbol Hilang</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>ID User</th>
+                                    <th>Nama Lengkap</th>
+                                    <th>No KTP</th>
+                                    <th>Nilai Angka Hilang</th>
+                                    <th>Nilai Huruf Hilang</th>
+                                    <th>Nilai Simbol Hilang</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <?php foreach ($top10 as $tp10) {
+                                    
+                                ?>
+                                <tr>
+                                    <td><?php echo $tp10->iduser ?></td>
+                                    <td><a href="<?php echo base_url().'admin/Admin_Controller/detail_peserta/'.$tp10->iduser ?>"><?php echo $tp10->namleng ?></a></td>
+                                    <td><?php echo $tp10->noktp ?></td>
+                                    <td><?php echo $tp10->NilaiAngkaHilang ?></td>
+                                    <td><?php echo $tp10->NilaiHurufHilang ?></td>
+                                    <td><?php echo $tp10->NilaiSimbolHilang ?></td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <div class="col-md-6">
+            <div class="card mb-6">
+                <div class="card-header">
+                    <i class="fas fa-table mr-1"></i>
+                    Token Peserta
+                    <div style="float: right;">
+                        <button type="button" class="btn btn-primary" id="btnrefreshtokenlist">Refresh</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTabletokenlist" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>ID User</th>
+                                    <th>Username</th>
+                                    <th>No KTP</th>
+                                    <th>Token</th>
+                                </tr>
+                            </thead>
+                            <tbody id="showdatatokenlist">
+
+                                <?php foreach ($pesertalisttoken as $l) {
+                                    
+                                ?>
+                                <tr>
+                                    <td><?php echo $l->iduser ?></td>
+                                    <td><?php echo $l->username ?></td>
+                                    <td><?php echo $l->noktp ?></td>
+                                    <td><span class="badge badge-primary"><?php echo $l->token; ?></span></td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    
 </div>

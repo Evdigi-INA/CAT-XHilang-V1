@@ -124,4 +124,11 @@ class Xhilangmodel extends CI_Model
 
         return $gas->result();    
     }
+
+    function fetchpesertatokenlist()
+    {
+        $select = array('tbl_user.id_user as iduser','tbl_peserta.no_ktp as noktp','tbl_user.username as username','tbl_user.role as role','tbl_user.token_access as token');
+        $querya = $this->db->select($select)->from('tbl_peserta')->join('tbl_user','tbl_peserta.id_user = tbl_user.id_user')->get();
+        return $querya->result();   
+    }
 }
