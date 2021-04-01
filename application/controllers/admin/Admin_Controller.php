@@ -447,21 +447,35 @@ class Admin_Controller extends CI_Controller
     		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S002') </script>";
 		} else {
 			$nganu = $output;
+
 			//$owo = str_split($nganu, 4); //kumpulkan ke variabel nganu daftar jawaban pada tbnya, sekalian di trim (12 karena UTF8 Simbol, beda dengan yang diatur ke 8)
-			echo $nganu; //debug only
-			/*$data = array(
-				'listjawaban' => $nganu
-			);
+			$utf7 = wordwrap(mb_convert_encoding($nganu, 'UTF-7'),21,' - ',true);//debug only
+			$utf8 = iconv('UTF-7','UTF-8',$utf7);
+			//echo $utf7.'<br><br>';
+			
+			$cleaned = str_replace(' - ','-',$utf8);
+			$lengthdata = strlen($cleaned);
+			//echo 'panjang string '.strlen($cleaned);
+			if ($lengthdata == 360) {
+				$data = array(
+					'listjawaban' => $cleaned
+				);
 
-			$where = array(
-				'id_kolomjawaban' => $idkolomjawabannya,
-				'kolom' => $kolomnya
-			);
+				$where = array(
+					'id_kolomjawaban' => $idkolomjawabannya,
+					'kolom' => $kolomnya
+				);
 
-			$this->load->model('Xhilangmodel'); //loadmodelnya dulu
-			$this->Xhilangmodel->lakukan_update($where,$data,'tbl_kolomjawaban');
-			$message = "Perubahan pada jawaban simbol untuk ".$kolomnya." Berhasil disimpan!";
-    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S003') </script>";*/
+				$this->load->model('Xhilangmodel'); //loadmodelnya dulu
+				$this->Xhilangmodel->lakukan_update($where,$data,'tbl_kolomjawaban');
+				$message = "Perubahan pada jawaban simbol untuk ".$kolomnya." Berhasil disimpan!";
+	    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S003') </script>";
+			} else {
+				$message = "Terdapat karakter bukan simbol pada inputan anda (".$kolomnya."), harap masukan simbol!";
+				print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S003'); </script>";
+			}
+
+			
 		}
 		
 		//echo 'this is the fucking output and it will be ready to be inserted to the facking database!: '.wordwrap($output, 12, '-', true); //debug only

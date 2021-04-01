@@ -92,10 +92,6 @@
 <script src="<?php echo base_url('assets/datatables/jszip.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/datatables/datatables.min.js') ?>"></script>
 
-<!--LOAD DEMO DATATABLES-->
-<script src="assets/demo/chart-area-demo.js"></script>
-<script src="assets/demo/chart-bar-demo.js"></script>
-
 <!-- LOAD CUSTOM SCRIPT UNTUK SEMUA YANG ADA DI LAMAN INI -->
 <script src="<?php echo base_url('js/sb-admin.min.js') ?>"></script>
 </body>

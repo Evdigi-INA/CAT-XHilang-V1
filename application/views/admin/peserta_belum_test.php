@@ -4,7 +4,7 @@
       <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?php echo base_url().'admin/Admin_Controller/index' ?>">Menu Utama</a></li>
       <li class="breadcrumb-item"><a href="<?php echo base_url().'admin/Admin_Controller/laporan_list' ?>">Laporan</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Peserta Belum Test</li>
+      <li class="breadcrumb-item active" aria-current="page">P. Belum Test</li>
     </ol>
   </nav>
 </div>
@@ -44,7 +44,7 @@
                       <td><?php echo $u->nama_lengkap; ?></td>
                       <td><?php echo $u->alamat; ?></td>
                       <td><?php echo $u->jenis_kelamin; ?></td>
-                      <td style="text-align: center;"><span class="badge badge-warning">Belum Test</span></td>
+                      <td style="text-align: center;"><span class="badge badge-danger">Belum Test</span></td>
                   </tr>
                 <?php } ?>
                 </tbody>
