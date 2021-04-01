@@ -446,9 +446,10 @@ class Admin_Controller extends CI_Controller
 			$message = "Perubahan pada jawaban huruf untuk ".$kolomnya." Berhasil disimpan!";
     		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S002') </script>";
 		} else {
-			$nganu = wordwrap($output, 12, '-', true); //kumpulkan ke variabel nganu daftar jawaban pada tbnya, sekalian di trim (12 karena UTF8 Simbol, beda dengan yang diatur ke 8)
-			//echo wordwrap($nganu2); debug only
-			$data = array(
+			$nganu = $output;
+			//$owo = str_split($nganu, 4); //kumpulkan ke variabel nganu daftar jawaban pada tbnya, sekalian di trim (12 karena UTF8 Simbol, beda dengan yang diatur ke 8)
+			echo $nganu; //debug only
+			/*$data = array(
 				'listjawaban' => $nganu
 			);
 
@@ -460,7 +461,7 @@ class Admin_Controller extends CI_Controller
 			$this->load->model('Xhilangmodel'); //loadmodelnya dulu
 			$this->Xhilangmodel->lakukan_update($where,$data,'tbl_kolomjawaban');
 			$message = "Perubahan pada jawaban simbol untuk ".$kolomnya." Berhasil disimpan!";
-    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S003') </script>";
+    		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S003') </script>";*/
 		}
 		
 		//echo 'this is the fucking output and it will be ready to be inserted to the facking database!: '.wordwrap($output, 12, '-', true); //debug only

@@ -47,13 +47,7 @@
 
 	var interval;
 
-	
-	var S1JLSalah = 0;
-	var S1JLBenar = 0;
-	var nilaiS1JL = 0;
-	var S2JLSalah = 0;
-	var S2JLBenar = 0;
-	var nilaiS2JL = 0;
+
 
 	var columnsoalcheckpoint = Array.from({length:31}, (v, i) => i * 30); //mulai dari 0, untuk index naekin 1
 	$(document).ready(function(){
@@ -76,6 +70,7 @@
 				$('#countdownkolom').css('display','unset');
 				$(document).attr("title", "Soal Simbol");
 			} else {
+				index+=1;
 				var tbiduser = $('#tbiduser').val();
             	var tbusername = $('#tbusername').val();
             	$(document).attr("title", "Soal Angka");
@@ -95,12 +90,12 @@
 	                }
 	            });
 			}
-			index++;
+			
 			$('.tabelsoal').removeAttr('hidden');
 			$('.brieftext').css('display','none');
 			$(this).css('display','none');
 			$('.barisnya' + barisny[index]).removeAttr('hidden');
-			$('#judulcard').text('Soal '+barisny[index]);
+			$('#judulcard').text('Soal '+ barisny[index]);
 			$( "#countdownkolom" ).removeClass("break");
 			status = 'Mengerjakan';
 			runTimer();
@@ -154,18 +149,24 @@
 				status = 'Break';
 				//console.log('Status: Break');
 				//console.log(index);
-			} else {
-				status = 'Mengerjakan';
-				index++;
-				$('.barisnya' + barisny[index]).removeAttr('hidden');
-				$('.listsoalke' + barisny[index]).removeAttr('hidden');
-				$('#judulcard').text('Soal ' + barisny[index]);
-				//console.log(index + '(Telah Dikerjakan)');	
-
 			}
+				
+			index++;
+			$('.barisnya' + barisny[index]).removeAttr('hidden');
+			$('.listsoalke' + barisny[index]).removeAttr('hidden');
+			$('#judulcard').text('Soal ' + barisny[index]);
+			console.log(index + '(Telah Dikerjakan)');	
+			$('table.tabledijawab > tbody > tr.barisdijawab' + index + ' > td.answered').text($('.selectorbaris' + index + ':checked').val());
+			if ($('table.tabledijawab > tbody > tr.barisdijawab' + index + ' > td.answered').text() == '') {
+				console.log('failed');
+			}
+			
 		} else {
 			alert("mentok kekanan");
 		}
+		//put the selected radio to table
+		//console.log('table.tabledijawab > tbody > tr:nth-child(' + index + ') > td.answered? also selector' + index + ':checked')
+
 
 		if (index < columnsoalcheckpoint[1] && status=='Mengerjakan') {
 			$('#jenissoalnya').text('Soal Angka - Kolom 1');
@@ -267,12 +268,15 @@
 				detectClassRunningOut();
 			}
 			soalke = '10';
-		} else if (index == 299 && status=='Break') {
+		} else if (index == 300 && status=='Break') {
 			jenissoal = 'S1JL';
+			$('.barispilihan').attr('hidden','true');
 			$('#loader').css('display','block');
 			$('#judulcard').text('Mengumpulkan Hasil');
 			$('#jenissoalnya').text('Mohon Menunggu');
 			$('.tabelsoal').attr('hidden','true');
+			$('.soaltest').attr('hidden','true');
+			$('.barisss').attr('hidden','true');
 			clearInterval(interval);
 			setTimeout(function(){
 				$('#loader').css('display','none');
@@ -395,12 +399,15 @@
 				detectClassRunningOut();
 			}
 			soalke = '20';
-		} else if (index == 599 && status=='Break') {
+		} else if (index == 600 && status=='Break') {
+
 			jenissoal = 'S2JL';
 			$('#loader').css('display','block');
 			$('#judulcard').text('Mengumpulkan Hasil');
 			$('#jenissoalnya').text('Mohon Menunggu');
 			$('.tabelsoal').attr('hidden','true');
+			$('.soaltest').attr('hidden','true');
+			$('.barisss').attr('hidden','true');
 			clearInterval(interval);
 			setTimeout(function(){
 				$('#loader').css('display','none');
@@ -549,10 +556,7 @@
 				},3000);
 		}
 
-		//put the selected radio to table
-		$('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered').text($('.selectorbaris' + index + ':checked').val());
-		////console.log('table.tablebarisjawabandandijawab > tbody > tr:nth-child(' + index + ') > td.answered? also selector' + index + ':checked')
-	
+			
 
 		//console.log(index + ' Selesai');
 		//console.warn('Soal ke :' + soalke);
@@ -931,7 +935,7 @@
 			var nilai0 = 0;
 			
 			//collect data jawaban fro kolom 2
-			$('table.tablebarisjawabandandijawab > tbody > tr').slice(0,300).each(function(o){
+			$('table.tabledijawab > tbody > tr').slice(0,300).each(function(o){
 			    tds0 = $(this).find('td');
   				datajawaban0[o] = $(tds0[0]).text();
 			});
@@ -991,7 +995,7 @@
 			var nilai1 = 0;
 			
 			//collect data jawaban fro kolom 2
-			$('table.tablebarisjawabandandijawab > tbody > tr').slice(300,600).each(function(o){
+			$('table.tabledijawab > tbody > tr').slice(300,600).each(function(o){
 			    tds1 = $(this).find('td');
   				datajawaban1[o] = $(tds1[0]).text();
 			});
@@ -1043,7 +1047,7 @@
 			var nilai2 = 0;
 			
 			//collect data jawaban fro kolom 2
-			$('table.tablebarisjawabandandijawab > tbody > tr').slice(600,900).each(function(o){
+			$('table.tabledijawab > tbody > tr').slice(600,900).each(function(o){
 			    tds2 = $(this).find('td');
   				datajawaban2[o] = $(tds2[0]).text();
 			});
