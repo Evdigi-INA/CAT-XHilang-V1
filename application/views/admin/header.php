@@ -51,7 +51,7 @@
 			  <div class="container-fluid">
 			    <a class="navbar-brand" href="<?php echo base_url().'admin/Admin_Controller/index' ?>">
 			      <span style="margin-right: 10px;"><i class="fas fa-file fa-fw"></i></span>
-			      CAT X Hilang Dashboard 
+			      CAT Tes Sikap Kerja 
 			    </a>
 			  </div>
 			  <div class="account-button-wrapper"><h6 style="color: white; font-size: 15px;"><?php

@@ -117,156 +117,96 @@
 									$var28 = '';
 									$var29 = '';
 									$var30 = '';
-									$var1answer = '';
-									$var2answer = '';
-									$var3answer = '';
-									$var4answer = '';
-									$var5answer = '';
-									$var6answer = '';
-									$var7answer = '';
-									$var8answer = '';
-									$var9answer = '';
-									$var10answer = '';
-									$var11answer = '';
-									$var12answer = '';
-									$var13answer = '';
-									$var14answer = '';
-									$var15answer = '';
-									$var16answer = '';
-									$var17answer = '';
-									$var18answer = '';
-									$var19answer = '';
-									$var20answer = '';
-									$var21answer = '';
-									$var22answer = '';
-									$var23answer = '';
-									$var24answer = '';
-									$var25answer = '';
-									$var26answer = '';
-									$var27answer = '';
-									$var28answer = '';
-									$var29answer = '';
-									$var30answer = '';
-
+									
 									foreach ($datajawabanlistkolom1a as $k1) {
 										$var1 = $k1->listjawaban;
-										$var1answer = $k1->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom2a as $k2) {
 										$var2 = $k2->listjawaban;
-										$var2answer = $k2->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom3a as $k3) {
 										$var3 = $k3->listjawaban;
-										$var3answer = $k3->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom4a as $k4) {
 										$var4 = $k4->listjawaban;
-										$var4answer = $k4->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom5a as $k5) {
 										$var5 = $k5->listjawaban;
-										$var5answer = $k5->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom6a as $k6) {
 										$var6 = $k6->listjawaban;
-										$var6answer = $k6->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom7a as $k7) {
 										$var7 = $k7->listjawaban;
-										$var7answer = $k7->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom8a as $k8) {
 										$var8 = $k8->listjawaban;
-										$var8answer = $k8->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom9a as $k9) {
 										$var9 = $k9->listjawaban;
-										$var9answer = $k9->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom10a as $k10) {
 										$var10 = $k10->listjawaban;
-										$var10answer = $k10->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom1b as $k11) {
 										$var11 = $k11->listjawaban;
-										$var11answer = $k11->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom2b as $k12) {
 										$var12 = $k12->listjawaban;
-										$var12answer = $k12->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom3b as $k13) {
 										$var13 = $k13->listjawaban;
-										$var13answer = $k13->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom4b as $k14) {
 										$var14 = $k14->listjawaban;
-										$var14answer = $k14->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom5b as $k15) {
 										$var15 = $k15->listjawaban;
-										$var15answer = $k15->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom6b as $k16) {
 										$var16 = $k16->listjawaban;
-										$var16answer = $k16->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom7b as $k17) {
 										$var17 = $k17->listjawaban;
-										$var17answer = $k17->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom8b as $k18) {
 										$var18 = $k18->listjawaban;
-										$var18answer = $k18->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom9b as $k19) {
 										$var19 = $k19->listjawaban;
-										$var19answer = $k19->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom10b as $k20) {
 										$var20 = $k20->listjawaban;
-										$var20answer = $k20->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom1c as $k21) {
 										$var21 = $k21->listjawaban;
-										$var21answer = $k21->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom2c as $k22) {
 										$var22 = $k22->listjawaban;
-										$var22answer = $k22->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom3c as $k23) {
 										$var23 = $k23->listjawaban;
-										$var23answer = $k23->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom4c as $k24) {
 										$var24 = $k24->listjawaban;
-										$var24answer = $k24->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom5c as $k25) {
 										$var25 = $k25->listjawaban;
-										$var25answer = $k25->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom6c as $k26) {
 										$var26 = $k26->listjawaban;
-										$var26answer = $k26->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom7c as $k27) {
 										$var27 = $k27->listjawaban;
-										$var27answer = $k27->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom8c as $k28) {
 										$var28 = $k28->listjawaban;
-										$var28answer = $k28->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom9c as $k29) {
 										$var29 = $k29->listjawaban;
-										$var29answer = $k29->jawabanbenar;
 									}
 									foreach ($datajawabanlistkolom10c as $k30) {
 										$var30 = $k30->listjawaban;
-										$var30answer = $k30->jawabanbenar;
 									}
 
 									$x = 1;
@@ -278,8 +218,6 @@
 										$x++;
 									}
 									$u = $var1.'-'.$var2.'-'.$var3.'-'.$var4.'-'.$var5.'-'.$var6.'-'.$var7.'-'.$var8.'-'.$var9.'-'.$var10.'-'.$var11.'-'.$var12.'-'.$var13.'-'.$var14.'-'.$var15.'-'.$var16.'-'.$var17.'-'.$var18.'-'.$var19.'-'.$var20.'-'.$var21.'-'.$var22.'-'.$var23.'-'.$var24.'-'.$var25.'-'.$var26.'-'.$var27.'-'.$var28.'-'.$var29.'-'.$var30;
-									//$ans = $var1answer.'-'.$var2answer.'-'.$var3answer.'-'.$var4answer.'-'.$var5answer.'-'.$var6answer.'-'.$var7answer.'-'.$var8answer.'-'.$var9answer.'-'.$var10answer.'-'.$var11answer.'-'.$var12answer.'-'.$var13answer.'-'.$var14answer.'-'.$var15answer.'-'.$var16answer.'-'.$var17answer.'-'.$var18answer.'-'.$var19answer.'-'.$var20answer.'-'.$var21answer.'-'.$var22answer.'-'.$var23answer.'-'.$var24answer.'-'.$var25answer.'-'.$var26answer.'-'.$var27answer.'-'.$var28answer.'-'.$var29answer.'-'.$var30answer;
-
 									$owo = array_map('trim',explode('-', $u));
 									//$anl = array_map('trim',explode('-', $ans));
 

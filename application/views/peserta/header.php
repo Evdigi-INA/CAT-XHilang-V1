@@ -50,9 +50,9 @@
 		<div class="navigation-headbar">
 			<nav class="navbar navbar-dark bg-dark" style="display: flex;flex-direction: row;align-items: flex-start;flex-wrap: nowrap;padding: 0 2vh;height: 50px;line-height: 2;">
 			  <div class="container-fluid">
-			    <a class="navbar-brand" href="<?php echo base_url().'admin/Admin_Controller/index' ?>">
+			    <a class="navbar-brand" href="#">
 			      <span style="margin-right: 10px;"><i class="fas fa-file fa-fw"></i></span>
-			      CAT X Hilang 
+			      CAT Tes Sikap Kerja 
 			    </a>
 			  </div>
 			  <div class="account-button-wrapper"><h6 style="color: white; font-size: 15px;"><?php

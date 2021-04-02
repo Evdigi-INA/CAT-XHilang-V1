@@ -415,6 +415,7 @@
 				$('.brieftext').css('display','block');
 				$('.brieftext').text('Berikut adalah hasil pengerjaan');
 				$('.soalke20').attr('hidden','true');
+				
 				$('#startbuttontest').css('display','block');
 				$('#judulcard').text('Soal Huruf Selesai');
 				$('.tabelsoal').attr('hidden','true');
@@ -534,6 +535,8 @@
 			$('#judulcard').text('Mengumpulkan Hasil');
 			$('#jenissoalnya').text('Mohon Menunggu');
 			$('.tabelsoal').attr('hidden','true');
+			$('.soaltest').attr('hidden','true');
+			$('.barisss').attr('hidden','true');
 			clearInterval(interval);
 			setTimeout(function(){
 				$('#loader').css('display','none');
@@ -541,6 +544,7 @@
 				$('.brieftext').css('display','block');
 				$('.brieftext').text('Berikut adalah hasil pengerjaan');
 				$('.soalke30').attr('hidden','true');
+				
 				$('#menjelangendbutton').css('display','block');
 				$('#judulcard').text('Soal Simbol Selesai');
 				$('.tabelsoal').attr('hidden','true');
@@ -653,14 +657,16 @@
 			$('#judulcard').text('Mengumpulkan Hasil');
 			$('#jenissoalnya').text('Mohon Menunggu');
 			$('.tabelsoal').attr('hidden','true');
+			$('.soaltest').attr('hidden','true');
+			$('.barisss').attr('hidden','true');
 			clearInterval(interval);
 			setTimeout(function(){
 				$('#loader').css('display','none');
 				$('#jenissoalnya').text('Hasil Pengerjaan Soal Angka');
 				$('.brieftext').css('display','block');
 				$('.brieftext').text('Berikut adalah hasil pengerjaan');
-				
 				$('.soalke10').attr('hidden','true');
+
 				$('#startbuttontest').css('display','block');
 				$('#judulcard').text('Soal Angka Selesai');
 				$('.tabelsoal').attr('hidden','true');
@@ -754,6 +760,8 @@
 			$('#judulcard').text('Mengumpulkan Hasil');
 			$('#jenissoalnya').text('Mohon Menunggu');
 			$('.tabelsoal').attr('hidden','true');
+			$('.soaltest').attr('hidden','true');
+			$('.barisss').attr('hidden','true');
 			clearInterval(interval);
 			setTimeout(function(){
 				$('#loader').css('display','none');
@@ -761,6 +769,7 @@
 				$('.brieftext').css('display','block');
 				$('.brieftext').text('Berikut adalah hasil pengerjaan');
 				$('.soalke20').attr('hidden','true');
+				
 				$('#startbuttontest').css('display','block');
 				$('#judulcard').text('Soal Huruf Selesai');
 				$('.tabelsoal').attr('hidden','true');
@@ -853,6 +862,8 @@
 			$('#judulcard').text('Mengumpulkan Hasil');
 			$('#jenissoalnya').text('Mohon Menunggu');
 			$('.tabelsoal').attr('hidden','true');
+			$('.soaltest').attr('hidden','true');
+			$('.barisss').attr('hidden','true');
 			clearInterval(interval);
 			setTimeout(function(){
 				$('#loader').css('display','none');
@@ -860,6 +871,7 @@
 				$('.brieftext').css('display','block');
 				$('.brieftext').text('Berikut adalah hasil pengerjaan');
 				$('.soalke30').attr('hidden','true');
+				
 				$('#menjelangendbutton').css('display','block');
 				$('#judulcard').text('Soal Huruf Selesai');
 				$('.tabelsoal').attr('hidden','true');
