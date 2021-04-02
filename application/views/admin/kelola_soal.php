@@ -51,15 +51,12 @@
 		    					
 		    					foreach ($datajawabanlistkolom1 as $jl1) {  //initialize
 		    						$arrayjawabanlist1 = explode('-', $jl1->listjawaban); // list-jawaban, pisahkan minusnya
-			    					$jawabanbener1 = explode('-', $jl1->jawabanbenar,1); //jawabaanbeneran, pisahkan untuk masing2baris
+			    					
 
 									$o = 0; //untuk cek posisi array dimulai dari 0
 									$i = 1;	//untuk penomoran baris
 									foreach ($arrayjawabanlist1 as $listjawaban1) {//bagi2 dulu arrayjawaban list yang udah dipisahin minusnya
 										$jl1 = explode(' ', $listjawaban1); //setelah pisahkan minsunya, pisahkan spasi
-										foreach ($jawabanbener1 as $jb1) { //dibagi2 dulu jawaban benernya yang udah dipisahin berdasarkan minus
-
-										}
 
 										//echo $jb1[0];//FOR DEBUG (Pastikan muncul 1 value)
 		    				?>
@@ -139,16 +136,11 @@
 		    					
 		    					foreach ($datajawabanlistkolom2 as $jl2) {  //initialize
 		    						$arrayjawabanlist2 = explode('-', $jl2->listjawaban); // list-jawaban, pisahkan minusnya
-			    					$jawabanbener2 = explode('-', $jl2->jawabanbenar,1); //jawabaanbeneran, pisahkan untuk masing2baris
 
 									$o = 0; //untuk cek posisi array dimulai dari 0
 									$i = 1;	//untuk penomoran baris
 									foreach ($arrayjawabanlist2 as $listjawaban2) {//bagi2 dulu arrayjawaban list yang udah dipisahin minusnya
 										$jl2 = explode(' ', $listjawaban2); //setelah pisahkan minsunya, pisahkan spasi
-										foreach ($jawabanbener2 as $jb2) { //dibagi2 dulu jawaban benernya yang udah dipisahin berdasarkan minus
-
-										}
-
 										//echo $jb2[0];//FOR DEBUG (Pastikan muncul 1 value)
 		    				?>
 		    				<tr>
@@ -228,17 +220,10 @@
 		    					
 		    					foreach ($datajawabanlistkolom3 as $jl3) {  //initialize
 		    						$arrayjawabanlist3 = explode('-', $jl3->listjawaban); // list-jawaban, pisahkan minusnya
-			    					$jawabanbener3 = explode('-', $jl3->jawabanbenar,1); //jawabaanbeneran, pisahkan untuk masing2baris
-
 									$o = 0; //untuk cek posisi array dimulai dari 0
 									$i = 1;	//untuk penomoran baris
 									foreach ($arrayjawabanlist3 as $listjawaban3) {//bagi2 dulu arrayjawaban list yang udah dipisahin minusnya
 										$jl3 = explode(' ', $listjawaban3); //setelah pisahkan minsunya, pisahkan spasi
-										foreach ($jawabanbener3 as $jb3) { //dibagi2 dulu jawaban benernya yang udah dipisahin berdasarkan minus
-
-										}
-
-										//echo $jb3[0];//FOR DEBUG (Pastikan muncul 1 value)
 		    				?>
 		    				<tr>
 		    					<td width="2">
@@ -320,17 +305,11 @@
 		    					
 		    					foreach ($datajawabanlistkolom4 as $jl4) {  //initialize
 		    						$arrayjawabanlist4 = explode('-', $jl4->listjawaban); // list-jawaban, pisahkan minusnya
-			    					$jawabanbener4 = explode('-', $jl4->jawabanbenar,1); //jawabaanbeneran, pisahkan untuk masing2baris
 
 									$o = 0; //untuk cek posisi array dimulai dari 0
 									$i = 1;	//untuk penomoran baris
 									foreach ($arrayjawabanlist4 as $listjawaban4) {//bagi2 dulu arrayjawaban list yang udah dipisahin minusnya
 										$jl4 = explode(' ', $listjawaban4); //setelah pisahkan minsunya, pisahkan spasi
-										foreach ($jawabanbener4 as $jb4) { //dibagi2 dulu jawaban benernya yang udah dipisahin berdasarkan minus
-
-										}
-
-										//echo $jb3[0];//FOR DEBUG (Pastikan muncul 1 value)
 		    				?>
 		    				<tr>
 		    					<td width="2">
@@ -415,17 +394,11 @@
 		    					
 		    					foreach ($datajawabanlistkolom5 as $jl5) {  //initialize
 		    						$arrayjawabanlist5 = explode('-', $jl5->listjawaban); // list-jawaban, pisahkan minusnya
-			    					$jawabanbener5 = explode('-', $jl5->jawabanbenar,1); //jawabaanbeneran, pisahkan untuk masing2baris
-
 									$o = 0; //untuk cek posisi array dimulai dari 0
 									$i = 1;	//untuk penomoran baris
 									foreach ($arrayjawabanlist5 as $listjawaban5) {//bagi2 dulu arrayjawaban list yang udah dipisahin minusnya
 										$jl5 = explode(' ', $listjawaban5); //setelah pisahkan minsunya, pisahkan spasi
-										foreach ($jawabanbener5 as $jb5) { //dibagi2 dulu jawaban benernya yang udah dipisahin berdasarkan minus
 
-										}
-
-										//echo $jb3[0];//FOR DEBUG (Pastikan muncul 1 value)
 		    				?>
 		    				<tr>
 		    					<td width="2">
@@ -508,17 +481,11 @@
 		    					
 		    					foreach ($datajawabanlistkolom6 as $jl6) {  //initialize
 		    						$arrayjawabanlist6 = explode('-', $jl6->listjawaban); // list-jawaban, pisahkan minusnya
-			    					$jawabanbener6 = explode('-', $jl6->jawabanbenar,1); //jawabaanbeneran, pisahkan untuk masing2baris
 
 									$o = 0; //untuk cek posisi array dimulai dari 0
 									$i = 1;	//untuk penomoran baris
 									foreach ($arrayjawabanlist6 as $listjawaban6) {//bagi2 dulu arrayjawaban list yang udah dipisahin minusnya
 										$jl6 = explode(' ', $listjawaban6); //setelah pisahkan minsunya, pisahkan spasi
-										foreach ($jawabanbener6 as $jb6) { //dibagi2 dulu jawaban benernya yang udah dipisahin berdasarkan minus
-
-										}
-
-										//echo $jb3[0];//FOR DEBUG (Pastikan muncul 1 value)
 		    				?>
 		    				<tr>
 		    					<td width="2">
@@ -601,17 +568,12 @@
 		    					
 		    					foreach ($datajawabanlistkolom7 as $jl7) {  //initialize
 		    						$arrayjawabanlist7 = explode('-', $jl7->listjawaban); // list-jawaban, pisahkan minusnya
-			    					$jawabanbener7 = explode('-', $jl7->jawabanbenar,1); //jawabaanbeneran, pisahkan untuk masing2baris
 
 									$o = 0; //untuk cek posisi array dimulai dari 0
 									$i = 1;	//untuk penomoran baris
 									foreach ($arrayjawabanlist7 as $listjawaban7) {//bagi2 dulu arrayjawaban list yang udah dipisahin minusnya
 										$jl7 = explode(' ', $listjawaban7); //setelah pisahkan minsunya, pisahkan spasi
-										foreach ($jawabanbener7 as $jb7) { //dibagi2 dulu jawaban benernya yang udah dipisahin berdasarkan minus
 
-										}
-
-										//echo $jb3[0];//FOR DEBUG (Pastikan muncul 1 value)
 		    				?>
 		    				<tr>
 		    					<td width="2">
@@ -694,17 +656,10 @@
 		    					
 		    					foreach ($datajawabanlistkolom8 as $jl8) {  //initialize
 		    						$arrayjawabanlist8 = explode('-', $jl8->listjawaban); // list-jawaban, pisahkan minusnya
-			    					$jawabanbener8 = explode('-', $jl8->jawabanbenar,1); //jawabaanbeneran, pisahkan untuk masing2baris
-
 									$o = 0; //untuk cek posisi array dimulai dari 0
 									$i = 1;	//untuk penomoran baris
 									foreach ($arrayjawabanlist8 as $listjawaban8) {//bagi2 dulu arrayjawaban list yang udah dipisahin minusnya
 										$jl8 = explode(' ', $listjawaban8); //setelah pisahkan minsunya, pisahkan spasi
-										foreach ($jawabanbener8 as $jb8) { //dibagi2 dulu jawaban benernya yang udah dipisahin berdasarkan minus
-
-										}
-
-										//echo $jb3[0];//FOR DEBUG (Pastikan muncul 1 value)
 		    				?>
 		    				<tr>
 		    					<td width="2">
@@ -789,17 +744,11 @@
 		    					
 		    					foreach ($datajawabanlistkolom9 as $jl9) {  //initialize
 		    						$arrayjawabanlist9 = explode('-', $jl9->listjawaban); // list-jawaban, pisahkan minusnya
-			    					$jawabanbener9 = explode('-', $jl9->jawabanbenar,1); //jawabaanbeneran, pisahkan untuk masing2baris
-
 									$o = 0; //untuk cek posisi array dimulai dari 0
 									$i = 1;	//untuk penomoran baris
 									foreach ($arrayjawabanlist9 as $listjawaban9) {//bagi2 dulu arrayjawaban list yang udah dipisahin minusnya
 										$jl9 = explode(' ', $listjawaban9); //setelah pisahkan minsunya, pisahkan spasi
-										foreach ($jawabanbener9 as $jb9) { //dibagi2 dulu jawaban benernya yang udah dipisahin berdasarkan minus
 
-										}
-
-										//echo $jb3[0];//FOR DEBUG (Pastikan muncul 1 value)
 		    				?>
 		    				<tr>
 		    					<td width="2">
@@ -881,17 +830,10 @@
 		    					
 		    					foreach ($datajawabanlistkolom10 as $jl10) {  //initialize
 		    						$arrayjawabanlist10 = explode('-', $jl10->listjawaban); // list-jawaban, pisahkan minusnya
-			    					$jawabanbener10 = explode('-', $jl10->jawabanbenar,1); //jawabaanbeneran, pisahkan untuk masing2baris
-
 									$o = 0; //untuk cek posisi array dimulai dari 0
 									$i = 1;	//untuk penomoran baris
 									foreach ($arrayjawabanlist10 as $listjawaban10) {//bagi2 dulu arrayjawaban list yang udah dipisahin minusnya
 										$jl10 = explode(' ', $listjawaban10); //setelah pisahkan minsunya, pisahkan spasi
-										foreach ($jawabanbener10 as $jb10) { //dibagi2 dulu jawaban benernya yang udah dipisahin berdasarkan minus
-
-										}
-
-										//echo $jb3[0];//FOR DEBUG (Pastikan muncul 1 value)
 		    				?>
 		    				<tr>
 		    					<td width="2">

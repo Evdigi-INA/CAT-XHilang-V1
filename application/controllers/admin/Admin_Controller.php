@@ -8,7 +8,7 @@ class Admin_Controller extends CI_Controller
 		parent::__construct();		
 		$this->load->model('modelverif');
 
-		//detection authorization! jadi lo GAK BISA SEMBARANG MASUK KE METHOD INI BOS!!! (Kalo akses web biasa bisa)
+		//detection authorization! jadi lo GAK BISA SEMBARANG MASUK KE CONTROLLER INI BOS!!! (Kalo SELAIN controller ini sih bisa)
 		if($this->session->userdata('status') != "login")
 		{
 			redirect(base_url("Verification"));
@@ -49,8 +49,6 @@ class Admin_Controller extends CI_Controller
 		$data['top10'] = $this->Xhilangmodel->p_top10();
 		$data['countpeserta'] = $this->Xhilangmodel->hitungpesertaberdasarkanstatus();
 		$data['pesertalisttoken'] = $this->Xhilangmodel->fetchpesertatokenlist();
-		//END OF DEBUG LOG//
-			//load view admin/blablabla.php
 		$data['title'] = 'Dashboard - Menu Laporan';
 		$this->load->view('admin/header',$data);
 		$this->load->view('admin/menu_laporan');
@@ -72,8 +70,6 @@ class Admin_Controller extends CI_Controller
 		$data['qinfo'] = $this->Xhilangmodel->tampilinformasiakun('tbl_user',$where);
 		$data['listpeserta'] = $this->Xhilangmodel->tampil_peserta()->result();
 		$data['qeditpeserta'] = $this->Xhilangmodel->tampil_edit_peserta();
-		//END OF DEBUG LOG//
-			//load view admin/blablabla.php
 		$data['title'] = 'Dashboard - Daftar Peserta';
 		$this->load->view('admin/header',$data);
 		$this->load->view('admin/daftar_peserta');
@@ -108,9 +104,6 @@ class Admin_Controller extends CI_Controller
 			"id_soal" => $idsoal
 		);
 		$data['idkolomjawaban'] = '';
-		
-		//END OF DEBUG LOG//
-			//load view admin/blablabla.php
 		if ($idsoal == 'S001') {
 			$data['title'] = 'Dashboard - Kelola Soal Angka';
 			$data['jenissoalnya'] = "Soal Angka (S0JL)";
@@ -277,11 +270,10 @@ class Admin_Controller extends CI_Controller
 			'kolom' => $kolomnya
 		);
 		
-		$this->load->model('Xhilangmodel'); //loadmodelnya dulu
 		$this->Xhilangmodel->lakukan_update($where,$data,'tbl_kolomjawaban');
 		
 		if ($idkolomjawabannya == 'S0JL') {
-			$message = "Perubahan pada SOAL ANGKA ".$kolomnya." Berhasil disimpan!"; //bug here BG001 - 17032021556 [FIXED]
+			$message = "Perubahan pada SOAL ANGKA ".$kolomnya." Berhasil disimpan!";
     		print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S001'); </script>";
 		} elseif ($idkolomjawabannya == 'S1JL') {
 			$message = "Perubahan pada SOAL HURUF ".$kolomnya." Berhasil disimpan!";
@@ -449,14 +441,21 @@ class Admin_Controller extends CI_Controller
 			$nganu = $output;
 
 			//$owo = str_split($nganu, 4); //kumpulkan ke variabel nganu daftar jawaban pada tbnya, sekalian di trim (12 karena UTF8 Simbol, beda dengan yang diatur ke 8)
-			$utf7 = wordwrap(mb_convert_encoding($nganu, 'UTF-7'),21,' - ',true);//debug only
-			$utf8 = iconv('UTF-7','UTF-8',$utf7);
+			$encode = mb_convert_encoding($nganu, 'UTF-7');
+			$wrap = wordwrap($encode,21,' - ',true);
+			//echo $wrap.'<br><br>';
+			//echo strlen($encode).' panjaangnya<br>';
+			$decode = mb_convert_encoding($wrap, 'UTF-8','UTF-7');
+			$cleaned = str_replace(' - ','-',$decode);
+			//echo $cleaned;
+			//$utf7 = wordwrap(mb_convert_encoding($nganu, 'UTF-7'),21,' - ',true);//debug only
+			//$utf8 = iconv('UTF-7','UTF-8',$utf7);
 			//echo $utf7.'<br><br>';
 			
-			$cleaned = str_replace(' - ','-',$utf8);
-			$lengthdata = strlen($cleaned);
+			//$cleaned = str_replace(' - ','-',$utf8);
+			$lengthdata = strlen($encode);
 			//echo 'panjang string '.strlen($cleaned);
-			if ($lengthdata == 360) {
+			if ($lengthdata == 600) {
 				$data = array(
 					'listjawaban' => $cleaned
 				);
@@ -474,8 +473,6 @@ class Admin_Controller extends CI_Controller
 				$message = "Terdapat karakter bukan simbol pada inputan anda (".$kolomnya."), harap masukan simbol!";
 				print "<script type='text/javascript'>alert('$message');window.location = ('kelola_soal/S003'); </script>";
 			}
-
-			
 		}
 		
 		//echo 'this is the fucking output and it will be ready to be inserted to the facking database!: '.wordwrap($output, 12, '-', true); //debug only
@@ -627,5 +624,48 @@ class Admin_Controller extends CI_Controller
 		$this->load->view('admin/footer');	
 	}
 
+	/*function fetch(){
+    	$data = $this->excel_import_model->select();
+	    $output = '
+    	<h3 align="center">Total Data - '.$data->num_rows().'</h3>
+	    	<table class="table table-striped table-bordered">
+    	 		<tr>
+      				<th>Name</th>
+      				<th>Email</th>
+			    </tr>
+    	';
 
+    	foreach($data->result() as $row){
+      		$output .= '
+      			<tr>
+      				<td>'.$row->name.'</td>
+				    <td>'.$row->email.'</td>
+			    </tr>';
+    	}
+    	$output .= '</table>';
+    	echo $output;
+  	}
+
+ 
+
+	function import(){
+	    if(isset($_FILES["file"]["name"])){
+			$path = $_FILES["file"]["tmp_name"];
+			$object = PHPExcel_IOFactory::load($path);
+			foreach($object->getWorksheetIterator() as $worksheet){
+		        $highestRow = $worksheet->getHighestRow();
+	    	    $highestColumn = $worksheet->getHighestColumn();
+		        for($row=2; $row<=$highestRow; $row++){
+					$name = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
+					$email = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+					$data[] = array(
+						'name'  => $name,
+						'email'   => $email
+					);
+				}
+			}
+		$this->excel_import_model->insert($data);
+		echo 'Data Imported successfully';
+	    }
+	}*/
 }
