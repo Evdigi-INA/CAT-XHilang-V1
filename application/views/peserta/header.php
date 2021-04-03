@@ -71,6 +71,7 @@
 			  </div>
 			  <div class="btn-logout-wrapper">
 			  	<a href="#" id="logoutlink" style="line-height: 3;"><span style="color: white;"><i class="fas fa-sign-out-alt"></i></span></a>
+			  	<a href="#" id="logoutlinkoke" style="display: none; line-height: 3;"><span style="color: white;"><i class="fas fa-sign-out-alt"></i></span></a>
 			  </div>
 			</nav>
 		</div>

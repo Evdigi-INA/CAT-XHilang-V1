@@ -47,6 +47,39 @@
 		})
 	});
 
+	$("#logoutlinkoke").click(function(e){
+		var tbiduser = $('#tbiduser').val();
+    	var tbusername = $('#tbusername').val();
+		e.preventDefault(); // <--- prevent form from submitting
+		Swal.fire({
+		  title: 'Yakin ingin Logout?',
+		  text: "Silahkan logout jika sudah selesai.",
+		  type: "question",
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'Ya'
+		}).then((result) => {
+		  if (result.value) {
+		  	var tbiduser = $('#tbiduser').val();
+    		var tbusername = $('#tbusername').val();
+          	var tbstatus = 'DONE'; //Selesai Mengerjaaakan
+            $.ajax({
+                type : "POST",
+                url  : "<?php echo base_url('/peserta/Peserta_Controller/update_status')?>",
+                dataType : "JSON",
+                data : {tbiduser:tbiduser,tbusername:tbusername,tbstatus:tbstatus},
+                success: function(data){
+                }
+            });
+		  	Swal.fire('Logout Sukses','Test diakhiri, silahkan klik OK','success').then(function() {
+	          window.location.href = "<?php echo base_url().'Verification/logoutkeun' ?>";// <--- submit for prmogrammatically
+	        });
+		    
+		  }
+		})
+	});
+
 
 	var barisny = range(1, 900); // array sampe 900 (untuk baris jawaban list)
 	var index = -1; //baris
@@ -114,6 +147,8 @@
 			$('#scoreresultRight').css('display','none');
 		});
 
+
+
 		$('#menjelangendbutton').click(function(){
 			forceHide();
 			$('#loader').css('display','none');
@@ -139,6 +174,8 @@
                 success: function(data){
                 }
             });
+            $("#logoutlink").css("display", "none");
+            $("#logoutlinkoke").css("display", "unset");
             $(document).attr("title", "Test Selesai");
             $('#scoreresultLeft').css('display','none');
 			$('#scoreresultRight').css('display','none');
@@ -413,6 +450,7 @@
 		} else if (index == 600 && status=='Break') {
 
 			jenissoal = 'S2JL';
+			$('.barispilihan').attr('hidden','true');
 			$('#loader').css('display','block');
 			$('#judulcard').text('Mengumpulkan Hasil');
 			$('#jenissoalnya').text('Mohon Menunggu');
@@ -542,6 +580,7 @@
 			}
 			soalke = '30';
 		} else {
+			$('.barispilihan').attr('hidden','true');
 			$('#loader').css('display','block');
 			$('#judulcard').text('Mengumpulkan Hasil');
 			$('#jenissoalnya').text('Mohon Menunggu');
