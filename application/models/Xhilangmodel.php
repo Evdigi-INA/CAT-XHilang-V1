@@ -131,4 +131,22 @@ class Xhilangmodel extends CI_Model
         $querya = $this->db->select($select)->from('tbl_peserta')->join('tbl_user','tbl_peserta.id_user = tbl_user.id_user')->get();
         return $querya->result();   
     }
+
+    function import_soal($data)
+    {
+        foreach ($data as $k) {
+            $where = array(
+              'id_kolomjawaban' => $k['id_kolomjawaban'],
+              'kolom'   => $k['kolom']
+            );
+
+            $datanya = array(
+                'listjawaban' => $k['jawabanlist'],
+                'soal'  => $k['soal']
+            );
+            $this->db->where($where);
+            $this->db->update('tbl_kolomjawaban',$datanya);
+        }
+     
+    }
 }

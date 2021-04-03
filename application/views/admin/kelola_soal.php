@@ -1,15 +1,17 @@
 <div class="container" style="background-color: #ececec;
     border-radius: 5px;">
 	<nav aria-label="breadcrumb">
-	  	<ol class="breadcrumb">
+	  	<ol class="breadcrumb" style="position: relative;">
 			<li class="breadcrumb-item"><a href="<?php echo base_url().'admin/Admin_Controller/index' ?>">Menu Utama</a></li>
 	    	<li class="breadcrumb-item"><a href="<?php echo base_url().'admin/Admin_Controller/pilih_kelola_soal'?>">Kelola Soal</a></li>
 			<li class="breadcrumb-item active" aria-current="page"><?php echo $jenissoalnya; ?></li>
 		</ol>
+
 	</nav>
 </div>
 <div class="container" style="overflow-y: scroll;
     height: 75vh;">
+    <!-- Button trigger modal -->
 	<div class="row">
 	  	<div class="col-sm-3">
 	    	<div class="card text-dark bg-light mb-3" style="max-width: 18rem;">

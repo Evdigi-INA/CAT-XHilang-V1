@@ -21,6 +21,7 @@ class Admin_Controller extends CI_Controller
 
 		$this->load->helper('text');
 		$this->load->model('Xhilangmodel'); //loadmodelnya dulu
+		$this->load->library('Excel'); //load librari excel;
 	}
 
 	function index()
@@ -624,48 +625,91 @@ class Admin_Controller extends CI_Controller
 		$this->load->view('admin/footer');	
 	}
 
-	/*function fetch(){
-    	$data = $this->excel_import_model->select();
-	    $output = '
-    	<h3 align="center">Total Data - '.$data->num_rows().'</h3>
-	    	<table class="table table-striped table-bordered">
-    	 		<tr>
-      				<th>Name</th>
-      				<th>Email</th>
-			    </tr>
-    	';
-
-    	foreach($data->result() as $row){
-      		$output .= '
-      			<tr>
-      				<td>'.$row->name.'</td>
-				    <td>'.$row->email.'</td>
-			    </tr>';
-    	}
-    	$output .= '</table>';
-    	echo $output;
-  	}
-
+	function upload()
+	{
+		$fileName = $_FILES['fileexcel']['name'];
+          
+        $config['upload_path'] = './temp_doc/'; //path upload
+        $config['file_name'] = $fileName;  // nama file
+        $config['allowed_types'] = 'xls|xlsx|csv'; //tipe file yang diperbolehkan
+        $config['max_size'] = 10000; // maksimal sizze
  
+        $this->load->library('upload'); //meload librari upload
+        $this->upload->initialize($config);
+          
+        if(! $this->upload->do_upload('fileexcel') ){
+            echo $this->upload->display_errors();
+            exit();
+        }
+              
+        $inputFileName = './temp_doc/'.$fileName;
+ 
+        try {
+            $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+            $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+            $objPHPExcel = $objReader->load($inputFileName);
+        } catch(Exception $e) {
+            die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+        }
 
-	function import(){
-	    if(isset($_FILES["file"]["name"])){
-			$path = $_FILES["file"]["tmp_name"];
-			$object = PHPExcel_IOFactory::load($path);
-			foreach($object->getWorksheetIterator() as $worksheet){
-		        $highestRow = $worksheet->getHighestRow();
-	    	    $highestColumn = $worksheet->getHighestColumn();
-		        for($row=2; $row<=$highestRow; $row++){
-					$name = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
-					$email = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
-					$data[] = array(
-						'name'  => $name,
-						'email'   => $email
-					);
-				}
-			}
-		$this->excel_import_model->insert($data);
-		echo 'Data Imported successfully';
-	    }
-	}*/
+		$arraysoaldata =array();
+
+		$idjs = $objPHPExcel->getSheet(1)->getCellByColumnAndRow(0,1)->getValue();
+
+    	//$ngan = 0;
+        foreach ($objPHPExcel->getAllSheets() as $key => $sheet) {              
+
+        	$idjenissoal = $sheet->getCellByColumnAndRow(0,1)->getValue();
+
+        	$kolom = $sheet->getCellByColumnAndRow(0,2)->getValue();
+
+        	$soalnyaa = $sheet->getCellByColumnAndRow(0,3)->getValue();
+        	$soalnyab = $sheet->getCellByColumnAndRow(1,3)->getValue();
+        	$soalnyac = $sheet->getCellByColumnAndRow(2,3)->getValue();
+        	$soalnyad = $sheet->getCellByColumnAndRow(3,3)->getValue();
+        	$soalnyae = $sheet->getCellByColumnAndRow(4,3)->getValue();
+        	$datasoal = $soalnyaa.'-'.$soalnyab.'-'.$soalnyac.'-'.$soalnyad.'-'.$soalnyae;
+        	
+        	$data = '';
+        	
+        	$u = 0;
+            $row = 4;
+            for ($row; $row <= 33; $row++) { //limit untuk 30 soal/kolom 
+                $pilihana = $sheet->getCellByColumnAndRow(0,$row)->getValue();
+                $pilihanb = $sheet->getCellByColumnAndRow(1,$row)->getValue();
+                $pilihanc = $sheet->getCellByColumnAndRow(2,$row)->getValue();
+                $pilihand = $sheet->getCellByColumnAndRow(3,$row)->getValue();   
+                $data.= $pilihana.' '.$pilihanb.' '.$pilihanc.' '.$pilihand.'-';
+            }
+        
+        	$datakomplit = array(
+        		'id_kolomjawaban' 	=> $idjenissoal,
+        		'kolom'				=> $kolom,
+        		'soal'				=> $datasoal,
+        		'jawabanlist'		=> rtrim($data, '-')
+        	);     
+ 				
+            array_push($arraysoaldata, $datakomplit);
+        }
+
+        //simpan data ke database
+		$this->Xhilangmodel->import_soal($arraysoaldata);
+
+		unlink($inputFileName);
+        if ($idjs == 'S0JL') {
+			$message = "Sukses upload soal angka.";
+			redirect('/admin/Admin_Controller/kelola_soal/S001');
+		} elseif ($idjs == 'S1JL') {
+			$message = "Sukses upload soal huruf.";
+			redirect('/admin/Admin_Controller/kelola_soal/S002');
+		} elseif ($idjs == 'S2JL') {
+			$message = "Sukses upload soal simbol.";
+			redirect('/admin/Admin_Controller/kelola_soal/S003');
+		} else {
+			echo "failed";
+		}
+
+		
+	}
 }
+

@@ -73,6 +73,31 @@
  
             });
         })
+
+        $("#submituploadfile").click(function(){
+        	let timerInterval
+			Swal.fire({
+			  title: 'Mohon Tunggu',
+			  html: 'Sedang Memvalidasi isi file soal.',
+			  timer: 10000,
+			  timerProgressBar: true,
+			  allowOutsideClick: false,
+			  didOpen: () => {
+			    Swal.showLoading()
+			    timerInterval = setInterval(() => {
+			      
+			    }, 1000)
+			  },
+			  willClose: () => {
+			    clearInterval(timerInterval)
+			  }
+			}).then((result) => {
+			  /* Read more about handling dismissals below */
+			  if (result.dismiss === Swal.DismissReason.timer) {
+			    console.log('I was closed by the timer')
+			  }
+			})
+        });
 	});
 
 </script>

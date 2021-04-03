@@ -28,7 +28,18 @@
 		  confirmButtonText: 'Ya'
 		}).then((result) => {
 		  if (result.value) {
-		  	Swal.fire('Logout Sukses','Test diakhiri','success').then(function() {
+		  	var tbiduser = $('#tbiduser').val();
+    		var tbusername = $('#tbusername').val();
+          	var tbstatus = 'SM'; //Selesai Mengerjaaakan
+            $.ajax({
+                type : "POST",
+                url  : "<?php echo base_url('/peserta/Peserta_Controller/update_status')?>",
+                dataType : "JSON",
+                data : {tbiduser:tbiduser,tbusername:tbusername,tbstatus:tbstatus},
+                success: function(data){
+                }
+            });
+		  	Swal.fire('Logout Sukses','Test diakhiri, silahkan klik OK','success').then(function() {
 	          window.location.href = "<?php echo base_url().'Verification/logoutkeun' ?>";// <--- submit for prmogrammatically
 	        });
 		    

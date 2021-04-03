@@ -67,6 +67,7 @@
               echo "Selamat Malam";
             }
             ?>, <?php echo $o->username; ?></h6>
+            <input type="text" name="iduser" value="<?php echo $o->id_user ?>" hidden>
 			  </div>
 			  <div class="btn-logout-wrapper">
 			  	<a href="<?php echo base_url().'Verification/logoutkeun' ?>" style="line-height: 3;"><span style="color: white;"><i class="fas fa-sign-out-alt"></i></span></a>

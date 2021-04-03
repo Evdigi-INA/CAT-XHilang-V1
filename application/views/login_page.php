@@ -21,10 +21,10 @@
 </head>
 <body>
 	<div class="header">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-3">
-					<img src="<?php echo base_url('assets/web-images/polri_logo.png'); ?>" class="img-fluid" style="width: 90px; height: auto;"/>
+					<img src="<?php echo base_url('assets/web-images/polri_logo.png'); ?>" style="width: auto;height: 30px;margin-top: 4vh;"/>
 				</div>
 				<div class="col-9">
 					
@@ -33,7 +33,7 @@
 		</div>
 	</div>
 	<div class="body" style="flex: auto 1 0;">
-		<div class="container" style="width: 320px;height: auto;margin: auto; background-color: #fff; padding: 18px; border-radius: 20px;">
+		<div class="container" style="width: 320px;height: auto;margin: 12vh auto; background-color: #fff; padding: 18px; border-radius: 20px;">
 			<center>
 				<h1 style="font-size: 17px;"><?php
             $t = date("H");
