@@ -9,8 +9,7 @@
 	$(document).ready(function() {
     	$('#dataTablePeserta').DataTable({
     		"scrollY":        "45vh",
-	        "scrollCollapse": true,
-	        "paging":         true
+	        "scrollCollapse": true
     	});
 
     	$('#tabelnilaipeserta').DataTable({
