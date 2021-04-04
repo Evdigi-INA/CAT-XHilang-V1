@@ -1,5 +1,10 @@
 <?php 
 
+require APPPATH.'vendor/autoload.php';
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+
 class Admin_Controller extends CI_Controller
 {
 
@@ -21,7 +26,6 @@ class Admin_Controller extends CI_Controller
 
 		$this->load->helper('text');
 		$this->load->model('Xhilangmodel'); //loadmodelnya dulu
-		$this->load->library('Excel'); //load librari excel;
 	}
 
 	function index()
@@ -645,29 +649,30 @@ class Admin_Controller extends CI_Controller
         $inputFileName = './temp_doc/'.$fileName;
  
         try {
-            $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-            $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-            $objPHPExcel = $objReader->load($inputFileName);
+
+            $inputFileType = IOFactory::identify($inputFileName);
+            $objReader = IOFactory::createReader($inputFileType);
+            $objExcel = $objReader->load($inputFileName);
         } catch(Exception $e) {
             die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
         }
 
 		$arraysoaldata =array();
 
-		$idjs = $objPHPExcel->getSheet(1)->getCellByColumnAndRow(0,1)->getValue();
+		$idjs = $objExcel->getSheet(1)->getCellByColumnAndRow(1,1)->getValue();
 
     	//$ngan = 0;
-        foreach ($objPHPExcel->getAllSheets() as $key => $sheet) {              
+        foreach ($objExcel->getAllSheets() as $key => $sheet) {              
 
-        	$idjenissoal = $sheet->getCellByColumnAndRow(0,1)->getValue();
+        	$idjenissoal = $sheet->getCellByColumnAndRow(1,1)->getValue();
 
-        	$kolom = $sheet->getCellByColumnAndRow(0,2)->getValue();
+        	$kolom = $sheet->getCellByColumnAndRow(1,2)->getValue();
 
-        	$soalnyaa = $sheet->getCellByColumnAndRow(0,3)->getValue();
-        	$soalnyab = $sheet->getCellByColumnAndRow(1,3)->getValue();
-        	$soalnyac = $sheet->getCellByColumnAndRow(2,3)->getValue();
-        	$soalnyad = $sheet->getCellByColumnAndRow(3,3)->getValue();
-        	$soalnyae = $sheet->getCellByColumnAndRow(4,3)->getValue();
+        	$soalnyaa = $sheet->getCellByColumnAndRow(1,3)->getValue();
+        	$soalnyab = $sheet->getCellByColumnAndRow(2,3)->getValue();
+        	$soalnyac = $sheet->getCellByColumnAndRow(3,3)->getValue();
+        	$soalnyad = $sheet->getCellByColumnAndRow(4,3)->getValue();
+        	$soalnyae = $sheet->getCellByColumnAndRow(5,3)->getValue();
         	$datasoal = $soalnyaa.'-'.$soalnyab.'-'.$soalnyac.'-'.$soalnyad.'-'.$soalnyae;
         	
         	if (!$idjenissoal || !$kolom || !$soalnyaa || !$soalnyab || !$soalnyac || !$soalnyad || !$soalnyae) {
@@ -677,13 +682,12 @@ class Admin_Controller extends CI_Controller
 
         	$data = '';
         	
-        	$u = 0;
             $row = 4;
             for ($row; $row <= 33; $row++) { //limit untuk 30 soal/kolom 
-                $pilihana = $sheet->getCellByColumnAndRow(0,$row)->getValue();
-                $pilihanb = $sheet->getCellByColumnAndRow(1,$row)->getValue();
-                $pilihanc = $sheet->getCellByColumnAndRow(2,$row)->getValue();
-                $pilihand = $sheet->getCellByColumnAndRow(3,$row)->getValue();
+                $pilihana = $sheet->getCellByColumnAndRow(1,$row)->getValue();
+                $pilihanb = $sheet->getCellByColumnAndRow(2,$row)->getValue();
+                $pilihanc = $sheet->getCellByColumnAndRow(3,$row)->getValue();
+                $pilihand = $sheet->getCellByColumnAndRow(4,$row)->getValue();
                 $data.= $pilihana.' '.$pilihanb.' '.$pilihanc.' '.$pilihand.'-';
                 if (!$pilihana || !$pilihanb || !$pilihanc || !$pilihand) {
                 	die('Isi file tidak lengkap : soal-soal ada yang kosong, harap cek kembali');
@@ -700,6 +704,8 @@ class Admin_Controller extends CI_Controller
  				
             array_push($arraysoaldata, $datakomplit);
         }
+
+        //print_r($arraysoaldata);
 
         //simpan data ke database
 		$this->Xhilangmodel->import_soal($arraysoaldata);
