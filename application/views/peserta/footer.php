@@ -1037,7 +1037,7 @@
 			while(x < 300);
 			//console.log('Benar : ' + benar);
 			//console.log('Salah : ' + salah);
-			if(nilai2 > 100){nilai2 = 100}//handling score if > 100 happen
+			if(nilai0 > 100){nilai0 = 100}//handling score if > 100 happen
 
 			$('#JBenar').text('' + benar0 + '');
 			$('#JSalah').text('' + salah0 + '');
@@ -1088,7 +1088,7 @@
 			}
 			while(x < 300);
 
-			if(nilai2 > 100){nilai2 = 100}//handling score if > 100 happen
+			if(nilai1 > 100){nilai1 = 100}//handling score if > 100 happen
 
 			console.log('Benar : ' + benar1);
 			console.log('Salah : ' + salah1);
