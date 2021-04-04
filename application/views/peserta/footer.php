@@ -1037,6 +1037,7 @@
 			while(x < 300);
 			//console.log('Benar : ' + benar);
 			//console.log('Salah : ' + salah);
+			if(nilai2 > 100){nilai2 = 100}//handling score if > 100 happen
 
 			$('#JBenar').text('' + benar0 + '');
 			$('#JSalah').text('' + salah0 + '');
@@ -1087,6 +1088,8 @@
 			}
 			while(x < 300);
 
+			if(nilai2 > 100){nilai2 = 100}//handling score if > 100 happen
+
 			console.log('Benar : ' + benar1);
 			console.log('Salah : ' + salah1);
 			console.log('Gadijawab : ' + gadijawab1);
@@ -1103,7 +1106,7 @@
 		} else if(js == 'S2JL') {
 			var datasoal2 = Array();
 			var datajawaban2 = Array();
-			var gadijawab2 = 0 + 1;
+			var gadijawab2 = 0;
 			var salah2 = 0;
 			var benar2 = 0;
 			var nilai2 = 0;
@@ -1141,7 +1144,7 @@
 			while(x < 300);
 			//console.log('Benar : ' + benar);
 			//console.log('Salah : ' + salah);
-
+			if(nilai2 > 100){nilai2 = 100}//handling score if > 100 happen
 			$('#JBenar').text('' + benar2 + '');
 			$('#JSalah').text('' + salah2 + '');
 			$('#JTidakDijawab').text('' + gadijawab2 + '');

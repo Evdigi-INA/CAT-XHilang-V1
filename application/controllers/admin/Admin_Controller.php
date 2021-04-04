@@ -628,7 +628,7 @@ class Admin_Controller extends CI_Controller
 	function upload()
 	{
 		$fileName = $_FILES['fileexcel']['name'];
-          
+         
         $config['upload_path'] = './temp_doc/'; //path upload
         $config['file_name'] = $fileName;  // nama file
         $config['allowed_types'] = 'xls|xlsx|csv'; //tipe file yang diperbolehkan
@@ -670,6 +670,11 @@ class Admin_Controller extends CI_Controller
         	$soalnyae = $sheet->getCellByColumnAndRow(4,3)->getValue();
         	$datasoal = $soalnyaa.'-'.$soalnyab.'-'.$soalnyac.'-'.$soalnyad.'-'.$soalnyae;
         	
+        	if (!$idjenissoal || !$kolom || !$soalnyaa || !$soalnyab || !$soalnyac || !$soalnyad || !$soalnyae) {
+				die('Isi file tidak lengkap : pastikan setiap sheet tercantum id jenis soal, kolom, dan jawaban peserta');
+				unlink($inputFileName);
+			}//handling empty field
+
         	$data = '';
         	
         	$u = 0;
@@ -678,10 +683,14 @@ class Admin_Controller extends CI_Controller
                 $pilihana = $sheet->getCellByColumnAndRow(0,$row)->getValue();
                 $pilihanb = $sheet->getCellByColumnAndRow(1,$row)->getValue();
                 $pilihanc = $sheet->getCellByColumnAndRow(2,$row)->getValue();
-                $pilihand = $sheet->getCellByColumnAndRow(3,$row)->getValue();   
+                $pilihand = $sheet->getCellByColumnAndRow(3,$row)->getValue();
                 $data.= $pilihana.' '.$pilihanb.' '.$pilihanc.' '.$pilihand.'-';
+                if (!$pilihana || !$pilihanb || !$pilihanc || !$pilihand) {
+                	die('Isi file tidak lengkap : soal-soal ada yang kosong, harap cek kembali');
+                	unlink($inputFileName);
+                }
             }
-        
+        	
         	$datakomplit = array(
         		'id_kolomjawaban' 	=> $idjenissoal,
         		'kolom'				=> $kolom,
