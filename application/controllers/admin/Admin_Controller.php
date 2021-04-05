@@ -484,6 +484,17 @@ class Admin_Controller extends CI_Controller
 
 	}
 
+	function update_token()
+	{
+        $token=$this->input->post('token');
+
+        $where = array('role' => 'peserta');
+ 		
+ 		$data = array('token_access' => $token);
+
+ 		$this->Xhilangmodel->lakukan_update($where,$data,'tbl_user');
+	}
+
 	function update_peserta()
 	{
 		$tbidusr = $this->input->post('tbiduser');

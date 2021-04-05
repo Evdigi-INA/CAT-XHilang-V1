@@ -33,9 +33,7 @@
             ]
         });
 
-        $('#dataTabletokenlist').DataTable();
-
-        $("#btnrefreshtokenlist").click(function(){
+        $("#btnupdatetoken").click(function(){
         	const Toast = Swal.mixin({
 			  toast: true,
 			  position: 'top-end',
@@ -47,31 +45,32 @@
 			    toast.addEventListener('mouseleave', Swal.resumeTimer)
 			  }
 			})
-            $.ajax({
-                type  : 'GET',
-                url   : '<?php echo base_url()?>admin/Admin_Controller/refreshtokenlistpeserta',
-                async : true,
-                dataType : 'json',
-                success : function(data){
-                    var html = '';
-                    var i;
-                    for(i=0; i<data.length; i++){
-                        html += '<tr>'+
-                                	'<td>'+data[i].iduser+'</td>'+
-                                	'<td>'+data[i].username+'</td>'+
-                                	'<td>'+data[i].noktp+'</td>'+
-	                                '<td><span class="badge badge-primary">'+data[i].token+'</span></td>'+
-                                '</tr>';
-                    }
-                    $('#showdatatokenlist').html(html);
-                    Toast.fire({
-					  icon: 'success',
-					  title: 'Refresh Data Token Berhasil'
-					})
-                }
- 
-            });
-        })
+
+            var token = $("#tbtokenpeserta").val();
+			if ($("#tbtokenold").val() == token ) {
+				$('#tokenalertnganu').html(`<div class="alert alert-warning alert-dismissible fade show" role="alert">
+										  Disarankan untuk tidak menggunakan <strong>token lama</strong>  
+										  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										    <span aria-hidden="true">&times;</span>
+										  </button>
+										</div>`);
+				return false;
+			}
+
+	      	$.ajax({
+	            type : "POST",
+	            url  : "<?php echo base_url("admin/Admin_Controller/update_token") ?>",
+	            dataType : "JSON",
+	            data : {token:token},
+	            success: function(data){
+	            }
+	        })
+	        Toast.fire({
+			  icon: 'success',
+			  title: 'Refresh Data Token Berhasil'
+			})
+			$('#tokenalertnganu').html(``);
+        });
 
         $("#submituploadfile").click(function(){
         	let timerInterval

@@ -94,22 +94,6 @@ class Verification extends CI_Controller
 		}
 		
 	}
-
-	function update_token()
-	{
-		$iduser=$this->input->post('username');
-        $password=$this->input->post('password');
-        $token=$this->input->post('token');
-
-        $where = array(
-			'username'		=> $iduser,
-			'password'		=> $password
-		);
- 		
- 		$data = array('token_access' => $token);
-
- 		$this->modelverif->lakukan_update($where,$data,'tbl_user');
-	}
 }
 
 ?>

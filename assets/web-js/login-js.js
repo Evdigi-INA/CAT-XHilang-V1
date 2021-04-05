@@ -44,42 +44,32 @@ $(document).ready(function() {
 			      	$('.tbpasswordnya').css('display','none');
 			      	$('.tbtokenform').css('display','block');
 			      	$('#buttonvalidate').css('display','block');
-			      	var token = makeid(5);
-			      	$.ajax({
-			            type : "POST",
-			            url  : siteUrl + "/verification/update_token",
-			            dataType : "JSON",
-			            data : {username:username,password:password,token:token},
-			            success: function(data){
-			            }
-			        });
                 } else if (data == "admin") {
                 	$('.tbtokenform').css('display','none');
 			      	$('.tbusernamenya').css('display','none');
 			      	$('.tbpasswordnya').css('display','none');
                 	$('.welcometext').text('Selamat Datang admin');
-				Swal.fire({
-					type: 'success',
-					title: 'Login Berhasil!',
-					text: 'Selamat Datang Admin, anda akan diarahkan dalam 3 detik mohon tunggu.',
-					timer: 3000,
-					showCancelButton: false,
-					showConfirmButton: false
-				}).then (function() {
-					$('.welcometext').html('<div class="alert alert-warning" role="alert">Memproses</div>');
-	      			$('.tbtokenform').css('display','none');
-	      			$('#buttonvalidate').css('display','none');
-					window.location.href = baseUrl + "/admin/Admin_Controller/index";
-				});
-
+					Swal.fire({
+						type: 'success',
+						title: 'Login Berhasil!',
+						text: 'Selamat Datang Admin, anda akan diarahkan dalam 3 detik mohon tunggu.',
+						timer: 3000,
+						showCancelButton: false,
+						showConfirmButton: false
+					}).then (function() {
+						$('.welcometext').html('<div class="alert alert-warning" role="alert">Memproses</div>');
+		      			$('.tbtokenform').css('display','none');
+		      			$('#buttonvalidate').css('display','none');
+						window.location.href = baseUrl + "/admin/Admin_Controller/index";
+					});
 				} else {
 					$('.welcometext').html('<div class="alert alert-danger" role="alert">Login gagal, silahkan hubungi admin</div>');
 					$('#btn-login').removeAttr('hidden');
-                  Swal.fire({
-                    type: 'error',
-                    title: 'Login Gagal!',
-                    text: 'Silahkan hubungi hubungi admin'
-                  });
+	                  Swal.fire({
+	                    type: 'error',
+	                    title: 'Login Gagal!',
+	                    text: 'Silahkan hubungi hubungi admin'
+	                  });
                 }
                 console.log(data);
               },
@@ -121,29 +111,10 @@ $(document).ready(function() {
 					type: 'error',
 					title: 'Login Gagal!',
 					text: 'Harap masukan token dengan benar'
-				}).then(function(){
-					$('.texttoken').css('display','unset');
 				});
 			}
 			console.log(data);
           }
         })
 	});
-
-	$(".texttoken").click(function(){
-		var username = $("#tbusername").val();
-		var password = $("#tbpassword").val();
-		var token = makeid(5);
-      	$.ajax({
-            type : "POST",
-            url  : siteUrl + "/verification/update_token",
-            dataType : "JSON",
-            data : {username:username,password:password,token:token},
-            success: function(data){
-            }
-        });
-        $(this).text('Sukses, harap masukan token baru anda');
-	})
-
-
 })

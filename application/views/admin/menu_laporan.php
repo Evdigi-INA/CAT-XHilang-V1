@@ -47,7 +47,7 @@
     <?php } ?>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="card mb-6">
                 <div class="card-header">
                     <i class="fas fa-table mr-1"></i>
@@ -95,40 +95,26 @@
                 </div>
             </div>
         </div>    
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="card mb-6">
                 <div class="card-header">
                     <i class="fas fa-table mr-1"></i>
                     Token Peserta
-                    <div style="float: right;">
-                        <button type="button" class="btn btn-primary" id="btnrefreshtokenlist">Refresh</button>
-                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTabletokenlist" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>ID User</th>
-                                    <th>Username</th>
-                                    <th>No KTP</th>
-                                    <th>Token</th>
-                                </tr>
-                            </thead>
-                            <tbody id="showdatatokenlist">
-
-                                <?php foreach ($pesertalisttoken as $l) {
+                    <div class="input-group mb-3">
+                    <?php foreach ($pesertalisttoken as $tok) {
+                        # code...
+                    } ?>
+                    <div id="tokenalertnganu">
                                     
-                                ?>
-                                <tr>
-                                    <td><?php echo $l->iduser ?></td>
-                                    <td><?php echo $l->username ?></td>
-                                    <td><?php echo $l->noktp ?></td>
-                                    <td><span class="badge badge-primary"><?php echo $l->token; ?></span></td>
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
+                    </div>
+                    <input type="text" class="form-control" id="tbtokenold" value="<?php echo $tok->token_access ?>" hidden>
+                      <input type="text" class="form-control" id="tbtokenpeserta" placeholder="Masukan Token" aria-label="Masukan Token" aria-describedby="basic-addon2" value="<?php echo $tok->token_access ?>">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" id="btnupdatetoken" type="button">Update</button>
+                      </div>
+                    <?php ?>
                     </div>
                 </div>
             </div>
