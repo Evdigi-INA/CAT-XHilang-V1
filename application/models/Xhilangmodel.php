@@ -86,9 +86,11 @@ class Xhilangmodel extends CI_Model
 
     function p_top10()
     {
-        $select = array('tbl_peserta.id_user as iduser', 'tbl_peserta.nama_lengkap as namleng','tbl_peserta.no_ktp as noktp', 'tbl_nilai.nilai1 as NilaiAngkaHilang', 'tbl_nilai.nilai2 as NilaiHurufHilang', 'tbl_nilai.nilai3 as NilaiSimbolHilang');
+        $select = array('tbl_peserta.id_user as iduser', 'tbl_peserta.nama_lengkap as namleng','tbl_peserta.no_ktp as noktp', 'ttgrouped.nilai1 as NilaiAngkaHilang', 'ttgrouped.nilai2 as NilaiHurufHilang', 'ttgrouped.nilai3 as NilaiSimbolHilang');
         
-        $gas = $this->db->select($select)->from('tbl_peserta')->join('tbl_nilai','tbl_nilai.id_user = tbl_peserta.id_user')->order_by('NilaiAngkaHilang', 'NilaiHurufHilang', 'NilaiSimbolHilang','desc')->limit(10)->get();
+        $select2 = '(SELECT id_user, nilai1,nilai2,nilai3, MAX(nilai1) AS MaxNilai1,MAX(nilai2) AS MaxNilai2,MAX(nilai3) AS MaxNilai3 FROM tbl_nilai GROUP BY id_user) ttgrouped';
+
+        $gas = $this->db->select($select)->from('tbl_peserta')->join($select2,'tbl_peserta.id_user = ttgrouped.id_user')->order_by('NilaiAngkaHilang', 'NilaiHurufHilang', 'NilaiSimbolHilang','desc')->limit(10)->get();
 
         return $gas->result();
     }

@@ -19,7 +19,7 @@
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-warning text-white mb-4">
-                <div class="card-body"><?php echo $cunt->sedangmengerjakan; ?> Sedang Mengerjakan</div>
+                <div class="card-body"><?php echo $cunt->sedangmengerjakan; ?> Sedang Test</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="<?php echo base_url().'admin/Admin_Controller/peserta_sedang_test' ?>">Lihat Detail</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -28,7 +28,7 @@
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-success text-white mb-4">
-                <div class="card-body"><?php echo $cunt->selesaimengerjakan; ?> Sudah Dinilai</div>
+                <div class="card-body"><?php echo $cunt->selesaimengerjakan; ?> Selesai Test</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="<?php echo base_url().'admin/Admin_Controller/peserta_dinilai' ?>">Lihat Detail</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -37,7 +37,7 @@
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-danger text-white mb-4">
-                <div class="card-body"><?php echo $cunt->belummengerjakan; ?> Belum Test</div>
+                <div class="card-body"><?php echo $cunt->belummengerjakan; ?> Belum Test/Logout</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="<?php echo base_url().'admin/Admin_Controller/peserta_belum_test' ?>">Lihat Detail</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>

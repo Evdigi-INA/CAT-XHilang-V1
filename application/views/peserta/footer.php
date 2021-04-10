@@ -30,7 +30,7 @@
 		  if (result.value) {
 		  	var tbiduser = $('#tbiduser').val();
     		var tbusername = $('#tbusername').val();
-          	var tbstatus = 'SM'; //Selesai Mengerjaaakan
+          	var tbstatus = 'BM'; //Tidak Mengerjaaakan
             $.ajax({
                 type : "POST",
                 url  : "<?php echo base_url('/peserta/Peserta_Controller/update_status')?>",
