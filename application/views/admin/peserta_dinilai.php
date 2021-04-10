@@ -33,6 +33,7 @@
                     <th>Nilai Angka Hilang</th>
                     <th>Nilai Huruf Hilang</th>
                     <th>Nilai Simbol Hilang</th>
+                    <th>Waktu</th>
                     <th>Status</th>
                   </tr>
                 </thead>
@@ -50,6 +51,7 @@
                       <td><?php echo $u->NilaiAngkaHilang; ?></td>
                       <td><?php echo $u->NilaiHurufHilang; ?></td>
                       <td><?php echo $u->NilaiSimbolHilang; ?></td>
+                      <td><?php echo $u->tgldatamasuk; ?></td>
                       <td style="text-align: center;"><span class="badge badge-success">Sudah Mengerjakan</span></td>
                   </tr>
                 <?php } ?>

@@ -24,7 +24,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-3">
-					<img src="<?php echo base_url('assets/web-images/polri_logo.png'); ?>" style="width: auto;height: 30px;margin-top: 4vh;"/>
+					<img src="<?php echo base_url('assets/web-images/polri_logo.png'); ?>" style="width: auto;height: 30px;margin-top: 4vh; margin-left: 2vh;"/>
 				</div>
 				<div class="col-9">
 					

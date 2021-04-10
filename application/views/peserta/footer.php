@@ -39,10 +39,24 @@
                 success: function(data){
                 }
             });
-		  	Swal.fire('Logout Sukses','Test diakhiri, silahkan klik OK','success').then(function() {
-	          window.location.href = "<?php echo base_url().'Verification/logoutkeun' ?>";// <--- submit for prmogrammatically
-	        });
-		    
+            window.location.href = "<?php echo base_url().'Verification/logoutkeun' ?>";// <--- submit for prmogrammatically
+            Swal.fire({
+			  title: 'Mohon Tunggu',
+			  html: 'Logout sukses, harap tunggu.',
+			  type: 'success',
+			  timer: 50000,
+			  timerProgressBar: true,
+			  allowOutsideClick: false,
+			  didOpen: () => {
+			    Swal.showLoading()
+			    timerInterval = setInterval(() => {
+			  	    
+			    }, 1000)
+			  },
+			  willClose: () => {
+			    clearInterval(timerInterval)
+			  }
+			});		    
 		  }
 		})
 	});

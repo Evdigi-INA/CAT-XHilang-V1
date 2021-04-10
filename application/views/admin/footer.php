@@ -4,9 +4,23 @@
 	</div>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="<?php echo base_url('js/moment-with-locales.js') ?>"></script>
 <script type="text/javascript">
 	
 	$(document).ready(function() {
+
+		$('#timeexpiredslider').change(function(){
+			if ($(this).val() == 0) {
+				$('#timeexpiredvalue').text('10 Menit');
+			} else if($(this).val() == 1) {
+				$('#timeexpiredvalue').text('30 Menit');
+			} else if($(this).val() == 2) {
+				$('#timeexpiredvalue').text('1 Jam');
+			} else {
+				$('#timeexpiredvalue').text('6 Jam');
+			}
+		});
+
     	$('#dataTablePeserta').DataTable({
     		"scrollY":        "45vh",
 	        "scrollCollapse": true
@@ -47,6 +61,7 @@
 			})
 
             var token = $("#tbtokenpeserta").val();
+            var timeexpiredvalue = $("#timeexpiredslider").val();
 			if ($("#tbtokenold").val() == token ) {
 				$('#tokenalertnganu').html(`<div class="alert alert-warning alert-dismissible fade show" role="alert">
 										  Disarankan untuk tidak menggunakan <strong>token lama</strong>  
@@ -61,7 +76,7 @@
 	            type : "POST",
 	            url  : "<?php echo base_url("admin/Admin_Controller/update_token") ?>",
 	            dataType : "JSON",
-	            data : {token:token},
+	            data : {token:token,timeexpiredvalue:timeexpiredvalue},
 	            success: function(data){
 	            }
 	        })
@@ -69,6 +84,7 @@
 			  icon: 'success',
 			  title: 'Refresh Data Token Berhasil'
 			})
+			$("#timeupdatedtoken").text(moment().format('YYYY-MM-DD kk:mm:ss'));
 			$('#tokenalertnganu').html(``);
         });
 
@@ -77,7 +93,7 @@
 			Swal.fire({
 			  title: 'Mohon Tunggu',
 			  html: 'Sedang Memvalidasi isi file soal.',
-			  timer: 10000,
+			  timer: 50000,
 			  timerProgressBar: true,
 			  allowOutsideClick: false,
 			  didOpen: () => {

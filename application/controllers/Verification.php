@@ -1,5 +1,5 @@
 <?php 
-
+date_default_timezone_set('Asia/Jakarta');
 class Verification extends CI_Controller
 {
 
@@ -25,21 +25,44 @@ class Verification extends CI_Controller
 			'token_access' => $token
 			);
 
+
 		$cek1 = $this->modelverif->cek_user("tbl_user",$where);
+		$cekconfigexpired = $this->modelverif->loadconfig("tbl_config");
+		
+		$timeadd = 0;
+        if ($cekconfigexpired->value == 0) {
+            $timeadd =+ 600;
+        } elseif ($cekconfigexpired->value == 1) {
+            $timeadd =+ 1800;
+        } elseif ($cekconfigexpired->value == 2) {
+            $timeadd =+ 3600;
+        } else {
+            $timeadd =+ 21600;
+        }
+	
+		$timestamp = strtotime($cek1->row()->update_token_time);
+
+		$cDate = strtotime(date('Y-m-d H:i:s'));
+
+		$oldDate = $timestamp + $timeadd;
 
 		if ($cek1->num_rows() > 0) //kondisi berdasarkan jumlah record
 		{
-			if($cek1->row()->role == 'peserta'){
-				$data_session = array(
-					'nama' => $username,
-					'status' => "login",
-					'iduser' => $cek1->row()->id_user, 
-					'role' => $cek1->row()->role
-				);
-				$this->session->set_userdata($data_session);
-				echo "peserta";
+			if ($cDate > $oldDate) {
+				echo "expired";
 			} else {
-				echo "failed";
+				if($cek1->row()->role == 'peserta'){
+					$data_session = array(
+						'nama' => $username,
+						'status' => "login",
+						'iduser' => $cek1->row()->id_user, 
+						'role' => $cek1->row()->role
+					);
+					$this->session->set_userdata($data_session);
+					echo "peserta";
+				} else {
+					echo "failed";
+				}
 			}
 			
 		}

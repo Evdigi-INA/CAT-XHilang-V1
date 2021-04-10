@@ -95,9 +95,9 @@ class Xhilangmodel extends CI_Model
 
     function tampil_peserta_with_nilai()
     {
-        $select = array('tbl_peserta.id_user as iduser', 'tbl_peserta.nama_lengkap as namleng','tbl_peserta.no_ktp as noktp','tbl_peserta.alamat as alamat','tbl_peserta.jenis_kelamin as jk','tbl_nilai.nilai1 as NilaiAngkaHilang', 'tbl_nilai.nilai2 as NilaiHurufHilang', 'tbl_nilai.nilai3 as NilaiSimbolHilang');
+        $select = array('tbl_peserta.id_user as iduser', 'tbl_peserta.nama_lengkap as namleng','tbl_peserta.no_ktp as noktp','tbl_peserta.alamat as alamat','tbl_peserta.jenis_kelamin as jk','tbl_nilai.nilai1 as NilaiAngkaHilang', 'tbl_nilai.nilai2 as NilaiHurufHilang', 'tbl_nilai.nilai3 as NilaiSimbolHilang','tbl_nilai.tanggal as tgldatamasuk');
         $wherenya = array('status' => 'DONE' );
-        $gas = $this->db->select($select)->from('tbl_peserta')->join('tbl_nilai','tbl_nilai.id_user = tbl_peserta.id_user')->order_by('NilaiAngkaHilang', 'NilaiHurufHilang', 'NilaiSimbolHilang','asc')->where($wherenya)->get();
+        $gas = $this->db->select($select)->from('tbl_peserta')->join('tbl_nilai','tbl_nilai.id_user = tbl_peserta.id_user')->order_by('tgldatamasuk','asc')->where($wherenya)->get();
 
         return $gas->result();
     }
@@ -127,7 +127,7 @@ class Xhilangmodel extends CI_Model
 
     function fetchpesertatokenlist()
     {
-        $select = array('role','token_access');
+        $select = array('role','token_access','update_token_time');
         $where = array('role' => 'peserta');
         $querya = $this->db->distinct()->select($select)->from('tbl_user')->where($where)->group_by('token_access')->get();
         return $querya->result();   
@@ -150,4 +150,11 @@ class Xhilangmodel extends CI_Model
         }
      
     }
+
+    function loadconfig(){
+        $select = array('*');
+        $conf = $this->db->select($select)->from('tbl_config')->where('nama_config','tokenexpiredtime')->get();
+        return $conf->result();
+    }
+
 }

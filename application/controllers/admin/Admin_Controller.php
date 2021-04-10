@@ -1,7 +1,7 @@
 <?php 
 
 require APPPATH.'vendor/autoload.php';
-
+date_default_timezone_set('Asia/Jakarta');
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
@@ -54,6 +54,7 @@ class Admin_Controller extends CI_Controller
 		$data['top10'] = $this->Xhilangmodel->p_top10();
 		$data['countpeserta'] = $this->Xhilangmodel->hitungpesertaberdasarkanstatus();
 		$data['pesertalisttoken'] = $this->Xhilangmodel->fetchpesertatokenlist();
+		$data['config'] = $this->Xhilangmodel->loadconfig();
 		$data['title'] = 'Dashboard - Menu Laporan';
 		$this->load->view('admin/header',$data);
 		$this->load->view('admin/menu_laporan');
@@ -487,12 +488,15 @@ class Admin_Controller extends CI_Controller
 	function update_token()
 	{
         $token=$this->input->post('token');
+        $valuetime=$this->input->post('timeexpiredvalue');
 
         $where = array('role' => 'peserta');
- 		
  		$data = array('token_access' => $token);
+ 		$configwhere = array('nama_config' => 'tokenexpiredtime');
+ 		$dataconfig = array('value' => $valuetime);
 
  		$this->Xhilangmodel->lakukan_update($where,$data,'tbl_user');
+ 		$this->Xhilangmodel->lakukan_update($configwhere,$dataconfig,'tbl_config');
 	}
 
 	function update_peserta()

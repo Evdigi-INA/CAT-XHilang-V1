@@ -106,6 +106,12 @@ $(document).ready(function() {
 				.then (function() {
 					window.location.href = baseUrl + "/peserta/Peserta_Controller/index";
 				});                	
+			} else if (data == "expired") {
+				Swal.fire({
+					type: 'error',
+					title: 'Token kadaluarsa',
+					text: 'Harap hubungi admin untuk token baru'
+				});
 			} else {
 				Swal.fire({
 					type: 'error',
