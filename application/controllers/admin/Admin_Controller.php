@@ -569,7 +569,6 @@ class Admin_Controller extends CI_Controller
 
 	public function hapus_peserta($id_user)
 	{
-		
 		$fetchid = $id_user;
 		$this->Xhilangmodel->lakukan_delete_peserta($fetchid);
 		$message = "Sukses menghapus ".$id_user.".";
