@@ -308,7 +308,7 @@ class Admin_Controller extends CI_Controller
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
-			while ($i <= 30 && $u < count($ap));
+			while ($i <= 50 && $u < count($ap));
 		} elseif ($kolomnya == 'KLM02') {
 			do{ //lakukan
 				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
@@ -319,7 +319,7 @@ class Admin_Controller extends CI_Controller
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
-			while ($i <= 30 && $u < count($ap));
+			while ($i <= 50 && $u < count($ap));
 		} elseif ($kolomnya == 'KLM03') {
 			do{ //lakukan
 				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
@@ -330,7 +330,7 @@ class Admin_Controller extends CI_Controller
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
-			while ($i <= 30 && $u < count($ap));
+			while ($i <= 50 && $u < count($ap));
 		} elseif ($kolomnya == 'KLM04') {
 			do{ //lakukan
 				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
@@ -341,7 +341,7 @@ class Admin_Controller extends CI_Controller
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
-			while ($i <= 30 && $u < count($ap));
+			while ($i <= 50 && $u < count($ap));
 		} elseif ($kolomnya == 'KLM05') {
 			do{ //lakukan
 				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
@@ -352,7 +352,7 @@ class Admin_Controller extends CI_Controller
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
-			while ($i <= 30 && $u < count($ap));
+			while ($i <= 50 && $u < count($ap));
 		} elseif ($kolomnya == 'KLM06') {
 			do{ //lakukan
 				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
@@ -363,7 +363,7 @@ class Admin_Controller extends CI_Controller
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
-			while ($i <= 30 && $u < count($ap));
+			while ($i <= 50 && $u < count($ap));
 		} elseif ($kolomnya == 'KLM07') {
 			do{ //lakukan
 				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
@@ -374,7 +374,7 @@ class Admin_Controller extends CI_Controller
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
-			while ($i <= 30 && $u < count($ap));
+			while ($i <= 50 && $u < count($ap));
 		} elseif ($kolomnya == 'KLM08') {
 			do{ //lakukan
 				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
@@ -385,7 +385,7 @@ class Admin_Controller extends CI_Controller
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
-			while ($i <= 30 && $u < count($ap));
+			while ($i <= 50 && $u < count($ap));
 		} elseif ($kolomnya == 'KLM09') {
 			do{ //lakukan
 				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
@@ -396,7 +396,7 @@ class Admin_Controller extends CI_Controller
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
-			while ($i <= 30 && $u < count($ap));
+			while ($i <= 50 && $u < count($ap));
 		} else {
 			do{ //lakukan
 				foreach ($ap as $k) { //pilah2 dulu array yang a b c d
@@ -407,7 +407,7 @@ class Admin_Controller extends CI_Controller
 				//echo $b[$i].' : Jawaban dipilih pada baris '.$i.'<br>'; //debug untuk cek nilai radio yang dipilih
 				$i++;
 			}
-			while ($i <= 30 && $u < count($ap));
+			while ($i <= 50 && $u < count($ap));
 		}
 
 		if ($idkolomjawabannya == 'S0JL') {
@@ -461,7 +461,7 @@ class Admin_Controller extends CI_Controller
 			//$cleaned = str_replace(' - ','-',$utf8);
 			$lengthdata = strlen($encode);
 			//echo 'panjang string '.strlen($cleaned);
-			if ($lengthdata == 600) {
+			if ($lengthdata == 1000) {
 				$data = array(
 					'listjawaban' => $cleaned
 				);
@@ -697,7 +697,7 @@ class Admin_Controller extends CI_Controller
         	$data = '';
         	
             $row = 4;
-            for ($row; $row <= 33; $row++) { //limit untuk 30 soal/kolom 
+            for ($row; $row <= 53; $row++) { //limit untuk 50 soal/kolom 
                 $pilihana = $sheet->getCellByColumnAndRow(1,$row)->getValue();
                 $pilihanb = $sheet->getCellByColumnAndRow(2,$row)->getValue();
                 $pilihanc = $sheet->getCellByColumnAndRow(3,$row)->getValue();

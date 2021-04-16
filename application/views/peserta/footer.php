@@ -107,7 +107,7 @@
 
 
 
-	var columnsoalcheckpoint = Array.from({length:31}, (v, i) => i * 30); //mulai dari 0, untuk index naekin 1
+	var columnsoalcheckpoint = Array.from({length:31}, (v, i) => i * 50); //mulai dari 0, untuk index naekin 1
 	$(document).ready(function(){
 		
 		$('#startbuttontest').click(function(){
@@ -207,7 +207,7 @@
 		$('.barisss').attr('hidden','true');
 		$('.barispilihan').attr('hidden','true');
 		if (index <= max) {
-			if (index == 299 || index == 599 || index == 899){
+			if (index == 499 || index == 999 || index == 1499){
 				status = 'Break';
 				//console.log('Status: Break');
 				//console.log(index);
@@ -1011,13 +1011,13 @@
 			var nilai0 = 0;
 			
 			//collect data jawaban fro kolom 2
-			$('table.tabledijawab > tbody > tr').slice(0,300).each(function(o){
+			$('table.tabledijawab > tbody > tr').slice(0,500).each(function(o){
 			    tds0 = $(this).find('td');
   				datajawaban0[o] = $(tds0[0]).text();
 			});
 
 			//collect data soal
-			$("table.soalny > tbody > tr.barisss").slice(0,300).each(function(i, v){
+			$("table.soalny > tbody > tr.barisss").slice(0,500).each(function(i, v){
 			  datasoal0[i] = Array();
 			  $(this).children('td').each(function(ii, vv){
 			    datasoal0[i][ii] = $(this).text();
@@ -1027,13 +1027,6 @@
 			//console.log('jawaban : ' + datajawaban);
 
 		    var x = 0;
-		    //buat perulangan
-		    for (var i = 0; i < datasoal0.length; i++) {
-		    	var datajawab = datajawaban0[i];
-		    	if (datasoal0[i] == datajawab) {
-		    		salah++;
-		    	}
-		    }
 			do {
 				//make sure the jawaban we got ada pada salah satu index array yang mana berisi 4 value (im make it comparison or 'make sure it was included')
 				if(datajawaban0[x]){ //pastikan value ada
@@ -1048,7 +1041,7 @@
 			    }
 			    x++;
 			}
-			while(x < 300);
+			while(x < 500);
 			//console.log('Benar : ' + benar);
 			//console.log('Salah : ' + salah);
 			if(nilai0 > 100){nilai0 = 100}//handling score if > 100 happen
@@ -1072,13 +1065,13 @@
 			var nilai1 = 0;
 			
 			//collect data jawaban fro kolom 2
-			$('table.tabledijawab > tbody > tr').slice(300,600).each(function(o){
+			$('table.tabledijawab > tbody > tr').slice(500,1000).each(function(o){
 			    tds1 = $(this).find('td');
   				datajawaban1[o] = $(tds1[0]).text();
 			});
 
 			//collect data soal
-			$("table.soalny > tbody > tr.barisss").slice(300,600).each(function(i, v){
+			$("table.soalny > tbody > tr.barisss").slice(500,1000).each(function(i, v){
 			  datasoal1[i] = Array();
 			  $(this).children('td').each(function(ii, vv){
 			    datasoal1[i][ii] = $(this).text();
@@ -1126,13 +1119,13 @@
 			var nilai2 = 0;
 			
 			//collect data jawaban fro kolom 2
-			$('table.tabledijawab > tbody > tr').slice(600,900).each(function(o){
+			$('table.tabledijawab > tbody > tr').slice(1000,1500).each(function(o){
 			    tds2 = $(this).find('td');
   				datajawaban2[o] = $(tds2[0]).text();
 			});
 
 			//collect data soal
-			$("table.soalny > tbody > tr.barisss").slice(600,900).each(function(i, v){
+			$("table.soalny > tbody > tr.barisss").slice(1000,1500).each(function(i, v){
 			  datasoal2[i] = Array();
 			  $(this).children('td').each(function(ii, vv){
 			    datasoal2[i][ii] = $(this).text();
