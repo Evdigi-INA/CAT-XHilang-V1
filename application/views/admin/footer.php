@@ -9,15 +9,19 @@
 	
 	$(document).ready(function() {
 
-		$('#timeexpiredslider').change(function(){
+		$('#timeexpiredslider').on('input', function(){
 			if ($(this).val() == 0) {
 				$('#timeexpiredvalue').text('10 Menit');
 			} else if($(this).val() == 1) {
 				$('#timeexpiredvalue').text('30 Menit');
 			} else if($(this).val() == 2) {
 				$('#timeexpiredvalue').text('1 Jam');
-			} else {
+			} else if($(this).val() == 3) {
 				$('#timeexpiredvalue').text('6 Jam');
+			} else if($(this).val() == 4) {
+				$('#timeexpiredvalue').text('12 Jam');
+			}else {
+				$('#timeexpiredvalue').text('24 Jam');
 			}
 		});
 

@@ -123,13 +123,17 @@
                             $expiredvalue = '30 Menit';
                         } elseif ($c->value == 2) {
                             $expiredvalue = '1 Jam';
+                        } elseif ($c->value == 3) {
+                            $expiredvalue == '6 Jam';
+                        } elseif ($c->value == 4) {
+                            $expiredvalue = '12 Jam';
                         } else {
-                            $expiredvalue = '6 Jam';
+                            $expiredvalue = '24 Jam';
                         }
                         
                          ?>
                         
-                        <input type="range" id="timeexpiredslider" name="timeexpiredslider" min="0" max="3" value="<?php echo $c->value ?>">
+                        <input type="range" id="timeexpiredslider" name="timeexpiredslider" min="0" max="5" value="<?php echo $c->value ?>" style="width: 100%;">
                         <br>
                         <br>
                         <br>

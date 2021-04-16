@@ -36,8 +36,12 @@ class Verification extends CI_Controller
             $timeadd =+ 1800;
         } elseif ($cekconfigexpired->value == 2) {
             $timeadd =+ 3600;
-        } else {
+        } elseif ($cekconfigexpired->value == 3) {
             $timeadd =+ 21600;
+        } elseif ($cekconfigexpired->value == 4) {
+            $timeadd =+ 43200;
+        } else {
+            $timeadd =+ 86400;
         }
 	
 		$timestamp = strtotime($cek1->row()->update_token_time);
