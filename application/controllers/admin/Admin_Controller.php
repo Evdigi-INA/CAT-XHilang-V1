@@ -690,8 +690,8 @@ class Admin_Controller extends CI_Controller
         	$datasoal = $soalnyaa.'-'.$soalnyab.'-'.$soalnyac.'-'.$soalnyad.'-'.$soalnyae;
         	
         	if (!$idjenissoal || !$kolom || !$soalnyaa || !$soalnyab || !$soalnyac || !$soalnyad || !$soalnyae) {
-				die('Isi file tidak lengkap : pastikan setiap sheet tercantum id jenis soal, kolom, dan jawaban peserta');
 				unlink($inputFileName);
+				die('Isi file tidak lengkap : pastikan setiap sheet tercantum id jenis soal, kolom, dan jawaban peserta');
 			}//handling empty field
 
         	$data = '';
@@ -704,8 +704,8 @@ class Admin_Controller extends CI_Controller
                 $pilihand = $sheet->getCellByColumnAndRow(4,$row)->getValue();
                 $data.= $pilihana.' '.$pilihanb.' '.$pilihanc.' '.$pilihand.'-';
                 if (!$pilihana || !$pilihanb || !$pilihanc || !$pilihand) {
-                	die('Isi file tidak lengkap : soal-soal ada yang kosong, harap cek kembali');
                 	unlink($inputFileName);
+                	die('Isi file tidak lengkap : soal-soal ada yang kosong, harap cek kembali');
                 }
             }
         	
