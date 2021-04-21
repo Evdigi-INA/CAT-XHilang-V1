@@ -1,3 +1,7 @@
+window.onbeforeunload = function () {
+	return "";
+}
+
 function range(awal, akhir) {
   	return Array(akhir - awal + 1).fill().map((_, idx) => awal + idx);
 }
@@ -266,17 +270,28 @@ function fetchnilaieachcolumn(js,start,end) {
 		nilaiArrayS0JLwrong.push(wrongscorepercolumn);
 		countArrayS0JLnotanswered.push(notansweredcorepercolumn);
 		countArrayS0JLanswered.push(answeredcorepercolumn);
-		console.log(correctscorepercolumn);
+		$("#tbS0JLcorrect").val(nilaiArrayS0JLcorrect);
+		$("#tbS0JLwrong").val(nilaiArrayS0JLwrong);
+		$("#tbS0JLanswered").val(countArrayS0JLanswered);
+		$("#tbS0JLnotanswered").val(countArrayS0JLnotanswered);
 	} else if (jenissoal == "S1JL") {
 		nilaiArrayS1JLcorrect.push(correctscorepercolumn);
 		nilaiArrayS1JLwrong.push(wrongscorepercolumn);
 		countArrayS1JLnotanswered.push(notansweredcorepercolumn);
 		countArrayS1JLanswered.push(answeredcorepercolumn);
+		$("#tbS1JLcorrect").val(nilaiArrayS1JLcorrect);
+		$("#tbS1JLwrong").val(nilaiArrayS1JLwrong);
+		$("#tbS1JLanswered").val(countArrayS1JLanswered);
+		$("#tbS1JLnotanswered").val(countArrayS1JLnotanswered);
 	} else {
 		nilaiArrayS2JLcorrect.push(correctscorepercolumn);
 		nilaiArrayS2JLwrong.push(wrongscorepercolumn);
 		countArrayS2JLnotanswered.push(notansweredcorepercolumn);
 		countArrayS2JLanswered.push(answeredcorepercolumn);
+		$("#tbS2JLcorrect").val(nilaiArrayS2JLcorrect);
+		$("#tbS2JLwrong").val(nilaiArrayS2JLwrong);
+		$("#tbS2JLanswered").val(countArrayS2JLanswered);
+		$("#tbS2JLnotanswered").val(countArrayS2JLnotanswered);
 	}
 }
 
@@ -289,9 +304,6 @@ function nextquest(jawab){
 	}
 	index++;
 	
-	if (index >= max) {
-		alert("mentok kekanan");
-	}
 	console.log(index + '(Telah Dikerjakan)');
 	$('table.tabledijawab > tbody > tr.barisdijawab' + index + ' > td.answered').text(jawab);
 	if ($('table.tabledijawab > tbody > tr.barisdijawab' + index + ' > td.answered').text() == '') {

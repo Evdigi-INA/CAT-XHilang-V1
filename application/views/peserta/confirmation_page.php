@@ -22,6 +22,18 @@
 								<input type="text" name="tbnilaiS0JL" id="tbnilaiS0JL">
 								<input type="text" name="tbnilaiS1JL" id="tbnilaiS1JL">
 								<input type="text" name="tbnilaiS2JL" id="tbnilaiS2JL">
+								<input type="text" name="tbS0JLcorrect" id="tbS0JLcorrect">
+								<input type="text" name="tbS0JLwrong" id="tbS0JLwrong">
+								<input type="text" name="tbS0JLanswered" id="tbS0JLanswered">
+								<input type="text" name="tbS1JLnotanswered" id="tbS1JLnotanswered">
+								<input type="text" name="tbS1JLcorrect" id="tbS1JLcorrect">
+								<input type="text" name="tbS1JLwrong" id="tbS1JLwrong">
+								<input type="text" name="tbS1JLanswered" id="tbS1JLanswered">
+								<input type="text" name="tbS1JLnotanswered" id="tbS1JLnotanswered">
+								<input type="text" name="tbS2JLcorrect" id="tbS2JLcorrect">
+								<input type="text" name="tbS2JLwrong" id="tbS2JLwrong">
+								<input type="text" name="tbS2JLanswered" id="tbS2JLanswered">
+								<input type="text" name="tbS2JLnotanswered" id="tbS2JLnotanswered">
 							</div>
 						</p>
 						<div class="container-fluid">
