@@ -214,24 +214,47 @@ class Peserta_Controller extends CI_Controller
 		$this->load->view('peserta/footer');	
 	}
 
-	public function simpan_nilai()
+	function simpan_nilai()
 	{
-		$user_name = $this->input->post('tbusername');
-		$id_user = $this->input->post('tbiduser');
-		$tb_nilai1 = $this->input->post('tbnilai1');
-		$tb_nilai2 = $this->input->post('tbnilai2');
-		$tb_nilai3 = $this->input->post('tbnilai3');
-		
+		$user_name		= $this->input->post('tbusername');
+		$id_user		= $this->input->post('tbiduser');
+		$tb_nilai1		= $this->input->post('tbnilai1');
+		$tb_nilai2		= $this->input->post('tbnilai2');
+		$tb_nilai3		= $this->input->post('tbnilai3');
+		$s0jlanswered	= $this->input->post('tbnilaiS0JLanswered');
+		$s0jlnotanswered= $this->input->post('tbnilaiS0JLnotanswered');
+		$s0jlcorrect	= $this->input->post('tbnilaiS0JLcorrect');
+		$s0jlwrong		= $this->input->post('tbnilaiS0JLwrong');
+		$s1jlanswered	= $this->input->post('tbnilaiS1JLanswered');
+		$s1jlnotanswered= $this->input->post('tbnilaiS1JLnotanswered');
+		$s1jlcorrect	= $this->input->post('tbnilaiS1JLcorrect');
+		$s1jlwrong		= $this->input->post('tbnilaiS1JLwrong');
+		$s2jlanswered	= $this->input->post('tbnilaiS2JLanswered');
+		$s2jlnotanswered= $this->input->post('tbnilaiS2JLnotanswered');
+		$s2jlcorrect	= $this->input->post('tbnilaiS2JLcorrect');
+		$s2jlwrong		= $this->input->post('tbnilaiS2JLwrong');
+
 		$datatbl= array(
 			'nilai1'		=> $tb_nilai1,
+			's0jlcorrect'		=> $s0jlcorrect,
+			's0jlwrong'		=> $s0jlwrong,
+			's0jlanswered'		=> $s0jlanswered,
+			's0jlnotanswered'		=> $s0jlnotanswered,
+			's1jlcorrect'		=> $s1jlcorrect,
+			's1jlwrong'		=> $s1jlwrong,
+			's1jlanswered'		=> $s1jlanswered,
+			's1jlnotanswered'		=> $s1jlnotanswered,
+			's2jlcorrect'		=> $s2jlcorrect,
+			's2jlwrong'		=> $s2jlwrong,
+			's2jlanswered'		=> $s2jlanswered,
+			's2jlnotanswered'		=> $s2jlnotanswered,
 			'nilai2'		=> $tb_nilai2,
 			'nilai3'		=> $tb_nilai3,
 			'id_user'	=> $id_user,
-			'username'	=> $user_name
+			'username'	=> $user_name,
 		);
 
 		$this->Xhilangmodel->lakukan_insert('tbl_nilai',$datatbl);
-		redirect('/login');
 	}
 
 	function update_status()

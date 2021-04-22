@@ -175,20 +175,32 @@ $(document).ready(function(){
 		var tbnilai1 = $('#tbnilaiS0JL').val();
         var tbnilai2 = $('#tbnilaiS1JL').val();
         var tbnilai3 = $('#tbnilaiS2JL').val();
+        var tbnilaiS0JLcorrect = $('#tbS0JLcorrect').val();
+        var tbnilaiS0JLwrong = $('#tbS0JLwrong').val();
+        var tbnilaiS0JLanswered = $('#tbS0JLanswered').val();
+        var tbnilaiS0JLnotanswered = $('#tbS0JLnotanswered').val();
+        var tbnilaiS1JLcorrect = $('#tbS1JLcorrect').val();
+        var tbnilaiS1JLwrong = $('#tbS1JLwrong').val();
+        var tbnilaiS1JLanswered = $('#tbS1JLanswered').val();
+        var tbnilaiS1JLnotanswered = $('#tbS1JLnotanswered').val();
+        var tbnilaiS2JLcorrect = $('#tbS2JLcorrect').val();
+        var tbnilaiS2JLwrong = $('#tbS2JLwrong').val();
+        var tbnilaiS2JLanswered = $('#tbS2JLanswered').val();
+        var tbnilaiS2JLnotanswered = $('#tbS2JLnotanswered').val();
         var tbiduser = $('#tbiduser').val();
         var tbusername = $('#tbusername').val();
         $.ajax({
             type : "POST",
-            url  : baseUrl + "/peserta/Peserta_Controller/simpan_nilai",
-            dataType : "JSON",
-            data : {tbnilai1:tbnilai1 , tbnilai2:tbnilai2, tbnilai3:tbnilai3, tbiduser:tbiduser,tbusername:tbusername},
+            url  : baseUrl + "peserta/Peserta_Controller/simpan_nilai",
+            dataType: "JSON",
+            data : {tbnilai1:tbnilai1 , tbnilai2:tbnilai2, tbnilai3:tbnilai3, tbnilaiS0JLcorrect:tbnilaiS0JLcorrect, tbnilaiS0JLwrong:tbnilaiS0JLwrong, tbnilaiS0JLanswered:tbnilaiS0JLanswered, tbnilaiS0JLnotanswered:tbnilaiS0JLnotanswered,tbnilaiS1JLcorrect:tbnilaiS1JLcorrect, tbnilaiS1JLwrong:tbnilaiS1JLwrong, tbnilaiS1JLanswered:tbnilaiS1JLanswered, tbnilaiS1JLnotanswered:tbnilaiS1JLnotanswered, tbnilaiS2JLcorrect:tbnilaiS2JLcorrect, tbnilaiS2JLwrong:tbnilaiS2JLwrong, tbnilaiS2JLanswered:tbnilaiS2JLanswered, tbnilaiS2JLnotanswered:tbnilaiS2JLnotanswered, tbiduser:tbiduser,tbusername:tbusername},
             success: function(data){
             }
         });
         var tbstatus = 'DONE'; //Selesai Mengerjaaakan
         $.ajax({
             type : "POST",
-            url  : baseUrl + "/peserta/Peserta_Controller/update_status",
+            url  : baseUrl + "peserta/Peserta_Controller/update_status",
             dataType : "JSON",
             data : {tbiduser:tbiduser,tbusername:tbusername,tbstatus:tbstatus},
             success: function(data){

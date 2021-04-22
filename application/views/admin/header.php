@@ -24,9 +24,8 @@
   	<script src="<?php echo base_url('assets/chart.js/Chart.min.js') ?>"></script>
   	<!-- LOAD DATATABLE PLUGIN CSS DISINI -->
   	
-	<link rel="stylesheet" href="<?php echo base_url('assets/datatables/jquery.dataTables.css') ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/datatables/dataTables.bootstrap4.css') ?>">
-  	<link rel="stylesheet" href="<?php echo base_url('assets/datatables/buttons.dataTables.min.css') ?>">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.24/b-1.7.0/b-html5-1.7.0/b-print-1.7.0/datatables.min.css"/>
+ 
 
   	<script type="text/javascript" src="<?php echo base_url('js/scriptsoal.js');?>"></script>
 

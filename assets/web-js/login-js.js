@@ -60,7 +60,7 @@ $(document).ready(function() {
 						$('.welcometext').html('<div class="alert alert-warning" role="alert">Memproses</div>');
 		      			$('.tbtokenform').css('display','none');
 		      			$('#buttonvalidate').css('display','none');
-						window.location.href = baseUrl + "/admin/Admin_Controller/index";
+						window.location.href = baseUrl + "admin/Admin_Controller/index";
 					});
 				} else {
 					$('.welcometext').html('<div class="alert alert-danger" role="alert">Login gagal, silahkan hubungi admin</div>');
@@ -104,7 +104,7 @@ $(document).ready(function() {
 					showConfirmButton: false
 				})
 				.then (function() {
-					window.location.href = baseUrl + "/peserta/Peserta_Controller/index";
+					window.location.href = baseUrl + "peserta/Peserta_Controller/index";
 				});                	
 			} else if (data == "expired") {
 				Swal.fire({

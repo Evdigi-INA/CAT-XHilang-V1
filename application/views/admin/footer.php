@@ -8,6 +8,85 @@
 <script type="text/javascript">
 	
 	$(document).ready(function() {
+		var chartLabels = ['Kolom 1', 'Kolom 2', 'Kolom 3', 'Kolom 4', 'Kolom 5', 'Kolom 6', 'Kolom 7', 'Kolom 8', 'Kolom 9', 'Kolom 10'];
+		var lineChart
+		var scalesOptions = {
+					xAxes: [
+					{
+						gridLines:
+						{
+							display: false
+						}
+					}],
+					yAxes: [
+					{
+						gridLines:
+						{
+							color: '#eff3f6',
+							drawBorder: false,
+						},
+					}]
+				};
+
+		var ctxLineChart = document.getElementById("score-chart").getContext("2d");
+		lineChart = new Chart(ctxLineChart,
+		{
+			type: 'line',
+			data:
+			{
+				labels: chartLabels,
+				<?php foreach ($infop as $key) {
+					?>
+				datasets: [
+				{
+					data: [<?php echo $key->s0jlcorrect; ?>],
+					label: 'Jawaban Benar',
+					fill: false,
+					borderWidth: 2,
+					pointRadius: 3,
+					pointHoverRadius: 5,
+					borderColor: '#1ce633',
+					backgroundColor: '#fff',
+				},
+				{
+					data: [<?php echo $key->s0jlwrong; ?>],
+					label: 'Jawaban Salah',
+					fill: false,
+					borderWidth: 2,
+					pointRadius: 3,
+					pointHoverRadius: 5,
+					borderColor: '#f04832',
+					backgroundColor: '#fff',
+				},
+				{
+					data: [<?php echo $key->s0jlanswered; ?>],
+					label: 'Dijawab',
+					fill: false,
+					borderWidth: 2,
+					pointRadius: 3,
+					pointHoverRadius: 5,
+					borderColor: '#45aeef',
+					backgroundColor: '#fff',
+				},
+				{
+					data: [<?php echo $key->s0jlnotanswered; ?>],
+					label: 'Tidak Dijawab',
+					fill: false,
+					borderWidth: 2,
+					pointRadius: 3,
+					pointHoverRadius: 5,
+					borderColor: '#f0e813',
+					backgroundColor: '#fff',
+				}]
+				<?php
+				} ?>
+			},
+			options:
+			{
+				responsive: true,
+				scales: scalesOptions,
+			}
+		});
 
 		$('#timeexpiredslider').on('input', function(){
 			if ($(this).val() == 0) {
@@ -123,17 +202,10 @@
 <!-- LOAD JAVASCRIPT PLUGIN INTI -->
 <script src="<?php echo base_url('assets/jquery-easing/jquery.easing.min.js') ?>"></script>
 
-<!-- LOAD PLUGIN JAVASCRIPT UNTUK TABEL -->
-
-<script src="<?php echo base_url('assets/datatables/jquery.dataTables.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/datatables/buttons.print.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/datatables/dataTables.buttons.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/datatables/jszip.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/datatables/pdfmake.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/datatables/vfs_fonts.js') ?>"></script>
-<script src="<?php echo base_url('assets/datatables/buttons.html5.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/datatables/jszip.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/datatables/datatables.min.js') ?>"></script>
+<!-- LOAD PLUGIN JAVASCRIPT UNTUK TABEL --> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.24/b-1.7.0/b-html5-1.7.0/b-print-1.7.0/datatables.min.js"></script>
 
 <!-- LOAD CUSTOM SCRIPT UNTUK SEMUA YANG ADA DI LAMAN INI -->
 <script src="<?php echo base_url('js/sb-admin.min.js') ?>"></script>

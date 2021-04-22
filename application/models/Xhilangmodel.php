@@ -113,8 +113,8 @@ class Xhilangmodel extends CI_Model
 
     function info_peserta_overview($where)
     {
-        $select = array('tbl_user.id_user as iduser','tbl_peserta.no_ktp as noktp','tbl_peserta.nama_lengkap as namleng','tbl_peserta.jenis_kelamin as jk','tbl_peserta.alamat as almt','tbl_user.username as username','tbl_user.role as role', 'tbl_nilai.nilai1 as n1','tbl_nilai.nilai2 as n2', 'tbl_nilai.nilai3 as n3','tbl_nilai.tanggal as datamasuk');
-        $querya = $this->db->select($select)->from('tbl_peserta')->join('tbl_user','tbl_peserta.id_user = tbl_user.id_user')->join('tbl_nilai','tbl_peserta.id_user = tbl_nilai.id_user')->where($where)->order_by('datamasuk','ASC')->limit(1)->get();
+        $select = array('tbl_user.id_user as iduser','tbl_peserta.no_ktp as noktp','tbl_peserta.nama_lengkap as namleng','tbl_peserta.jenis_kelamin as jk','tbl_peserta.alamat as almt','tbl_user.username as username','tbl_user.role as role', 'tbl_nilai.nilai1 as n1','tbl_nilai.nilai2 as n2', 'tbl_nilai.nilai3 as n3','tbl_nilai.tanggal as datamasuk','tbl_nilai.s0jlcorrect as s0jlcorrect','tbl_nilai.s0jlwrong as s0jlwrong','tbl_nilai.s0jlanswered as s0jlanswered','tbl_nilai.s0jlnotanswered as s0jlnotanswered','tbl_nilai.s1jlcorrect as s1jlcorrect','tbl_nilai.s1jlwrong as s1jlwrong','tbl_nilai.s1jlanswered as s1jlanswered','tbl_nilai.s1jlnotanswered as s1jlnotanswered','tbl_nilai.s2jlcorrect as s2jlcorrect','tbl_nilai.s2jlwrong as s2jlwrong','tbl_nilai.s2jlanswered as s2jlanswered','tbl_nilai.s2jlnotanswered as s2jlnotanswered');
+        $querya = $this->db->select($select)->from('tbl_peserta')->join('tbl_user','tbl_peserta.id_user = tbl_user.id_user')->join('tbl_nilai','tbl_peserta.id_user = tbl_nilai.id_user')->where($where)->order_by('n1 DESC','n2 DESC','n3 DESC')->limit(1)->get();
         return $querya->result();
     }
 

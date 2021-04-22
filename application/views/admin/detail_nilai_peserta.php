@@ -59,7 +59,7 @@
 				
 			</div>
 			<div class="col-4">
-				<div class="card">
+				<div class="card"  style="height: 100%">
 					<div class="card-header">
 						<h3><span><i class="fas fa-trophy fa-fw fa-md"></i></span> Skor Tertinggi</h3>
 					</div>
@@ -70,18 +70,18 @@
 						$nilai3 = $uwu->n3;
 						if ($nilai1 > $nilai2 && $nilai1 > $nilai3) {
 							echo '
-								<h2 style="text-align: center;">'.$nilai1.'</h2><br>
-								<p>Skor Nilai Angka Hilang</p>
+								<h2 style="text-align: center; padding: 15px; font-size: 90px;">'.$nilai1.'</h2><br>
+								<p style="text-align: center;">Skor Nilai Angka Hilang</p>
 							';
 						} elseif ($nilai2 > $nilai1 && $nilai2 > $nilai1) {
 							echo '
-								<h2 style="text-align: center;">'.$nilai2.'</h2><br>
-								<p>Skor Nilai Huruf Hilang</p>
+								<h2 style="text-align: center;padding: 15px; font-size: 90px;">'.$nilai2.'</h2><br>
+								<p style="text-align: center;">Skor Nilai Huruf Hilang</p>
 							';
 						} else {
 							echo '
-								<h2 style="text-align: center;">'.$nilai3.'</h2><br>
-								<p>Skor Nilai Simbol Hilang</p>
+								<h2 style="text-align: center;padding: 15px; font-size: 90px;">'.$nilai3.'</h2><br>
+								<p style="text-align: center;">Skor Nilai Simbol Hilang</p>
 							';
 						} ?>
 					</div>
@@ -94,45 +94,58 @@
 	</div>
 	<br>
 	<div class="container">
+		<div class="card"  style="height: 100%">
+			<div class="card-header">
+				<h3><span><i class="fas fa-trophy fa-fw fa-md"></i></span> Grafik Nilai - Terbaru</h3>
+			</div>
+			<div class="card-body">
+				<div class="container score-chart-wrapper">
+					<canvas id="score-chart" height="100"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="container">
 		<div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
             Data Nilai
           </div>
           <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="tabelnilaipeserta" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th hidden="true">No.</th>
-                    <th hidden="true">Username</th>
-                    <th>Nilai Soal Angka</th>
-                    <th>Nilai Soal Huruf</th>
-                    <th>Nilai Soal Simbol</th>
-                    <th>Rata-Rata</th>
-                    <th>Tanggal</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  $no = 1;
-                  foreach($dtlnilailist as $u)
-                  {
-                  	$rata2 = (floatval($u->nilai1)+floatval($u->nilai2)+floatval($u->nilai3))/3;
-                   ?>
-                  <tr>
-                      <td hidden="true"><?php echo $no++ ?></td>
-                      <td hidden="true"><?php echo $u->username; ?></td>
-                      <td><?php echo $u->nilai1; ?></td>
-                      <td><?php echo $u->nilai2; ?></td>
-                      <td><?php echo $u->nilai3; ?></td>
-                      <td><?php echo $rata2; ?></td>
-                      <td><?php echo $u->tanggal; ?></td>
-                  </tr>
-                <?php } ?>
-                </tbody>
-              </table>
-            </div>
+            
+	          <table class="table table-bordered" id="tabelnilaipeserta" style="width: 100%">
+	            <thead>
+	              <tr>
+	                <th hidden="true">No.</th>
+	                <th hidden="true">Username</th>
+	                <th>Nilai Soal Angka</th>
+	                <th>Nilai Soal Huruf</th>
+	                <th>Nilai Soal Simbol</th>
+	                <th>Rata-Rata</th>
+	                <th>Tanggal</th>
+	              </tr>
+	            </thead>
+	            <tbody>
+	              <?php
+	              $no = 1;
+	              foreach($dtlnilailist as $u)
+	              {
+	              	$rata2 = (floatval($u->nilai1)+floatval($u->nilai2)+floatval($u->nilai3))/3;
+	               ?>
+	              <tr>
+	                  <td hidden="true"><?php echo $no++ ?></td>
+	                  <td hidden="true"><?php echo $u->username; ?></td>
+	                  <td><?php echo $u->nilai1; ?></td>
+	                  <td><?php echo $u->nilai2; ?></td>
+	                  <td><?php echo $u->nilai3; ?></td>
+	                  <td><?php echo $rata2; ?></td>
+	                  <td><?php echo $u->tanggal; ?></td>
+	              </tr>
+	            <?php } ?>
+	            </tbody>
+	          </table>
+            
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
