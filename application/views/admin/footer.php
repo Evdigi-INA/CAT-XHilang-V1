@@ -9,7 +9,9 @@
 	
 	$(document).ready(function() {
 		var chartLabels = ['Kolom 1', 'Kolom 2', 'Kolom 3', 'Kolom 4', 'Kolom 5', 'Kolom 6', 'Kolom 7', 'Kolom 8', 'Kolom 9', 'Kolom 10'];
-		var lineChart
+		var lineCharts0jl;
+		var lineCharts1jl;
+		var lineCharts2jl;
 		var scalesOptions = {
 					xAxes: [
 					{
@@ -28,18 +30,18 @@
 					}]
 				};
 
-		var ctxLineChart = document.getElementById("score-chart").getContext("2d");
-		lineChart = new Chart(ctxLineChart,
+		var ctxLineChartS0JL = document.getElementById("score-chart-s0jl").getContext("2d");
+		var ctxLineChartS1JL = document.getElementById("score-chart-s1jl").getContext("2d");
+		var ctxLineChartS2JL = document.getElementById("score-chart-s2jl").getContext("2d");
+		lineCharts0jl = new Chart(ctxLineChartS0JL,
 		{
 			type: 'line',
 			data:
 			{
 				labels: chartLabels,
-				<?php foreach ($infop as $key) {
-					?>
 				datasets: [
 				{
-					data: [<?php echo $key->s0jlcorrect; ?>],
+					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
 					label: 'Jawaban Benar',
 					fill: false,
 					borderWidth: 2,
@@ -49,7 +51,7 @@
 					backgroundColor: '#fff',
 				},
 				{
-					data: [<?php echo $key->s0jlwrong; ?>],
+					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
 					label: 'Jawaban Salah',
 					fill: false,
 					borderWidth: 2,
@@ -59,7 +61,7 @@
 					backgroundColor: '#fff',
 				},
 				{
-					data: [<?php echo $key->s0jlanswered; ?>],
+					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
 					label: 'Dijawab',
 					fill: false,
 					borderWidth: 2,
@@ -69,7 +71,7 @@
 					backgroundColor: '#fff',
 				},
 				{
-					data: [<?php echo $key->s0jlnotanswered; ?>],
+					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
 					label: 'Tidak Dijawab',
 					fill: false,
 					borderWidth: 2,
@@ -78,8 +80,64 @@
 					borderColor: '#f0e813',
 					backgroundColor: '#fff',
 				}]
-				<?php
-				} ?>
+			},
+			options:
+			{
+				legend:{
+					display: false
+				},
+				responsive: true,
+				scales: scalesOptions,
+			}
+		});
+
+		lineCharts1jl = new Chart(ctxLineChartS1JL,
+		{
+			type: 'line',
+			data:
+			{
+				labels: chartLabels,
+				datasets: [
+				{
+					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
+					label: 'Jawaban Benar',
+					fill: false,
+					borderWidth: 2,
+					pointRadius: 3,
+					pointHoverRadius: 5,
+					borderColor: '#1ce633',
+					backgroundColor: '#fff',
+				},
+				{
+					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
+					label: 'Jawaban Salah',
+					fill: false,
+					borderWidth: 2,
+					pointRadius: 3,
+					pointHoverRadius: 5,
+					borderColor: '#f04832',
+					backgroundColor: '#fff',
+				},
+				{
+					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
+					label: 'Dijawab',
+					fill: false,
+					borderWidth: 2,
+					pointRadius: 3,
+					pointHoverRadius: 5,
+					borderColor: '#45aeef',
+					backgroundColor: '#fff',
+				},
+				{
+					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
+					label: 'Tidak Dijawab',
+					fill: false,
+					borderWidth: 2,
+					pointRadius: 3,
+					pointHoverRadius: 5,
+					borderColor: '#f0e813',
+					backgroundColor: '#fff',
+				}]
 			},
 			options:
 			{
@@ -88,6 +146,64 @@
 			}
 		});
 
+		lineCharts2jl = new Chart(ctxLineChartS2JL,
+		{
+			type: 'line',
+			data:
+			{
+				labels: chartLabels,
+				datasets: [
+				{
+					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
+					label: 'Jawaban Benar',
+					fill: false,
+					borderWidth: 2,
+					pointRadius: 3,
+					pointHoverRadius: 5,
+					borderColor: '#1ce633',
+					backgroundColor: '#fff',
+				},
+				{
+					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
+					label: 'Jawaban Salah',
+					fill: false,
+					borderWidth: 2,
+					pointRadius: 3,
+					pointHoverRadius: 5,
+					borderColor: '#f04832',
+					backgroundColor: '#fff',
+				},
+				{
+					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
+					label: 'Dijawab',
+					fill: false,
+					borderWidth: 2,
+					pointRadius: 3,
+					pointHoverRadius: 5,
+					borderColor: '#45aeef',
+					backgroundColor: '#fff',
+				},
+				{
+					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
+					label: 'Tidak Dijawab',
+					fill: false,
+					borderWidth: 2,
+					pointRadius: 3,
+					pointHoverRadius: 5,
+					borderColor: '#f0e813',
+					backgroundColor: '#fff',
+				}]
+			},
+			options:
+			{
+				legend:{
+					display: false
+				},
+				responsive: true,
+				scales: scalesOptions,
+			}
+		});
+	
 		$('#timeexpiredslider').on('input', function(){
 			if ($(this).val() == 0) {
 				$('#timeexpiredvalue').text('10 Menit');
@@ -129,6 +245,51 @@
 	            }
             ]
         });
+
+        $('#tabelnilaipeserta tbody').on('click','tr', function () {
+        	$('html, body').animate({
+		        scrollTop: $("#card-chart").offset().top
+		    }, 500);
+	        lineCharts0jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(8)').text() + "]");
+		    lineCharts0jl.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(9)').text() + "]");
+		    lineCharts0jl.data.datasets[2].data = JSON.parse("[" + $(this).find('td:eq(10)').text() + "]");
+		    lineCharts0jl.data.datasets[3].data = JSON.parse("[" + $(this).find('td:eq(11)').text() + "]");
+		    lineCharts1jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(12)').text() + "]");
+		    lineCharts1jl.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(13)').text() + "]");
+		    lineCharts1jl.data.datasets[2].data = JSON.parse("[" + $(this).find('td:eq(14)').text() + "]");
+		    lineCharts1jl.data.datasets[3].data = JSON.parse("[" + $(this).find('td:eq(15)').text() + "]");
+		    lineCharts2jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(16)').text() + "]");
+		    lineCharts2jl.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(17)').text() + "]");
+		    lineCharts2jl.data.datasets[2].data = JSON.parse("[" + $(this).find('td:eq(18)').text() + "]");
+		    lineCharts2jl.data.datasets[3].data = JSON.parse("[" + $(this).find('td:eq(19)').text() + "]");
+		    lineCharts0jl.update();
+		    lineCharts1jl.update();
+		    lineCharts2jl.update();
+	        if ($(this).hasClass('selected') ) {
+	            $(this).removeClass('selected');
+	            lineCharts0jl.data.datasets[0].data = JSON.parse("[0,0,0,0,0,0,0,0,0,0]");
+			    lineCharts0jl.data.datasets[1].data = JSON.parse("[0,0,0,0,0,0,0,0,0,0]");
+			    lineCharts0jl.data.datasets[2].data = JSON.parse("[0,0,0,0,0,0,0,0,0,0]");
+			    lineCharts0jl.data.datasets[3].data = JSON.parse("[0,0,0,0,0,0,0,0,0,0]");
+			    lineCharts1jl.data.datasets[0].data = JSON.parse("[0,0,0,0,0,0,0,0,0,0]");
+			    lineCharts1jl.data.datasets[1].data = JSON.parse("[0,0,0,0,0,0,0,0,0,0]");
+			    lineCharts1jl.data.datasets[2].data = JSON.parse("[0,0,0,0,0,0,0,0,0,0]");
+			    lineCharts1jl.data.datasets[3].data = JSON.parse("[0,0,0,0,0,0,0,0,0,0]");
+			    lineCharts2jl.data.datasets[0].data = JSON.parse("[0,0,0,0,0,0,0,0,0,0]");
+			    lineCharts2jl.data.datasets[1].data = JSON.parse("[0,0,0,0,0,0,0,0,0,0]");
+			    lineCharts2jl.data.datasets[2].data = JSON.parse("[0,0,0,0,0,0,0,0,0,0]");
+			    lineCharts2jl.data.datasets[3].data = JSON.parse("[0,0,0,0,0,0,0,0,0,0]");
+			    lineCharts0jl.update();
+			    lineCharts1jl.update();
+			    lineCharts2jl.update();
+			    $('.block').css('display','block');
+	        }
+	        else {
+	            $('#tabelnilaipeserta tbody tr.selected').removeClass('selected');
+	            $(this).addClass('selected');
+	            $('.block').css('display','none');
+	        }
+	    });
 
         $("#btnupdatetoken").click(function(){
         	const Toast = Swal.mixin({

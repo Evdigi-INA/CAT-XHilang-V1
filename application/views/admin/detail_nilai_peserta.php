@@ -92,15 +92,38 @@
 					?>
 		</div>
 	</div>
-	<br>
+	<br id="card-chart">
 	<div class="container">
-		<div class="card"  style="height: 100%">
+		<div class="card" style="height: 100%">
 			<div class="card-header">
-				<h3><span><i class="fas fa-trophy fa-fw fa-md"></i></span> Grafik Nilai - Terbaru</h3>
+				<h3><span><i class="fas fa-chart-bar fa-fw fa-md"></i></span> Grafik Nilai</h3>
 			</div>
 			<div class="card-body">
-				<div class="container score-chart-wrapper">
-					<canvas id="score-chart" height="100"></canvas>
+				<div class="container score-chart-wrapper" style="position: relative;">
+					<div class="block" style="display: block;
+    background: rgb(76 76 76 / 69%);;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    left: -2px;
+    z-index: 9999;">
+						<div style="margin-top: 15%;text-align: center; color: white;"><h2><i class="fas fa-exclamation-triangle fa-fw"></i> Pilih Data Nilai Terlebih dahulu</h2></div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<canvas id="score-chart-s0jl" class="charteachscorecolumn" height="350" style="margin-top: 50px;"></canvas>
+							<center><p>Soal Angka</p></center>
+						</div>
+						<div class="col-sm-4">
+							<canvas id="score-chart-s1jl" class="charteachscorecolumn" height="400"></canvas>
+							<center><p>Soal Huruf</p></center>
+						</div>
+						<div class="col-sm-4">
+							<canvas id="score-chart-s2jl" class="charteachscorecolumn" height="350" style="margin-top: 50px;"></canvas>
+							<center><p>Soal Simbol</p></center>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -124,6 +147,18 @@
 	                <th>Nilai Soal Simbol</th>
 	                <th>Rata-Rata</th>
 	                <th>Tanggal</th>
+	                <th hidden="true">1</th>
+	                <th hidden="true">1</th>
+	                <th hidden="true">1</th>
+	                <th hidden="true">1</th>
+	                <th hidden="true">1</th>
+	                <th hidden="true">1</th>
+	                <th hidden="true">1</th>
+	                <th hidden="true">1</th>
+	                <th hidden="true">1</th>
+	                <th hidden="true">1</th>
+	                <th hidden="true">1</th>
+	                <th hidden="true">1</th>
 	              </tr>
 	            </thead>
 	            <tbody>
@@ -133,7 +168,7 @@
 	              {
 	              	$rata2 = (floatval($u->nilai1)+floatval($u->nilai2)+floatval($u->nilai3))/3;
 	               ?>
-	              <tr>
+	              <tr style="cursor: pointer;">
 	                  <td hidden="true"><?php echo $no++ ?></td>
 	                  <td hidden="true"><?php echo $u->username; ?></td>
 	                  <td><?php echo $u->nilai1; ?></td>
@@ -141,6 +176,18 @@
 	                  <td><?php echo $u->nilai3; ?></td>
 	                  <td><?php echo $rata2; ?></td>
 	                  <td><?php echo $u->tanggal; ?></td>
+	                  <td hidden="true"><?php echo $u->s0jlcorrect; ?></td>
+	                  <td hidden="true"><?php echo $u->s0jlwrong; ?></td>
+	                  <td hidden="true"><?php echo $u->s0jlanswered; ?></td>
+	                  <td hidden="true"><?php echo $u->s0jlnotanswered; ?></td>
+	                  <td hidden="true"><?php echo $u->s1jlcorrect; ?></td>
+	                  <td hidden="true"><?php echo $u->s1jlwrong; ?></td>
+	                  <td hidden="true"><?php echo $u->s1jlanswered; ?></td>
+	                  <td hidden="true"><?php echo $u->s1jlnotanswered; ?></td>
+	                  <td hidden="true"><?php echo $u->s2jlcorrect; ?></td>
+	                  <td hidden="true"><?php echo $u->s2jlwrong; ?></td>
+	                  <td hidden="true"><?php echo $u->s2jlanswered; ?></td>
+	                  <td hidden="true"><?php echo $u->s2jlnotanswered; ?></td>
 	              </tr>
 	            <?php } ?>
 	            </tbody>

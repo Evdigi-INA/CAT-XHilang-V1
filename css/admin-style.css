@@ -77,3 +77,8 @@ body {
     margin-top: 2px;
     font-style: italic;
 }
+
+.selected {
+  background-color: #5179fc;
+  color: white;
+}
