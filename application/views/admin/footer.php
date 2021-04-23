@@ -8,6 +8,88 @@
 <script type="text/javascript">
 	
 	$(document).ready(function() {
+		$("#btnupdatetoken").click(function(){
+        	const Toast = Swal.mixin({
+			  toast: true,
+			  position: 'top-end',
+			  showConfirmButton: false,
+			  timer: 3000,
+			  timerProgressBar: true,
+			  didOpen: (toast) => {
+			    toast.addEventListener('mouseenter', Swal.stopTimer)
+			    toast.addEventListener('mouseleave', Swal.resumeTimer)
+			  }
+			})
+
+            var token = $("#tbtokenpeserta").val();
+            var timeexpiredvalue = $("#timeexpiredslider").val();
+			if ($("#tbtokenold").val() == token ) {
+				$('#tokenalertnganu').html(`<div class="alert alert-warning alert-dismissible fade show" role="alert">
+										  Disarankan untuk tidak menggunakan <strong>token lama</strong>  
+										  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										    <span aria-hidden="true">&times;</span>
+										  </button>
+										</div>`);
+				return false;
+			}
+
+	      	$.ajax({
+	            type : "POST",
+	            url  : "<?php echo base_url("admin/Admin_Controller/update_token") ?>",
+	            dataType : "JSON",
+	            data : {token:token,timeexpiredvalue:timeexpiredvalue},
+	            success: function(data){
+	            }
+	        })
+	        Toast.fire({
+			  icon: 'success',
+			  title: 'Refresh Data Token Berhasil'
+			})
+			$("#timeupdatedtoken").text(moment().format('YYYY-MM-DD kk:mm:ss'));
+			$('#tokenalertnganu').html(``);
+        });
+
+        $("#submituploadfile").click(function(){
+        	let timerInterval
+			Swal.fire({
+			  title: 'Mohon Tunggu',
+			  html: 'Sedang Memvalidasi isi file soal.',
+			  timer: 50000,
+			  timerProgressBar: true,
+			  allowOutsideClick: false,
+			  didOpen: () => {
+			    Swal.showLoading()
+			    timerInterval = setInterval(() => {
+			      
+			    }, 1000)
+			  },
+			  willClose: () => {
+			    clearInterval(timerInterval)
+			  }
+			}).then((result) => {
+			  /* Read more about handling dismissals below */
+			  if (result.dismiss === Swal.DismissReason.timer) {
+			    console.log('I was closed by the timer')
+			  }
+			})
+        });
+        
+		$('#timeexpiredslider').on('input', function(){
+			if ($(this).val() == 0) {
+				$('#timeexpiredvalue').text('10 Menit');
+			} else if($(this).val() == 1) {
+				$('#timeexpiredvalue').text('30 Menit');
+			} else if($(this).val() == 2) {
+				$('#timeexpiredvalue').text('1 Jam');
+			} else if($(this).val() == 3) {
+				$('#timeexpiredvalue').text('6 Jam');
+			} else if($(this).val() == 4) {
+				$('#timeexpiredvalue').text('12 Jam');
+			}else {
+				$('#timeexpiredvalue').text('24 Jam');
+			}
+		});
+
 		var chartLabels = ['Kolom 1', 'Kolom 2', 'Kolom 3', 'Kolom 4', 'Kolom 5', 'Kolom 6', 'Kolom 7', 'Kolom 8', 'Kolom 9', 'Kolom 10'];
 		var lineCharts0jl;
 		var lineCharts1jl;
@@ -204,21 +286,6 @@
 			}
 		});
 	
-		$('#timeexpiredslider').on('input', function(){
-			if ($(this).val() == 0) {
-				$('#timeexpiredvalue').text('10 Menit');
-			} else if($(this).val() == 1) {
-				$('#timeexpiredvalue').text('30 Menit');
-			} else if($(this).val() == 2) {
-				$('#timeexpiredvalue').text('1 Jam');
-			} else if($(this).val() == 3) {
-				$('#timeexpiredvalue').text('6 Jam');
-			} else if($(this).val() == 4) {
-				$('#timeexpiredvalue').text('12 Jam');
-			}else {
-				$('#timeexpiredvalue').text('24 Jam');
-			}
-		});
 
     	$('#dataTablePeserta').DataTable({
     		"scrollY":        "45vh",
@@ -291,71 +358,6 @@
 	        }
 	    });
 
-        $("#btnupdatetoken").click(function(){
-        	const Toast = Swal.mixin({
-			  toast: true,
-			  position: 'top-end',
-			  showConfirmButton: false,
-			  timer: 3000,
-			  timerProgressBar: true,
-			  didOpen: (toast) => {
-			    toast.addEventListener('mouseenter', Swal.stopTimer)
-			    toast.addEventListener('mouseleave', Swal.resumeTimer)
-			  }
-			})
-
-            var token = $("#tbtokenpeserta").val();
-            var timeexpiredvalue = $("#timeexpiredslider").val();
-			if ($("#tbtokenold").val() == token ) {
-				$('#tokenalertnganu').html(`<div class="alert alert-warning alert-dismissible fade show" role="alert">
-										  Disarankan untuk tidak menggunakan <strong>token lama</strong>  
-										  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-										    <span aria-hidden="true">&times;</span>
-										  </button>
-										</div>`);
-				return false;
-			}
-
-	      	$.ajax({
-	            type : "POST",
-	            url  : "<?php echo base_url("admin/Admin_Controller/update_token") ?>",
-	            dataType : "JSON",
-	            data : {token:token,timeexpiredvalue:timeexpiredvalue},
-	            success: function(data){
-	            }
-	        })
-	        Toast.fire({
-			  icon: 'success',
-			  title: 'Refresh Data Token Berhasil'
-			})
-			$("#timeupdatedtoken").text(moment().format('YYYY-MM-DD kk:mm:ss'));
-			$('#tokenalertnganu').html(``);
-        });
-
-        $("#submituploadfile").click(function(){
-        	let timerInterval
-			Swal.fire({
-			  title: 'Mohon Tunggu',
-			  html: 'Sedang Memvalidasi isi file soal.',
-			  timer: 50000,
-			  timerProgressBar: true,
-			  allowOutsideClick: false,
-			  didOpen: () => {
-			    Swal.showLoading()
-			    timerInterval = setInterval(() => {
-			      
-			    }, 1000)
-			  },
-			  willClose: () => {
-			    clearInterval(timerInterval)
-			  }
-			}).then((result) => {
-			  /* Read more about handling dismissals below */
-			  if (result.dismiss === Swal.DismissReason.timer) {
-			    console.log('I was closed by the timer')
-			  }
-			})
-        });
 	});
 
 </script>

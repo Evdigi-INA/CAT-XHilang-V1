@@ -119,15 +119,20 @@
                         $expiredvalue = '';
                         if ($c->value == 0) {
                             $expiredvalue = '10 Menit';
-                        } elseif ($c->value == 1) {
+                        }
+                        if ($c->value == 1) {
                             $expiredvalue = '30 Menit';
-                        } elseif ($c->value == 2) {
+                        }
+                        if ($c->value == 2) {
                             $expiredvalue = '1 Jam';
-                        } elseif ($c->value == 3) {
-                            $expiredvalue == '6 Jam';
-                        } elseif ($c->value == 4) {
+                        }
+                        if ($c->value == 3) {
+                            $expiredvalue = '6 Jam';
+                        }
+                        if ($c->value == 4) {
                             $expiredvalue = '12 Jam';
-                        } else {
+                        }
+                        if ($c->value == 5) {
                             $expiredvalue = '24 Jam';
                         }
                         

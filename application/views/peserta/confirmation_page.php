@@ -461,7 +461,7 @@
 													<input value="<?php echo $h4[0]; ?>" type="radio" id="option-one<?php echo'baris'.$kolom4a ?>" name="selector<?php echo'baris'.$kolom4a ?>" class="selector<?php echo 'baris'.$kolom4a ?>">
 													<label onclick="setTimeout(function(){nextquest('<?php echo $h4[0] ?>')},170);" for="option-one<?php echo'baris'.$kolom4a ?>">A</label>
 													<input value="<?php echo $h4[1]; ?>" type="radio" id="option-two<?php echo'baris'.$kolom4a ?>" name="selector<?php echo'baris'.$kolom4a ?>" class="selector<?php echo 'baris'.$kolom4a ?>">
-													<label onclick="setTimeout(function(){nextquest('<?php echo $h4[1] ?>')},170);" for="option-two<?php echo'baris'.$kolom4a ?>">B</label>e
+													<label onclick="setTimeout(function(){nextquest('<?php echo $h4[1] ?>')},170);" for="option-two<?php echo'baris'.$kolom4a ?>">B</label>
 													<input value="<?php echo $h4[2]; ?>" type="radio" id="option-three<?php echo'baris'.$kolom4a ?>" name="selector<?php echo'baris'.$kolom4a ?>" class="selector<?php echo 'baris'.$kolom4a ?>">
 													<label onclick="setTimeout(function(){nextquest('<?php echo $h4[2] ?>')},170);" for="option-three<?php echo'baris'.$kolom4a ?>">C</label>
 													<input value="<?php echo $h4[3]; ?>" type="radio" id="option-four<?php echo'baris'.$kolom4a ?>" name="selector<?php echo'baris'.$kolom4a ?>" class="selector<?php echo 'baris'.$kolom4a ?>">

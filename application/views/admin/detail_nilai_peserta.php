@@ -24,33 +24,27 @@
 					<div class="card-body">
 						<table class="table table-bordered">
 							<tr>
-								<td>No. KTP</td>
-								<td>:</td>
+								<td style="font-weight: bold;">No. KTP</td>
 								<td><?php echo $uwu->noktp; ?></td>
 							</tr>
 							<tr>
-								<td>Nama Lengkap</td>
-								<td>:</td>
+								<td style="font-weight: bold;">Nama Lengkap</td>
 								<td><?php echo $uwu->namleng; ?></td>
 							</tr>
 							<tr>
-								<td>Jenis Kelamin</td>
-								<td>:</td>
+								<td style="font-weight: bold;">Jenis Kelamin</td>
 								<td><?php echo $uwu->jk; ?></td>
 							</tr>
 							<tr>
-								<td>Alamat</td>
-								<td>:</td>
+								<td style="font-weight: bold;">Alamat</td>
 								<td><?php echo $uwu->almt; ?></td>
 							</tr>
 							<tr>
-								<td>Username</td>
-								<td>:</td>
+								<td style="font-weight: bold;">Username</td>
 								<td><?php echo $uwu->username; ?></td>
 							</tr>
 							<tr>
-								<td>Role</td>
-								<td>:</td>
+								<td style="font-weight: bold;">Role</td>
 								<td><?php echo $uwu->role; ?></td>
 							</tr>
 						</table>		
