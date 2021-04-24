@@ -1398,7 +1398,7 @@ function fetchNilai(jsnya) {
 		//console.log('Salah : ' + salah);
 		//console.log('Gadijawab : ' + gadijawab);
 		//$('#tbnilaiS1JL').val(parseFloat(nilai).toFixed(2));
-		$('#tbnilaiS1JL').val(parseFloat(nilaiArrayS2JLcorrectmultiply.reduce((a, b) => a + b, 0)/10).toFixed(2));
+		$('#tbnilaiS1JL').val(parseFloat(nilaiArrayS1JLcorrectmultiply.reduce((a, b) => a + b, 0)/10).toFixed(2));
 		$('#tbperformanceS1JL').val(datascore);
 		$('#scoreresultLeft').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
