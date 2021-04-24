@@ -187,7 +187,7 @@ $(document).ready(function(){
         var tbnilaiS2JLwrong = $('#tbS2JLwrong').val();
         var tbnilaiS2JLanswered = $('#tbS2JLanswered').val();
         var tbnilaiS2JLnotanswered = $('#tbS2JLnotanswered').val();
-        var tbperformances0jl = $('#tbperformanceS0JL;').val();
+        var tbperformances0jl = $('#tbperformanceS0JL').val();
         var tbperformances1jl = $('#tbperformanceS1JL').val();
         var tbperformances2jl = $('#tbperformanceS2JL').val();
         var tbiduser = $('#tbiduser').val();
@@ -1300,8 +1300,8 @@ function fetchNilai(jsnya) {
 		    datasoal[i][ii] = $(this).text();
 		  }); 
 		});
-		console.log(datajawaban);
-		console.log(datasoal);
+		//console.log(datajawaban);
+		//console.log(datasoal);
 		var x = 0;
 		do {
 			if(datajawaban[x]){

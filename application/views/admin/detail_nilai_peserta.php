@@ -118,6 +118,9 @@
 			                <th hidden="true">1</th>
 			                <th hidden="true">1</th>
 			                <th hidden="true">1</th>
+			                <th hidden="true">1</th>
+			                <th hidden="true">1</th>
+			                <th hidden="true">1</th>
 			              </tr>
 			            </thead>
 			            <tbody>
@@ -147,6 +150,9 @@
 			                  <td hidden="true"><?php echo $u->s2jlwrong; ?></td>
 			                  <td hidden="true"><?php echo $u->s2jlanswered; ?></td>
 			                  <td hidden="true"><?php echo $u->s2jlnotanswered; ?></td>
+			                  <td hidden="true"><?php echo $u->performancescores0jl; ?></td>
+			                  <td hidden="true"><?php echo $u->performancescores1jl; ?></td>
+			                  <td hidden="true"><?php echo $u->performancescores2jl; ?></td>
 			              </tr>
 			            <?php } ?>
 			            </tbody>
@@ -194,7 +200,7 @@
 			    position: absolute;
 			    left: -2px;
 			    z-index: 9999;">
-									<div style="margin-top: 15%;text-align: center; color: white;"><h2><i class="fas fa-exclamation-triangle fa-fw"></i> Pilih Data Nilai Terlebih dahulu</h2></div>
+									<div style="margin-top: 25%;text-align: center; color: white;"><h2><i class="fas fa-exclamation-triangle fa-fw"></i> Pilih Data Nilai Terlebih dahulu</h2></div>
 								</div>
 							    <div id="soalangka" class="tab-pane fade in active show">
 							    	<div class="container score-chart-wrapper" style="position: relative;">

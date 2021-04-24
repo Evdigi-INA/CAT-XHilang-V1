@@ -13,7 +13,7 @@
 						<p class="brieftext">
 							Sebelum mengerjakan, pastikan peserta memahami cara mengerjakan dengan melihat video dibawah ini dan menunggu penjelasan dari instruktur selesai, jika sudah silahkaan klik <b>Mulai Test</b>.<br>
 							<center><span class="gambarpetunjuk"><img class="img-fluid" src="<?php echo base_url('assets/web-images/petunjuk.gif')?>"></span></center>
-							<div hidden="true">
+							<div>
 							<?php foreach ($qinfo as $v) {
 								# code...
 							} ?>

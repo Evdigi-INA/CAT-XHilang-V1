@@ -359,7 +359,7 @@
 			type: 'line',
 			data:
 			{
-				labels: 'Performa Pengerjaan',
+				labels: chartLabels,
 				datasets: [
 				{
 					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
@@ -472,9 +472,9 @@
 		    lineCharts2jl.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(17)').text() + "]");
 		    lineCharts2jl.data.datasets[2].data = JSON.parse("[" + $(this).find('td:eq(18)').text() + "]");
 		    lineCharts2jl.data.datasets[3].data = JSON.parse("[" + $(this).find('td:eq(19)').text() + "]");
-		    performances0jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(19)').text() + "]");
-		    performances1jl.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(19)').text() + "]");
-		    performances2jl.data.datasets[2].data = JSON.parse("[" + $(this).find('td:eq(19)').text() + "]");
+		    performances0jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(20)').text() + "]");
+		    performances1jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(21)').text() + "]");
+		    performances2jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(22)').text() + "]");
 		    barChartAlljs.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(8)').text() + "," + $(this).find('td:eq(12)').text() + "," + $(this).find('td:eq(16)').text() + "]");
 		    barChartAlljs.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(9)').text() + "," + $(this).find('td:eq(13)').text() +"," + $(this).find('td:eq(17)').text() + "]");
 		    barChartHorizAlljs.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(3)').text() + "," + $(this).find('td:eq(4)').text() +"," + $(this).find('td:eq(5)').text() + "]");
@@ -483,6 +483,9 @@
 		    lineCharts2jl.update();
 		    barChartAlljs.update();
 		    barChartHorizAlljs.update();
+		    performances0jl.update();
+	    	performances1jl.update();
+	    	performances2jl.update();
 
 	        if ($(this).hasClass('selected') ) {
 	            $(this).removeClass('selected');
@@ -501,6 +504,12 @@
 			    barChartAlljs.data.datasets[0].data = JSON.parse("[0,0,0]");
 			    barChartAlljs.data.datasets[1].data = JSON.parse("[0,0,0]");
 			    barChartHorizAlljs.data.datasets[0].data = JSON.parse("[0,0,0]");
+			    performances0jl.data.datasets[0].data = JSON.parse("[0]");
+		    	performances1jl.data.datasets[0].data = JSON.parse("[0]");
+		    	performances2jl.data.datasets[0].data = JSON.parse("[0]");
+		    	performances0jl.update();
+		    	performances1jl.update();
+		    	performances2jl.update();
 			    lineCharts0jl.update();
 			    lineCharts1jl.update();
 			    lineCharts2jl.update();
