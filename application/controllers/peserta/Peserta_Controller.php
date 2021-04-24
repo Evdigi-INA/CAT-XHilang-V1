@@ -233,6 +233,9 @@ class Peserta_Controller extends CI_Controller
 		$s2jlnotanswered= $this->input->post('tbnilaiS2JLnotanswered');
 		$s2jlcorrect	= $this->input->post('tbnilaiS2JLcorrect');
 		$s2jlwrong		= $this->input->post('tbnilaiS2JLwrong');
+		$performances0jl		= $this->input->post('tbperformances0jl');
+		$performances1jl		= $this->input->post('tbperformances1jl');
+		$performances2jl		= $this->input->post('tbperformances2jl');
 
 		$datatbl= array(
 			'nilai1'		=> $tb_nilai1,
@@ -250,6 +253,9 @@ class Peserta_Controller extends CI_Controller
 			's2jlnotanswered'		=> $s2jlnotanswered,
 			'nilai2'		=> $tb_nilai2,
 			'nilai3'		=> $tb_nilai3,
+			'performancescores0jl'		=> $performances0jl,
+			'performancescores1jl'		=> $performances1jl,
+			'performancescores2jl'		=> $performances2jl,
 			'id_user'	=> $id_user,
 			'username'	=> $user_name,
 		);

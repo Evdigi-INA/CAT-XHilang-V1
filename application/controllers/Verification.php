@@ -22,12 +22,13 @@ class Verification extends CI_Controller
 		$where = array(
 			'username' => $username,
 			'password' => $password, //password menggunakan MD5! without MD5? simply remove it lol
-			'token_access' => $token
-			);
+		);
 
+		$fetchtokentimelastupdate = $this->modelverif->loadconfig("update_token_time");
+		$tokenaccess = $this->modelverif->loadconfig("token_access");
 
 		$cek1 = $this->modelverif->cek_user("tbl_user",$where);
-		$cekconfigexpired = $this->modelverif->loadconfig("tbl_config");
+		$cekconfigexpired = $this->modelverif->loadconfig("tokenexpiredtime");
 		
 		$timeadd = 0;
         if ($cekconfigexpired->value == 0) {
@@ -44,13 +45,13 @@ class Verification extends CI_Controller
             $timeadd =+ 86400;
         }
 	
-		$timestamp = strtotime($cek1->row()->update_token_time);
+		$timestamp = strtotime($fetchtokentimelastupdate->value);
 
 		$cDate = strtotime(date('Y-m-d H:i:s'));
 
 		$oldDate = $timestamp + $timeadd;
 
-		if ($cek1->num_rows() > 0) //kondisi berdasarkan jumlah record
+		if ($token == $tokenaccess->value) //kondisi berdasarkan jumlah record
 		{
 			if ($cDate > $oldDate) {
 				echo "expired";

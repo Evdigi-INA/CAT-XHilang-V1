@@ -18,9 +18,9 @@ class Modelverif extends CI_Model
 		$this->db->update($table,$data);
 	}
 
-	function loadconfig(){
+	function loadconfig($namaconfig){
         $select = array('*');
-        $conf = $this->db->select($select)->from('tbl_config')->where('nama_config','tokenexpiredtime')->get();
+        $conf = $this->db->select($select)->from('tbl_config')->where('nama_config',$namaconfig)->get();
         return $conf->row();
     }
 }

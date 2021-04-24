@@ -34,6 +34,9 @@
 								<input type="text" name="tbS2JLwrong" id="tbS2JLwrong" value="">
 								<input type="text" name="tbS2JLanswered" id="tbS2JLanswered" value="">
 								<input type="text" name="tbS2JLnotanswered" id="tbS2JLnotanswered" value="">
+								<input type="text" name="tbperformanceS0JL" id="tbperformanceS0JL" value="">
+								<input type="text" name="tbperformanceS1JL" id="tbperformanceS1JL" value="">
+								<input type="text" name="tbperformanceS2JL" id="tbperformanceS2JL" value="">
 							</div>
 						</p>
 						<div class="container-fluid">

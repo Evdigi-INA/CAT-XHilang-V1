@@ -105,57 +105,51 @@
                     <div id="tokenalertnganu">
                                     
                     </div>
-                    <?php
-                    foreach ($pesertalisttoken as $tok) {
-                    ?>
-                    <p><b>Terakhir Update</b> : <span id="timeupdatedtoken"><?php echo $tok->update_token_time ?></span></p>
+                    
+                    <p><b>Terakhir Update</b> : <span id="timeupdatedtoken"><?php echo $configtokenlastupdated[0]->value ?></span></p>
                     <div class="input-group mb-3" style="height: auto;">
                         <?php 
 
-                        foreach ($config as $c) {
                             # code...d
                         
 
                         $expiredvalue = '';
-                        if ($c->value == 0) {
+                        if ($configtokenexpiredtime[0]->value == 0) {
                             $expiredvalue = '10 Menit';
                         }
-                        if ($c->value == 1) {
+                        if ($configtokenexpiredtime[0]->value == 1) {
                             $expiredvalue = '30 Menit';
                         }
-                        if ($c->value == 2) {
+                        if ($configtokenexpiredtime[0]->value == 2) {
                             $expiredvalue = '1 Jam';
                         }
-                        if ($c->value == 3) {
+                        if ($configtokenexpiredtime[0]->value == 3) {
                             $expiredvalue = '6 Jam';
                         }
-                        if ($c->value == 4) {
+                        if ($configtokenexpiredtime[0]->value == 4) {
                             $expiredvalue = '12 Jam';
                         }
-                        if ($c->value == 5) {
+                        if ($configtokenexpiredtime[0]->value == 5) {
                             $expiredvalue = '24 Jam';
                         }
                         
                          ?>
                         
-                        <input type="range" id="timeexpiredslider" name="timeexpiredslider" min="0" max="5" value="<?php echo $c->value ?>" style="width: 100%;">
+                        <input type="range" id="timeexpiredslider" name="timeexpiredslider" min="0" max="5" value="<?php echo $configtokenexpiredtime[0]->value ?>" style="width: 100%;">
                         <br>
                         <br>
                         <br>
                         <label for="timeexpiredslider" style="position: absolute;">Kadaluarsa : <span id="timeexpiredvalue"><?php echo $expiredvalue; ?></span></label>
-                        <?php } ?>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="tbtokenold" value="<?php echo $tok->token_access ?>" hidden>
-                        <input type="text" class="form-control" id="tbtokenpeserta" placeholder="Masukan Token" aria-label="Masukan Token" aria-describedby="basic-addon2" value="<?php echo $tok->token_access ?>">
-                        <?php # code...d
-                            }?>
+                        <input type="text" class="form-control" id="tbtokenold" value="<?php echo $configtokenvalue[0]->value ?>" hidden>
+                        <input type="text" class="form-control" id="tbtokenpeserta" placeholder="Masukan Token" aria-label="Masukan Token" aria-describedby="basic-addon2" value="<?php echo $configtokenvalue[0]->value ?>">
+                        
                         <div class="input-group-append">
                             <button class="btn btn-primary" id="btnupdatetoken" type="button">Update</button>
                         </div>
                     </div>
                 </div>
-                    <?php ?>
             </div>
         </div>
     </div>

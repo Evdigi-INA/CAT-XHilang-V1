@@ -127,14 +127,6 @@ class Xhilangmodel extends CI_Model
         return $gas->result();    
     }
 
-    function fetchpesertatokenlist()
-    {
-        $select = array('role','token_access','update_token_time');
-        $where = array('role' => 'peserta');
-        $querya = $this->db->distinct()->select($select)->from('tbl_user')->where($where)->group_by('token_access')->get();
-        return $querya->result();   
-    }
-
     function import_soal($data)
     {
         foreach ($data as $k) {
@@ -153,9 +145,9 @@ class Xhilangmodel extends CI_Model
      
     }
 
-    function loadconfig(){
+    function loadconfig($namaconfig){
         $select = array('*');
-        $conf = $this->db->select($select)->from('tbl_config')->where('nama_config','tokenexpiredtime')->get();
+        $conf = $this->db->select($select)->from('tbl_config')->where('nama_config',$namaconfig)->get();
         return $conf->result();
     }
 

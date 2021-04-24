@@ -187,13 +187,16 @@ $(document).ready(function(){
         var tbnilaiS2JLwrong = $('#tbS2JLwrong').val();
         var tbnilaiS2JLanswered = $('#tbS2JLanswered').val();
         var tbnilaiS2JLnotanswered = $('#tbS2JLnotanswered').val();
+        var tbperformances0jl = $('#tbperformanceS0JL;').val();
+        var tbperformances1jl = $('#tbperformanceS1JL').val();
+        var tbperformances2jl = $('#tbperformanceS2JL').val();
         var tbiduser = $('#tbiduser').val();
         var tbusername = $('#tbusername').val();
         $.ajax({
             type : "POST",
             url  : baseUrl + "peserta/Peserta_Controller/simpan_nilai",
             dataType: "JSON",
-            data : {tbnilai1:tbnilai1 , tbnilai2:tbnilai2, tbnilai3:tbnilai3, tbnilaiS0JLcorrect:tbnilaiS0JLcorrect, tbnilaiS0JLwrong:tbnilaiS0JLwrong, tbnilaiS0JLanswered:tbnilaiS0JLanswered, tbnilaiS0JLnotanswered:tbnilaiS0JLnotanswered,tbnilaiS1JLcorrect:tbnilaiS1JLcorrect, tbnilaiS1JLwrong:tbnilaiS1JLwrong, tbnilaiS1JLanswered:tbnilaiS1JLanswered, tbnilaiS1JLnotanswered:tbnilaiS1JLnotanswered, tbnilaiS2JLcorrect:tbnilaiS2JLcorrect, tbnilaiS2JLwrong:tbnilaiS2JLwrong, tbnilaiS2JLanswered:tbnilaiS2JLanswered, tbnilaiS2JLnotanswered:tbnilaiS2JLnotanswered, tbiduser:tbiduser,tbusername:tbusername},
+            data : {tbnilai1:tbnilai1 , tbnilai2:tbnilai2, tbnilai3:tbnilai3, tbnilaiS0JLcorrect:tbnilaiS0JLcorrect, tbnilaiS0JLwrong:tbnilaiS0JLwrong, tbnilaiS0JLanswered:tbnilaiS0JLanswered, tbnilaiS0JLnotanswered:tbnilaiS0JLnotanswered,tbnilaiS1JLcorrect:tbnilaiS1JLcorrect, tbnilaiS1JLwrong:tbnilaiS1JLwrong, tbnilaiS1JLanswered:tbnilaiS1JLanswered, tbnilaiS1JLnotanswered:tbnilaiS1JLnotanswered, tbnilaiS2JLcorrect:tbnilaiS2JLcorrect, tbnilaiS2JLwrong:tbnilaiS2JLwrong, tbnilaiS2JLanswered:tbnilaiS2JLanswered, tbnilaiS2JLnotanswered:tbnilaiS2JLnotanswered,tbperformances0jl:tbperformances0jl,tbperformances1jl:tbperformances1jl,tbperformances2jl:tbperformances2jl, tbiduser:tbiduser,tbusername:tbusername},
             success: function(data){
             }
         });
@@ -224,6 +227,9 @@ $(document).ready(function(){
 var nilaiArrayS0JLcorrect = [];
 var nilaiArrayS1JLcorrect = [];
 var nilaiArrayS2JLcorrect = [];
+var nilaiArrayS0JLcorrectmultiply = [];
+var nilaiArrayS1JLcorrectmultiply = [];
+var nilaiArrayS2JLcorrectmultiply = [];
 var nilaiArrayS0JLwrong = [];
 var nilaiArrayS1JLwrong = [];
 var nilaiArrayS2JLwrong = [];
@@ -233,6 +239,9 @@ var countArrayS2JLanswered = [];
 var countArrayS0JLnotanswered = [];
 var countArrayS1JLnotanswered = [];
 var countArrayS2JLnotanswered = [];
+var performancescoreS0JL = [];
+var performancescoreS1JL = [];
+var performancescoreS2JL = [];
 
 function fetchnilaieachcolumn(js,start,end) {
 	var datasoal = Array();
@@ -242,6 +251,7 @@ function fetchnilaieachcolumn(js,start,end) {
 	var xpure = 0;
 	var epure = 50;
 	let correctscorepercolumn = 0;
+	let correctscoremultiplypersoaltotal = 0;
 	let wrongscorepercolumn = 0;
 	let answeredcorepercolumn = 0;
 	let notansweredcorepercolumn = 0;
@@ -265,6 +275,7 @@ function fetchnilaieachcolumn(js,start,end) {
 			answeredcorepercolumn++;
 	        if(!datasoal[xpure].includes(datajawaban[xpure])){ //adding not includes operand
 				correctscorepercolumn++;
+				correctscoremultiplypersoaltotal+=2;
 			}
 			if(datasoal[xpure].includes(datajawaban[xpure])){ //adding not includes operand
 				wrongscorepercolumn++;
@@ -277,11 +288,13 @@ function fetchnilaieachcolumn(js,start,end) {
 	}
 	while(xpure < epure);
 
+
 	if (jenissoal == "S0JL") {
 		nilaiArrayS0JLcorrect.push(correctscorepercolumn);
 		nilaiArrayS0JLwrong.push(wrongscorepercolumn);
 		countArrayS0JLnotanswered.push(notansweredcorepercolumn);
 		countArrayS0JLanswered.push(answeredcorepercolumn);
+		nilaiArrayS0JLcorrectmultiply.push(correctscoremultiplypersoaltotal);
 		$("#tbS0JLcorrect").val(nilaiArrayS0JLcorrect);
 		$("#tbS0JLwrong").val(nilaiArrayS0JLwrong);
 		$("#tbS0JLanswered").val(countArrayS0JLanswered);
@@ -291,6 +304,7 @@ function fetchnilaieachcolumn(js,start,end) {
 		nilaiArrayS1JLwrong.push(wrongscorepercolumn);
 		countArrayS1JLnotanswered.push(notansweredcorepercolumn);
 		countArrayS1JLanswered.push(answeredcorepercolumn);
+		nilaiArrayS1JLcorrectmultiply.push(correctscoremultiplypersoaltotal);
 		$("#tbS1JLcorrect").val(nilaiArrayS1JLcorrect);
 		$("#tbS1JLwrong").val(nilaiArrayS1JLwrong);
 		$("#tbS1JLanswered").val(countArrayS1JLanswered);
@@ -300,6 +314,7 @@ function fetchnilaieachcolumn(js,start,end) {
 		nilaiArrayS2JLwrong.push(wrongscorepercolumn);
 		countArrayS2JLnotanswered.push(notansweredcorepercolumn);
 		countArrayS2JLanswered.push(answeredcorepercolumn);
+		nilaiArrayS2JLcorrectmultiply.push(correctscoremultiplypersoaltotal);
 		$("#tbS2JLcorrect").val(nilaiArrayS2JLcorrect);
 		$("#tbS2JLwrong").val(nilaiArrayS2JLwrong);
 		$("#tbS2JLanswered").val(countArrayS2JLanswered);
@@ -1179,11 +1194,29 @@ function fetchNilai(jsnya) {
 		while(x < 500);
 		//console.log('Benar : ' + benar);
 		//console.log('Salah : ' + salah);
-		if(nilai > 100){nilai = 100}//handling score if > 100 happen
+		var datascore = [];
+		let scorperklom = 0;
+		for (var i = 0; i < 10; i++) {
+		
+			scorperklom = nilaiArrayS0JLcorrect[i];
+			if (nilaiArrayS0JLcorrect[i] >= nilaiArrayS0JLcorrect[i - 1]) {
+			    scorperklom = nilaiArrayS0JLcorrect[i] * 2;
+			} else {
+			  	scorperklom = nilaiArrayS0JLcorrect[i];
+			}
+			datascore.push(scorperklom);
+			scorperklom = 0;
+		}
+		var multiplyfirstcolumn = datascore[0] * 2;
+		if (datascore[1] >= datascore[0]){
+		  	datascore.splice(0, 1, multiplyfirstcolumn);
+		}
+		performancescoreS0JL.push(datascore);
+		//if(nilai > 100){nilai = 100}//handling score if > 100 happen
 
 			// line chart
-		console.log(datajawaban);
-		console.log(datasoal);
+		//console.log(datajawaban);
+		//console.log(datasoal);
 		var ctxLineChart = document.getElementById("score-chart").getContext("2d");
 		lineChart = new Chart(ctxLineChart,
 		{
@@ -1240,9 +1273,9 @@ function fetchNilai(jsnya) {
 			}
 		});
 
-		$('#tbnilaiS0JL').val(parseFloat(nilai).toFixed(2));
-
-
+		//$('#tbnilaiS0JL').val(parseFloat(nilai).toFixed(2)); //Old Scorong System
+		$('#tbnilaiS0JL').val(parseFloat(nilaiArrayS0JLcorrectmultiply.reduce((a, b) => a + b, 0)/10).toFixed(2));
+		$('#tbperformanceS0JL').val(datascore);
 		$('#scoreresultLeft').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
 
@@ -1286,6 +1319,24 @@ function fetchNilai(jsnya) {
 		while(x < 500);
 
 		if(nilai > 100){nilai = 100}//handling score if > 100 happen
+		var datascore = [];
+		let scorperklom = 0
+		for (var i = 0; i < 10; i++) {
+		
+			scorperklom = nilaiArrayS1JLcorrect[i];
+			if (nilaiArrayS1JLcorrect[i] >= nilaiArrayS1JLcorrect[i - 1]) {
+			    scorperklom = nilaiArrayS1JLcorrect[i] * 2;
+			} else {
+			  	scorperklom = nilaiArrayS1JLcorrect[i];
+			}
+			datascore.push(scorperklom);
+			scorperklom = 0;
+		}
+		var multiplyfirstcolumn = datascore[0] * 2;
+		if (datascore[1] >= datascore[0]){
+		  	datascore.splice(0, 1, multiplyfirstcolumn);
+		}
+		performancescoreS1JL.push(datascore);
 			// line chart
 		var ctxLineChart = document.getElementById("score-chart").getContext("2d");
 		lineChart = new Chart(ctxLineChart,
@@ -1343,12 +1394,12 @@ function fetchNilai(jsnya) {
 			}
 		});
 
-		console.log('Benar : ' + benar);
-		console.log('Salah : ' + salah);
-		console.log('Gadijawab : ' + gadijawab);
-		$('#tbnilaiS1JL').val(parseFloat(nilai).toFixed(2));
-
-
+		//console.log('Benar : ' + benar);
+		//console.log('Salah : ' + salah);
+		//console.log('Gadijawab : ' + gadijawab);
+		//$('#tbnilaiS1JL').val(parseFloat(nilai).toFixed(2));
+		$('#tbnilaiS1JL').val(parseFloat(nilaiArrayS2JLcorrectmultiply.reduce((a, b) => a + b, 0)/10).toFixed(2));
+		$('#tbperformanceS1JL').val(datascore);
 		$('#scoreresultLeft').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
 
@@ -1390,6 +1441,25 @@ function fetchNilai(jsnya) {
 		    x++;
 		}
 		while(x < 500);
+
+		var datascore = [];
+		let scorperklom = 0;
+		for (var i = 0; i < 10; i++) {
+		
+			scorperklom = nilaiArrayS2JLcorrect[i];
+			if (nilaiArrayS2JLcorrect[i] >= nilaiArrayS2JLcorrect[i - 1]) {
+			    scorperklom = nilaiArrayS2JLcorrect[i] * 2;
+			} else {
+			  	scorperklom = nilaiArrayS2JLcorrect[i];
+			}
+			datascore.push(scorperklom);
+			scorperklom = 0;
+		}
+		var multiplyfirstcolumn = datascore[0] * 2;
+		if (datascore[1] >= datascore[0]){
+		  	datascore.splice(0, 1, multiplyfirstcolumn);
+		}
+		performancescoreS2JL.push(datascore);
 
 		var ctxLineChart = document.getElementById("score-chart").getContext("2d");
 		lineChart = new Chart(ctxLineChart,
@@ -1448,11 +1518,11 @@ function fetchNilai(jsnya) {
 		});
 		//console.log('Benar : ' + benar);
 		//console.log('Salah : ' + salah);
-		if(nilai > 100){nilai = 100}//handling score if > 100 happen
-		$('#tbnilaiS2JL').val(parseFloat(nilai).toFixed(2));
-
-
-		$('#scoreresultLeft').css('display','unset');
+		//if(nilai > 100){nilai = 100}//handling score if > //100 happen
+		//$('#tbnilaiS2JL').val(parseFloat(nilai).toFixed(2)1;
+		$('#tbnilaiS2JL').val(parseFloat(nilaiArrayS2JLcorrectmultiply.reduce((a, b) => a + b, 0)/10).toFixed(2));
+		$('#tbperformanceS2JL').val(datascore);
+		$('#nilaiArrayS2JLcorrectmultiply').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
 	} else {
 		alert('Error 210421 : cantumkan kode report ini saat melapor')

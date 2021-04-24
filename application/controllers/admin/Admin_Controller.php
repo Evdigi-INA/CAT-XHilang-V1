@@ -53,8 +53,9 @@ class Admin_Controller extends CI_Controller
 
 		$data['top10'] = $this->Xhilangmodel->p_top10();
 		$data['countpeserta'] = $this->Xhilangmodel->hitungpesertaberdasarkanstatus();
-		$data['pesertalisttoken'] = $this->Xhilangmodel->fetchpesertatokenlist();
-		$data['config'] = $this->Xhilangmodel->loadconfig();
+		$data['configtokenexpiredtime'] = $this->Xhilangmodel->loadconfig('tokenexpiredtime');
+		$data['configtokenvalue'] = $this->Xhilangmodel->loadconfig('token_access');
+		$data['configtokenlastupdated'] = $this->Xhilangmodel->loadconfig('update_token_time');
 		$data['title'] = 'Dashboard - Menu Laporan';
 		$this->load->view('admin/header',$data);
 		$this->load->view('admin/menu_laporan');
@@ -490,13 +491,16 @@ class Admin_Controller extends CI_Controller
         $token=$this->input->post('token');
         $valuetime=$this->input->post('timeexpiredvalue');
 
-        $where = array('role' => 'peserta');
- 		$data = array('token_access' => $token);
- 		$configwhere = array('nama_config' => 'tokenexpiredtime');
- 		$dataconfig = array('value' => $valuetime);
+        $updatetime = array('value' => date('Y-m-d H:i:s'));
+ 		$tokenvalue = array('value' => $token);
+ 		$tokenexpiredtime = array('value' => $valuetime);
+ 		$whereexpiredtokenoption = array('nama_config' => 'tokenexpiredtime');
+ 		$wheretokenaccessvalueoption = array('nama_config' => 'token_access');
+ 		$wheretokenupdatelasttimeoption = array('nama_config' => 'update_token_time');
 
- 		$this->Xhilangmodel->lakukan_update($where,$data,'tbl_user');
- 		$this->Xhilangmodel->lakukan_update($configwhere,$dataconfig,'tbl_config');
+ 		$this->Xhilangmodel->lakukan_update($whereexpiredtokenoption,$tokenexpiredtime,'tbl_config');
+ 		$this->Xhilangmodel->lakukan_update($wheretokenaccessvalueoption,$tokenvalue,'tbl_config');
+ 		$this->Xhilangmodel->lakukan_update($wheretokenupdatelasttimeoption,$updatetime,'tbl_config');
 	}
 
 	function update_peserta()
