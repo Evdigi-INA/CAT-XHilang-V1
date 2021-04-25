@@ -1208,15 +1208,14 @@ function fetchNilai(jsnya) {
 			scorperklom = 0;
 		}
 		var multiplyfirstcolumn = datascore[0] * 2;
-		if (datascore[1] >= datascore[0]){
+		datascore.splice(0, 1, multiplyfirstcolumn);
+		for (var o = 2; o < 10; o++){
+			if (datascore[o] >= datascore[o + 1]){
 		  	datascore.splice(0, 1, multiplyfirstcolumn);
+			}
 		}
 		performancescoreS0JL.push(datascore);
-		//if(nilai > 100){nilai = 100}//handling score if > 100 happen
-
-			// line chart
-		//console.log(datajawaban);
-		//console.log(datasoal);
+		
 		var ctxLineChart = document.getElementById("score-chart").getContext("2d");
 		lineChart = new Chart(ctxLineChart,
 		{
@@ -1274,8 +1273,9 @@ function fetchNilai(jsnya) {
 			}
 		});
 
+		var ooo = datascore.reduce((a, b) => a + b, 0);
 		//$('#tbnilaiS0JL').val(parseFloat(nilai).toFixed(2)); //Old Scorong System
-		$('#tbnilaiS0JL').val(parseFloat(performancescoreS0JL.reduce((a, b) => a + b, 0)/10).toFixed(2));
+		$('#tbnilaiS0JL').val(parseFloat(ooo/10).toFixed(2));
 		$('#tbperformanceS0JL').val(datascore);
 		//$('#scoreresultLeft').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
@@ -1334,8 +1334,11 @@ function fetchNilai(jsnya) {
 			scorperklom = 0;
 		}
 		var multiplyfirstcolumn = datascore[0] * 2;
-		if (datascore[1] >= datascore[0]){
+		datascore.splice(0, 1, multiplyfirstcolumn);
+		for (var o = 2; o < 10; o++){
+			if (datascore[o] >= datascore[o + 1]){
 		  	datascore.splice(0, 1, multiplyfirstcolumn);
+			}
 		}
 		performancescoreS1JL.push(datascore);
 			// line chart
@@ -1400,7 +1403,8 @@ function fetchNilai(jsnya) {
 		//console.log('Salah : ' + salah);
 		//console.log('Gadijawab : ' + gadijawab);
 		//$('#tbnilaiS1JL').val(parseFloat(nilai).toFixed(2));
-		$('#tbnilaiS1JL').val(parseFloat(performancescoreS1JL.reduce((a, b) => a + b, 0)/10).toFixed(2));
+		var ooo = datascore.reduce((a, b) => a + b, 0);
+		$('#tbnilaiS1JL').val(parseFloat(ooo/10).toFixed(2));
 		$('#tbperformanceS1JL').val(datascore);
 		//$('#scoreresultLeft').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
@@ -1523,7 +1527,8 @@ function fetchNilai(jsnya) {
 		//console.log('Salah : ' + salah);
 		//if(nilai > 100){nilai = 100}//handling score if > //100 happen
 		//$('#tbnilaiS2JL').val(parseFloat(nilai).toFixed(2)1;
-		$('#tbnilaiS2JL').val(parseFloat(performancescoreS2JL.reduce((a, b) => a + b, 0)/10).toFixed(2));
+		var ooo = datascore.reduce((a, b) => a + b, 0);
+		$('#tbnilaiS2JL').val(parseFloat(ooo/10).toFixed(2));
 		$('#tbperformanceS2JL').val(datascore);
 		//$('#nilaiArrayS2JLcorrectmultiply').css('display','unset');
 		$('#scoreresultRight').css('display','unset');

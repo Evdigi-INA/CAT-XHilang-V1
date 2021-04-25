@@ -20,21 +20,31 @@
 
 </head>
 <body>
-	<div class="header">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-3">
-					<img src="<?php echo base_url('assets/web-images/polri_logo.png'); ?>" style="width: auto;height: 30px;margin-top: 4vh; margin-left: 2vh;"/>
-				</div>
-				<div class="col-9">
-					
-				</div>
+	<div class="trail">
+		<canvas id="world" width="876" height="657"></canvas>
+	</div>
+	<div class="container" style="opacity:1;">
+		<div class="row col-md-offset-2 col-md-8 login-error">
+			<div class="alert alert-danger" role="alert">
+				<strong>
+					<font size="3">The following errors were found</font>	
+				</strong>
+				<font color="black" size="3">
+					<ul type="square">
+					</ul>
+				</font>
 			</div>
 		</div>
-	</div>
-	<div class="body" style="flex: auto 1 0;">
-		<div class="container" style="width: 320px;height: auto;margin: 12vh auto; background-color: #fff; padding: 18px; border-radius: 20px;">
-			<center>
+	  	<div class="row-fluid">
+	  		<div class="col-sm-offset-2 col-md-offset-4 col-sm-8 col-md-4 col-xs-12 login-form">
+	  			<div class="row-fluid">
+	  				<div class="col-sm-12 logo-login-form" style="text-align: center; margin: 4vh 0;">
+	  					<img class="img-fluid center-block" src="<?php echo base_url('assets/web-images/polri_logo.png'); ?>"/>
+	  				</div>
+	  			</div>
+	  			<div class="row-fluid">
+	  				<div class="col-sm-12">
+	  					<center>
 				<h1 style="font-size: 17px;"><?php
             $t = date("H");
 
@@ -50,10 +60,8 @@
             ?></h1>
 				<h5 style="font-size: 14px;" class="welcometext">Silahkan masukan data login anda</h3>
 			</center>
-			<div class="login-wrapper">
-				<p class="warning"></p>
-				<div class="container" style="height: auto;">
-					<div id="form-login" name="form-login">
+			<p class="warning"></p>
+	  					<div id="form-login" name="form-login">
 						<div class="form tbusernamenya">
 							<input type="text" name="tbusername" id="tbusername" autocomplete="off" required>
 			        		<label for="nama" class="label-nama">
@@ -72,20 +80,19 @@
 			            		<span class="content-nama">Ketik disini</span>
 			        		</label>		
 						</div>
-						<div class="button-wrapper">
+						<div class="button-wrapper" style="margin-bottom: 10px;">
 							<div class="button-container">
 								<input class="button" type="submit" value="Login" id="btn-login">
 								<input class="button" type="submit" value="Validasi" id="buttonvalidate" style="display: none;">
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+	  				</div>
+	  			</div>
+	  		</div>
+	  	</div>
 	</div>
-	<div class="footer">
-		<p style="font-size: 10px;">© <span class="uwu">create with <3</span> | Dev-Mode, Version: 0.0.1 (Latest Beta-Build.R2 - 13/03/2021 ) see <a href="update_history.txt">this log</a> for update history </p>
-	</div>
+	
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
 	<script type="text/javascript">

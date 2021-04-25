@@ -1,26 +1,19 @@
-body
+body{background-color: black;overflow: hidden;}
+.trail{position: absolute;z-index: 1;height: 600px;}
+.login-form{background-color: white;padding: 20px;position: relative;z-index: 1;margin: auto;}
+.login-error{padding: 20px;position: relative;z-index: 1;border-radius: 0;visibility: hidden;}
+
+
+
+.trail
 {
-    font-family: sans-serif;
-    background: #CCC !important;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column
+    position: absolute;z-index: 1;height: 600px;
 }
 
-
-
-
-.login-wraper > .container
+.login-form
 { 
     border-radius: 20px;
-    width: 300px;
-    height: 320px;
-}
-
-.button-wrapper
-{
-    width: 100%;
-    height: 70px;
+    background: rgb(240 240 240 / 85%);
 }
 
 .button-container
@@ -106,7 +99,7 @@ body
     width: 100%;
     left: 0px;
     bottom: -1px;
-    border-bottom: 3px solid lightblue;
+    border-bottom: 3px solid #494949;
     transform: translateX(-100%); 
     transition: all 0.3s ease;
 }
@@ -147,8 +140,6 @@ body
     font-size: 10px;
     font-weight: bold;
 }
-
-.footer {
-    margin-top: 15px;
-    text-align: center;
-}
+.alert-fpass{border-radius: 2px;padding: 10px 30px 10px 50px;background-color: #d5ebcc;border: 3px solid #3c763d;box-shadow: inset 55px 0 #3c763d;}
+.alert-fpass>.alert-note {top: 32px;position: absolute;font-size: 17px;color: white;left: 32px;}
+.note-message {font-size: 14px;display: table;vertical-align: middle;padding-left: 20px;}
