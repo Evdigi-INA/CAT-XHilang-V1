@@ -196,7 +196,7 @@ $(document).ready(function(){
             type : "POST",
             url  : baseUrl + "peserta/Peserta_Controller/simpan_nilai",
             dataType: "JSON",
-            data : {tbnilai1:tbnilai1 , tbnilai2:tbnilai2, tbnilai3:tbnilai3, tbnilaiS0JLcorrect:tbnilaiS0JLcorrect, tbnilaiS0JLwrong:tbnilaiS0JLwrong, tbnilaiS0JLanswered:tbnilaiS0JLanswered, tbnilaiS0JLnotanswered:tbnilaiS0JLnotanswered,tbnilaiS1JLcorrect:tbnilaiS1JLcorrect, tbnilaiS1JLwrong:tbnilaiS1JLwrong, tbnilaiS1JLanswered:tbnilaiS1JLanswered, tbnilaiS1JLnotanswered:tbnilaiS1JLnotanswered, tbnilaiS2JLcorrect:tbnilaiS2JLcorrect, tbnilaiS2JLwrong:tbnilaiS2JLwrong, tbnilaiS2JLanswered:tbnilaiS2JLanswered, tbnilaiS2JLnotanswered:tbnilaiS2JLnotanswered,tbperformances0jl:tbperformances0jl,tbperformances1jl:tbperformances1jl,tbperformances2jl:tbperformances2jl, tbiduser:tbiduser,tbusername:tbusername},
+            data : {tbnilai1:tbnilai1 , tbnilai2:tbnilai2, tbnilai3:tbnilai3, tbnilaiS0JLcorrect:tbnilaiS0JLcorrect, tbnilaiS0JLwrong:tbnilaiS0JLwrong, tbnilaiS0JLanswered:tbnilaiS0JLanswered, tbnilaiS0JLnotanswered:tbnilaiS0JLnotanswered,tbnilaiS1JLcorrect:tbnilaiS1JLcorrect, tbnilaiS1JLwrong:tbnilaiS1JLwrong, tbnilaiS1JLanswered:tbnilaiS1JLanswered, tbnilaiS1JLnotanswered:tbnilaiS1JLnotanswered, tbnilaiS2JLcorrect:tbnilaiS2JLcorrect, tbnilaiS2JLwrong:tbnilaiS2JLwrong, tbnilaiS2JLanswered:tbnilaiS2JLanswered, tbnilaiS2JLnotanswered:tbnilaiS2JLnotanswered, tbperformances0jl:tbperformances0jl, tbperformances1jl:tbperformances1jl,tbperformances2jl:tbperformances2jl, tbiduser:tbiduser,tbusername:tbusername},
             success: function(data){
             }
         });
@@ -1275,13 +1275,14 @@ function fetchNilai(jsnya) {
 
 		var ooo = datascore.reduce((a, b) => a + b, 0);
 		//$('#tbnilaiS0JL').val(parseFloat(nilai).toFixed(2)); //Old Scorong System
-		$('#tbnilaiS0JL').val(parseFloat(ooo/10).toFixed(2));
 		nilai = parseFloat(ooo/10).toFixed(2);
+		if (nilai > 100) {nilai = 100}
+		$('#tbnilaiS0JL').val(nilai);
 		$('#tbperformanceS0JL').val(datascore);
 		//$('#scoreresultLeft').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
-		console.log("total :" + ooo);
-		console.log("nilai :" + parseFloat(ooo/10).toFixed(2));
+		console.log("total :" + nilai);
+		console.log("nilai :" + nilai);
 
 
 	} else if(js == 'S1JL') {
@@ -1326,7 +1327,6 @@ function fetchNilai(jsnya) {
 		var datascore = [];
 		let scorperklom = 0
 		for (var i = 0; i < 10; i++) {
-		
 			scorperklom = nilaiArrayS1JLcorrect[i];
 			if (nilaiArrayS1JLcorrect[i] >= nilaiArrayS1JLcorrect[i - 1]) {
 			    scorperklom = nilaiArrayS1JLcorrect[i] * 2;
@@ -1407,11 +1407,15 @@ function fetchNilai(jsnya) {
 		//console.log('Gadijawab : ' + gadijawab);
 		//$('#tbnilaiS1JL').val(parseFloat(nilai).toFixed(2));
 		var ooo = datascore.reduce((a, b) => a + b, 0);
-		$('#tbnilaiS1JL').val(parseFloat(ooo/10).toFixed(2));
+		//$('#tbnilaiS0JL').val(parseFloat(nilai).toFixed(2)); //Old Scorong System
 		nilai = parseFloat(ooo/10).toFixed(2);
+		if (nilai > 100) {nilai = 100}
+		$('#tbnilaiS1JL').val(nilai);
 		$('#tbperformanceS1JL').val(datascore);
 		//$('#scoreresultLeft').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
+		console.log("total :" + nilai);
+		console.log("nilai :" + nilai);
 
 	} else if(js == 'S2JL') {			
 		var datasoal = Array();
@@ -1532,11 +1536,15 @@ function fetchNilai(jsnya) {
 		//if(nilai > 100){nilai = 100}//handling score if > //100 happen
 		//$('#tbnilaiS2JL').val(parseFloat(nilai).toFixed(2)1;
 		var ooo = datascore.reduce((a, b) => a + b, 0);
-		$('#tbnilaiS2JL').val(parseFloat(ooo/10).toFixed(2));
+		//$('#tbnilaiS0JL').val(parseFloat(nilai).toFixed(2)); //Old Scorong System
 		nilai = parseFloat(ooo/10).toFixed(2);
+		if (nilai > 100) {nilai = 100}
+		$('#tbnilaiS2JL').val(nilai);
 		$('#tbperformanceS2JL').val(datascore);
-		//$('#nilaiArrayS2JLcorrectmultiply').css('display','unset');
+		//$('#scoreresultLeft').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
+		console.log("total :" + nilai);
+		console.log("nilai :" + nilai);
 	} else {
 		alert('Error 210421 : cantumkan kode report ini saat melapor')
 	}

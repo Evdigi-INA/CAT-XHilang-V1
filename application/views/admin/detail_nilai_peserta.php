@@ -204,14 +204,14 @@
 								</div>
 							    <div id="soalangka" class="tab-pane fade in active show">
 							    	<div class="container score-chart-wrapper" style="position: relative;">
-										<center><h3>Soal Huruf</h3></center>
+										<center><h3>Soal Angka</h3></center>
 										<canvas id="score-chart-s0jl" class="charteachscorecolumn" height="190"></canvas>
 										<canvas id="performance-s0jl" height="190"></canvas>
 									</div>
 							    </div>
 							    <div id="soalhuruf" class="tab-pane fade">
 							    	<div class="container score-chart-wrapper" style="position: relative;">
-										<center><h3>Soal Angka</h3></center>
+										<center><h3>Soal Huruf</h3></center>
 							      		<canvas id="score-chart-s1jl" class="charteachscorecolumn" height="190"></canvas>
 							      		<canvas id="performance-s1jl" height="190"></canvas>
 							  		</div>

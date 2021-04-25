@@ -24,7 +24,7 @@
 		<canvas id="world" width="876" height="657"></canvas>
 	</div>
 	<div class="container" style="opacity:1;">
-	  	<div class="row-fluid" style="padding-top: 25%;">
+	  	<div class="row-fluid" style="padding-top: 25vh;">
 	  		<div class="col-sm-offset-2 col-md-offset-4 col-sm-8 col-md-4 col-xs-12 login-form">
 	  			<div class="row-fluid">
 	  				<div class="col-sm-12 logo-login-form" style="text-align: center; margin: 4vh 0;">

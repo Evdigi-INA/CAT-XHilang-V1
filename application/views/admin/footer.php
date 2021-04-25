@@ -7,6 +7,14 @@
 <script src="<?php echo base_url('js/moment-with-locales.js') ?>"></script>
 <script type="text/javascript">
 
+	function sumStr(str){
+	    let strArr = str.split(",");
+	    let sum = strArr.reduce(function(total, num){
+	      return parseFloat(total) + parseFloat(num);
+	    });
+
+	    return sum;
+	}
 	$(document).ready(function() {
 		$("#btnupdatetoken").click(function(){
         	const Toast = Swal.mixin({
@@ -299,7 +307,7 @@
 			}
 		});
 
-		lineCharts2jl = new Chart(ctxPerformanceS2JL,
+		lineCharts2jl = new Chart(ctxLineChartS2JL,
 		{
 			type: 'line',
 			data:
@@ -384,7 +392,7 @@
 			type: 'line',
 			data:
 			{
-				labels: 'Performa Pengerjaan',
+				labels: chartLabels,
 				datasets: [
 				{
 					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
@@ -409,7 +417,7 @@
 			type: 'line',
 			data:
 			{
-				labels: 'Performa Pengerjaan',
+				labels: chartLabels,
 				datasets: [
 				{
 					data: JSON.parse("[0,0,0,0,0,0,0,0,0,0]"),
@@ -460,24 +468,24 @@
         	$('html, body').animate({
 		        scrollTop: $("#card-chart").offset().top -100
 		    }, 500);
-	        lineCharts0jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(8)').text() + "]");
-		    lineCharts0jl.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(9)').text() + "]");
-		    lineCharts0jl.data.datasets[2].data = JSON.parse("[" + $(this).find('td:eq(10)').text() + "]");
-		    lineCharts0jl.data.datasets[3].data = JSON.parse("[" + $(this).find('td:eq(11)').text() + "]");
-		    lineCharts1jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(12)').text() + "]");
-		    lineCharts1jl.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(13)').text() + "]");
-		    lineCharts1jl.data.datasets[2].data = JSON.parse("[" + $(this).find('td:eq(14)').text() + "]");
-		    lineCharts1jl.data.datasets[3].data = JSON.parse("[" + $(this).find('td:eq(15)').text() + "]");
-		    lineCharts2jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(16)').text() + "]");
-		    lineCharts2jl.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(17)').text() + "]");
-		    lineCharts2jl.data.datasets[2].data = JSON.parse("[" + $(this).find('td:eq(18)').text() + "]");
-		    lineCharts2jl.data.datasets[3].data = JSON.parse("[" + $(this).find('td:eq(19)').text() + "]");
-		    performances0jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(20)').text() + "]");
-		    performances1jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(21)').text() + "]");
-		    performances2jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(22)').text() + "]");
-		    barChartAlljs.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(8)').text() + "," + $(this).find('td:eq(12)').text() + "," + $(this).find('td:eq(16)').text() + "]");
-		    barChartAlljs.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(9)').text() + "," + $(this).find('td:eq(13)').text() +"," + $(this).find('td:eq(17)').text() + "]");
-		    barChartHorizAlljs.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(3)').text() + "," + $(this).find('td:eq(4)').text() +"," + $(this).find('td:eq(5)').text() + "]");
+	        lineCharts0jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(7)').text() + "]");
+		    lineCharts0jl.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(8)').text() + "]");
+		    lineCharts0jl.data.datasets[2].data = JSON.parse("[" + $(this).find('td:eq(9)').text() + "]");
+		    lineCharts0jl.data.datasets[3].data = JSON.parse("[" + $(this).find('td:eq(10)').text() + "]");
+		    lineCharts1jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(11)').text() + "]");
+		    lineCharts1jl.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(12)').text() + "]");
+		    lineCharts1jl.data.datasets[2].data = JSON.parse("[" + $(this).find('td:eq(13)').text() + "]");
+		    lineCharts1jl.data.datasets[3].data = JSON.parse("[" + $(this).find('td:eq(14)').text() + "]");
+		    lineCharts2jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(15)').text() + "]");
+		    lineCharts2jl.data.datasets[1].data = JSON.parse("[" + $(this).find('td:eq(16)').text() + "]");
+		    lineCharts2jl.data.datasets[2].data = JSON.parse("[" + $(this).find('td:eq(17)').text() + "]");
+		    lineCharts2jl.data.datasets[3].data = JSON.parse("[" + $(this).find('td:eq(18)').text() + "]");
+		    performances0jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(19)').text() + "]");
+		    performances1jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(20)').text() + "]");
+		    performances2jl.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(21)').text() + "]");
+		    barChartAlljs.data.datasets[0].data = JSON.parse("[" + sumStr($(this).find('td:eq(9)').text()) + "," + sumStr($(this).find('td:eq(13)').text()) + "," + sumStr($(this).find('td:eq(17)').text()) + "]");
+		    barChartAlljs.data.datasets[1].data = JSON.parse("[" + sumStr($(this).find('td:eq(10)').text()) + "," + sumStr($(this).find('td:eq(14)').text()) +"," + sumStr($(this).find('td:eq(18)').text()) + "]");
+		    barChartHorizAlljs.data.datasets[0].data = JSON.parse("[" + $(this).find('td:eq(2)').text() + "," + $(this).find('td:eq(3)').text() +"," + $(this).find('td:eq(4)').text() + "]");
 		    lineCharts0jl.update();
 		    lineCharts1jl.update();
 		    lineCharts2jl.update();
