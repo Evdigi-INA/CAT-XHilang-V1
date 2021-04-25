@@ -13,7 +13,7 @@
 						<p class="brieftext">
 							Sebelum mengerjakan, pastikan peserta memahami cara mengerjakan dengan melihat video dibawah ini dan menunggu penjelasan dari instruktur selesai, jika sudah silahkaan klik <b>Mulai Test</b>.<br>
 							<center><span class="gambarpetunjuk"><img class="img-fluid" src="<?php echo base_url('assets/web-images/petunjuk.gif')?>"></span></center>
-							<div>
+							<div hidden="true">
 							<?php foreach ($qinfo as $v) {
 								# code...
 							} ?>
@@ -67,7 +67,9 @@
 							</div>
 							<div class="row">
 								<div class="col-md-12" id="scorechartgraph" style="display: none;">
-									<canvas id="score-chart" height="150"></canvas>
+									<div class="table-responsive">
+										<canvas id="score-chart" style="min-height: 200px !important;" class="table"></canvas>
+									</div>
 								</div>
 							</div>
 						</div>

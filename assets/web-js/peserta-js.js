@@ -1152,7 +1152,7 @@ function fetchNilai(jsnya) {
 	var js = jsnya;
 
 	$('#score-chart').remove(); // this is my <canvas> element
-	$('#scorechartgraph').append('<canvas id="score-chart" height="150"><canvas>');
+	$('#scorechartgraph').append('<canvas id="score-chart" style="max-height: 50vh; width: auto;"></canvas>');
 
 	if (js == 'S0JL') {
 		var datasoal = Array();
@@ -1269,14 +1269,15 @@ function fetchNilai(jsnya) {
 			options:
 			{
 				responsive: true,
+            	maintainAspectRatio: false,
 				scales: scalesOptions,
 			}
 		});
 
 		//$('#tbnilaiS0JL').val(parseFloat(nilai).toFixed(2)); //Old Scorong System
-		$('#tbnilaiS0JL').val(parseFloat(nilaiArrayS0JLcorrectmultiply.reduce((a, b) => a + b, 0)/10).toFixed(2));
+		$('#tbnilaiS0JL').val(parseFloat(performancescoreS0JL.reduce((a, b) => a + b, 0)/10).toFixed(2));
 		$('#tbperformanceS0JL').val(datascore);
-		$('#scoreresultLeft').css('display','unset');
+		//$('#scoreresultLeft').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
 
 
@@ -1390,6 +1391,7 @@ function fetchNilai(jsnya) {
 			options:
 			{
 				responsive: true,
+            	maintainAspectRatio: false,
 				scales: scalesOptions,
 			}
 		});
@@ -1398,9 +1400,9 @@ function fetchNilai(jsnya) {
 		//console.log('Salah : ' + salah);
 		//console.log('Gadijawab : ' + gadijawab);
 		//$('#tbnilaiS1JL').val(parseFloat(nilai).toFixed(2));
-		$('#tbnilaiS1JL').val(parseFloat(nilaiArrayS1JLcorrectmultiply.reduce((a, b) => a + b, 0)/10).toFixed(2));
+		$('#tbnilaiS1JL').val(parseFloat(performancescoreS1JL.reduce((a, b) => a + b, 0)/10).toFixed(2));
 		$('#tbperformanceS1JL').val(datascore);
-		$('#scoreresultLeft').css('display','unset');
+		//$('#scoreresultLeft').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
 
 	} else if(js == 'S2JL') {			
@@ -1513,6 +1515,7 @@ function fetchNilai(jsnya) {
 			options:
 			{
 				responsive: true,
+            	maintainAspectRatio: false,
 				scales: scalesOptions,
 			}
 		});
@@ -1520,9 +1523,9 @@ function fetchNilai(jsnya) {
 		//console.log('Salah : ' + salah);
 		//if(nilai > 100){nilai = 100}//handling score if > //100 happen
 		//$('#tbnilaiS2JL').val(parseFloat(nilai).toFixed(2)1;
-		$('#tbnilaiS2JL').val(parseFloat(nilaiArrayS2JLcorrectmultiply.reduce((a, b) => a + b, 0)/10).toFixed(2));
+		$('#tbnilaiS2JL').val(parseFloat(performancescoreS2JL.reduce((a, b) => a + b, 0)/10).toFixed(2));
 		$('#tbperformanceS2JL').val(datascore);
-		$('#nilaiArrayS2JLcorrectmultiply').css('display','unset');
+		//$('#nilaiArrayS2JLcorrectmultiply').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
 	} else {
 		alert('Error 210421 : cantumkan kode report ini saat melapor')

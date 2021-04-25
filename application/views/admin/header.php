@@ -53,19 +53,19 @@
 			      CAT Tes Sikap Kerja 
 			    </a>
 			  </div>
-			  <div class="account-button-wrapper"><h6 style="color: white; font-size: 15px;"><?php
+			  <div class="account-button-wrapper"><h6 style="color: white;font-size: 15px; inline-size: max-content;margin: 9px 16px;"><span class="greeting"><?php
             $t = date("H");
 
             if ($t < "11") {
-              echo "Selamat Pagi";
+              echo "Selamat Pagi,";
             } elseif ($t < "15") {
-              echo "Selamat Siang";
+              echo "Selamat Siang,";
             } elseif ($t < "18") {
-              echo "Selamat Sore";
+              echo "Selamat Sore,";
             } else {
-              echo "Selamat Malam";
+              echo "Selamat Malam,";
             }
-            ?>, <?php echo $o->username; ?></h6>
+            ?></span><span class="usernamefetch"><?php echo $o->username; ?></span> </h6>
             <input type="text" name="iduser" value="<?php echo $o->id_user ?>" hidden>
 			  </div>
 			  <div class="btn-logout-wrapper">
