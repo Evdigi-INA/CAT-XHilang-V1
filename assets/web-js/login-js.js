@@ -88,8 +88,8 @@ function documentTouchMoveHandler(event) {
 }
 
 function windowResizeHandler() {
-	SCREEN_WIDTH = window.innerWidth;
-	SCREEN_HEIGHT = window.innerHeight;
+	SCREEN_WIDTH = screen.width;
+	SCREEN_HEIGHT = screen.height;
 	
 	canvas.width = SCREEN_WIDTH;
 	canvas.height = SCREEN_HEIGHT;

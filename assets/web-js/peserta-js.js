@@ -1184,7 +1184,7 @@ function fetchNilai(jsnya) {
 							salah++;
 						} else {
 		                    benar++;
-		                    nilai+= 0.2; //saat mendapat point
+		    //                nilai+= 0.2; //saat mendapat point
 		                }
 		        } else {
 		        gadijawab++;
@@ -1276,9 +1276,12 @@ function fetchNilai(jsnya) {
 		var ooo = datascore.reduce((a, b) => a + b, 0);
 		//$('#tbnilaiS0JL').val(parseFloat(nilai).toFixed(2)); //Old Scorong System
 		$('#tbnilaiS0JL').val(parseFloat(ooo/10).toFixed(2));
+		nilai = parseFloat(ooo/10).toFixed(2);
 		$('#tbperformanceS0JL').val(datascore);
 		//$('#scoreresultLeft').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
+		console.log("total :" + ooo);
+		console.log("nilai :" + parseFloat(ooo/10).toFixed(2));
 
 
 	} else if(js == 'S1JL') {
@@ -1310,7 +1313,7 @@ function fetchNilai(jsnya) {
 							salah++;
 						} else {
 		                    benar++;
-		                    nilai+= 0.2; //saat mendapat point
+		    //                nilai+= 0.2; //saat mendapat point
 		                }
 		        } else {
 		        gadijawab++;
@@ -1405,6 +1408,7 @@ function fetchNilai(jsnya) {
 		//$('#tbnilaiS1JL').val(parseFloat(nilai).toFixed(2));
 		var ooo = datascore.reduce((a, b) => a + b, 0);
 		$('#tbnilaiS1JL').val(parseFloat(ooo/10).toFixed(2));
+		nilai = parseFloat(ooo/10).toFixed(2);
 		$('#tbperformanceS1JL').val(datascore);
 		//$('#scoreresultLeft').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
@@ -1439,7 +1443,7 @@ function fetchNilai(jsnya) {
 							salah++;
 						} else {
 		                    benar++;
-		                    nilai+= 0.2; //saat mendapat point
+		    //                nilai+= 0.2; //saat mendapat point
 		                }
 		        } else {
 		        gadijawab++;
@@ -1529,6 +1533,7 @@ function fetchNilai(jsnya) {
 		//$('#tbnilaiS2JL').val(parseFloat(nilai).toFixed(2)1;
 		var ooo = datascore.reduce((a, b) => a + b, 0);
 		$('#tbnilaiS2JL').val(parseFloat(ooo/10).toFixed(2));
+		nilai = parseFloat(ooo/10).toFixed(2);
 		$('#tbperformanceS2JL').val(datascore);
 		//$('#nilaiArrayS2JLcorrectmultiply').css('display','unset');
 		$('#scoreresultRight').css('display','unset');
@@ -1538,5 +1543,5 @@ function fetchNilai(jsnya) {
 	$('#JBenar').text('' + benar + '');
 	$('#JSalah').text('' + salah + '');
 	$('#JTidakDijawab').text('' + gadijawab + '');
-	$('#Nilainya').text('' + parseFloat(nilai).toFixed(2) + '');
+	$('#Nilainya').text(nilai);
 }
