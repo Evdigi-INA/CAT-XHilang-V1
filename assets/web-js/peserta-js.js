@@ -21,6 +21,36 @@ function detectClassRunningOut() {
 	}
 }
 
+$(".switchnya").click(function(){
+	const Toast = Swal.mixin({
+	  toast: true,
+	  position: 'top-start',
+	  showConfirmButton: false,
+	  timer: 3000,
+	  timerProgressBar: true,
+	  didOpen: (toast) => {
+	    toast.addEventListener('mouseenter', Swal.stopTimer)
+	    toast.addEventListener('mouseleave', Swal.resumeTimer)
+	  }
+	})
+	if (this.checked) {
+		$("body").addClass("dark");
+		console.log("Nyala");
+
+		Toast.fire({
+		  type: 'success',
+		  title: 'Mode Gelap Aktif'
+		});
+	} else {
+		$("body").removeClass("dark");
+		console.log("Mati");
+		Toast.fire({
+		  type: 'error',
+		  title: 'Mode Gelap Tidak Aktif'
+		});
+	}
+});
+
 $("#logoutlink").click(function(e){
 	e.preventDefault(); // <--- prevent form from submitting
 	Swal.fire({

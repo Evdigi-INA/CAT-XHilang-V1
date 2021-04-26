@@ -40,7 +40,12 @@
 
 </style>
 <body>
-	
+	<div class="switchwrapper">
+	  	<label class="switch">
+		  <input class="switchnya" type="checkbox">
+		  <span class="slider round"></span>
+		</label>
+	</div>
 	<div class="header" style="position: sticky !important;
     top: 0; z-index: 999;">
     	<?php
