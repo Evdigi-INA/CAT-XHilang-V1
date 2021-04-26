@@ -188,6 +188,7 @@ $(document).ready(function(){
 		$('.tabelsoal').removeAttr('hidden');
 		$('.brieftext').css('display','none');
 		$(this).css('display','none');
+
 		$('.barisnya' + barisny[index]).removeAttr('hidden');
 		$('#judulcard').text('Soal '+ barisny[index]);
 		$( "#countdownkolom" ).removeClass("break");
@@ -490,13 +491,16 @@ function nextquest(jawab){
 		getfilledEachColumn('S0JL',0,10);
 		clearInterval(interval);
 		setTimeout(function(){
+			index = 500;
 			$('#loader').css('display','none');
 			$('#jenissoalnya').text('Hasil Pengerjaan Soal Angka');
 			$('.brieftext').css('display','block');
 			$('.brieftext').text('Berikut adalah hasil pengerjaan');
 			$('#scorechartgraph').css("display","unset");
 			$('.soalke10').attr('hidden','true');
-			
+
+			$('#menjelangendbutton').css('display','none');
+
 			$('#startbuttontest').css('display','block');
 			$('#judulcard').text('Soal Angka Selesai');
 			$('.tabelsoal').attr('hidden','true');
@@ -624,6 +628,7 @@ function nextquest(jawab){
 		getfilledEachColumn('S1JL',10,20);
 		clearInterval(interval);
 		setTimeout(function(){
+			index = 1000;
 			$('#loader').css('display','none');
 			$('#jenissoalnya').text('Hasil Pengerjaan Soal Huruf');
 			$('.brieftext').css('display','block');
@@ -631,6 +636,8 @@ function nextquest(jawab){
 			$('#scorechartgraph').css("display","unset");
 			$('.soalke20').attr('hidden','true');
 			
+			$('#menjelangendbutton').css('display','none');
+
 			$('#startbuttontest').css('display','block');
 			$('#judulcard').text('Soal Huruf Selesai');
 			$('.tabelsoal').attr('hidden','true');
