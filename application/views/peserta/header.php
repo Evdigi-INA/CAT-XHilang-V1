@@ -12,23 +12,17 @@
 
 	<link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
 
-	<!-- LOAD JAVASCRIPT INTI DARI BOOTSTRAP  -->
-	<script src="<?php echo base_url('js/jquery-3.6.0.min.js') ?>"></script>
-	<script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+
   	<!--LOAD FAVICON-->
   	<link rel="icon" href="<?php echo base_url('assets/web-images/lock.png') ?>" sizes="16x16" type="image/png">
 
   	<!-- LOAD CUSTOM TEMPLATE STYLE DISINI -->
 	<link rel="stylesheet" href="<?php echo base_url('css/sb-admin.css') ?> ">
-
-  	<script src="<?php echo base_url('assets/chart.js/Chart.min.js') ?>"></script>
   	<!-- LOAD DATATABLE PLUGIN CSS DISINI -->
   	
 	<link rel="stylesheet" href="<?php echo base_url('assets/datatables/jquery.dataTables.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/datatables/dataTables.bootstrap4.css') ?>">
   	<link rel="stylesheet" href="<?php echo base_url('assets/datatables/buttons.dataTables.min.css') ?>">
-
-  	<script type="text/javascript" src="<?php echo base_url('js/scriptsoal.js');?>"></script>
 
 </head>
 <style type="text/css">
@@ -40,12 +34,6 @@
 
 </style>
 <body>
-	<div class="switchwrapper">
-	  	<label class="switch">
-		  <input class="switchnya" type="checkbox">
-		  <span class="slider round"></span>
-		</label>
-	</div>
 	<div class="header" style="position: sticky !important;
     top: 0; z-index: 999;">
     	<?php
@@ -60,6 +48,12 @@
 			      CAT Tes Sikap Kerja 
 			    </a>
 			  </div>
+			  <div class="switchwrapper">
+				  	<label class="switch">s
+					  <input class="switchnya" type="checkbox">
+					  <span class="slider round"></span>
+					</label>
+				</div>
 			  <div class="account-button-wrapper"><h6 class="text-greeting" style="color: white;font-size: 15px; inline-size: max-content;margin: 9px 16px;"><span class="greeting"><?php
             $t = date("H");
 

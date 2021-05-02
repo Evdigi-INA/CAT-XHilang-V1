@@ -496,7 +496,7 @@ function nextquest(jawab){
 			$('#jenissoalnya').text('Hasil Pengerjaan Soal Angka');
 			$('.brieftext').css('display','block');
 			$('.brieftext').text('Berikut adalah hasil pengerjaan');
-			$('#scorechartgraph').css("display","unset");
+			$('#scorechartgraph').css("display","block");
 			$('.soalke10').attr('hidden','true');
 
 			$('#menjelangendbutton').css('display','none');
@@ -510,9 +510,10 @@ function nextquest(jawab){
 			//saat tepat sekali user ngisi soal pas waktu dah deket, pastikan soal selanjutnya ga keliatan [kode ini hanya sesaat, soon it will be implemented (for debugging purpose)]
 			forceHide();
 
-			fetchNilai('S0JL');
+			
 			detectClassRunningOut();
 			clearInterval(interval);
+			fetchNilai('S0JL');
 		},5000);
 
 	} else if (index < columnsoalcheckpoint[11] && status=='Mengerjakan') {
@@ -633,7 +634,7 @@ function nextquest(jawab){
 			$('#jenissoalnya').text('Hasil Pengerjaan Soal Huruf');
 			$('.brieftext').css('display','block');
 			$('.brieftext').text('Berikut adalah hasil pengerjaan');
-			$('#scorechartgraph').css("display","unset");
+			$('#scorechartgraph').css("display","block");
 			$('.soalke20').attr('hidden','true');
 			
 			$('#menjelangendbutton').css('display','none');
@@ -647,9 +648,10 @@ function nextquest(jawab){
 			//saat tepat sekali user ngisi soal pas waktu dah deket, pastikan soal selanjutnya ga keliatan [kode ini hanya sesaat, soon it will be implemented (for debugging purpose)]
 			forceHide();
 
-			fetchNilai('S1JL');
+			
 			detectClassRunningOut();
 			clearInterval(interval);
+			fetchNilai('S1JL');
 			},3000);
 	} else if (index < columnsoalcheckpoint[21] && status=='Mengerjakan') {
 		$('#jenissoalnya').text('Soal Simbol - Kolom 1');
@@ -767,7 +769,7 @@ function nextquest(jawab){
 			$('#jenissoalnya').text('Hasil Pengerjaan Soal Simbol');
 			$('.brieftext').css('display','block');
 			$('.brieftext').text('Berikut adalah hasil pengerjaan');
-			$('#scorechartgraph').css("display","unset");
+			$('#scorechartgraph').css("display","block");
 			$('.soalke30').attr('hidden','true');
 			
 			$('#menjelangendbutton').css('display','block');
@@ -778,10 +780,10 @@ function nextquest(jawab){
 
 			//saat tepat sekali user ngisi soal pas waktu dah deket, pastikan soal selanjutnya ga keliatan [kode ini hanya sesaat, soon it will be implemented (for debugging purpose)]
 			forceHide();
-
-			fetchNilai('S2JL');
+			
 			detectClassRunningOut();
 			clearInterval(interval);
+			fetchNilai('S2JL');
 		},3000);
 	}
 
@@ -889,7 +891,7 @@ function pindahKolom() {
 			$('#jenissoalnya').text('Hasil Pengerjaan Soal Angka');
 			$('.brieftext').css('display','block');
 			$('.brieftext').text('Berikut adalah hasil pengerjaan');
-			$('#scorechartgraph').css("display","unset");
+			$('#scorechartgraph').css("display","block");
 			$('.soalke10').attr('hidden','true');
 
 			$('#startbuttontest').css('display','block');
@@ -900,9 +902,10 @@ function pindahKolom() {
 
 			//saat tepat sekali user ngisi soal pas waktu dah deket, pastikan soal selanjutnya ga keliatan [kode ini hanya sesaat, soon it will be implemented (for debugging purpose)]
 			forceHide();
-			fetchNilai('S0JL');
+			
 			detectClassRunningOut();
 			clearInterval(interval);
+			fetchNilai('S0JL');
 			},3000);
 		soalke = '11';
 	} else if (soalke == '11') {
@@ -993,7 +996,7 @@ function pindahKolom() {
 			$('#jenissoalnya').text('Hasil Pengerjaan Soal Huruf');
 			$('.brieftext').css('display','block');
 			$('.brieftext').text('Berikut adalah hasil pengerjaan');
-			$('#scorechartgraph').css("display","unset");
+			$('#scorechartgraph').css("display","block");
 			$('.soalke20').attr('hidden','true');
 
 			$('#startbuttontest').css('display','block');
@@ -1005,9 +1008,9 @@ function pindahKolom() {
 			//saat tepat sekali user ngisi soal pas waktu dah deket, pastikan soal selanjutnya ga keliatan [kode ini hanya sesaat, soon it will be implemented (for debugging purpose)]
 			forceHide();
 
-			fetchNilai('S1JL');
 			detectClassRunningOut();
 			clearInterval(interval);
+			fetchNilai('S1JL');
 			},3000);
 		soalke = '21';
 	} else if (soalke == '21') {
@@ -1097,11 +1100,11 @@ function pindahKolom() {
 			$('#jenissoalnya').text('Hasil Pengerjaan Soal Simbol');
 			$('.brieftext').css('display','block');
 			$('.brieftext').text('Berikut adalah hasil pengerjaan');
-			$('#scorechartgraph').css("display","unset");
+			$('#scorechartgraph').css("display","block");
 			$('.soalke30').attr('hidden','true');
 			
 			$('#menjelangendbutton').css('display','block');
-			$('#judulcard').text('Soal Huruf Selesai');
+			$('#judulcard').text('Soal Simbol Selesai');
 			$('.tabelsoal').attr('hidden','true');
 			$( "#countdownkolom" ).addClass("break");
 			$( "#countdownkolom" ).text("jeda");
@@ -1109,10 +1112,10 @@ function pindahKolom() {
 			//saat tepat sekali user ngisi soal pas waktu dah deket, pastikan soal selanjutnya ga keliatan [kode ini hanya sesaat, soon it will be implemented (for debugging purpose)]
 			forceHide();
 
-			fetchNilai('S2JL');
 			detectClassRunningOut();
 			clearInterval(interval);
-			},3000);
+			fetchNilai('S2JL');
+		},3000);
 	} else {
 		alert('Error 32104-21: cantumkan kode report ini saat melapor')
 		console.log('something wrong?');
@@ -1585,6 +1588,7 @@ function fetchNilai(jsnya) {
 	} else {
 		alert('Error 210421 : cantumkan kode report ini saat melapor')
 	}
+	$('#score-chart').css('display',''); //fixing not showing chart someti
 	$('#JBenar').text('' + benar + '');
 	$('#JSalah').text('' + salah + '');
 	$('#JTidakDijawab').text('' + gadijawab + '');

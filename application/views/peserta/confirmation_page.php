@@ -68,7 +68,7 @@
 							<div class="row">
 								<div class="col-md-12" id="scorechartgraph" style="display: none;">
 									<div class="table-responsive">
-										<canvas id="score-chart" style="min-height: 200px !important;" class="table"></canvas>
+										<canvas id="score-chart" class="table"></canvas>
 									</div>
 								</div>
 							</div>
