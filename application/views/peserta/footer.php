@@ -17,6 +17,6 @@
 
 <!-- LOAD CUSTOM SCRIPT UNTUK SEMUA YANG ADA DI LAMAN INI -->
 <script src="<?php echo base_url('js/sb-admin.min.js') ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/web-js/peserta-js.js')?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/web-js/peserta-js.min.js')?>"></script>
 </body>
 </html>
