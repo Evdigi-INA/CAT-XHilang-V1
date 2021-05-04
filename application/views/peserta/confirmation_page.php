@@ -292,7 +292,8 @@
 								$kolom7c = 1301;
 								$kolom8c = 1351;
 								$kolom9c = 1401;
-								$kolom10c = 1501;
+								$kolom10c = 1451;
+								$end = 1501;
 
 
 								foreach ($soal1 as $k1) {
@@ -765,15 +766,15 @@
 											<div class="radioform">
 												<div class="radiogroup">
 													<input value="<?php echo $h17[0]; ?>" type="radio" id="option-one<?php echo'baris'.$kolom7b ?>" name="selector<?php echo'baris'.$kolom7b ?>" class="selector<?php echo 'baris'.$kolom7b ?>">
-													<label onclick="setTimeout(function(){nextquest('<?php echo $h16[0] ?>')},170);" for="option-one<?php echo'baris'.$kolom7b ?>">A</label>
+													<label onclick="setTimeout(function(){nextquest('<?php echo $h17[0] ?>')},170);" for="option-one<?php echo'baris'.$kolom7b ?>">A</label>
 													<input value="<?php echo $h17[1]; ?>" type="radio" id="option-two<?php echo'baris'.$kolom7b ?>" name="selector<?php echo'baris'.$kolom7b ?>" class="selector<?php echo 'baris'.$kolom7b ?>">
-													<label onclick="setTimeout(function(){nextquest('<?php echo $h16[1] ?>')},170);" for="option-two<?php echo'baris'.$kolom7b ?>">B</label>
+													<label onclick="setTimeout(function(){nextquest('<?php echo $h17[1] ?>')},170);" for="option-two<?php echo'baris'.$kolom7b ?>">B</label>
 													<input value="<?php echo $h17[2]; ?>" type="radio" id="option-three<?php echo'baris'.$kolom7b ?>" name="selector<?php echo'baris'.$kolom7b ?>" class="selector<?php echo 'baris'.$kolom7b ?>">
-													<label onclick="setTimeout(function(){nextquest('<?php echo $h16[2] ?>')},170);" for="option-three<?php echo'baris'.$kolom7b ?>">C</label>
+													<label onclick="setTimeout(function(){nextquest('<?php echo $h17[2] ?>')},170);" for="option-three<?php echo'baris'.$kolom7b ?>">C</label>
 													<input value="<?php echo $h17[3]; ?>" type="radio" id="option-four<?php echo'baris'.$kolom7b ?>" name="selector<?php echo'baris'.$kolom7b ?>" class="selector<?php echo 'baris'.$kolom7b ?>">
-													<label onclick="setTimeout(function(){nextquest('<?php echo $h16[3] ?>')},170);" for="option-four<?php echo'baris'.$kolom7b ?>">D</label>
+													<label onclick="setTimeout(function(){nextquest('<?php echo $h17[3] ?>')},170);" for="option-four<?php echo'baris'.$kolom7b ?>">D</label>
 													<input value="<?php echo $h17[4]; ?>" type="radio" id="option-five<?php echo'baris'.$kolom7b ?>" name="selector<?php echo'baris'.$kolom7b ?>" class="selector<?php echo 'baris'.$kolom7b ?>">
-													<label onclick="setTimeout(function(){nextquest('<?php echo $h16[4] ?>')},170);" for="option-five<?php echo'baris'.$kolom7b ?>">E</label>
+													<label onclick="setTimeout(function(){nextquest('<?php echo $h17[4] ?>')},170);" for="option-five<?php echo'baris'.$kolom7b ?>">E</label>
 												</div>
 											</div>
 										</td>
@@ -973,15 +974,15 @@
 											<div class="radioform">
 												<div class="radiogroup">
 													<input value="<?php echo $h26[0]; ?>" type="radio" id="option-one<?php echo'baris'.$kolom6c ?>" name="selector<?php echo'baris'.$kolom6c ?>" class="selector<?php echo 'baris'.$kolom6c ?>">
-													<label onclick="setTimeout(function(){nextquest('<?php echo $h25[0] ?>')},170);" for="option-one<?php echo'baris'.$kolom6c ?>">A</label>
+													<label onclick="setTimeout(function(){nextquest('<?php echo $h26[0] ?>')},170);" for="option-one<?php echo'baris'.$kolom6c ?>">A</label>
 													<input value="<?php echo $h26[1]; ?>" type="radio" id="option-two<?php echo'baris'.$kolom6c ?>" name="selector<?php echo'baris'.$kolom6c ?>" class="selector<?php echo 'baris'.$kolom6c ?>">
-													<label onclick="setTimeout(function(){nextquest('<?php echo $h25[1] ?>')},170);" for="option-two<?php echo'baris'.$kolom6c ?>">B</label>
+													<label onclick="setTimeout(function(){nextquest('<?php echo $h26[1] ?>')},170);" for="option-two<?php echo'baris'.$kolom6c ?>">B</label>
 													<input value="<?php echo $h26[2]; ?>" type="radio" id="option-three<?php echo'baris'.$kolom6c ?>" name="selector<?php echo'baris'.$kolom6c ?>" class="selector<?php echo 'baris'.$kolom6c ?>">
-													<label onclick="setTimeout(function(){nextquest('<?php echo $h25[2] ?>')},170);" for="option-three<?php echo'baris'.$kolom6c ?>">C</label>
+													<label onclick="setTimeout(function(){nextquest('<?php echo $h26[2] ?>')},170);" for="option-three<?php echo'baris'.$kolom6c ?>">C</label>
 													<input value="<?php echo $h26[3]; ?>" type="radio" id="option-four<?php echo'baris'.$kolom6c ?>" name="selector<?php echo'baris'.$kolom6c ?>" class="selector<?php echo 'baris'.$kolom6c ?>">
-													<label onclick="setTimeout(function(){nextquest('<?php echo $h25[3] ?>')},170);" for="option-four<?php echo'baris'.$kolom6c ?>">D</label>
+													<label onclick="setTimeout(function(){nextquest('<?php echo $h26[3] ?>')},170);" for="option-four<?php echo'baris'.$kolom6c ?>">D</label>
 													<input value="<?php echo $h26[4]; ?>" type="radio" id="option-five<?php echo'baris'.$kolom6c ?>" name="selector<?php echo'baris'.$kolom6c ?>" class="selector<?php echo 'baris'.$kolom6c ?>">
-													<label onclick="setTimeout(function(){nextquest('<?php echo $h25[4] ?>')},170);" for="option-five<?php echo'baris'.$kolom6c ?>">E</label>
+													<label onclick="setTimeout(function(){nextquest('<?php echo $h26[4] ?>')},170);" for="option-five<?php echo'baris'.$kolom6c ?>">E</label>
 												</div>
 											</div>
 										</td>
@@ -1058,7 +1059,7 @@
 									<?php
 								}
 
-								for ($kolom10c; $kolom10c < 901; $kolom10c++) { 
+								for ($kolom10c; $kolom10c < $end; $kolom10c++) { 
 									?>
 									<tr class="barispilihan barispilihankolom30 listsoalke<?php echo $kolom10c ?>" hidden>
 										<td>
@@ -1082,7 +1083,7 @@
 								}
 								?>
 								</table>
-								<table class="tabledijawab" hidden="true">
+								<table class="tabledijawab" hidden="hidden">
 									<?php 
 									$brs = 1;
 									do {

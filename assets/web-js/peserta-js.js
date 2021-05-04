@@ -300,6 +300,7 @@ function fetchnilaieachcolumn(js,start,end) {
 	  	}); 
 	});
 
+	
 	do {
 		//make sure the jawaban we got ada pada salah satu index array yang mana berisi 4 value (im make it comparison or 'make sure it was included')
 		if(datajawaban[xpure]){ //pastikan value ada
@@ -1201,6 +1202,7 @@ function fetchNilai(jsnya) {
 		var salah = 0;
 		var benar = 0;
 		var nilai = 0;
+		var status = [];
 		//collect data jawaban fro kolom 2
 		$('table.tabledijawab > tbody > tr').slice(0,500).each(function(o){
 		    tds0 = $(this).find('td');
@@ -1214,26 +1216,30 @@ function fetchNilai(jsnya) {
 		    datasoal[i][ii] = $(this).text();
 		  }); 
 		});
-		//console.log('soalnya : ' + datasoal);
-		//console.log('jawaban : ' + datajawaban);
+		console.log(datasoal);
+		console.log(datajawaban);
 
 	    var x = 0;
 		do {
 			if(datajawaban[x]){
 		        if(datasoal[x].includes(datajawaban[x])){
 							salah++;
+							status.push('Nomor ' + x + ' Salah');
 						} else {
 		                    benar++;
+		                    status.push('Nomor ' + x + ' Benar');
 		    //                nilai+= 0.2; //saat mendapat point
 		                }
 		        } else {
 		        gadijawab++;
+		        status.push('Nomor ' + x + ' Ga Diisi');
 		    }
 		    x++;
 		}
 		while(x < 500);
 		//console.log('Benar : ' + benar);
 		//console.log('Salah : ' + salah);
+		console.log(status);
 		var datascore = [];
 		let scorperklom = 0;
 		for (var i = 0; i < 10; i++) {
@@ -1332,6 +1338,7 @@ function fetchNilai(jsnya) {
 		var salah = 0;
 		var benar = 0;
 		var nilai = 0;
+		var status = [];
 		//collect data jawaban fro kolom 2
 		$('table.tabledijawab > tbody > tr').slice(500,1000).each(function(o){
 		    tds1 = $(this).find('td');
@@ -1345,24 +1352,27 @@ function fetchNilai(jsnya) {
 		    datasoal[i][ii] = $(this).text();
 		  }); 
 		});
-		//console.log(datajawaban);
-		//console.log(datasoal);
+		console.log(datajawaban);
+		console.log(datasoal);
 		var x = 0;
 		do {
 			if(datajawaban[x]){
 		        if(datasoal[x].includes(datajawaban[x])){
 							salah++;
+							status.push('Nomor ' + x + ' Salah');
 						} else {
 		                    benar++;
+		                    status.push('Nomor ' + x + ' Benar');
 		    //                nilai+= 0.2; //saat mendapat point
 		                }
 		        } else {
 		        gadijawab++;
+		        status.push('Nomor ' + x + ' Ga Diisi');
 		    }
 		    x++;
 		}
 		while(x < 500);
-
+		console.log(status);
 		if(nilai > 100){nilai = 100}//handling score if > 100 happen
 		var datascore = [];
 		let scorperklom = 0
@@ -1464,6 +1474,7 @@ function fetchNilai(jsnya) {
 		var salah = 0;
 		var benar = 0;
 		var nilai = 0;
+		var status = [];
 		//collect data jawaban fro kolom 2
 		$('table.tabledijawab > tbody > tr').slice(1000,1500).each(function(o){
 		    tds2 = $(this).find('td');
@@ -1477,24 +1488,29 @@ function fetchNilai(jsnya) {
 		    datasoal[i][ii] = $(this).text();
 		  }); 
 		});
-		//console.log('soalnya : ' + datasoal);
-		//console.log('jawaban : ' + datajawaban);
+		console.log(datasoal);
+		console.log(datajawaban);
 
 	    var x = 0;
 		do {
 			if(datajawaban[x]){
 		        if(datasoal[x].includes(datajawaban[x])){
 							salah++;
+							status.push('Nomor ' + x + ' Salah');
 						} else {
 		                    benar++;
+		                    status.push('Nomor ' + x + ' Benar');
 		    //                nilai+= 0.2; //saat mendapat point
 		                }
 		        } else {
 		        gadijawab++;
+		        status.push('Nomor ' + x + ' Ga Diisi');
 		    }
 		    x++;
 		}
 		while(x < 500);
+
+		console.log(status);
 
 		var datascore = [];
 		let scorperklom = 0;
